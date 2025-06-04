@@ -61,12 +61,14 @@ ds_portfolio/
 - Python 3.10+
 - PostgreSQL (Sistema principal de base de datos)
 - SQL (Consultas avanzadas, análisis de datos)
-- Streamlit
+- Docker (Containerización y despliegue)
+- FastAPI (API REST para modelos ML)
+- Streamlit (Interfaz web interactiva)
 - Pandas, NumPy, Scikit-learn
 - Plotly, Matplotlib, Seaborn
 - Jupyter Notebooks
 - Git
-- Testing (pytest)
+- Testing (pytest, httpx)
 - MLflow
 - Great Expectations
 
@@ -82,6 +84,10 @@ ds_portfolio/
   - ✅ Conexión desde Python
   - ⭕ Fundamentos y consultas básicas
   - ⭕ Consultas avanzadas
+- ⭕ Docker y Containerización
+  - ⭕ Instalación y configuración de Docker
+  - ⭕ Creación de Dockerfiles
+  - ⭕ Docker Compose para servicios
 - ⭕ Integración Python-PostgreSQL
   - ✅ Configuración de dependencias
   - ⭕ Implementación de conexiones
@@ -91,16 +97,35 @@ ds_portfolio/
 - ⭕ Análisis de datos con SQL y Python
 - ⭕ Manipulación y limpieza de datos
 - ⭕ Visualización avanzada
+- ⭕ Containerización de notebooks y aplicaciones
 
 ### Fase 3: Machine Learning (6-8 semanas) ⭕
 - ⭕ Preparación de datos con SQL
 - ⭕ Modelos de ML
 - ⭕ Feature engineering
+- ⭕ Containerización de modelos ML
 
 ### Fase 4: Desarrollo y Despliegue (3-4 semanas) ⭕
-- ⭕ APIs y microservicios
+- ⭕ FastAPI y APIs REST
+  - ⭕ Diseño de endpoints
+  - ⭕ Validación con Pydantic
+  - ⭕ Documentación con Swagger/OpenAPI
+  - ⭕ Testing de APIs
 - ⭕ Integración con bases de datos
+  - ⭕ SQLModel para APIs
+  - ⭕ Migraciones con Alembic
 - ⭕ Despliegue de modelos
+  - ⭕ API REST para inferencia
+  - ⭕ Monitoreo de modelos
+- ⭕ Docker y Containerización
+  - ⭕ Dockerfile para FastAPI
+  - ⭕ Dockerfile para Streamlit
+  - ⭕ Docker Compose para servicios
+  - ⭕ Orquestación de contenedores
+- ⭕ CI/CD con Docker
+  - ⭕ GitHub Actions
+  - ⭕ Tests automatizados
+  - ⭕ Despliegue continuo
 
 ### Fase 5: Preparación Final (2-3 semanas) ⭕
 - ⭕ Optimización
@@ -114,11 +139,19 @@ ds_portfolio/
   - Análisis de datos con SQL
   - Optimización de consultas
   - Integración Python-PostgreSQL
+- Docker y Containerización
+  - Fundamentos de Docker
+  - Creación y gestión de contenedores
+  - Docker Compose para orquestación
+  - Mejores prácticas de containerización
 - Manipulación de Datos
 - Machine Learning
 - Desarrollo de APIs
 - Testing y Mejores Prácticas
-- Despliegue de Aplicaciones
+- CI/CD y Despliegue
+  - Integración continua con Docker
+  - Despliegue de contenedores
+  - Orquestación en producción
 
 ## 💡 Notas Importantes
 - Mantener el código limpio y documentado
