@@ -1,17 +1,13 @@
-# Data Science Portfolio
+# Análisis de Emisiones de CO2 en Chile
 
-Este repositorio contiene mi portafolio de proyectos de Data Science, incluyendo:
-- Notebooks de análisis y aprendizaje
-- Aplicación Streamlit para visualización de proyectos
-- Ejemplos de código y modelos
-- Documentación y guías
+Este repositorio contiene un análisis comprehensivo de las emisiones de CO2 en Chile, utilizando datos del Registro de Emisiones y Transferencias de Contaminantes (RETC).
 
 ## 🚀 Características Principales
-- Integración con PostgreSQL para análisis de datos
-- Visualizaciones interactivas con Streamlit
-- Modelos de Machine Learning
-- Tests automatizados
-- Documentación detallada
+- Análisis exploratorio detallado de datos de emisiones
+- Visualizaciones interactivas y mapas
+- Procesamiento y limpieza avanzada de datos
+- Documentación detallada del proceso analítico
+- Conclusiones y recomendaciones basadas en datos
 
 ## 📦 Estructura del Proyecto
 ```
@@ -28,15 +24,12 @@ ds_portfolio/
 
 ## 🛠️ Tecnologías Utilizadas
 - Python 3.10+
-- PostgreSQL
-- Streamlit
-- Pandas, NumPy, Scikit-learn
-- MLflow
-- Pytest
+- Pandas y NumPy para análisis de datos
+- Matplotlib, Seaborn y Plotly para visualización
+- Jupyter Notebooks para análisis interactivo
 
 ## 📋 Requisitos
 - Python 3.10 o superior
-- PostgreSQL
 - Dependencias listadas en `requirements.txt`
 
 ## 🔧 Instalación

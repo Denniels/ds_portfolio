@@ -1,10 +1,14 @@
 # 📝 Project Roadmap
 
 ## 🎯 Objetivos Principales
-1. Crear un portafolio interactivo que combine:
-   - Notebooks para documentación y aprendizaje
-   - Aplicación Streamlit para mostrar proyectos
-   - Enfoque en Data Science y Desarrollo Python
+1. Crear un análisis comprehensivo de emisiones de CO2 en Chile:
+   - Análisis exploratorio detallado
+   - Visualizaciones interactivas y mapas
+   - Recomendaciones basadas en datos
+2. Desarrollar un portafolio que demuestre:
+   - Habilidades en análisis de datos con Python
+   - Capacidad de limpieza y transformación de datos
+   - Visualización efectiva de datos complejos
 
 ## 🗂️ Estructura del Proyecto
 ```
@@ -59,45 +63,35 @@ ds_portfolio/
 
 ## 🛠️ Herramientas y Tecnologías
 - Python 3.10+
-- PostgreSQL (Sistema principal de base de datos)
-- SQL (Consultas avanzadas, análisis de datos)
-- Docker (Containerización y despliegue)
-- FastAPI (API REST para modelos ML)
-- Streamlit (Interfaz web interactiva)
-- Pandas, NumPy, Scikit-learn
-- Plotly, Matplotlib, Seaborn
-- Jupyter Notebooks
-- Git
-- Testing (pytest, httpx)
-- MLflow
-- Great Expectations
+- Pandas (Procesamiento y análisis de datos)
+- NumPy (Computación numérica)
+- Matplotlib y Seaborn (Visualización estática)
+- Plotly (Visualización interactiva)
+- Jupyter Notebooks (Análisis exploratorio)
+- Git (Control de versiones)
+- Streamlit (Visualización web interactiva - Futura implementación)
 
 ## 📅 Plan de Desarrollo y Progreso
 
-### Fase 1: Fundamentos y SQL (3-4 semanas) ⏳
-- ⏳ Python avanzado
-  - ✅ Configuración del entorno
+### Fase 1: Análisis de Emisiones CO2 (2-3 semanas)
+- ✅ Configuración del entorno
   - ✅ Estructura del proyecto
-  - ⭕ Conceptos avanzados
-- ⏳ PostgreSQL
-  - ✅ Instalación y configuración
-  - ✅ Conexión desde Python
-  - ⭕ Fundamentos y consultas básicas
-  - ⭕ Consultas avanzadas
-- ⭕ Docker y Containerización
-  - ⭕ Instalación y configuración de Docker
-  - ⭕ Creación de Dockerfiles
-  - ⭕ Docker Compose para servicios
-- ⭕ Integración Python-PostgreSQL
-  - ✅ Configuración de dependencias
-  - ⭕ Implementación de conexiones
-  - ⭕ Consultas desde Python
+  - ✅ Dependencias y librerías
+- ⏳ Análisis Exploratorio
+  - ✅ Carga y limpieza de datos
+  - ✅ Tratamiento de valores faltantes
+  - ⭕ Análisis estadístico descriptivo
+  - ⭕ Detección de patrones y anomalías
+- ⭕ Visualización de Datos
+  - ⭕ Gráficos estadísticos
+  - ⭕ Mapas de distribución de emisiones
+  - ⭕ Dashboards interactivos
 
-### Fase 2: Data Science Core (4-5 semanas) ⭕
-- ⭕ Análisis de datos con SQL y Python
-- ⭕ Manipulación y limpieza de datos
-- ⭕ Visualización avanzada
-- ⭕ Containerización de notebooks y aplicaciones
+### Fase 2: Visualización y Presentación (2-3 semanas) ⭕
+- ⭕ Creación de visualizaciones avanzadas
+- ⭕ Desarrollo de narrativa basada en datos
+- ⭕ Documentación detallada
+- ⭕ Conclusiones y recomendaciones
 
 ### Fase 3: Machine Learning (6-8 semanas) ⭕
 - ⭕ Preparación de datos con SQL
