@@ -47,11 +47,11 @@ def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
                 return pd.DataFrame()
         
         # Leer el CSV con pandas de manera más eficiente
-        try:
-            # Usar usecols para seleccionar solo las columnas necesarias y reducir memoria
+        try:            # Usar usecols para seleccionar solo las columnas necesarias y reducir memoria
             columns_to_use = [
                 'nombre_establecimiento', 'region', 'comuna', 'cantidad_toneladas',
-                'año', 'latitud', 'longitud', 'contaminante'
+                'año', 'latitud', 'longitud', 'contaminante', 'razon_social', 'tipo_fuente',
+                'fuente_emisora_general'
             ]
             
             # Primero leer solo la cabecera para verificar qué columnas están disponibles
