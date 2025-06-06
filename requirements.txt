@@ -18,3 +18,5 @@ shapely>=2.0.0
 folium>=0.15.0
 branca>=0.7.0
 pydeck>=0.8.0
+gdown>=4.7.1
+streamlit-folium>=0.15.0
