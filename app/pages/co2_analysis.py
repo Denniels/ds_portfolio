@@ -20,34 +20,26 @@ set_theme()
 apply_theme()
 
 # Función para cargar datos
+from utils.data_loader import DataLoader
+
 @st.cache_data
 def load_data():
-    DATA_DIR = Path(__file__).parents[2] / 'data'
-    RAW_DATA_PATH = DATA_DIR / 'raw' / 'retc_emisiones_aire_2023.csv'
-    
-    def detect_delimiter(file_path):
-        delimiters = [',', ';', '\t']
-        with open(file_path, 'r', encoding='utf-8') as f:
-            header = f.readline().strip()
-            for delimiter in delimiters:
-                if header.count(delimiter) > 0:
-                    return delimiter
-        return ','
-    
-    delimiter = detect_delimiter(RAW_DATA_PATH)
-    df = pd.read_csv(RAW_DATA_PATH, encoding='utf-8', delimiter=delimiter)
-    
-    # Convertir columnas numéricas
-    def convert_numeric(x):
-        if isinstance(x, str):
-            return float(x.replace(',', '.'))
-        return x
-
-    df['cantidad_toneladas'] = df['cantidad_toneladas'].apply(convert_numeric)
-    df['latitud'] = df['latitud'].apply(convert_numeric)
-    df['longitud'] = df['longitud'].apply(convert_numeric)
-    
-    return df
+    try:
+        # Usar el DataLoader que ya maneja la descarga desde Google Drive
+        data_loader = DataLoader()
+        
+        # Cargar datos usando el método de carga unificado
+        df = data_loader.load_data_from_gdrive(data_loader.FILE_ID)
+        
+        if df.empty:
+            st.error("❌ Error al cargar los datos desde Google Drive")
+            return pd.DataFrame()
+            
+        return df
+    except Exception as e:
+        st.error(f"❌ Error al cargar los datos: {str(e)}")
+        st.exception(e)
+        return pd.DataFrame()
 
 # Cargar datos
 try:

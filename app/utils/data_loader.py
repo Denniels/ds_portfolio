@@ -95,6 +95,11 @@ class DataLoader:
     def __init__(self):
         self.FILE_ID = "1XbMaVUuL9GzklMNBpq0wsFUStfzlzczf"
         
+    # Método para exponer la función load_data_from_gdrive como método de clase
+    def load_data_from_gdrive(self, file_id: str) -> pd.DataFrame:
+        """Wrapper para la función global load_data_from_gdrive"""
+        return load_data_from_gdrive(file_id)
+        
     def get_emissions_summary(self) -> Optional[Dict[str, Any]]:
         """Obtener resumen de emisiones"""
         try:
