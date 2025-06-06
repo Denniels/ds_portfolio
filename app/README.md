@@ -18,6 +18,7 @@ Este dashboard interactivo desarrollado con Streamlit proporciona visualizacione
 - Gráficos interactivos
 - Filtros dinámicos
 - Exportación de datos
+- Optimizaciones para rendimiento en cloud
 
 ## 🔧 Estructura de la Aplicación
 ```
@@ -25,6 +26,8 @@ app/
 ├── Home.py                # Página principal
 ├── components/           # Componentes reutilizables
 │   └── theme.py         # Gestión de temas
+├── utils/               # Utilidades y funciones comunes
+│   └── data_loader.py   # Carga y procesamiento de datos
 └── pages/               # Páginas del dashboard
     └── co2_analysis.py  # Análisis de CO2
 ```
@@ -34,6 +37,7 @@ app/
 - **Plotly**: Visualizaciones interactivas
 - **Pandas**: Procesamiento de datos
 - **NumPy**: Cálculos numéricos
+- **Folium**: Mapas interactivos
 
 ## 🚀 Instalación y Ejecución
 
@@ -64,6 +68,24 @@ streamlit run app/Home.py
 - Interactuar con gráficos
 - Filtrar datos por región
 - Exportar visualizaciones
+
+## 📊 Optimizaciones de Rendimiento
+
+Para mejorar el rendimiento en entornos cloud con recursos limitados (como Streamlit Cloud), la aplicación implementa las siguientes optimizaciones:
+
+### Manejo de Datos
+- **Muestreo estratificado**: Reducción a 100,000 registros (50% del dataset original)
+- **Detección de health checks**: Retorno de datos mínimos durante verificaciones del sistema
+- **Conversión de tipos de datos**: Optimización de memoria con tipos apropiados
+- **Almacenamiento en caché**: Uso de `st.cache_data` con persistencia en disco
+
+### Visualizaciones
+- **Mapas optimizados**: Límite de 5,000 puntos en mapas de calor
+- **Gráficos de torta independientes**: Evita errores de DOM con gráficos separados
+- **Simplificación de categorías**: Agrupación de categorías menores en "Otros"
+- **Manejo robusto de errores**: Captura de excepciones y mensajes informativos
+
+Estas optimizaciones permiten que la aplicación funcione eficientemente en Streamlit Cloud mientras mantiene la integridad del análisis y una experiencia de usuario fluida.
 
 ## 🔄 Actualizaciones Planificadas
 - Nuevos módulos de análisis ambiental

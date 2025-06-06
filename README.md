@@ -8,6 +8,7 @@ Este repositorio contiene un análisis comprehensivo de las emisiones de CO2 en 
 - Procesamiento y limpieza avanzada de datos
 - Documentación detallada del proceso analítico
 - Conclusiones y recomendaciones basadas en datos
+- Optimizaciones para rendimiento en entornos cloud
 
 ## 📦 Estructura del Proyecto
 ```
@@ -27,6 +28,7 @@ ds_portfolio/
 - Pandas y NumPy para análisis de datos
 - Matplotlib, Seaborn y Plotly para visualización
 - Jupyter Notebooks para análisis interactivo
+- Streamlit para aplicación web interactiva
 
 ## 📋 Requisitos
 - Python 3.10 o superior
@@ -44,6 +46,13 @@ ds_portfolio/
    ```bash
    pip install -r requirements.txt
    ```
+
+## 📊 Optimizaciones de Rendimiento
+Para optimizar el rendimiento en Streamlit Cloud, la aplicación implementa:
+- Muestreo estratificado de datos (reducción a 100,000 registros)
+- Gráficos optimizados para consumo eficiente de memoria
+- Health checks para mejorar tiempos de carga
+- Consulta [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md) para más detalles
 
 ## 📚 Documentación
 Para más detalles, consultar:
