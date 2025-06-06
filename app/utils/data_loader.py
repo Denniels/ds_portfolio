@@ -35,73 +35,84 @@ def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
             except Exception as e:
                 st.error(f"❌ Error descargando archivo: {str(e)}")
                 return pd.DataFrame()
-        
-        # Intentar leer el CSV con diferentes configuraciones
+
         try:
-            # Leer el archivo con detección automática del separador
+            # Primero leer solo las primeras filas para diagnóstico
+            df_sample = pd.read_csv(cache_file, nrows=5)
+            st.write("Muestra de las primeras filas:")
+            st.write(df_sample)
+            st.write("Tipos de datos detectados:")
+            st.write(df_sample.dtypes)
+
+            # Leer el archivo completo con configuración específica
             df = pd.read_csv(
                 cache_file,
-                encoding='utf-8',
-                sep=None,  # Detectar separador automáticamente
-                engine='python',  # Usar el engine de Python que es más flexible
-                decimal=',',  # Usar coma como separador decimal
-                thousands='.'  # Usar punto como separador de miles
+                dtype={
+                    'cantidad_toneladas': str,
+                    'año': str,
+                    'latitud': str,
+                    'longitud': str,
+                    'region': str,
+                    'comuna': str,
+                    'nombre_establecimiento': str
+                }
             )
-            
-            # Limpiar y convertir tipos de datos
-            # Limpieza de cantidad_toneladas
+
+            # Convertir y limpiar datos numéricos
+            def clean_numeric_column(series):
+                # Remover cualquier carácter que no sea número, punto o coma
+                cleaned = series.str.replace(r'[^\d,.-]', '', regex=True)
+                # Reemplazar coma por punto para decimales
+                cleaned = cleaned.str.replace(',', '.')
+                # Convertir a numérico
+                return pd.to_numeric(cleaned, errors='coerce')
+
+            # Limpiar columnas numéricas
             if 'cantidad_toneladas' in df.columns:
-                # Primero, reemplazar cualquier valor no válido con NaN
-                df['cantidad_toneladas'] = df['cantidad_toneladas'].replace(r'[^\d,.]', '', regex=True)
-                # Convertir a tipo numérico
-                df['cantidad_toneladas'] = pd.to_numeric(
-                    df['cantidad_toneladas'].str.replace(',', '.'),
-                    errors='coerce'
-                )
-                # Rellenar NaN con 0
-                df['cantidad_toneladas'] = df['cantidad_toneladas'].fillna(0)
-            
-            # Limpieza de coordenadas
+                st.write("Limpiando cantidad_toneladas...")
+                df['cantidad_toneladas'] = clean_numeric_column(df['cantidad_toneladas'])
+                st.write("Estadísticas de cantidad_toneladas:")
+                st.write(df['cantidad_toneladas'].describe())
+
+            if 'año' in df.columns:
+                st.write("Limpiando año...")
+                df['año'] = pd.to_numeric(df['año'].astype(str).replace(r'\D', '', regex=True), errors='coerce')
+                df['año'] = df['año'].fillna(0).astype(int)
+
             for col in ['latitud', 'longitud']:
                 if col in df.columns:
-                    df[col] = pd.to_numeric(df[col].astype(str).str.replace(',', '.'), errors='coerce')
-            
-            # Limpieza de año
-            if 'año' in df.columns:
-                df['año'] = pd.to_numeric(df['año'], errors='coerce').fillna(0).astype(int)
-            
-            # Eliminar filas con valores nulos en columnas críticas
-            critical_columns = ['cantidad_toneladas', 'nombre_establecimiento', 'region']
-            df = df.dropna(subset=[col for col in critical_columns if col in df.columns])
-            
-            st.success("✅ Datos cargados exitosamente")
-            st.info(f"📈 Estadísticas del dataset:")
-            st.write(f"- Filas totales: {len(df)}")
-            st.write(f"- Columnas disponibles: {', '.join(df.columns)}")
-            st.write(f"- Tipos de datos:")
-            for col in df.columns:
-                st.write(f"  - {col}: {df[col].dtype}")
-            
+                    st.write(f"Limpiando {col}...")
+                    df[col] = clean_numeric_column(df[col])
+
+            # Limpiar filas con valores nulos en columnas críticas
+            before_len = len(df)
+            df = df.dropna(subset=['cantidad_toneladas', 'nombre_establecimiento', 'region'])
+            after_len = len(df)
+            st.write(f"Filas eliminadas por valores nulos: {before_len - after_len}")
+
+            # Validar tipos de datos finales
+            st.success("✅ Datos procesados exitosamente")
+            st.write("Tipos de datos finales:")
+            st.write(df.dtypes)
+            st.write("Resumen de datos:")
+            st.write(df.describe())
+
             return df
-            
-        except pd.errors.ParserError:
-            st.warning("⚠️ Error en el formato del CSV, intentando con configuración alternativa...")
+
+        except pd.errors.ParserError as e:
+            st.error(f"❌ Error en el formato del CSV: {str(e)}")
+            # Intentar leer con configuración más permisiva
             try:
-                df = pd.read_csv(
-                    cache_file,
-                    encoding='utf-8',
-                    sep=None,  # Detectar separador automáticamente
-                    engine='python'  # Usar el engine de Python que es más flexible
-                )
-                st.warning("⚠️ Algunos registros pueden haber sido omitidos debido a errores de formato")
-                st.info(f"Columnas disponibles: {', '.join(df.columns)}")
+                df = pd.read_csv(cache_file, encoding='utf-8', sep=None, engine='python')
+                st.warning("⚠️ Archivo leído con configuración alternativa")
                 return df
-            except Exception as e:
-                st.error(f"❌ Error en la lectura del archivo: {str(e)}")
+            except Exception as e2:
+                st.error(f"❌ Error en la lectura alternativa: {str(e2)}")
                 return pd.DataFrame()
-            
+
     except Exception as e:
-        st.error(f"❌ Error en la carga de datos: {str(e)}")
+        st.error(f"❌ Error general en la carga de datos: {str(e)}")
+        st.exception(e)
         return pd.DataFrame()
 
 class DataLoader:
