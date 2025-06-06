@@ -6,6 +6,11 @@ from typing import Dict, Any, Optional
 from pathlib import Path
 import tempfile
 
+# Definir rutas relativas para que funcionen tanto en local como en Streamlit Cloud
+ROOT_DIR = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+DATA_DIR = ROOT_DIR / "data" / "raw"
+CACHE_DIR = Path(tempfile.gettempdir()) / "ds_portfolio_cache"
+
 @st.cache_data(ttl=3600)
 def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
     """
@@ -18,50 +23,51 @@ def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
         DataFrame con los datos cargados
     """
     try:
-        cache_dir = Path(tempfile.gettempdir()) / "ds_portfolio_cache"
-        cache_dir.mkdir(exist_ok=True)
-        cache_file = cache_dir / "emisiones_aire.csv"
+        # Asegurarse de que el directorio de caché existe
+        CACHE_DIR.mkdir(exist_ok=True)
+        cache_file = CACHE_DIR / "emisiones_aire.csv"
         
+        # Si no existe el archivo en caché, intentar descargarlo
         if not cache_file.exists():
+            st.info("🌐 Descargando datos desde Google Drive...")
             url = f"https://drive.google.com/uc?id={file_id}"
-            gdown.download(url, str(cache_file), quiet=False)
-            st.info("✅ Archivo descargado correctamente")
+            try:
+                gdown.download(url, str(cache_file), quiet=False)
+                st.success("✅ Archivo descargado correctamente")
+            except Exception as e:
+                st.error(f"❌ Error descargando archivo: {str(e)}")
+                return pd.DataFrame()
         
         # Intentar leer el CSV con diferentes configuraciones
         try:
-            # Primer intento: detección automática
-            df = pd.read_csv(cache_file)
-        except Exception as e1:
-            st.warning(f"Primer intento de lectura fallido: {str(e1)}")
+            # Primer intento: lectura básica
+            df = pd.read_csv(cache_file, encoding='utf-8')
+            st.success("✅ Datos cargados exitosamente")
+            return df
+        except pd.errors.ParserError:
+            st.warning("⚠️ Error en el formato del CSV, intentando con configuración alternativa...")
             try:
-                # Segundo intento: especificar separador y encoding
-                df = pd.read_csv(cache_file, sep=',', encoding='utf-8', engine='python')
-            except Exception as e2:
-                st.error(f"Segundo intento de lectura fallido: {str(e2)}")
-                try:
-                    # Tercer intento: modo de error permisivo
-                    df = pd.read_csv(cache_file, sep=',', encoding='utf-8', 
-                                   engine='python', error_bad_lines=False,
-                                   warn_bad_lines=True)
-                except Exception as e3:
-                    st.error(f"Tercer intento de lectura fallido: {str(e3)}")
-                    return pd.DataFrame()
-                
-        if df.empty:
-            st.error("El archivo se cargó pero está vacío")
-            return pd.DataFrame()
+                # Segundo intento: manejo de errores más flexible
+                df = pd.read_csv(
+                    cache_file,
+                    encoding='utf-8',
+                    on_bad_lines='skip',  # Usar on_bad_lines en lugar de error_bad_lines
+                    sep=None,  # Detectar separador automáticamente
+                    engine='python'  # Usar el engine de Python que es más flexible
+                )
+                st.warning("⚠️ Algunos registros pueden haber sido omitidos debido a errores de formato")
+                return df
+            except Exception as e:
+                st.error(f"❌ Error en la lectura del archivo: {str(e)}")
+                return pd.DataFrame()
             
-        # Mostrar información sobre las columnas cargadas
-        st.info(f"Columnas cargadas: {', '.join(df.columns)}")
-        return df
-        
     except Exception as e:
-        st.error(f"Error en la carga de datos: {str(e)}")
+        st.error(f"❌ Error en la carga de datos: {str(e)}")
         return pd.DataFrame()
 
 class DataLoader:
     def __init__(self):
-        self.FILE_ID = "1XbMaVUuL9GzklMNBpq0wsFUStfzlzczf"  # retc_emisiones_aire_2023.csv
+        self.FILE_ID = "1XbMaVUuL9GzklMNBpq0wsFUStfzlzczf"
         
     def get_emissions_summary(self) -> Optional[Dict[str, Any]]:
         """Obtener resumen de emisiones"""
@@ -69,17 +75,20 @@ class DataLoader:
             df = load_data_from_gdrive(self.FILE_ID)
             if df.empty:
                 return None
-                
+            
+            # Verificar y mostrar las columnas disponibles
+            st.info(f"Columnas disponibles: {', '.join(df.columns)}")
+            
             # Verificar columnas necesarias
-            required_columns = ['emision', 'anno']
+            required_columns = ['cantidad', 'anno']  # Ajustar nombres según el CSV real
             missing_columns = [col for col in required_columns if col not in df.columns]
             if missing_columns:
                 st.error(f"Faltan columnas requeridas: {', '.join(missing_columns)}")
                 return None
             
             return {
-                "total_emissions": float(df["emision"].sum()),
-                "average_emissions": float(df["emision"].mean()),
+                "total_emissions": float(df["cantidad"].sum()),
+                "average_emissions": float(df["cantidad"].mean()),
                 "num_facilities": len(df),
                 "last_updated": df["anno"].max() if "anno" in df.columns else None
             }
@@ -94,7 +103,11 @@ class DataLoader:
             if df.empty:
                 return pd.DataFrame()
             
-            return df.groupby('region')['emision'].sum().reset_index()
+            st.info(f"Columnas disponibles: {', '.join(df.columns)}")
+            region_col = 'region' if 'region' in df.columns else 'Region'
+            emissions_col = 'cantidad' if 'cantidad' in df.columns else 'Cantidad'
+            
+            return df.groupby(region_col)[emissions_col].sum().reset_index()
         except Exception as e:
             st.error(f"Error cargando datos regionales: {str(e)}")
             return pd.DataFrame()
@@ -106,7 +119,13 @@ class DataLoader:
             if df.empty:
                 return pd.DataFrame()
             
-            return df.nlargest(limit, "emision")[['nombre_establecimiento', 'region', 'comuna', 'emision']]
+            # Ajustar nombres de columnas según el CSV real
+            nombre_col = 'nombre_establecimiento' if 'nombre_establecimiento' in df.columns else 'Establecimiento'
+            region_col = 'region' if 'region' in df.columns else 'Region'
+            comuna_col = 'comuna' if 'comuna' in df.columns else 'Comuna'
+            emissions_col = 'cantidad' if 'cantidad' in df.columns else 'Cantidad'
+            
+            return df.nlargest(limit, emissions_col)[[nombre_col, region_col, comuna_col, emissions_col]]
         except Exception as e:
             st.error(f"Error cargando principales emisores: {str(e)}")
             return pd.DataFrame()
@@ -118,8 +137,12 @@ class DataLoader:
             if df.empty:
                 return pd.DataFrame()
             
-            geo_columns = ['nombre_establecimiento', 'region', 'comuna', 'latitud', 'longitud', 'emision']
-            return df[geo_columns].dropna(subset=['latitud', 'longitud'])
+            # Ajustar nombres de columnas según el CSV real
+            st.info(f"Columnas disponibles: {', '.join(df.columns)}")
+            geo_columns = ['nombre_establecimiento', 'region', 'comuna', 'latitud', 'longitud', 'cantidad']
+            available_columns = [col for col in geo_columns if col in df.columns]
+            
+            return df[available_columns].dropna(subset=['latitud', 'longitud'])
         except Exception as e:
             st.error(f"Error cargando datos geográficos: {str(e)}")
             return pd.DataFrame()
