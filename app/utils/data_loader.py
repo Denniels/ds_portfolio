@@ -6,9 +6,7 @@ from typing import Dict, Any, Optional
 from pathlib import Path
 import tempfile
 
-# Definir rutas relativas para que funcionen tanto en local como en Streamlit Cloud
-ROOT_DIR = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-DATA_DIR = ROOT_DIR / "data" / "raw"
+# Definir rutas para el caché
 CACHE_DIR = Path(tempfile.gettempdir()) / "ds_portfolio_cache"
 
 @st.cache_data(ttl=3600)
@@ -40,22 +38,63 @@ def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
         
         # Intentar leer el CSV con diferentes configuraciones
         try:
-            # Primer intento: lectura básica
+            # Primero intentamos leer unas pocas filas para detectar el formato
+            df_sample = pd.read_csv(cache_file, encoding='utf-8', nrows=5)
+            st.info("📊 Muestra de columnas detectadas:")
+            for col in df_sample.columns:
+                st.write(f"- {col}: {df_sample[col].dtype}")
+            
+            # Definir las columnas requeridas y sus tipos esperados
+            required_columns = {
+                'cantidad_toneladas': 'float64',
+                'año': 'int64',
+                'nombre_establecimiento': 'object',
+                'region': 'object',
+                'comuna': 'object',
+                'latitud': 'float64',
+                'longitud': 'float64'
+            }
+            
+            # Verificar columnas faltantes
+            missing_columns = [col for col in required_columns if col not in df_sample.columns]
+            if missing_columns:
+                st.warning(f"⚠️ Columnas faltantes: {', '.join(missing_columns)}")
+                # Intentar buscar columnas similares
+                for missing_col in missing_columns:
+                    similar_cols = [col for col in df_sample.columns if missing_col.lower() in col.lower()]
+                    if similar_cols:
+                        st.info(f"💡 Posibles alternativas para '{missing_col}': {', '.join(similar_cols)}")
+            
+            # Leer el archivo completo
             df = pd.read_csv(cache_file, encoding='utf-8')
+            
+            # Limpiar y convertir tipos de datos
+            if 'cantidad_toneladas' in df.columns:
+                df['cantidad_toneladas'] = pd.to_numeric(df['cantidad_toneladas'], errors='coerce')
+            if 'año' in df.columns:
+                df['año'] = pd.to_numeric(df['año'], errors='coerce')
+            if 'latitud' in df.columns:
+                df['latitud'] = pd.to_numeric(df['latitud'], errors='coerce')
+            if 'longitud' in df.columns:
+                df['longitud'] = pd.to_numeric(df['longitud'], errors='coerce')
+            
             st.success("✅ Datos cargados exitosamente")
+            st.info(f"📈 Estadísticas del dataset:")
+            st.write(f"- Filas totales: {len(df)}")
+            st.write(f"- Columnas disponibles: {', '.join(df.columns)}")
             return df
+            
         except pd.errors.ParserError:
             st.warning("⚠️ Error en el formato del CSV, intentando con configuración alternativa...")
             try:
-                # Segundo intento: manejo de errores más flexible
                 df = pd.read_csv(
                     cache_file,
                     encoding='utf-8',
-                    on_bad_lines='skip',  # Usar on_bad_lines en lugar de error_bad_lines
                     sep=None,  # Detectar separador automáticamente
                     engine='python'  # Usar el engine de Python que es más flexible
                 )
                 st.warning("⚠️ Algunos registros pueden haber sido omitidos debido a errores de formato")
+                st.info(f"Columnas disponibles: {', '.join(df.columns)}")
                 return df
             except Exception as e:
                 st.error(f"❌ Error en la lectura del archivo: {str(e)}")
@@ -76,21 +115,20 @@ class DataLoader:
             if df.empty:
                 return None
             
-            # Verificar y mostrar las columnas disponibles
-            st.info(f"Columnas disponibles: {', '.join(df.columns)}")
-            
             # Verificar columnas necesarias
-            required_columns = ['cantidad', 'anno']  # Ajustar nombres según el CSV real
-            missing_columns = [col for col in required_columns if col not in df.columns]
-            if missing_columns:
-                st.error(f"Faltan columnas requeridas: {', '.join(missing_columns)}")
+            emissions_col = 'cantidad_toneladas'
+            year_col = 'año'
+            
+            if emissions_col not in df.columns or year_col not in df.columns:
+                st.error(f"Faltan columnas requeridas: {emissions_col} y/o {year_col}")
+                st.write("Columnas disponibles:", df.columns.tolist())
                 return None
             
             return {
-                "total_emissions": float(df["cantidad"].sum()),
-                "average_emissions": float(df["cantidad"].mean()),
+                "total_emissions": float(df[emissions_col].sum()),
+                "average_emissions": float(df[emissions_col].mean()),
                 "num_facilities": len(df),
-                "last_updated": df["anno"].max() if "anno" in df.columns else None
+                "last_updated": df[year_col].max()
             }
         except Exception as e:
             st.error(f"Error procesando datos: {str(e)}")
@@ -102,47 +140,43 @@ class DataLoader:
             df = load_data_from_gdrive(self.FILE_ID)
             if df.empty:
                 return pd.DataFrame()
+                
+            # Agrupar por región y sumar emisiones
+            regional_emissions = df.groupby('region', as_index=False).agg({
+                'cantidad_toneladas': 'sum'
+            }).rename(columns={'cantidad_toneladas': 'emision'})
             
-            st.info(f"Columnas disponibles: {', '.join(df.columns)}")
-            region_col = 'region' if 'region' in df.columns else 'Region'
-            emissions_col = 'cantidad' if 'cantidad' in df.columns else 'Cantidad'
-            
-            return df.groupby(region_col)[emissions_col].sum().reset_index()
+            return regional_emissions.sort_values('emision', ascending=False)
         except Exception as e:
             st.error(f"Error cargando datos regionales: {str(e)}")
             return pd.DataFrame()
 
     def get_top_emitters(self, limit: int = 10) -> pd.DataFrame:
-        """Obtener principales emisores"""
+        """Obtener los principales emisores"""
         try:
             df = load_data_from_gdrive(self.FILE_ID)
             if df.empty:
                 return pd.DataFrame()
-            
-            # Ajustar nombres de columnas según el CSV real
-            nombre_col = 'nombre_establecimiento' if 'nombre_establecimiento' in df.columns else 'Establecimiento'
-            region_col = 'region' if 'region' in df.columns else 'Region'
-            comuna_col = 'comuna' if 'comuna' in df.columns else 'Comuna'
-            emissions_col = 'cantidad' if 'cantidad' in df.columns else 'Cantidad'
-            
-            return df.nlargest(limit, emissions_col)[[nombre_col, region_col, comuna_col, emissions_col]]
+                
+            # Seleccionar y ordenar los principales emisores
+            top_emitters = df[['nombre_establecimiento', 'region', 'comuna', 'cantidad_toneladas']]
+            top_emitters = top_emitters.nlargest(limit, 'cantidad_toneladas')
+            return top_emitters.rename(columns={'cantidad_toneladas': 'emision'})
         except Exception as e:
             st.error(f"Error cargando principales emisores: {str(e)}")
             return pd.DataFrame()
 
     def get_geographical_data(self) -> pd.DataFrame:
-        """Obtener datos geográficos con coordenadas"""
+        """Obtener datos geográficos de las instalaciones"""
         try:
             df = load_data_from_gdrive(self.FILE_ID)
             if df.empty:
                 return pd.DataFrame()
-            
-            # Ajustar nombres de columnas según el CSV real
-            st.info(f"Columnas disponibles: {', '.join(df.columns)}")
-            geo_columns = ['nombre_establecimiento', 'region', 'comuna', 'latitud', 'longitud', 'cantidad']
-            available_columns = [col for col in geo_columns if col in df.columns]
-            
-            return df[available_columns].dropna(subset=['latitud', 'longitud'])
+                
+            # Seleccionar columnas relevantes y filtrar registros con coordenadas válidas
+            geo_data = df[['nombre_establecimiento', 'latitud', 'longitud', 'cantidad_toneladas']]
+            geo_data = geo_data.dropna(subset=['latitud', 'longitud'])
+            return geo_data.rename(columns={'cantidad_toneladas': 'emision'})
         except Exception as e:
             st.error(f"Error cargando datos geográficos: {str(e)}")
             return pd.DataFrame()
