@@ -37,66 +37,42 @@ def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
                 return pd.DataFrame()
 
         try:
-            # Primero leer solo las primeras filas para diagnóstico
-            df_sample = pd.read_csv(cache_file, nrows=5)
-            st.write("Muestra de las primeras filas:")
-            st.write(df_sample)
-            st.write("Tipos de datos detectados:")
-            st.write(df_sample.dtypes)
-
-            # Leer el archivo completo con configuración específica
+            # Primero intentar leer el CSV con pandas
             df = pd.read_csv(
                 cache_file,
-                dtype={
-                    'cantidad_toneladas': str,
-                    'año': str,
-                    'latitud': str,
-                    'longitud': str,
-                    'region': str,
-                    'comuna': str,
-                    'nombre_establecimiento': str
-                }
+                encoding='utf-8',
+                sep=';',  # Usar punto y coma como separador
+                dtype='str'  # Leer todo como string inicialmente
             )
-
-            # Convertir y limpiar datos numéricos
-            def clean_numeric_column(series):
-                # Remover cualquier carácter que no sea número, punto o coma
-                cleaned = series.str.replace(r'[^\d,.-]', '', regex=True)
-                # Reemplazar coma por punto para decimales
-                cleaned = cleaned.str.replace(',', '.')
-                # Convertir a numérico
-                return pd.to_numeric(cleaned, errors='coerce')
-
-            # Limpiar columnas numéricas
-            if 'cantidad_toneladas' in df.columns:
-                st.write("Limpiando cantidad_toneladas...")
-                df['cantidad_toneladas'] = clean_numeric_column(df['cantidad_toneladas'])
-                st.write("Estadísticas de cantidad_toneladas:")
-                st.write(df['cantidad_toneladas'].describe())
-
-            if 'año' in df.columns:
-                st.write("Limpiando año...")
-                df['año'] = pd.to_numeric(df['año'].astype(str).replace(r'\D', '', regex=True), errors='coerce')
-                df['año'] = df['año'].fillna(0).astype(int)
-
-            for col in ['latitud', 'longitud']:
+            
+            st.info("📊 Columnas detectadas en el archivo:")
+            st.write(df.columns.tolist())
+            
+            # Convertir columnas numéricas
+            numeric_columns = {
+                'cantidad_toneladas': float,
+                'año': int,
+                'latitud': float,
+                'longitud': float
+            }
+            
+            for col, dtype in numeric_columns.items():
                 if col in df.columns:
-                    st.write(f"Limpiando {col}...")
-                    df[col] = clean_numeric_column(df[col])
-
-            # Limpiar filas con valores nulos en columnas críticas
-            before_len = len(df)
-            df = df.dropna(subset=['cantidad_toneladas', 'nombre_establecimiento', 'region'])
-            after_len = len(df)
-            st.write(f"Filas eliminadas por valores nulos: {before_len - after_len}")
-
-            # Validar tipos de datos finales
+                    # Limpiar datos numéricos
+                    df[col] = df[col].astype(str).str.replace(',', '.').str.replace(r'[^\d\.\-]', '', regex=True)
+                    df[col] = pd.to_numeric(df[col], errors='coerce')
+                    if dtype == int:
+                        df[col] = df[col].fillna(0).astype(int)
+                    else:
+                        df[col] = df[col].fillna(0.0)
+            
+            # Limpiar filas con valores críticos faltantes
+            critical_columns = ['cantidad_toneladas', 'nombre_establecimiento', 'region']
+            df = df.dropna(subset=[col for col in critical_columns if col in df.columns])
+            
             st.success("✅ Datos procesados exitosamente")
-            st.write("Tipos de datos finales:")
-            st.write(df.dtypes)
-            st.write("Resumen de datos:")
-            st.write(df.describe())
-
+            st.write(f"Total de registros: {len(df)}")
+            
             return df
 
         except pd.errors.ParserError as e:
@@ -151,6 +127,17 @@ class DataLoader:
             df = load_data_from_gdrive(self.FILE_ID)
             if df.empty:
                 return pd.DataFrame()
+            
+            # Asegurarse de que cantidad_toneladas sea numérico
+            emissions_col = 'cantidad_toneladas'
+            if emissions_col in df.columns:
+                if not pd.api.types.is_numeric_dtype(df[emissions_col]):
+                    df[emissions_col] = df[emissions_col].astype(str).str.replace(',', '.').str.replace(r'[^\d\.\-]', '', regex=True)
+                    df[emissions_col] = pd.to_numeric(df[emissions_col], errors='coerce')
+                    df[emissions_col] = df[emissions_col].fillna(0.0)
+            else:
+                st.error(f"❌ Columna '{emissions_col}' no encontrada")
+                return pd.DataFrame()
                 
             # Agrupar por región y sumar emisiones
             regional_emissions = df.groupby('region', as_index=False).agg({
@@ -170,12 +157,22 @@ class DataLoader:
                 return pd.DataFrame()
             
             # Asegurarse de que cantidad_toneladas sea numérico
-            if not pd.api.types.is_numeric_dtype(df['cantidad_toneladas']):
-                df['cantidad_toneladas'] = pd.to_numeric(df['cantidad_toneladas'].astype(str).str.replace(',', '.'), errors='coerce')
-                df['cantidad_toneladas'] = df['cantidad_toneladas'].fillna(0)
+            emissions_col = 'cantidad_toneladas'
+            if emissions_col in df.columns:
+                # Convertir a numérico si aún no lo es
+                if not pd.api.types.is_numeric_dtype(df[emissions_col]):
+                    df[emissions_col] = df[emissions_col].astype(str).str.replace(',', '.').str.replace(r'[^\d\.\-]', '', regex=True)
+                    df[emissions_col] = pd.to_numeric(df[emissions_col], errors='coerce')
+                    df[emissions_col] = df[emissions_col].fillna(0.0)
+            else:
+                st.error(f"❌ Columna '{emissions_col}' no encontrada")
+                return pd.DataFrame()
             
             # Seleccionar y ordenar los principales emisores
-            top_emitters = df[['nombre_establecimiento', 'region', 'comuna', 'cantidad_toneladas']]
+            columns = ['nombre_establecimiento', 'region', 'comuna', 'cantidad_toneladas']
+            available_columns = [col for col in columns if col in df.columns]
+            
+            top_emitters = df[available_columns].copy()
             top_emitters = top_emitters.sort_values('cantidad_toneladas', ascending=False).head(limit)
             return top_emitters.rename(columns={'cantidad_toneladas': 'emision'})
         except Exception as e:
@@ -190,9 +187,29 @@ class DataLoader:
                 return pd.DataFrame()
                 
             # Seleccionar columnas relevantes y filtrar registros con coordenadas válidas
-            geo_data = df[['nombre_establecimiento', 'latitud', 'longitud', 'cantidad_toneladas']]
-            geo_data = geo_data.dropna(subset=['latitud', 'longitud'])
-            return geo_data.rename(columns={'cantidad_toneladas': 'emision'})
+            geo_columns = ['nombre_establecimiento', 'latitud', 'longitud', 'cantidad_toneladas']
+            available_columns = [col for col in geo_columns if col in df.columns]
+            
+            if 'cantidad_toneladas' in available_columns:
+                # Convertir a numérico si aún no lo es
+                if not pd.api.types.is_numeric_dtype(df['cantidad_toneladas']):
+                    df['cantidad_toneladas'] = df['cantidad_toneladas'].astype(str).str.replace(',', '.').str.replace(r'[^\d\.\-]', '', regex=True)
+                    df['cantidad_toneladas'] = pd.to_numeric(df['cantidad_toneladas'], errors='coerce')
+                    df['cantidad_toneladas'] = df['cantidad_toneladas'].fillna(0.0)
+            
+            geo_data = df[available_columns].copy()
+            # Convertir coordenadas a valores numéricos
+            for coord_col in ['latitud', 'longitud']:
+                if coord_col in geo_data.columns:
+                    geo_data[coord_col] = pd.to_numeric(geo_data[coord_col], errors='coerce')
+            
+            geo_data = geo_data.dropna(subset=[col for col in ['latitud', 'longitud'] if col in geo_data.columns])
+            
+            # Renombrar la columna de emisiones si existe
+            if 'cantidad_toneladas' in geo_data.columns:
+                geo_data = geo_data.rename(columns={'cantidad_toneladas': 'emision'})
+                
+            return geo_data
         except Exception as e:
             st.error(f"Error cargando datos geográficos: {str(e)}")
             return pd.DataFrame()
