@@ -34,18 +34,90 @@ ds_portfolio/
 └── config/           # Configuración
 ```
 
-## 📋 Estado del Proyecto
+## 📋 Plan de Desarrollo
 
-### Configuración Inicial
-- ✅ Abrir el espacio de trabajo en `ds_portfolio`
-- ✅ Crear estructura de directorios del proyecto
-- ✅ Inicializar entorno virtual con Python 3.10
-- ✅ Instalar y configurar dependencias
-- ✅ Configurar PostgreSQL y herramientas de base de datos
-- ✅ Inicializar Git y vincular con GitHub
-- ✅ Crear documentación inicial (README.md, project-roadmap.md)
-- ⏳ Configurar entorno de desarrollo
-- ⭕ Comenzar con el primer módulo de aprendizaje
+### Fase 1: Optimización de Infraestructura 🔧
+- ✅ Configuración inicial del proyecto
+- ✅ Establecimiento de estructura de directorios
+- ⏳ Implementación de solución para datos grandes:
+  - [ ] Configurar almacenamiento en Google Drive
+  - [ ] Implementar sistema de descarga automática
+  - [ ] Agregar sistema de caché con `st.cache_data`
+  - [ ] Optimizar carga de datos con chunks
+- [ ] Mejoras en el despliegue:
+  - [ ] Configurar Docker para desarrollo local
+  - [ ] Optimizar Dockerfile para producción
+  - [ ] Implementar CI/CD con GitHub Actions
+
+### Fase 2: Desarrollo de Funcionalidades Core 💻
+- [ ] Sistema de análisis de datos:
+  - [ ] Implementar procesamiento por lotes
+  - [ ] Crear pipeline de transformación
+  - [ ] Desarrollar funciones de agregación
+- [ ] Visualizaciones:
+  - [ ] Crear mapas interactivos con Folium
+  - [ ] Implementar gráficos dinámicos con Plotly
+  - [ ] Agregar dashboards comparativos
+
+### Fase 3: Mejoras de UX/UI 🎨
+- [ ] Interfaz de usuario:
+  - [ ] Diseñar layout responsivo
+  - [ ] Implementar indicadores de carga
+  - [ ] Agregar tutoriales interactivos
+- [ ] Optimizaciones de rendimiento:
+  - [ ] Implementar carga progresiva
+  - [ ] Optimizar consultas de datos
+  - [ ] Mejorar tiempo de respuesta
+
+### Fase 4: Documentación y Testing 📚
+- [ ] Documentación técnica:
+  - [ ] Actualizar README.md
+  - [ ] Crear guías de usuario
+  - [ ] Documentar API y funciones
+- [ ] Testing:
+  - [ ] Implementar tests unitarios
+  - [ ] Agregar tests de integración
+  - [ ] Configurar coverage reports
+
+## 📊 Estrategia de Manejo de Datos
+
+### Almacenamiento de Datos Grandes
+1. **Google Drive como CDN**:
+   - Almacenar datasets grandes en Google Drive
+   - Implementar sistema de versionado de datos
+   - Crear enlaces permanentes para acceso rápido
+
+2. **Sistema de Caché Local**:
+   - Utilizar `st.cache_data` para datos frecuentes
+   - Implementar TTL (Time To Live) para datos
+   - Gestionar memoria con limpieza automática
+
+3. **Carga Optimizada**:
+   - Procesamiento por chunks con pandas
+   - Carga progresiva de visualizaciones
+   - Compresión de datos cuando sea posible
+
+## 🚀 Estrategia de Despliegue
+
+### Desarrollo Local
+```bash
+ds_portfolio/
+└── docker/
+    ├── streamlit/
+    │   └── Dockerfile    # Configuración para desarrollo
+    └── docker-compose.yml # Orquestación de servicios
+```
+
+### Producción (Streamlit Cloud)
+1. **Optimizaciones**:
+   - Minimizar tamaño de imagen Docker
+   - Implementar health checks
+   - Configurar logs y monitoreo
+
+2. **CI/CD**:
+   - Automatizar pruebas con GitHub Actions
+   - Implementar despliegue continuo
+   - Mantener versionado semántico
 
 ## 📚 Contenido Principal
 1. **Notebook Principal**: `00_RoadMap_y_Seguimiento.ipynb`

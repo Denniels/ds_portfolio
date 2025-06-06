@@ -1,0 +1,6 @@
+theme: jekyll-theme-minimal
+title: Data Science Portfolio
+description: Análisis y visualizaciones de datos ambientales y más
+show_downloads: true
+google_analytics:
+markdown: GFM
