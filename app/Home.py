@@ -12,11 +12,7 @@ st.set_page_config(
 )
 
 # Inicialización del DataLoader
-@st.cache_resource
-def get_data_loader():
-    return DataLoader()
-
-data_loader = get_data_loader()
+data_loader = DataLoader()
 
 # Título principal
 st.title("🌍 Análisis de Emisiones RETC Chile")
