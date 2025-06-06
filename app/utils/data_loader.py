@@ -38,50 +38,50 @@ def load_data_from_gdrive(file_id: str) -> pd.DataFrame:
         
         # Intentar leer el CSV con diferentes configuraciones
         try:
-            # Primero intentamos leer unas pocas filas para detectar el formato
-            df_sample = pd.read_csv(cache_file, encoding='utf-8', nrows=5)
-            st.info("📊 Muestra de columnas detectadas:")
-            for col in df_sample.columns:
-                st.write(f"- {col}: {df_sample[col].dtype}")
-            
-            # Definir las columnas requeridas y sus tipos esperados
-            required_columns = {
-                'cantidad_toneladas': 'float64',
-                'año': 'int64',
-                'nombre_establecimiento': 'object',
-                'region': 'object',
-                'comuna': 'object',
-                'latitud': 'float64',
-                'longitud': 'float64'
-            }
-            
-            # Verificar columnas faltantes
-            missing_columns = [col for col in required_columns if col not in df_sample.columns]
-            if missing_columns:
-                st.warning(f"⚠️ Columnas faltantes: {', '.join(missing_columns)}")
-                # Intentar buscar columnas similares
-                for missing_col in missing_columns:
-                    similar_cols = [col for col in df_sample.columns if missing_col.lower() in col.lower()]
-                    if similar_cols:
-                        st.info(f"💡 Posibles alternativas para '{missing_col}': {', '.join(similar_cols)}")
-            
-            # Leer el archivo completo
-            df = pd.read_csv(cache_file, encoding='utf-8')
+            # Leer el archivo con detección automática del separador
+            df = pd.read_csv(
+                cache_file,
+                encoding='utf-8',
+                sep=None,  # Detectar separador automáticamente
+                engine='python',  # Usar el engine de Python que es más flexible
+                decimal=',',  # Usar coma como separador decimal
+                thousands='.'  # Usar punto como separador de miles
+            )
             
             # Limpiar y convertir tipos de datos
+            # Limpieza de cantidad_toneladas
             if 'cantidad_toneladas' in df.columns:
-                df['cantidad_toneladas'] = pd.to_numeric(df['cantidad_toneladas'], errors='coerce')
+                # Primero, reemplazar cualquier valor no válido con NaN
+                df['cantidad_toneladas'] = df['cantidad_toneladas'].replace(r'[^\d,.]', '', regex=True)
+                # Convertir a tipo numérico
+                df['cantidad_toneladas'] = pd.to_numeric(
+                    df['cantidad_toneladas'].str.replace(',', '.'),
+                    errors='coerce'
+                )
+                # Rellenar NaN con 0
+                df['cantidad_toneladas'] = df['cantidad_toneladas'].fillna(0)
+            
+            # Limpieza de coordenadas
+            for col in ['latitud', 'longitud']:
+                if col in df.columns:
+                    df[col] = pd.to_numeric(df[col].astype(str).str.replace(',', '.'), errors='coerce')
+            
+            # Limpieza de año
             if 'año' in df.columns:
-                df['año'] = pd.to_numeric(df['año'], errors='coerce')
-            if 'latitud' in df.columns:
-                df['latitud'] = pd.to_numeric(df['latitud'], errors='coerce')
-            if 'longitud' in df.columns:
-                df['longitud'] = pd.to_numeric(df['longitud'], errors='coerce')
+                df['año'] = pd.to_numeric(df['año'], errors='coerce').fillna(0).astype(int)
+            
+            # Eliminar filas con valores nulos en columnas críticas
+            critical_columns = ['cantidad_toneladas', 'nombre_establecimiento', 'region']
+            df = df.dropna(subset=[col for col in critical_columns if col in df.columns])
             
             st.success("✅ Datos cargados exitosamente")
             st.info(f"📈 Estadísticas del dataset:")
             st.write(f"- Filas totales: {len(df)}")
             st.write(f"- Columnas disponibles: {', '.join(df.columns)}")
+            st.write(f"- Tipos de datos:")
+            for col in df.columns:
+                st.write(f"  - {col}: {df[col].dtype}")
+            
             return df
             
         except pd.errors.ParserError:
@@ -157,10 +157,15 @@ class DataLoader:
             df = load_data_from_gdrive(self.FILE_ID)
             if df.empty:
                 return pd.DataFrame()
-                
+            
+            # Asegurarse de que cantidad_toneladas sea numérico
+            if not pd.api.types.is_numeric_dtype(df['cantidad_toneladas']):
+                df['cantidad_toneladas'] = pd.to_numeric(df['cantidad_toneladas'].astype(str).str.replace(',', '.'), errors='coerce')
+                df['cantidad_toneladas'] = df['cantidad_toneladas'].fillna(0)
+            
             # Seleccionar y ordenar los principales emisores
             top_emitters = df[['nombre_establecimiento', 'region', 'comuna', 'cantidad_toneladas']]
-            top_emitters = top_emitters.nlargest(limit, 'cantidad_toneladas')
+            top_emitters = top_emitters.sort_values('cantidad_toneladas', ascending=False).head(limit)
             return top_emitters.rename(columns={'cantidad_toneladas': 'emision'})
         except Exception as e:
             st.error(f"Error cargando principales emisores: {str(e)}")
