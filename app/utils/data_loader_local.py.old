@@ -1,0 +1,115 @@
+import pandas as pd
+from pathlib import Path
+import streamlit as st
+import numpy as np
+
+class LocalDataLoader:
+    def __init__(self):
+        self.DATA_DIR = Path(__file__).parent.parent.parent / 'data'
+        self.RAW_DATA_PATH = self.DATA_DIR / 'raw' / 'retc_emisiones_aire_2023.csv'
+        self._data = None
+
+    def load_data(self):
+        """Retorna el DataFrame cargado y procesado"""
+        if self._data is None:
+            try:
+                if not self.RAW_DATA_PATH.exists():
+                    st.error(f"No se encontró el archivo de datos en {self.RAW_DATA_PATH}")
+                    return pd.DataFrame()
+
+                # Intentar cargar el archivo
+                try:
+                    df = pd.read_csv(self.RAW_DATA_PATH, encoding='utf-8')
+                except:
+                    # Si falla, detectar delimitador
+                    delimiters = [',', ';', '\t']
+                    delimiter = None
+                    
+                    with open(self.RAW_DATA_PATH, 'r', encoding='utf-8') as f:
+                        header = f.readline().strip()
+                        for d in delimiters:
+                            if header.count(d) > 0:
+                                delimiter = d
+                                break
+                    
+                    if delimiter:
+                        df = pd.read_csv(self.RAW_DATA_PATH, delimiter=delimiter, encoding='utf-8')
+                    else:
+                        st.error("No se pudo detectar el delimitador del archivo CSV")
+                        return pd.DataFrame()
+
+                # Procesar columnas numéricas
+                if 'cantidad_toneladas' in df.columns:
+                    df['cantidad_toneladas'] = pd.to_numeric(
+                        df['cantidad_toneladas'].astype(str).str.replace(',', '.'), 
+                        errors='coerce'
+                    )
+
+                # Procesar coordenadas
+                for col in ['latitud', 'longitud']:
+                    if col in df.columns:
+                        df[col] = pd.to_numeric(
+                            df[col].astype(str).str.replace(',', '.'), 
+                            errors='coerce'
+                        )
+
+                # Limpiar datos
+                df_clean = df.dropna(subset=['latitud', 'longitud', 'cantidad_toneladas']).copy()
+                
+                if len(df_clean) < len(df):
+                    st.warning(f"Se eliminaron {len(df) - len(df_clean)} registros con datos inválidos")
+                
+                self._data = df_clean
+                
+            except Exception as e:
+                st.error(f"Error al cargar los datos: {str(e)}")
+                return pd.DataFrame()
+                
+        return self._data    @st.cache_data(ttl=3600)
+    def get_emissions_summary(_self) -> dict:
+        """Obtiene el resumen de emisiones"""
+        df = self.load_data()
+        if df.empty:
+            return {
+                'total_emissions': 0.0,
+                'average_emissions': 0.0,
+                'num_facilities': 0
+            }
+
+        return {
+            'total_emissions': float(df['cantidad_toneladas'].sum()),
+            'average_emissions': float(df['cantidad_toneladas'].mean()),
+            'num_facilities': int(len(df))
+        }
+
+    @st.cache_data(ttl=3600)
+    def get_emissions_by_region(self) -> pd.DataFrame:
+        """Obtiene las emisiones por región"""
+        df = self.load_data()
+        if df.empty:
+            return pd.DataFrame()
+
+        return df.groupby('region').agg({
+            'cantidad_toneladas': ['sum', 'mean', 'count']
+        }).round(2).reset_index()
+
+    @st.cache_data(ttl=3600)
+    def get_top_emitters(self, limit: int = 10) -> pd.DataFrame:
+        """Obtiene los principales emisores"""
+        df = self.load_data()
+        if df.empty:
+            return pd.DataFrame()
+
+        return df.nlargest(limit, 'cantidad_toneladas')[
+            ['nombre_establecimiento', 'region', 'comuna', 'cantidad_toneladas']
+        ]
+
+    @st.cache_data(ttl=3600)
+    def get_geographical_data(self) -> pd.DataFrame:
+        """Obtiene los datos geográficos de emisiones"""
+        df = self.load_data()
+        if df.empty:
+            return pd.DataFrame()
+
+        geo_data = df[['nombre_establecimiento', 'latitud', 'longitud', 'cantidad_toneladas', 'region', 'comuna']].copy()
+        return geo_data[~geo_data[['latitud', 'longitud']].isna().any(axis=1)]

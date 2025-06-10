@@ -1,0 +1,38 @@
+steps:
+  # Construir la imagen de Docker
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/retc-emissions-app', '-f', 'docker/streamlit/Dockerfile', '.']
+
+  # Enviar la imagen al Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/retc-emissions-app']
+
+  # Desplegar en Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'retc-emissions-app'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/retc-emissions-app'
+      - '--region'
+      - 'southamerica-west1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--memory'
+      - '2Gi'
+      - '--timeout'
+      - '3600'
+      - '--cpu'
+      - '2'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '10'
+      - '--set-env-vars'
+      - 'ENVIRONMENT=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID'
+
+images:
+  - 'gcr.io/$PROJECT_ID/retc-emissions-app'
