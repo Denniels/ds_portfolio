@@ -20,46 +20,42 @@ set_theme()
 apply_theme()
 
 # Función para cargar datos
-from utils.data_loader import DataLoader
-
-@st.cache_data(ttl=3600, max_entries=10)
+@st.cache_data
 def load_data():
-    try:
-        # Usar el DataLoader que ya maneja la descarga desde Google Drive
-        data_loader = DataLoader()
-        
-        # Detectar si es un health check
-        if hasattr(data_loader, 'is_health_check') and data_loader.is_health_check():
-            # Devolver un DataFrame mínimo para health checks
-            return pd.DataFrame({
-                'region': ['Región Test'],
-                'cantidad_toneladas': [100],
-                'razon_social': ['Empresa Test'],
-                'tipo_fuente': ['Fuente Test'],
-                'latitud': [-33.4489],
-                'longitud': [-70.6693]
-            })
-        
-        # Cargar datos usando el método de carga unificado
-        df = data_loader.load_data_from_gdrive(data_loader.FILE_ID)
-        
-        if df.empty:
-            st.error("❌ Error al cargar los datos desde Google Drive")
-            return pd.DataFrame()
-        
-        # Optimizar memoria: convertir tipos de datos
-        if 'cantidad_toneladas' in df.columns:
-            df['cantidad_toneladas'] = pd.to_numeric(df['cantidad_toneladas'], errors='coerce')
-        
-        # Limitar la cantidad de datos si es excesiva
-        if len(df) > 100000:
-            st.warning(f"Optimizando rendimiento: limitando a 100,000 registros de {len(df)} totales")
-            df = df.sample(n=100000, random_state=42)
-            
-        return df
-    except Exception as e:
-        st.error(f"❌ Error al cargar los datos: {str(e)}")
-        return pd.DataFrame()
+    DATA_DIR = Path(__file__).parents[2] / 'data'
+    RAW_DATA_PATH = DATA_DIR / 'raw' / 'retc_emisiones_aire_2023.csv'
+    
+    def detect_delimiter(file_path):
+        delimiters = [',', ';', '\t']
+        with open(file_path, 'r', encoding='utf-8') as f:
+            header = f.readline().strip()
+            for delimiter in delimiters:
+                if header.count(delimiter) > 0:
+                    return delimiter
+        return ','
+    
+    delimiter = detect_delimiter(RAW_DATA_PATH)
+    df = pd.read_csv(RAW_DATA_PATH, encoding='utf-8', delimiter=delimiter)
+    
+    # Convertir columnas numéricas
+    def convert_numeric(x):
+        if isinstance(x, str):
+            return float(x.replace(',', '.'))
+        return x
+
+    df['cantidad_toneladas'] = df['cantidad_toneladas'].apply(convert_numeric)
+    df['latitud'] = df['latitud'].apply(convert_numeric)
+    df['longitud'] = df['longitud'].apply(convert_numeric)
+    
+    # Aplicar el límite de registros si está configurado
+    if 'num_records' in st.session_state:
+        num_records = st.session_state['num_records']
+        total_records = len(df)
+        if total_records > num_records:
+            df = df.sample(n=num_records, random_state=42)
+            st.sidebar.info(f"📊 Usando la misma muestra de {num_records:,} registros configurada en la página principal")
+    
+    return df
 
 # Cargar datos
 try:
@@ -110,11 +106,24 @@ try:
         # Eliminar filas con coordenadas inválidas
         map_data = map_data.dropna(subset=['latitud', 'longitud'])
         
-        # Limitar la cantidad de datos para mejorar el rendimiento
-        if len(map_data) > 5000:
-            # Muestreo estratificado para mantener representatividad
-            map_data = map_data.sample(n=5000, random_state=42)
-            st.info(f"Mostrando una muestra de 5,000 puntos para optimizar el rendimiento")
+        # Control de número de muestras para el mapa
+        total_points = len(map_data)
+        st.sidebar.header("🗺️ Configuración del Mapa")
+        num_samples = st.sidebar.slider(
+            "Número de puntos a mostrar",
+            min_value=0,
+            max_value=total_points,
+            value=min(5000, total_points),
+            step=1000,
+            help="Ajusta el número de puntos para equilibrar detalle y rendimiento. 0 muestra todos los puntos."
+        )
+        
+        # Aplicar muestreo si se seleccionó un número específico
+        if num_samples > 0 and num_samples < total_points:
+            map_data = map_data.sample(n=num_samples, random_state=42)
+            st.sidebar.info(f"🎯 Mostrando muestra de {num_samples:,} puntos de {total_points:,} totales")
+        else:
+            st.sidebar.info(f"🎯 Mostrando todos los puntos ({total_points:,})")
         
         # Transformación logarítmica para visualización
         map_data['color_weight'] = np.log1p(map_data['cantidad_toneladas'])
