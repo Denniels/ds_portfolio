@@ -28,6 +28,45 @@ Imagina nuestro proyecto como una casa con diferentes habitaciones, cada una con
 
 > 🌟 **Tip**: Si quieres empezar a explorar, te recomiendo comenzar por la carpeta `notebooks/` - ahí encontrarás análisis explicados paso a paso.
 
+## 📦 Consideraciones de Rendimiento y Optimización
+
+### 🔄 Muestreo de Datos en Streamlit Cloud
+
+Nuestro dataset completo contiene más de 200,000 registros, lo que puede generar problemas de rendimiento en entornos con recursos limitados como Streamlit Cloud. Para optimizar la experiencia del usuario, hemos implementado varias estrategias:
+
+### 📊 Estrategias de Optimización Implementadas
+
+1. **Muestreo Estratificado**: 
+   - Reducimos la muestra a 100,000 registros (aproximadamente 50% del dataset original)
+   - Utilizamos muestreo aleatorio con una semilla fija para mantener resultados reproducibles
+   - Esta decisión mantiene la distribución estadística mientras mejora significativamente el rendimiento
+
+```python
+# Código implementado para optimizar carga de datos
+if len(df) > 100000:
+    st.warning(f"Optimizando rendimiento: limitando a 100,000 registros de {len(df)} totales")
+    df = df.sample(n=100000, random_state=42)
+```
+
+2. **Optimizaciones Visuales**:
+   - Para mapas geográficos: limitamos a 5,000 puntos máximo
+   - Para gráficos de torta: agregamos las categorías menores en "Otros" cuando hay más de 7 categorías
+   - Separamos los gráficos complejos en componentes independientes para evitar errores de DOM
+
+3. **Manejo de Health Checks**:
+   - Implementamos detección de health checks para devolver datos mínimos durante verificaciones del sistema
+   - Esto mejora los tiempos de carga iniciales y reduce el consumo de recursos
+
+### ⚠️ Limitaciones y Consideraciones
+
+Este enfoque de muestreo mantiene los patrones generales y tendencias principales, pero puede tener las siguientes limitaciones:
+
+- Algunos valores atípicos o casos específicos podrían no estar representados en la muestra
+- Los análisis muy detallados a nivel de establecimientos individuales podrían verse afectados
+- Las proporciones exactas pueden variar ligeramente respecto al dataset completo
+
+Para análisis más exhaustivos y precisos, recomendamos utilizar la versión local de la aplicación con el dataset completo.
+
 ## 🛠️ Nuestras Herramientas y Cómo las Usamos
 
 ### 📊 El Corazón del Análisis
