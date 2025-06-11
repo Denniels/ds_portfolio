@@ -1,40 +1,80 @@
 """
 Helper module for managing visualizations in notebooks with GitHub compatibility.
+Versión optimizada para rendimiento.
 """
 import os
-from IPython.display import HTML, Image
+from pathlib import Path
+from IPython.display import display, HTML
+import plotly.io as pio
 
-def save_plot_with_fallback(fig, filename, directory='figures', width=1200, height=800):
-    """Saves a plotly figure both as HTML and PNG for maximum compatibility.
+def save_plot_with_fallback(fig, filename, directory='figures', width=800, height=600):
+    """
+    Guarda una figura de Plotly como HTML y genera una versión estática para GitHub.
+    Esta versión prioriza velocidad y confiabilidad.
     
     Args:
-        fig: Plotly figure object
-        filename: Base filename without extension
-        directory: Directory to save files in (relative to notebook location)
-        width: Width of the static image in pixels
-        height: Height of the static image in pixels
+        fig: Figura de Plotly
+        filename: Nombre base del archivo sin extensión
+        directory: Directorio donde guardar los archivos
+        width: Ancho de la imagen
+        height: Alto de la imagen
     """
-    # Ensure directory exists
-    os.makedirs(directory, exist_ok=True)
-    
-    # Save interactive HTML version
-    html_path = os.path.join(directory, f'{filename}.html')
-    fig.write_html(html_path)
-    
-    # Save static PNG version with high resolution
-    png_path = os.path.join(directory, f'{filename}.png')
-    fig.write_image(png_path, width=width, height=height, scale=2)
-    
-    # Show figure in notebook
-    fig.show()
-    
-    # Use relative paths for markdown
-    rel_html_path = os.path.join('./figures', f'{filename}.html')
-    rel_png_path = os.path.join('./figures', f'{filename}.png')
-    
-    print("\n### Para incluir en el notebook:")
-    print("\nVersión interactiva (visible en VS Code):")
-    print(f'<iframe src="{rel_html_path}" width="100%" height="600px" frameborder="0"></iframe>')
-    
-    print("\nVersión estática (visible en GitHub):")
-    print(f'![{filename}]({rel_png_path})')
+    try:
+        # Crear directorio si no existe
+        directory = Path(directory)
+        directory.mkdir(parents=True, exist_ok=True)
+        
+        # Path para el HTML
+        html_path = directory / f'{filename}.html'
+        
+        print(f"Guardando visualización '{filename}'...")
+        
+        # 1. Guardar HTML (versión interactiva)
+        print("- Guardando versión interactiva...", end=" ", flush=True)
+        
+        # Configurar para mejor rendimiento
+        fig.update_layout(
+            width=width,
+            height=height,
+            showlegend=True,
+        )
+        
+        # Guardar HTML con CDN
+        fig.write_html(
+            str(html_path),
+            include_plotlyjs='cdn',
+            full_html=False,
+            auto_play=False,
+            include_mathjax=False
+        )
+        
+        if html_path.exists():
+            print(f"✓ ({html_path.stat().st_size / 1024:.1f} KB)")
+            
+        # 2. Crear versión estática para GitHub
+        print("- Creando enlace estático para GitHub...")
+        static_html = f'''
+        <div>
+            <a href="{html_path}" target="_blank">
+                <img src="https://plotly.com/~plotly/0.png" alt="Click para ver gráfico interactivo" style="max-width:100%;height:auto;">
+            </a>
+            <br>
+            <small><i>Click en la imagen para ver versión interactiva</i></small>
+        </div>
+        '''
+        
+        # Guardar referencia para GitHub
+        github_path = directory / f'{filename}_github.html'
+        with open(github_path, 'w', encoding='utf-8') as f:
+            f.write(static_html)
+        
+        print(f"✓ Visualización guardada exitosamente:")
+        print(f"- HTML interactivo: {html_path}")
+        print(f"- Referencia GitHub: {github_path}")
+        
+        # Mostrar versión interactiva en el notebook
+        display(fig)
+        
+    except Exception as e:
+        print(f"\n❌ Error: {str(e)}")
+        raise
