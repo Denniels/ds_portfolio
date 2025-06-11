@@ -1,0 +1,37 @@
+[server]
+# Configuración para ejecución en entornos con recursos limitados
+maxUploadSize = 50
+enableCORS = true
+enableXsrfProtection = true
+headless = true
+port = 8501
+address = "0.0.0.0"
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+# Reducir la magnitud del parámetro fastReruns para disminuir el uso de memoria
+fastReruns = false
+
+[theme]
+# Tema personalizado para la aplicación
+primaryColor = "#3B82F6"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F5F9"
+textColor = "#1E293B"
+font = "sans serif"
+
+[logger]
+level = "warning"
+
+[client]
+# Optimización para contenedores y entornos cloud
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[caching]
+# Configuración de caché para mejorar rendimiento y reducir uso de memoria
+enable = true
+memoryLimit = 1000
+diskLimit = 2000

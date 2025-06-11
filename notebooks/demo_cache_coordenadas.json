@@ -1,0 +1,85 @@
+{
+  "LAGO VILLARRICA EN PELAGIAL VILLARRICA": {
+    "nombre_estacion": "LAGO VILLARRICA EN PELAGIAL VILLARRICA",
+    "latitud": -39.2553317,
+    "longitud": -72.0857331,
+    "geocodificado": true,
+    "metodo": "toponimo_lago",
+    "toponimos_extraidos": {
+      "lago": "Villarrica",
+      "localidad": "Pelagial Villarrica"
+    },
+    "timestamp": "2025-06-11T16:02:30.815926"
+  },
+  "EMBALSE RAPEL EN SECTOR BRAZO ALHUE": {
+    "nombre_estacion": "EMBALSE RAPEL EN SECTOR BRAZO ALHUE",
+    "latitud": -34.0415858,
+    "longitud": -71.5888203,
+    "geocodificado": true,
+    "metodo": "toponimo_embalse",
+    "toponimos_extraidos": {
+      "embalse": "Rapel",
+      "sector": "Brazo",
+      "localidad": "Sector Brazo Alhue"
+    },
+    "timestamp": "2025-06-11T16:02:33.143611"
+  },
+  "LAGO RIÑIHUE EN RIÑIHUE": {
+    "nombre_estacion": "LAGO RIÑIHUE EN RIÑIHUE",
+    "latitud": null,
+    "longitud": null,
+    "geocodificado": false,
+    "metodo": null,
+    "toponimos_extraidos": {},
+    "timestamp": "2025-06-11T16:02:34.536501"
+  },
+  "LAGUNA GRANDE DE SAN PEDRO EN SECTOR SUR": {
+    "nombre_estacion": "LAGUNA GRANDE DE SAN PEDRO EN SECTOR SUR",
+    "latitud": -36.8582915,
+    "longitud": -73.1102597,
+    "geocodificado": true,
+    "metodo": "toponimo_laguna",
+    "toponimos_extraidos": {
+      "laguna": "Grande De San Pedro",
+      "sector": "Sur",
+      "localidad": "Sector Sur"
+    },
+    "timestamp": "2025-06-11T16:02:36.958266"
+  },
+  "LAGO RANCO EN FUTRONO": {
+    "nombre_estacion": "LAGO RANCO EN FUTRONO",
+    "latitud": -40.3216708,
+    "longitud": -72.4813502,
+    "geocodificado": true,
+    "metodo": "toponimo_lago",
+    "toponimos_extraidos": {
+      "lago": "Ranco",
+      "localidad": "Futrono"
+    },
+    "timestamp": "2025-06-11T16:02:39.295149"
+  },
+  "EMBALSE LA PALOMA EN BOCATOMA": {
+    "nombre_estacion": "EMBALSE LA PALOMA EN BOCATOMA",
+    "latitud": -30.7382785,
+    "longitud": -71.0203132,
+    "geocodificado": true,
+    "metodo": "toponimo_embalse",
+    "toponimos_extraidos": {
+      "embalse": "La Paloma",
+      "localidad": "Bocatoma"
+    },
+    "timestamp": "2025-06-11T16:02:41.664065"
+  },
+  "LAGO LLANQUIHUE EN PUERTO VARAS": {
+    "nombre_estacion": "LAGO LLANQUIHUE EN PUERTO VARAS",
+    "latitud": -41.1429898,
+    "longitud": -72.8062011,
+    "geocodificado": true,
+    "metodo": "toponimo_lago",
+    "toponimos_extraidos": {
+      "lago": "Llanquihue",
+      "localidad": "Puerto Varas"
+    },
+    "timestamp": "2025-06-11T16:02:44.000648"
+  }
+}

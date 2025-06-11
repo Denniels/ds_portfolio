@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ffec6c977bed638568a9d02ad00a3841 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ffec6c977bed638568a9d02ad00a3841" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ffec6c977bed638568a9d02ad00a3841 = L.map(
+                "map_ffec6c977bed638568a9d02ad00a3841",
+                {
+                    center: [-37.05969135, -72.18211293333333],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9ac09a267821832a3cc98e97beb7dad8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9ac09a267821832a3cc98e97beb7dad8.addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+            var circle_marker_b0f09b4e0a11f0f0c926912db8aebafa = L.circleMarker(
+                [-39.2553317, -72.0857331],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+        var popup_d9ebbf5e15d2c3d134068becad86291f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c930a901c58874767d6a5c08962c37c9 = $(`<div id="html_c930a901c58874767d6a5c08962c37c9" style="width: 100.0%; height: 100.0%;"><b>LAGO VILLARRICA EN PELAGIAL VILLARRICA</b><br>Lat: -39.2553<br>Lon: -72.0857</div>`)[0];
+                popup_d9ebbf5e15d2c3d134068becad86291f.setContent(html_c930a901c58874767d6a5c08962c37c9);
+            
+        
+
+        circle_marker_b0f09b4e0a11f0f0c926912db8aebafa.bindPopup(popup_d9ebbf5e15d2c3d134068becad86291f)
+        ;
+
+        
+    
+    
+            circle_marker_b0f09b4e0a11f0f0c926912db8aebafa.bindTooltip(
+                `<div>
+                     LAGO VILLARRICA EN PELAGIAL VILLARRICA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc431e93be763c9d21d74520da830a05 = L.circleMarker(
+                [-34.0415858, -71.5888203],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+        var popup_deb4ef7f50e6b9d6f63e2850f3ebcb10 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_226963ecf951efbcd2819772c7377c21 = $(`<div id="html_226963ecf951efbcd2819772c7377c21" style="width: 100.0%; height: 100.0%;"><b>EMBALSE RAPEL EN SECTOR BRAZO ALHUE</b><br>Lat: -34.0416<br>Lon: -71.5888</div>`)[0];
+                popup_deb4ef7f50e6b9d6f63e2850f3ebcb10.setContent(html_226963ecf951efbcd2819772c7377c21);
+            
+        
+
+        circle_marker_dc431e93be763c9d21d74520da830a05.bindPopup(popup_deb4ef7f50e6b9d6f63e2850f3ebcb10)
+        ;
+
+        
+    
+    
+            circle_marker_dc431e93be763c9d21d74520da830a05.bindTooltip(
+                `<div>
+                     EMBALSE RAPEL EN SECTOR BRAZO ALHUE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e77ad9a24b5238a94a4f8939a7c8884 = L.circleMarker(
+                [-36.8582915, -73.1102597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+        var popup_8f0bdb34e58ab6743f1485cf3d24f4a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2f52edde5ad7e72a4a6de9e2270b566 = $(`<div id="html_a2f52edde5ad7e72a4a6de9e2270b566" style="width: 100.0%; height: 100.0%;"><b>LAGUNA GRANDE DE SAN PEDRO EN SECTOR SUR</b><br>Lat: -36.8583<br>Lon: -73.1103</div>`)[0];
+                popup_8f0bdb34e58ab6743f1485cf3d24f4a2.setContent(html_a2f52edde5ad7e72a4a6de9e2270b566);
+            
+        
+
+        circle_marker_8e77ad9a24b5238a94a4f8939a7c8884.bindPopup(popup_8f0bdb34e58ab6743f1485cf3d24f4a2)
+        ;
+
+        
+    
+    
+            circle_marker_8e77ad9a24b5238a94a4f8939a7c8884.bindTooltip(
+                `<div>
+                     LAGUNA GRANDE DE SAN PEDRO EN SECTOR SUR
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71652dd6f3880f9cd8528250a78d332b = L.circleMarker(
+                [-40.3216708, -72.4813502],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+        var popup_9174df77441569a225e4c1a91d044b8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dfa0d18fa75ca1f688746a7a505aa28a = $(`<div id="html_dfa0d18fa75ca1f688746a7a505aa28a" style="width: 100.0%; height: 100.0%;"><b>LAGO RANCO EN FUTRONO</b><br>Lat: -40.3217<br>Lon: -72.4814</div>`)[0];
+                popup_9174df77441569a225e4c1a91d044b8e.setContent(html_dfa0d18fa75ca1f688746a7a505aa28a);
+            
+        
+
+        circle_marker_71652dd6f3880f9cd8528250a78d332b.bindPopup(popup_9174df77441569a225e4c1a91d044b8e)
+        ;
+
+        
+    
+    
+            circle_marker_71652dd6f3880f9cd8528250a78d332b.bindTooltip(
+                `<div>
+                     LAGO RANCO EN FUTRONO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ebabf9185defa04884ffc7f5eb617ba4 = L.circleMarker(
+                [-30.7382785, -71.0203132],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+        var popup_89dc69686597b51a2d61689ccc03cf7c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ac2d8bbd3dd5e7d9fad451ef965b5a4 = $(`<div id="html_1ac2d8bbd3dd5e7d9fad451ef965b5a4" style="width: 100.0%; height: 100.0%;"><b>EMBALSE LA PALOMA EN BOCATOMA</b><br>Lat: -30.7383<br>Lon: -71.0203</div>`)[0];
+                popup_89dc69686597b51a2d61689ccc03cf7c.setContent(html_1ac2d8bbd3dd5e7d9fad451ef965b5a4);
+            
+        
+
+        circle_marker_ebabf9185defa04884ffc7f5eb617ba4.bindPopup(popup_89dc69686597b51a2d61689ccc03cf7c)
+        ;
+
+        
+    
+    
+            circle_marker_ebabf9185defa04884ffc7f5eb617ba4.bindTooltip(
+                `<div>
+                     EMBALSE LA PALOMA EN BOCATOMA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d34c097e98275f9f84b8752d45bb01c = L.circleMarker(
+                [-41.1429898, -72.8062011],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_ffec6c977bed638568a9d02ad00a3841);
+        
+    
+        var popup_cd95da7ad772f440eddfb8ba047cc50e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63eedbbd679f733aac7cbd973066e037 = $(`<div id="html_63eedbbd679f733aac7cbd973066e037" style="width: 100.0%; height: 100.0%;"><b>LAGO LLANQUIHUE EN PUERTO VARAS</b><br>Lat: -41.1430<br>Lon: -72.8062</div>`)[0];
+                popup_cd95da7ad772f440eddfb8ba047cc50e.setContent(html_63eedbbd679f733aac7cbd973066e037);
+            
+        
+
+        circle_marker_9d34c097e98275f9f84b8752d45bb01c.bindPopup(popup_cd95da7ad772f440eddfb8ba047cc50e)
+        ;
+
+        
+    
+    
+            circle_marker_9d34c097e98275f9f84b8752d45bb01c.bindTooltip(
+                `<div>
+                     LAGO LLANQUIHUE EN PUERTO VARAS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

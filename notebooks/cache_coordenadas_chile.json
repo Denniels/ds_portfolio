@@ -1,0 +1,49 @@
+{
+  "LAGO VILLARRICA EN PELAGIAL VILLARRICA": {
+    "nombre_estacion": "LAGO VILLARRICA EN PELAGIAL VILLARRICA",
+    "latitud": -39.2553317,
+    "longitud": -72.0857331,
+    "geocodificado": true,
+    "metodo": "toponimo_lago",
+    "toponimos_extraidos": {
+      "lago": "Villarrica",
+      "localidad": "Pelagial Villarrica"
+    },
+    "timestamp": "2025-06-11T15:11:02.829480"
+  },
+  "EMBALSE RAPEL EN SECTOR BRAZO ALHUE": {
+    "nombre_estacion": "EMBALSE RAPEL EN SECTOR BRAZO ALHUE",
+    "latitud": -34.0415858,
+    "longitud": -71.5888203,
+    "geocodificado": true,
+    "metodo": "toponimo_embalse",
+    "toponimos_extraidos": {
+      "embalse": "Rapel",
+      "sector": "Brazo",
+      "localidad": "Sector Brazo Alhue"
+    },
+    "timestamp": "2025-06-11T15:11:05.166962"
+  },
+  "LAGO RIÑIHUE EN RIÑIHUE": {
+    "nombre_estacion": "LAGO RIÑIHUE EN RIÑIHUE",
+    "latitud": null,
+    "longitud": null,
+    "geocodificado": false,
+    "metodo": null,
+    "toponimos_extraidos": {},
+    "timestamp": "2025-06-11T15:11:06.588076"
+  },
+  "LAGUNA GRANDE DE SAN PEDRO EN SECTOR SUR": {
+    "nombre_estacion": "LAGUNA GRANDE DE SAN PEDRO EN SECTOR SUR",
+    "latitud": -36.8582915,
+    "longitud": -73.1102597,
+    "geocodificado": true,
+    "metodo": "toponimo_laguna",
+    "toponimos_extraidos": {
+      "laguna": "Grande De San Pedro",
+      "sector": "Sur",
+      "localidad": "Sector Sur"
+    },
+    "timestamp": "2025-06-11T15:11:09.007698"
+  }
+}

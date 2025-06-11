@@ -1,3 +1,9 @@
+# 🧹 .gitignore optimizado para DS Portfolio
+
+# ==============================================================================
+# ARCHIVOS DE SISTEMA Y TEMPORALES
+# ==============================================================================
+
 # Python
 __pycache__/
 *.py[cod]
@@ -19,55 +25,135 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Virtual Environment
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Entornos virtuales
+ds_portfolio_env/
 venv/
 ENV/
 env/
-.env
-.venv/
-ds_portfolio_env/
-*_env/
+.venv
 
 # IDEs
-.idea/
 .vscode/
+.idea/
 *.swp
 *.swo
-.vs/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb_checkpoints/
-*.ipynb_cache/
-*/.ipynb_checkpoints/
-
-# Data Science específico
-*.h5
-*.pkl
-*.model
-data/raw/*
-data/processed/*
-data/external/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-!data/external/.gitkeep
-
-# Logs y bases de datos
-*.log
-*.sql
-*.sqlite
-*.db
-
-# OS
+# Sistema operativo
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# MLflow
-mlruns/
-mlartifacts/
+# ==============================================================================
+# DATOS Y ARCHIVOS GRANDES
+# ==============================================================================
 
-# Streamlit
-.streamlit/
+# Datos raw (mantener estructura de carpetas)
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.json
+data/processed/
+data/external/
 
-vs_buildtools.exe
+# Cache de coordenadas (excepto los esenciales)
+cache_coordenadas_chile.json
+*_cache_*.json
+
+# ==============================================================================
+# ARCHIVOS GENERADOS Y TEMPORALES
+# ==============================================================================
+
+# Mapas HTML generados automáticamente
+*.html
+!notebooks/mapa_estaciones_calidad_agua.html
+!notebooks/demo_mapa_estaciones.html
+!notebooks/figures/*.html
+
+# Archivos de backup
+*backup*
+*~
+*.bak
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# ==============================================================================
+# APLICACIONES Y CONFIGURACIONES
+# ==============================================================================
+
+# Aplicaciones en desarrollo
+app/
+docker/
+config/
+models/
+src/
+tests/
+
+# Archivos de configuración cloud
+cloudbuild.yaml
+packages.txt
+setup.py
+
+# ==============================================================================
+# DOCUMENTACIÓN TEMPORAL
+# ==============================================================================
+
+# Documentos de trabajo temporal
+recordatorio.md
+project-roadmap.md
+extraccion_datos_temp.md
+
+# Documentos de prueba
+*test*
+*prueba*
+*demo_*.md
+
+# ==============================================================================
+# PERMITIR ARCHIVOS ESPECÍFICOS IMPORTANTES
+# ==============================================================================
+
+# Notebooks principales
+!notebooks/01_Analisis_Emisiones_CO2_Chile.ipynb
+!notebooks/02_Analisis_Calidad_Del_Agua.ipynb
+!notebooks/demo_sistema_completo.ipynb
+
+# Sistema core
+!notebooks/visualizaciones_helper.py
+!notebooks/integracion_automatica.py
+!notebooks/actualizar_visualizaciones.py
+
+# Geocodificación
+!notebooks/utils/
+!notebooks/utils/*
+
+# Documentación final
+!notebooks/README.md
+!notebooks/SISTEMA_VISUALIZACIONES.md
+!notebooks/ESTADO_FINAL_SISTEMA.md
+
+# Cache y datos esenciales
+!notebooks/cache_coordenadas_chile.json
+!notebooks/demo_cache_coordenadas.json
+!notebooks/demo_estaciones_geocodificadas.csv
+
+# Estructura básica de datos
+!data/
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+!data/external/
+!data/external/.gitkeep
+!data/results/
+!data/results/.gitkeep
