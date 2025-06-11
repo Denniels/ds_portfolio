@@ -15,28 +15,48 @@ Esta sección contiene notebooks de Jupyter que proporcionan análisis detallado
 - Visualizaciones detalladas
 - Conclusiones y recomendaciones
 
+### 2. Análisis de Calidad del Agua en Chile
+**[02_Analisis_Calidad_Del_Agua.ipynb](02_Analisis_Calidad_Del_Agua.ipynb)**
+- Análisis de parámetros físico-químicos
+- Distribución espacial del monitoreo
+- Tendencias temporales y estacionalidad
+- Identificación de valores críticos
+- Correlaciones entre parámetros
+- Evaluación de la calidad del monitoreo
+- Recomendaciones para gestión hídrica
+
 ## 🔧 Estructura del Análisis
 
-### Proceso Analítico
-1. **Carga y Limpieza de Datos**
-   - Importación de datos crudos
-   - Validación y limpieza
-   - Transformación de formatos
+### Metodología de Análisis
+1. **Preparación y Validación de Datos**
+   - Importación automática desde fuentes oficiales
+   - Validación de integridad y consistencia
+   - Transformación y estandarización
+   - Control de calidad de datos
 
 2. **Análisis Exploratorio**
-   - Estadísticas descriptivas
-   - Distribuciones
-   - Identificación de outliers
+   - Estadísticas descriptivas robustas
+   - Distribuciones y patrones
+   - Identificación de valores atípicos
+   - Análisis de completitud
 
-3. **Análisis Geográfico**
-   - Mapas de calor
-   - Distribución espacial
-   - Clustering geográfico
+3. **Análisis Espacial**
+   - Distribución geográfica
+   - Patrones regionales
+   - Identificación de zonas críticas
+   - Evaluación de cobertura territorial
 
-4. **Análisis Sectorial**
-   - Comparativas por industria
-   - Tendencias temporales
-   - Impacto por sector
+4. **Análisis Temporal**
+   - Tendencias a largo plazo
+   - Patrones estacionales
+   - Ciclos y periodicidades
+   - Evaluación de continuidad
+
+5. **Análisis Multivariado**
+   - Correlaciones entre variables
+   - Análisis de factores subyacentes
+   - Identificación de patrones complejos
+   - Evaluación de interdependencias
 
 5. **Visualizaciones**
    - Gráficos interactivos

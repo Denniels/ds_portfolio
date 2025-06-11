@@ -1,14 +1,18 @@
-# Análisis de Emisiones de CO2 en Chile
+# Análisis de Datos Ambientales en Chile
 
-Este repositorio contiene un análisis comprehensivo de las emisiones de CO2 en Chile, utilizando datos del Registro de Emisiones y Transferencias de Contaminantes (RETC).
+Este repositorio contiene análisis comprehensivos de datos ambientales en Chile, incluyendo:
+- Emisiones de CO2 (basado en datos del RETC)
+- Calidad del agua en lagos y embalses (basado en datos de la DGA)
 
 ## 🚀 Características Principales
-- Análisis exploratorio detallado de datos de emisiones
-- Visualizaciones interactivas y mapas
+- Análisis exploratorio detallado de datos ambientales
+- Visualizaciones interactivas y mapas dinámicos
 - Procesamiento y limpieza avanzada de datos
-- Documentación detallada del proceso analítico
+- Documentación detallada de metodologías analíticas
 - Conclusiones y recomendaciones basadas en datos
 - Optimizaciones para rendimiento en entornos cloud
+- Análisis multivariado de parámetros ambientales
+- Detección y evaluación de valores críticos
 
 ## 📦 Estructura del Proyecto
 ```
