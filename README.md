@@ -10,7 +10,6 @@ Este repositorio contiene análisis comprehensivos de datos ambientales en Chile
 - Procesamiento y limpieza avanzada de datos
 - Documentación detallada de metodologías analíticas
 - Conclusiones y recomendaciones basadas en datos
-- Optimizaciones para rendimiento en entornos cloud
 - Análisis multivariado de parámetros ambientales
 - Detección y evaluación de valores críticos
 
