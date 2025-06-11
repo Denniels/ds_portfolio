@@ -25,12 +25,16 @@ venv/
 ENV/
 env/
 .env
+.venv/
+ds_portfolio_env/
+*_env/
 
 # IDEs
 .idea/
 .vscode/
 *.swp
 *.swo
+.vs/
 
 # Jupyter Notebook
 .ipynb_checkpoints
