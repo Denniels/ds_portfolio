@@ -4,6 +4,12 @@
 # ARCHIVOS DE SISTEMA Y TEMPORALES
 # ==============================================================================
 
+# Credenciales y secretos
+credentials/
+*.json
+*/**/credentials/
+*/**/*.json
+
 # Python
 __pycache__/
 *.py[cod]
