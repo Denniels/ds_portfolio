@@ -155,103 +155,27 @@ from apps.modules.data_loaders import load_water_quality_data
 print("✅ Integración con módulos funcionando")
 ```
 
-## 📊 Fuentes de Datos Oficiales
+## 📊 Fuentes de Datos
+- Registro de Emisiones y Transferencias de Contaminantes (RETC)
+- Datos geográficos de Chile
+- Información sectorial industrial
 
-### 🏛️ **Instituciones Fuente**
-- **DGA (Dirección General de Aguas)** - Ministerio de Obras Públicas
-  - Calidad del agua en lagos, lagunas y embalses
-  - Red nacional de monitoreo ambiental
-  - Datos históricos desde 2010
+## 📈 Próximos Análisis
+- Análisis de calidad del aire
+- Estudio de impacto ambiental por sector
+- Predicción de tendencias de emisiones
+- Análisis de políticas ambientales
 
-- **RETC (Registro de Emisiones y Transferencias de Contaminantes)** - Ministerio del Medio Ambiente
-  - Emisiones industriales por sector
-  - Cobertura nacional con reporte obligatorio
-  - Series temporales anuales
+## 📝 Notas
+- Los notebooks están optimizados para reproducibilidad
+- Se incluyen comentarios detallados en cada paso
+- Las visualizaciones son interactivas cuando es posible
+- Se proporcionan explicaciones de decisiones metodológicas
 
-- **INE (Instituto Nacional de Estadísticas)**
-  - Datos poblacionales y territoriales
-  - Códigos regionales y comunales
-  - Información de respaldo para análisis
-
-### 🔍 **Validación y Calidad de Datos**
-- **Control automático** de rangos válidos
-- **Identificación de outliers** usando métodos estadísticos
-- **Verificación de consistencia** temporal y espacial
-- **Imputación inteligente** para datos faltantes
-
-## 🎯 Próximos Análisis en Desarrollo
-
-### 🚀 **Pipeline de Nuevos Notebooks**
-
-1. **📊 03_Analisis_Calidad_Aire_Chile.ipynb** - En desarrollo
-   - PM2.5, PM10, O3, NO2, SO2
-   - Red SINCA (Sistema de Información Nacional de Calidad del Aire)
-   - Índices de calidad del aire por región
-   - Correlaciones meteorológicas
-
-2. **🌱 04_Biodiversidad_Marina_Chile.ipynb** - Planificado
-   - Especies marinas protegidas
-   - Áreas Marinas Protegidas (AMP)
-   - Análisis de ecosistemas costeros
-   - Impacto de actividades humanas
-
-3. **⚡ 05_Energias_Renovables_Chile.ipynb** - Futuro
-   - Capacidad instalada solar/eólica
-   - Generación por tipo de fuente
-   - Análisis de potencial energético
-   - Transición energética nacional
-
-## 🤝 Contribución y Colaboración
-
-### 📋 **Guías para Nuevos Notebooks**
-
-Para agregar un nuevo análisis al portafolio:
-
-1. **📝 Crear notebook siguiendo la nomenclatura**:
-   ```
-   ##_Nombre_Analisis_Chile.ipynb
-   ```
-
-2. **🏗️ Estructura recomendada**:
-   ```markdown
-   # Título del Análisis
-   ## 1. Importación y Configuración
-   ## 2. Carga y Validación de Datos
-   ## 3. Análisis Exploratorio
-   ## 4. Visualizaciones Principales
-   ## 5. Análisis Estadístico
-   ## 6. Conclusiones y Recomendaciones
-   ## 7. Exportación para Streamlit App
-   ```
-
-3. **🔧 Integración con módulos**:
-   ```python
-   # Usar utilidades existentes
-   from app.apps.modules import data_loaders, chart_utils, map_utils
-   
-   # Desarrollar nuevas funciones si es necesario
-   # Documentar para futura migración a módulos
-   ```
-
-4. **📊 Preparación para aplicación Streamlit**:
-   - Identificar visualizaciones principales
-   - Modularizar funciones reutilizables
-   - Documentar parámetros de configuración
-   - Preparar datos para cache
-
-### 🔄 **Proceso de Integración**
-1. **Notebook completo** → Análisis exploratorio
-2. **Módulo de utilidades** → Funciones reutilizables
-3. **Aplicación Streamlit** → Interfaz interactiva
-4. **Documentación** → README actualizado
-
-## 📞 Contacto y Soporte
-
-Para preguntas sobre análisis específicos o colaboración:
-- 📧 **Issues**: Usar GitHub Issues para reportar bugs o sugerir mejoras
-- 📝 **Documentación**: Consultar READMEs específicos de cada componente
-- 🔧 **Soporte técnico**: Verificar configuración de entorno virtual
-
----
-
-> **💡 Tip**: Los notebooks están diseñados para ser **autocontenidos** pero se benefician de la integración con el sistema modular para máxima eficiencia.
+## 🤝 Contribuciones
+Las contribuciones son bienvenidas. Por favor:
+1. Fork el repositorio
+2. Crea una rama para tu feature
+3. Commit tus cambios
+4. Push a la rama
+5. Abre un Pull Request
