@@ -30,6 +30,7 @@ MANIFEST
 # Jupyter Notebooks
 .ipynb_checkpoints/
 */.ipynb_checkpoints/*
+notebooks/data/
 
 # Entornos virtuales
 ds_portfolio_env/
