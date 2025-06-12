@@ -1,315 +1,326 @@
-# 🔧 Módulos del Sistema - Data Science Portfolio
+# Módulos del Sistema - Data Science Portfolio
 
-> **Estado**: ✅ **Sistema Modular Completo** - Arquitectura escalable y mantenible
+Esta carpeta contiene la arquitectura modular del sistema de visualización de datos ambientales. La refactorización desde código monolítico a módulos especializados permite mayor escalabilidad, mantenibilidad y reutilización.
 
-## 🎯 Filosofía del Sistema Modular
+## 📁 Estructura de Módulos
 
-Este directorio implementa una **arquitectura modular** que separa las responsabilidades en componentes reutilizables, facilitando:
+### 🔧 Módulos Core
 
-1. **🔄 Reutilización**: Funciones utilizables por múltiples aplicaciones
-2. **🧪 Testabilidad**: Módulos independientes fáciles de probar
-3. **📈 Escalabilidad**: Agregar nuevas funcionalidades sin afectar existentes
-4. **🛠️ Mantenibilidad**: Código organizado y fácil de mantener
+#### `config.py`
+**Configuraciones centralizadas del sistema**
+- Configuración de coordenadas de estaciones verificadas
+- Mapas de regiones administrativas de Chile
+- Constantes del sistema (colores, estilos, URLs)
+- Configuración de APIs externas
 
-## 📚 Módulos Disponibles
-
-### ⚙️ **config.py** - Configuraciones Centralizadas
 ```python
-# Configuraciones principales del sistema
-MAP_CONFIG = {
-    'chile_center': [-35.6751, -71.5430],
-    'chile_zoom': 6,
-    'default_zoom': 8
-}
-
-COLORS = {
-    'primary': '#0891b2',
-    'secondary': '#06b6d4',
-    # ... paleta completa
-}
-
-DEMO_STATIONS = {
-    "LAGO VILLARRICA EN PELAGIAL VILLARRICA": {"lat": -39.2553, "lon": -72.0857},
-    # ... coordenadas verificadas
-}
+from modules.config import ESTACIONES_VERIFICADAS, REGIONES_CHILE
 ```
 
-**🎯 Uso**:
+#### `__init__.py`
+**Inicializador del paquete de módulos**
+- Configuración de importaciones automáticas
+- Definición de APIs públicas del módulo
+
+### 🗺️ Módulos Geoespaciales
+
+#### `geo_utils.py`
+**Utilidades de geocodificación y manejo de coordenadas**
+- Clase `CoordenadasEstaciones` con sistema híbrido de búsqueda
+- Cache automático de coordenadas en JSON
+- Geocodificación específica para Chile
+- Búsqueda en cuerpos de agua y regiones
+
 ```python
-from apps.modules.config import MAP_CONFIG, COLORS, DEMO_STATIONS
+from modules.geo_utils import get_station_coordinates, CoordenadasEstaciones
+
+# Obtener coordenadas con cache automático
+coords = get_station_coordinates("LAGO VILLARRICA")
 ```
 
-### 📥 **data_loaders.py** - Cargadores de Datos
+**Características:**
+- ✅ Cache automático en `estaciones_coordenadas.json`
+- ✅ Búsqueda en estaciones verificadas
+- ✅ Fallback a cuerpos de agua conocidos
+- ✅ Geocodificación por regiones de Chile
+- ✅ Sistema de coordenadas por defecto
+
+#### `map_utils.py`
+**Creación y configuración de mapas interactivos**
+- Mapas con clusters automáticos
+- Múltiples capas base (OpenStreetMap, Satellite, Terrain)
+- Popups informativos personalizados
+- Centrado automático en Chile
+
 ```python
-def load_water_quality_data():
-    """Carga datos de calidad del agua con validación automática"""
-    
-def load_emissions_data():
-    """Carga datos de emisiones CO2 con procesamiento"""
-    
-def validate_data_quality(df):
-    """Valida calidad e integridad de datasets"""
+from modules.map_utils import create_interactive_water_quality_map
+
+mapa = create_interactive_water_quality_map(df_calidad_agua)
 ```
 
-**🎯 Uso**:
+**Características:**
+- 🗺️ Folium con clusters de marcadores
+- 🌍 Múltiples proveedores de tiles
+- 📍 Popups con información detallada
+- 🎯 Auto-centrado en coordenadas chilenas
+
+### 📊 Módulos de Datos
+
+#### `data_loaders.py`
+**Carga y procesamiento de datos**
+- Funciones especializadas para diferentes tipos de datos
+- Validación y limpieza automática
+- Manejo de errores y datos faltantes
+- Optimización de memoria
+
 ```python
-from apps.modules.data_loaders import load_water_quality_data
+from modules.data_loaders import load_water_quality_data, load_emissions_data
 
-data, is_official = load_water_quality_data()
+df_agua = load_water_quality_data()
+df_emisiones = load_emissions_data()
 ```
 
-### 🗺️ **geo_utils.py** - Utilidades Geográficas
+**Funciones disponibles:**
+- `load_water_quality_data()` - Datos de calidad del agua
+- `load_emissions_data()` - Datos de emisiones de CO2
+- `validate_dataframe()` - Validación de estructura
+- `clean_missing_values()` - Limpieza de datos faltantes
+
+#### `chart_utils.py`
+**Creación de visualizaciones y gráficos**
+- Gráficos interactivos con Plotly
+- Estilos consistentes y personalizables
+- Configuraciones responsivas
+- Exportación automática
+
 ```python
-class CoordenadasEstaciones:
-    """Sistema inteligente de coordenadas con cache"""
-    
-def get_station_coordinates(station_name: str):
-    """Obtiene coordenadas usando múltiples fuentes"""
-    
-def load_coordinates_cache():
-    """Maneja cache persistente de coordenadas"""
+from modules.chart_utils import create_time_series_chart, create_correlation_heatmap
+
+grafico = create_time_series_chart(df, columna='valor')
 ```
 
-**🎯 Uso**:
+**Tipos de gráficos:**
+- 📈 Series temporales interactivas
+- 🔥 Mapas de calor de correlación
+- 📊 Gráficos de barras agrupadas
+- 🥧 Gráficos de distribución
+
+### 🌊 Módulos de Aplicación
+
+#### `water_quality.py`
+**Lógica específica para análisis de calidad del agua**
+- Procesamiento de datos de estaciones de monitoreo
+- Cálculos de índices de calidad
+- Análisis de tendencias temporales
+- Detección de anomalías
+
 ```python
-from apps.modules.geo_utils import get_station_coordinates
+from modules.water_quality import analyze_water_quality, calculate_quality_index
 
-coords = get_station_coordinates("LAGO LLANQUIHUE EN PUERTO VARAS")
+analisis = analyze_water_quality(df_estaciones)
+indice = calculate_quality_index(parametros)
 ```
 
-### 🗺️ **map_utils.py** - Mapas Interactivos
+#### `water_quality_config.py`
+**Configuraciones específicas para calidad del agua**
+- Parámetros de calidad del agua
+- Umbrales y límites normativos
+- Configuración de estaciones
+- Metadatos de sensores
+
+#### `emissions.py`
+**Lógica específica para análisis de emisiones de CO2**
+- Procesamiento de datos de emisiones
+- Cálculos de factores de emisión
+- Análisis de tendencias por sector
+- Proyecciones y escenarios
+
 ```python
-def create_interactive_water_quality_map(df, filters):
-    """Crea mapas Folium con estaciones y datos"""
-    
-def create_interactive_emissions_map(df, region_col, emissions_col):
-    """Mapas de emisiones por región"""
+from modules.emissions import analyze_emissions, calculate_emission_factors
+
+analisis = analyze_emissions(df_emisiones)
+factores = calculate_emission_factors(sector='transporte')
 ```
 
-**🎯 Uso**:
+#### `emissions_config.py`
+**Configuraciones específicas para emisiones**
+- Factores de emisión por sector
+- Configuración de fuentes de datos
+- Parámetros de cálculo
+- Metadatos de inventarios
+
+## 🚀 Uso de los Módulos
+
+### Importación Básica
 ```python
-from apps.modules.map_utils import create_interactive_water_quality_map
+# Importar módulos específicos
+from modules.geo_utils import get_station_coordinates
+from modules.map_utils import create_interactive_water_quality_map
+from modules.data_loaders import load_water_quality_data
 
-mapa = create_interactive_water_quality_map(df, filtros)
+# Flujo típico
+df = load_water_quality_data()
+mapa = create_interactive_water_quality_map(df)
 ```
 
-### 📊 **chart_utils.py** - Gráficos y Visualizaciones
+### Integración con Streamlit
 ```python
-def create_temporal_chart(df, parameter, station=None):
-    """Gráficos temporales interactivos con Plotly"""
-    
-def create_station_comparison_chart(df, parameters, stations):
-    """Comparaciones entre estaciones"""
-    
-def create_quality_distribution_chart(df, parameter):
-    """Distribuciones de calidad"""
-```
-
-**🎯 Uso**:
-```python
-from apps.modules.chart_utils import create_temporal_chart
-
-chart = create_temporal_chart(df, 'pH', 'LAGO_VILLARRICA')
-```
-
-### 💧 **water_quality.py** - Lógica de Calidad del Agua
-```python
-def create_demo_water_data():
-    """Genera datos de demostración realistas"""
-    
-def calculate_water_quality_index(df, parameters):
-    """Calcula índice de calidad del agua"""
-    
-def get_water_quality_summary_statistics(df, parameters):
-    """Estadísticas resumidas por parámetro"""
-    
-def filter_water_data(df, filters):
-    """Filtrado avanzado de datos"""
-```
-
-### 🏭 **emissions.py** - Lógica de Emisiones CO2
-```python
-def classify_emission_level(emission_value):
-    """Clasifica nivel de emisión"""
-    
-def get_emission_color(emission_value):
-    """Obtiene color para visualización"""
-    
-def calculate_emission_statistics(df):
-    """Estadísticas de emisiones"""
-```
-
-### ⚙️ **water_quality_config.py** - Configuración Específica
-```python
-WATER_QUALITY_PARAMETERS = {
-    'Ph a 25°C': {
-        'name': 'pH',
-        'unit': 'unidades',
-        'optimal_range': (6.0, 8.5),
-        'description': 'Potencial de hidrógeno'
-    },
-    # ... más parámetros
-}
-
-QUALITY_CLASSIFICATION = {
-    'Ph a 25°C': {
-        'Excelente': (6.5, 8.0),
-        'Buena': (6.0, 8.5),
-        'Regular': (5.5, 9.0),
-        'Deficiente': (0, 14)
-    }
-    # ... más clasificaciones
-}
-```
-
-### 🏭 **emissions_config.py** - Configuración de Emisiones
-```python
-EMISSION_COLORS = {
-    'Muy Bajo': '#4ade80',
-    'Bajo': '#84cc16', 
-    'Medio': '#eab308',
-    'Alto': '#f97316',
-    'Muy Alto': '#dc2626'
-}
-
-EMISSION_THRESHOLDS = {
-    'co2_ton': [0, 100, 500, 2000, 10000]
-}
-```
-
-## 🔗 Sistema de Interconexiones
-
-### 📋 **Dependencias entre Módulos**
-```
-config.py (base)
-    ↓
-data_loaders.py ← geo_utils.py ← map_utils.py
-    ↓                ↓             ↓
-water_quality.py → chart_utils.py → apps
-    ↓                ↓
-emissions.py → water_quality_config.py
-                    ↓
-               emissions_config.py
-```
-
-### 🔄 **Flujo de Datos Típico**
-1. **📥 Carga**: `data_loaders.py` obtiene datos oficiales
-2. **🗺️ Geocodificación**: `geo_utils.py` asigna coordenadas
-3. **🧮 Procesamiento**: `water_quality.py` o `emissions.py` procesan datos
-4. **📊 Visualización**: `chart_utils.py` y `map_utils.py` generan gráficos
-5. **🎨 Presentación**: Apps de Streamlit integran todo
-
-## 🚀 Patrón de Uso Recomendado
-
-### 🎯 **Para Nuevas Aplicaciones**
-```python
-# app/apps/nueva_app.py
 import streamlit as st
-from modules.data_loaders import load_new_dataset
-from modules.chart_utils import create_custom_chart
-from modules.map_utils import create_custom_map
-from modules.config import COLORS, MAP_CONFIG
+from modules.water_quality import analyze_water_quality
+from modules.chart_utils import create_time_series_chart
 
-def nueva_aplicacion():
-    st.title("Nueva Aplicación")
-    
-    # Usar cargadores de datos
-    data = load_new_dataset()
-    
-    # Usar utilidades de visualización
-    chart = create_custom_chart(data)
-    mapa = create_custom_map(data)
-    
-    # Presentar con configuración centralizada
-    st.plotly_chart(chart, use_container_width=True)
-    st_folium(mapa, width=800, height=600)
+# En la aplicación Streamlit
+st.title("Análisis de Calidad del Agua")
+df = load_water_quality_data()
+analisis = analyze_water_quality(df)
+chart = create_time_series_chart(df, 'oxigeno_disuelto')
+st.plotly_chart(chart)
 ```
 
-### 🔧 **Para Nuevos Módulos**
+### Integración con Notebooks
 ```python
-# app/apps/modules/nuevo_modulo.py
-"""
-Nuevo módulo siguiendo convenciones del sistema
-"""
-import pandas as pd
-import streamlit as st
-from .config import COLORS, CONFIG_PARAM
-from .data_loaders import base_data_loader
+# En Jupyter Notebooks
+%load_ext autoreload
+%autoreload 2
 
-def nueva_funcionalidad(data, parametros):
+from modules.geo_utils import CoordenadasEstaciones
+from modules.map_utils import create_interactive_water_quality_map
+
+# Análisis interactivo
+coords = CoordenadasEstaciones()
+estacion_coords = coords.get_coordinates("RIO MAIPO")
+```
+
+## 🔄 Flujo de Datos
+
+```mermaid
+graph TD
+    A[Datos Raw] --> B[data_loaders.py]
+    B --> C[water_quality.py / emissions.py]
+    C --> D[geo_utils.py]
+    D --> E[map_utils.py]
+    E --> F[chart_utils.py]
+    F --> G[Streamlit App]
+    
+    H[config.py] --> B
+    H --> C
+    H --> D
+    H --> E
+    H --> F
+```
+
+## 📝 Convenciones de Código
+
+### Nomenclatura
+- **Archivos**: `snake_case.py`
+- **Funciones**: `snake_case()`
+- **Clases**: `PascalCase`
+- **Constantes**: `UPPER_SNAKE_CASE`
+
+### Documentación
+```python
+def get_station_coordinates(station_name: str) -> Tuple[float, float]:
     """
-    Nueva funcionalidad del sistema
+    Obtiene las coordenadas de una estación de monitoreo.
     
     Args:
-        data: DataFrame con datos
-        parametros: Dict con configuración
+        station_name: Nombre de la estación a buscar
         
     Returns:
-        resultado: Resultado procesado
-    """
-    # Implementación usando convenciones del sistema
-    return resultado
-```
-
-## 📈 Mejores Prácticas
-
-### ✅ **Convenciones de Código**
-- **📝 Docstrings**: Toda función pública debe tener documentación
-- **🏷️ Type Hints**: Usar typing para parámetros y retornos
-- **🚨 Error Handling**: Manejo robusto de errores con feedback a usuario
-- **⚡ Performance**: Cache cuando sea apropiado
-- **🧪 Testeable**: Funciones puras cuando sea posible
-
-### 🔧 **Estructura de Función Estándar**
-```python
-def funcion_modular(data: pd.DataFrame, parametros: Dict) -> Dict:
-    """
-    Descripción clara de la función
-    
-    Args:
-        data: DataFrame con datos de entrada
-        parametros: Configuración de la función
-        
-    Returns:
-        Dict con resultados procesados
+        Tupla con (latitud, longitud) de la estación
         
     Raises:
-        ValueError: Si los datos no son válidos
+        StationNotFoundError: Si la estación no existe
     """
-    try:
-        # Validación de entrada
-        if data.empty:
-            st.warning("No hay datos para procesar")
-            return {}
-            
-        # Procesamiento principal
-        resultado = procesar_datos(data, parametros)
-        
-        # Feedback al usuario
-        st.success(f"Procesados {len(data)} registros exitosamente")
-        
-        return resultado
-        
-    except Exception as e:
-        st.error(f"Error en procesamiento: {str(e)}")
-        return {}
 ```
 
-## 🔮 Roadmap de Expansión
+### Logging
+```python
+import logging
 
-### 📋 **Próximos Módulos Planificados**
-- **🤖 ml_utils.py**: Utilidades de machine learning
-- **📊 api_clients.py**: Clientes para APIs gubernamentales
-- **🔒 security_utils.py**: Utilidades de seguridad y validación
-- **📤 export_utils.py**: Exportación a múltiples formatos
-- **⚡ performance_utils.py**: Optimizaciones de rendimiento
+logger = logging.getLogger(__name__)
+logger.info("Procesando datos de calidad del agua")
+```
 
-### 🎯 **Mejoras Continuas**
-- **📊 Métricas de rendimiento**: Monitoreo de performance
-- **🧪 Testing automatizado**: Cobertura de tests
-- **📚 Documentación auto-generada**: Docs desde docstrings
-- **🔄 CI/CD Integration**: Automatización de despliegue
+## 🧪 Testing
+
+### Estructura de Tests
+```
+tests/
+├── test_geo_utils.py
+├── test_map_utils.py
+├── test_data_loaders.py
+└── conftest.py
+```
+
+### Ejecutar Tests
+```bash
+# Desde la raíz del proyecto
+pytest app/tests/
+
+# Con cobertura
+pytest --cov=app/apps/modules app/tests/
+```
+
+## 📦 Dependencias
+
+### Core
+- `streamlit` - Framework web
+- `pandas` - Manipulación de datos
+- `numpy` - Cálculos numéricos
+
+### Visualización
+- `plotly` - Gráficos interactivos
+- `folium` - Mapas interactivos
+- `seaborn` - Visualización estadística
+
+### Geoespacial
+- `geopy` - Geocodificación
+- `geopandas` - Datos geoespaciales
+
+## 🔧 Configuración de Desarrollo
+
+### Variables de Entorno
+```bash
+# .env
+STREAMLIT_SERVER_PORT=8501
+STREAMLIT_SERVER_ADDRESS=localhost
+CACHE_COORDINATES=true
+DEBUG_MODE=false
+```
+
+### Estructura de Archivos de Datos
+```
+app/data/
+├── estaciones_coordenadas.json  # Cache de coordenadas
+├── water_quality/              # Datos de calidad del agua
+└── emissions/                  # Datos de emisiones
+```
+
+## 🚀 Roadmap de Desarrollo
+
+### Próximas Características
+- [ ] Módulo de machine learning (`ml_utils.py`)
+- [ ] Sistema de notificaciones (`notifications.py`)
+- [ ] API REST (`api_utils.py`)
+- [ ] Módulo de reportes (`report_generator.py`)
+
+### Mejoras Planificadas
+- [ ] Cache distribuido con Redis
+- [ ] Paralelización de cálculos
+- [ ] Integración con bases de datos
+- [ ] Sistema de plugins
+
+## 📞 Soporte
+
+Para dudas sobre la arquitectura modular:
+1. Revisar la documentación de cada módulo
+2. Consultar los ejemplos en notebooks
+3. Verificar los tests unitarios
+4. Revisar el changelog del proyecto
 
 ---
 
-> **💡 Filosofía**: "Escribe una vez, usa en muchos lugares" - Cada módulo debe ser independiente pero integrable con el ecosistema completo.
+**Última actualización**: Enero 2025  
+**Versión de arquitectura**: 2.0 (Modular)  
+**Compatibilidad**: Python 3.8+, Streamlit 1.0+
