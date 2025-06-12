@@ -1,0 +1,82 @@
+{
+    "LAGO VILLARRICA": {
+        "base": {"lat": -39.2821, "lon": -72.0851},
+        "estaciones": {
+            "LAGO VILLARRICA EN PELAGIAL VILLARRICA": {"lat": -39.2553, "lon": -72.0857},
+            "LAGO VILLARRICA EN BAHIA PUCON": {"lat": -39.2720, "lon": -71.9780},
+            "LAGO VILLARRICA EN LITORAL NORTE": {"lat": -39.2650, "lon": -72.0500}
+        }
+    },
+    "LAGO CALAFQUEN": {
+        "base": {"lat": -39.5527, "lon": -72.1541},
+        "estaciones": {
+            "LAGO CALAFQUEN EN BAHIA COÑARIPE": {"lat": -39.5527, "lon": -72.1541},
+            "LAGO CALAFQUEN EN BAHIA LICANRAY": {"lat": -39.5100, "lon": -72.1300},
+            "LAGO CALAFQUEN EN CENTRO DEL LAGO": {"lat": -39.5300, "lon": -72.1400},
+            "CANAL HUEINICA EN LAGO CALAFQUEN": {"lat": -39.5200, "lon": -72.1350},
+            "ESTERO NILFE EN LAGO CALAFQUEN": {"lat": -39.5400, "lon": -72.1450},
+            "ESTERO DIUCO EN LAGO CALAFQUEN": {"lat": -39.5350, "lon": -72.1480},
+            "ESTERO COMONAHUE EN LAGO CALAFQUEN": {"lat": -39.5150, "lon": -72.1520}
+        }
+    },
+    "LAGO LLANQUIHUE": {
+        "base": {"lat": -41.1429, "lon": -72.8062},
+        "estaciones": {
+            "LAGO LLANQUIHUE EN PUERTO VARAS": {"lat": -41.1429, "lon": -72.8062},
+            "LAGO LLANQUIHUE EN ENSENADA": {"lat": -41.2083, "lon": -72.5333},
+            "LAGO LLANQUIHUE EN FRUTILLAR": {"lat": -41.1167, "lon": -73.1000},
+            "LAGO LLANQUIHUE EN FRUTILLAR 2": {"lat": -41.1200, "lon": -73.0950},
+            "LAGO LLANQUIHUE EN PUERTO OCTAY 2": {"lat": -40.9833, "lon": -72.8833},
+            "LAGO LLANQUIHUE EN PUERTO VARAS 2": {"lat": -41.1450, "lon": -72.8050},
+            "LAGO LLANQUIHUE EN Z MAX": {"lat": -41.1000, "lon": -72.8500}
+        }
+    },
+    "LAGO RANCO": {
+        "base": {"lat": -40.2333, "lon": -72.4333},
+        "estaciones": {
+            "LAGO RANCO EN FUTRONO": {"lat": -40.3216, "lon": -72.4813},
+            "LAGO RANCO EN PUERTO NUEVO": {"lat": -40.2100, "lon": -72.3700},
+            "LAGO RANCO EN RIÑINAHUE": {"lat": -40.3500, "lon": -72.3300},
+            "LAGO RANCO EN RIÑINAHUE 2": {"lat": -40.3550, "lon": -72.3350},
+            "LAGO RANCO SECTOR BAHIA FUTRONO": {"lat": -40.3200, "lon": -72.4800}
+        }
+    },
+    "EMBALSE RAPEL": {
+        "base": {"lat": -34.0415, "lon": -71.5888},
+        "estaciones": {
+            "EMBALSE RAPEL EN SECTOR BRAZO ALHUE": {"lat": -34.0415, "lon": -71.5888},
+            "EMBALSE RAPEL EN SECTOR LAS BALSAS": {"lat": -34.0500, "lon": -71.5950},
+            "EMBALSE RAPEL EN EL MURO (CA)": {"lat": -34.0400, "lon": -71.5850},
+            "LAGO RAPEL EN LLALLAUQUEN": {"lat": -34.0350, "lon": -71.5800}
+        }
+    },
+    "EMBALSE LA PALOMA": {
+        "base": {"lat": -30.7382, "lon": -71.0203},
+        "estaciones": {
+            "EMBALSE LA PALOMA EN SECTOR BRAZO RIO GRANDE": {"lat": -30.7382, "lon": -71.0203},
+            "EMBALSE LA PALOMA EN SECTOR BRAZO RIO GUATULAME": {"lat": -30.7400, "lon": -71.0250},
+            "EMBALSE LA PALOMA EN SECTOR MURO": {"lat": -30.7350, "lon": -71.0180}
+        }
+    },
+    "LAGO CHAPO": {
+        "base": {"lat": -41.4511, "lon": -72.5000},
+        "estaciones": {
+            "LAGO CHAPO EN SECTOR HORNOPIREN": {"lat": -41.4511, "lon": -72.5000},
+            "LAGO CHAPO EN SECTOR CENTRO 2": {"lat": -41.4500, "lon": -72.5050},
+            "LAGO CHAPO EN SURORIENTE": {"lat": -41.4600, "lon": -72.4900},
+            "LAGO CHAPO SECTOR CANUTILLAR": {"lat": -41.4400, "lon": -72.5100},
+            "LAGO CHAPO SECTOR CENTRO": {"lat": -41.4500, "lon": -72.5000},
+            "LAGO CHAPO SECTOR CHAMIZA": {"lat": -41.4450, "lon": -72.5150}
+        }
+    },
+    "LAGO RIÑIHUE": {
+        "base": {"lat": -39.7833, "lon": -72.4500},
+        "estaciones": {
+            "LAGO RIÑIHUE EN RIÑIHUE": {"lat": -39.7833, "lon": -72.4500},
+            "LAGO RIÑIHUE EN DESAGÜE": {"lat": -39.7800, "lon": -72.4550},
+            "LAGO RIÑIHUE EN ENCO": {"lat": -39.7900, "lon": -72.4400},
+            "LAGO RIÑIHUE EN SECTOR CENTRO": {"lat": -39.7850, "lon": -72.4500},
+            "LAGO RIÑIHUE EN SECTOR ENCO 2": {"lat": -39.7920, "lon": -72.4420}
+        }
+    }
+}

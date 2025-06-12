@@ -92,13 +92,15 @@ logs/
 # APLICACIONES Y CONFIGURACIONES
 # ==============================================================================
 
-# Aplicaciones en desarrollo
-app/
+# Aplicaciones en desarrollo - ignorar solo algunos archivos específicos
+app/__pycache__/
+app/**/__pycache__/
+app/**/*.pyc
+app/**/test_*.py
+app/test_*.py
+
+# Otras carpetas de desarrollo
 docker/
-config/
-models/
-src/
-tests/
 
 # Archivos de configuración cloud
 cloudbuild.yaml
