@@ -1,0 +1,1001 @@
+indicator,country,countryiso3code,date,value,unit,obs_status,decimal
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2023,1659.51529015376,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2022,1628.02452570959,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2021,1522.59008804972,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2020,1344.08096192004,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2019,1493.78044490037,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2018,1538.92418773564,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2017,1520.17129839287,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2016,1329.77782375583,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2015,1479.56412348117,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2014,1656.10764215035,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2013,1673.14047580686,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2012,1702.96925758003,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2011,1735.58514005394,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2010,1601.72774808025,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2009,1386.59020649073,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2008,1421.11861211069,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2007,1362.31065076801,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2006,1220.0024682059,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2005,1115.71395556649,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2004,981.744630526503,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2003,809.968139434436,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2002,625.998814954319,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2001,626.169148423877,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2000,707.120376327506,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2023,1568.72431045118,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2022,1777.23501216669,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2021,1747.84054911545,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2020,1664.24917643553,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2019,1783.65436491191,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2018,1703.89639222804,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2017,1560.16299864482,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2016,1616.84319800249,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2015,1845.76780421108,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2014,2204.99569969979,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2013,2113.31698591778,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2012,1920.11991168727,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2011,1824.72282666403,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2010,1647.14984698519,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2009,1439.04780321508,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2008,1652.18985007053,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2007,1393.74848679569,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2006,1222.55049775568,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2005,989.699738831975,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2004,834.86129094692,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2003,694.500938597172,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2002,616.796033062474,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2001,530.653167271222,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2000,516.932316255791,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2023,7292.21040780618,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2022,7658.40646973315,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2021,6445.80726093411,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2020,5648.34111789395,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2019,6525.21184312384,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2018,6576.51663083912,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2017,6005.39012863954,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2016,5957.05983659325,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2015,6203.70263640435,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2014,7259.93672933779,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2013,7311.29675508093,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2012,7336.19770815465,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2011,6883.37402358513,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2010,5928.30479005386,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2009,5134.45006055159,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2008,6091.93206445673,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2007,4940.70226511719,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2006,4355.08762186879,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2005,3750.50855449002,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2004,3133.73687664723,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2003,2696.67230474801,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2002,2483.10723424941,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2001,2536.711964719,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '1A', 'value': 'Arab World'}",ARB,2000,2664.16579571488,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2023,16906.5672140942,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2022,15564.5576210508,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2021,11920.3427576157,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2020,10270.790474345,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2019,12356.3216439351,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2018,12047.8528111635,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2017,11775.3905011905,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2016,11358.7030845165,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2015,11835.2872155303,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2014,11603.9405523069,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2013,11336.2160431807,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2012,11305.6061869965,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2011,10801.1389108724,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2010,10638.1693872311,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2009,10122.4230619208,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2008,10440.0932891398,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2007,10042.3691021094,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2006,9344.43164221982,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2005,8063.66051325437,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2004,7417.59119516605,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2003,7098.96854417985,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2002,6957.1548298183,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2001,6628.93694828703,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2000,6626.89515219893,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2023,22637.7950110942,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2022,19502.8169309088,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2021,19144.0685537317,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2020,16450.8775088615,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2019,16475.161477584,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2018,16181.6073703684,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2017,14294.4470174706,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2016,12836.5666338962,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2015,12568.2965059245,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2014,14183.715484494,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2013,13697.2993030016,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2012,13107.500121516,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2011,14000.1792695253,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2010,12639.1540363705,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2009,12304.59124503,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2008,14574.6727793682,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2007,11997.963219873,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2006,9467.80237635982,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2005,8353.57200087818,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2004,7181.26214567993,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2003,5949.7367798729,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2002,4941.08494540774,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2001,4360.49747680825,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2000,3959.09429252347,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2023,4256.78414448262,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2022,4076.36749050073,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2021,3732.86849069467,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2020,3240.95150218079,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2019,3527.54327176522,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2018,3503.21320137921,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2017,3496.77164846492,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2016,3262.32001806648,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2015,3211.78012733143,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2014,3424.5502589261,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2013,3357.74475640532,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2012,3356.98183201305,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2011,3259.60808878841,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2010,2936.70530854625,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2009,2455.41737232791,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2008,2592.62529453225,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2007,2341.11989959369,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2006,2010.14276000475,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2005,1787.409549471,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2004,1562.59429997932,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2003,1368.16133713028,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2002,1251.00892977928,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2001,1310.87699433468,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2000,1345.96096692962,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2023,12908.6377076783,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2022,12889.9061983889,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2021,13117.3989864275,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2020,11464.1012855988,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2019,11458.795842252,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2018,11285.8972298534,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2017,10428.6321782284,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2016,9832.13036290931,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2015,9562.10616350756,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2014,9672.05856791833,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2013,9446.40916515236,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2012,9416.21589854877,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2011,8875.65549142235,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2010,7712.66504492202,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2009,6654.35892650051,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2008,6514.16831583065,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2007,5691.5373348119,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2006,5131.87299138217,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2005,4878.31107550326,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2004,4606.36838279497,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2003,4138.94393779073,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2002,3793.34541491271,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2001,3765.76496640633,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2000,4086.5181236253,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2023,9900.61356517593,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2022,9901.2640992049,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2021,9795.31938942758,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2020,8245.71521577714,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2019,8153.62140587102,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2018,7925.42476458248,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2017,7133.00005851308,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2016,6575.5250881796,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2015,6482.99315626888,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2014,6276.04217924336,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2013,5867.35466578774,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2012,5364.23069934233,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2011,4853.3853516549,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2010,4004.41005469392,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2009,3314.60145010006,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2008,3080.23622735126,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2007,2453.50441863965,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2006,1956.03345351952,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2005,1637.02409948695,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2004,1424.59971112587,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2003,1238.62098638657,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2002,1103.59067285494,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2001,1006.00155273718,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2000,954.465171205624,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2023,10011.9941315998,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2022,10012.4494743706,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2021,9905.15440355218,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2020,8338.13776036985,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2019,8245.10161071216,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2018,8014.49766251885,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2017,7213.3607178978,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2016,6649.86735991736,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2015,6556.49872551757,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2014,6347.42096914922,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2013,5934.33756176803,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2012,5425.75299693559,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2011,4909.30156743948,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2010,4050.73080711289,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2009,3353.09423455797,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2008,3116.1370361509,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2007,2482.21510804632,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2006,1979.02205350002,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2005,1656.34064911147,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2004,1441.45426844398,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2003,1253.30203271346,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2002,1116.71958026231,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2001,1018.02508088273,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2000,965.915605536413,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2023,45130.1240539874,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2022,41454.1660248186,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2021,42978.8817916638,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2020,38241.5756519082,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2019,39217.3839966029,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2018,40068.5215464339,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2017,37181.1343044604,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2016,35178.8502697866,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2015,34415.6153549122,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2014,39926.3443427769,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2013,39109.1766026701,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2012,37558.5184564355,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2011,40651.6933402412,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2010,37555.1722674637,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2009,38519.9701794267,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2008,42222.5782437359,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2007,38580.616203138,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2006,33671.9314013325,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2005,31800.4430333572,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2004,30816.5401524146,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2003,27017.6209071529,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2002,22049.3482385273,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2001,20289.8293666247,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2000,20039.4002663005,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2023,29789.15402951,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2022,27731.7695375442,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2021,27591.2437497041,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2020,24091.3416895738,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2019,24958.3859753607,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2018,25340.1536558293,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2017,23755.738099932,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2016,22476.2668798332,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2015,22657.3094941092,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2014,26425.7524782923,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2013,26175.7703214097,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2012,25165.1269344708,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2011,26241.0435104875,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2010,23699.4951447534,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2009,23249.1311921343,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2008,26512.6764895811,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2007,24183.3554159446,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2006,20756.9726239461,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2005,19219.8862771614,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2004,18105.8152622032,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2003,15577.4077530747,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2002,12843.6996685135,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2001,11749.4971365928,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2000,11645.0816833377,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2023,8548.0103775697,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2022,7247.73491679181,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2021,6623.50479025077,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2020,5733.53881172869,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2019,6020.75079545102,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2018,5952.35226461881,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2017,6111.81706371512,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2016,5977.23488835294,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2015,6282.67304098967,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2014,7272.88444788426,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2013,7646.12341259007,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2012,7072.25824676591,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2011,6762.3794711987,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2010,5994.38483353001,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2009,5103.74434065186,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2008,6167.50382892328,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2007,5187.17828024455,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2006,4129.79367047738,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2005,3566.86899633867,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2004,2876.76837934408,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2003,2245.29783911291,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2002,1768.77803665239,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2001,1526.97978969399,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2000,1788.23206214028,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2023,11977.3398758875,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2022,11351.0079692916,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2021,10010.7744146786,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2020,8443.06159084581,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2019,9027.50709505223,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2018,8884.71291375979,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2017,8555.47638597094,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2016,7649.90665844729,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2015,8001.11229243002,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2014,10293.7203442319,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2013,10951.2240872194,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2012,10406.9546977795,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2011,10016.5610218821,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2010,8267.9596291029,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2009,7062.97874323259,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2008,8939.12521851525,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2007,7237.14538156758,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2006,5626.52823420799,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2005,4655.78176687215,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2004,3719.98615448538,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2003,2877.40065787295,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2002,2339.23767914136,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2001,2079.66473968776,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2000,2043.07968265217,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2023,41422.7999680879,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2022,37948.9505377699,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2021,39180.3758426065,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2020,34635.4895902222,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2019,35341.5703329216,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2018,36002.564051993,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2017,33327.6674894487,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2016,31404.4306041117,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2015,30716.6295698647,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2014,35539.2020994967,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2013,34803.3461372357,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2012,33378.8274150555,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2011,36020.4863545784,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2010,33164.0048499327,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2009,33670.6266742517,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2008,37203.1372499812,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2007,33729.2735892255,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2006,29217.9538526123,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2005,27444.1812267616,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2004,26377.6033756932,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2003,23025.7556068565,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2002,18799.0954341052,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2001,17230.6503712627,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'EU', 'value': 'European Union'}",EUU,2000,16975.9150408779,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2023,1830.33271759402,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2022,1892.6227062256,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2021,1753.54775352624,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2020,1680.96884674984,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2019,1890.22006963616,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2018,1819.00302147749,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2017,1702.90845193168,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2016,1632.33745272851,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2015,1810.68930176888,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2014,2351.21273489301,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2013,2267.60404077018,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2012,2235.7997856716,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2011,2047.73072001973,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2010,2009.65900444016,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2009,1735.21605183258,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2008,1963.20985365822,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2007,1573.22108284027,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2006,1314.21280234474,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2005,1074.74988871637,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2004,870.427134576013,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2003,702.970522875086,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2002,684.36449919632,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2001,718.682953740052,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2000,751.402386963343,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2023,1231.81257022963,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2022,1100.34076496851,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2021,1040.03410722444,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2020,959.181737577661,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2019,976.312547557857,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2018,968.18729528141,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2017,931.787880001889,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2016,893.010597521193,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2015,909.494352340789,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2014,974.252131612265,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2013,947.074489712364,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2012,868.154967280185,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2011,861.349226790284,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2010,799.185039524398,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2009,756.660213715341,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2008,784.345639716183,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2007,678.666466882937,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2006,584.531742958073,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2005,512.742651464538,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2004,460.446469436065,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2003,411.069440888416,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2002,373.078875646533,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2001,353.858262986775,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2000,376.321478266707,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2023,48752.7127374395,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2022,46632.8486068879,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2021,45229.2753341398,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2020,40262.8698752887,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2019,41457.3871652811,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2018,41180.3426854104,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2017,38873.8613987597,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2016,37140.5595822096,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2015,36650.4490056998,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2014,39502.0829505689,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2013,39073.8403373506,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2012,38757.333549902,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2011,38853.6505551505,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2010,35835.9314284341,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2009,34172.5755091711,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2008,36964.5337655886,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2007,34720.6647830615,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2006,31763.2580538848,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2005,30103.6580732481,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2004,28502.739036532,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2003,25651.8389582777,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2002,22968.4725051781,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2001,22119.2818075546,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XD', 'value': 'High income'}",,2000,22409.9007588105,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2023,7832.14975609303,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2022,7651.51702544821,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2021,7289.99204765957,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2020,6171.87965743072,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2019,6459.05649734705,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2018,6376.20637613021,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2017,6032.45731643701,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2016,5513.07715328885,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2015,5525.00490743408,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2014,5959.31801743295,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2013,5827.57315536311,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2012,5583.76223642553,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2011,5311.68710845423,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2010,4533.45250289637,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2009,3766.34252440899,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2008,3924.24429512151,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2007,3305.74868192042,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2006,2689.14728914202,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2005,2291.4754476584,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2004,1939.12360831921,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2003,1646.22410729152,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2002,1482.32970903156,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2001,1477.36945705172,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2000,1474.43353846311,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2023,6075.12299337435,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2022,5974.31658352895,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2021,5707.61064306399,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2020,4884.2624249805,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2019,5125.36118877249,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2018,5071.47780601742,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2017,4816.55669747848,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2016,4431.30440041701,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2015,4458.11083061724,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2014,4807.8107682246,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2013,4699.59848026348,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2012,4504.30020456011,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2011,4299.30668600632,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2010,3693.18554879603,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2009,3090.40007819369,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2008,3228.51833219121,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2007,2730.00321260461,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2006,2238.11252029251,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2005,1912.04792898155,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2004,1626.72085949787,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2003,1387.17052196991,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2002,1252.31278322444,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2001,1245.67361419728,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2000,1249.12417056884,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2023,1687.28133682938,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2022,1944.22814736694,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2021,1827.96310627066,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2020,1713.86457937643,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2019,1865.35605450935,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2018,1856.81876322366,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2017,1796.8728729754,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2016,1787.03439986924,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2015,1953.90145153229,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2014,2099.6785212584,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2013,1976.24837246876,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2012,1858.02047371817,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2011,1710.78560509619,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2010,1534.54240273236,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2009,1341.38097939406,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2008,1475.15695400862,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2007,1292.99815403321,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2006,1145.17379691669,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2005,946.794253935796,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2004,820.145899878185,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2003,693.533888199508,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2002,629.758800881462,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2001,587.754375329136,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2000,605.027325147959,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2023,1424.84597936669,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2022,1347.0495978989,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2021,1276.2327161945,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2020,1197.82655626131,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2019,1211.19958978076,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2018,1177.52764226474,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2017,1130.91814340942,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2016,1072.25258983136,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2015,1036.87089667356,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2014,1062.79330233719,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2013,1014.87983161624,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2012,950.907162941154,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2011,968.34519375484,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2010,884.929161218141,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2009,796.737887056272,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2008,801.128041153278,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2007,677.073290378513,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2006,583.703214008206,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2005,518.933138909895,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2004,466.406333288671,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2003,421.541245406357,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2002,382.938579097994,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2001,369.440641317888,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2000,385.174065928169,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2023,1510.984396965,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2022,1545.89311822681,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2021,1460.26675489479,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2020,1370.26257847044,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2019,1430.29036966118,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2018,1405.59717231873,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2017,1354.977107485,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2016,1313.25207885782,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2015,1346.69693190726,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2014,1413.48701723574,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2013,1340.12885949432,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2012,1257.6289139483,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2011,1219.25831669685,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2010,1104.15461625587,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2009,980.122611087803,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2008,1027.5300890754,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2007,883.635175670808,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2006,771.750444184555,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2005,661.786366802496,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2004,584.209055074261,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2003,511.731752009684,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2002,464.737979512485,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2001,441.615846410528,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2000,457.644524502419,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2023,12184.2070837954,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2022,12082.0001033778,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2021,11597.4855569831,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2020,9734.68959265356,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2019,9991.40401633086,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2018,9850.36115121356,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2017,9032.31848043335,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2016,8192.82724280848,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2015,8228.52190325449,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2014,8829.32167411182,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2013,8562.31597870335,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2012,8005.48648466589,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2011,7540.26925442879,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2010,6225.20436553873,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2009,5204.53304111396,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2008,5420.88487398449,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2007,4388.24202883372,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2006,3506.87979791598,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2005,2924.78065020395,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2004,2440.0621053477,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2003,2043.33260370564,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2002,1805.11773407746,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2001,1714.59831358618,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2000,1670.88947753602,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2023,10796.8623721014,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2022,9714.93628741262,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2021,8596.35588522419,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2020,7444.66073393848,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2019,8830.90045629057,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2018,9034.70781075095,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2017,9311.41109369302,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2016,8461.78546877733,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2015,8759.80639725635,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2014,10583.1936198566,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2013,10491.0812576738,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2012,10344.625186318,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2011,10333.742702415,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2010,9183.19767723313,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2009,7495.04042902379,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2008,8077.94075948397,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2007,7035.72399848062,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2006,6047.65689952018,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2005,5229.8239926535,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2004,4385.8228776811,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2003,3862.06311727292,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2002,3839.09899910135,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2001,4326.54800510521,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2000,4472.56198128317,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2023,10180.7055245454,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2022,9129.46662678089,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2021,7996.40776122081,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2020,6940.27896334688,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2019,8305.98946791718,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2018,8504.73822009602,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2017,8843.08534628217,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2016,8011.61015629879,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2015,8337.14599402852,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2014,9914.63937046348,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2013,9978.51358110554,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2012,9826.01988585737,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2011,9973.99471449255,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2010,8634.47712876863,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2009,6979.94806706969,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2008,7617.5533478192,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2007,6667.54488816401,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2006,5713.84017374526,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2005,4958.19476759044,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2004,4151.88036848965,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2003,3690.37198578833,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2002,3661.55201517345,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2001,4121.55299445651,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2000,4286.86453280356,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2023,10553.7109939929,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2022,9483.70640570626,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2021,8382.65451574502,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2020,7240.56006051251,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2019,8654.86209465818,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2018,8877.72299219367,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2017,9165.48671951323,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2016,8302.17434243113,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2015,8617.55291183431,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2014,10507.1454660865,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2013,10420.6445319996,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2012,10277.9055625547,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2011,10277.121218157,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2010,9115.01031671367,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2009,7386.62016566466,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2008,7989.39743844634,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2007,6927.84231233634,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2006,5926.83500661988,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2005,5103.92113996547,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2004,4252.78397234292,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2003,3728.6712642465,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2002,3714.29505944995,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2001,4222.90265329048,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2000,4388.9268109925,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2023,1306.23478492715,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2022,1265.52540549785,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2021,1153.75092851568,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2020,1081.79748199294,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2019,1097.76355049254,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2018,1065.22658037951,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2017,1024.16282643038,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2016,958.174398065087,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2015,964.449793360221,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2014,1028.07776350662,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2013,978.737310473627,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2012,920.356744208064,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2011,900.510012779307,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2010,808.168179758183,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2009,731.962713694542,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2008,756.409553432228,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2007,631.72643212122,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2006,538.361298432206,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2005,476.414723125529,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2004,413.928889618364,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2003,369.077756082546,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2002,334.142875511538,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2001,313.199360647217,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2000,332.760035513826,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2023,5658.54749596439,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2022,5551.33514593968,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2021,5345.67919342271,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2020,4585.37575872202,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2019,4791.42088334726,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2018,4738.20340339937,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2017,4507.72590697511,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2016,4176.46750468353,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2015,4187.84406931518,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2014,4373.15629137736,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2013,4236.63227165432,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2012,4048.47846033862,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2011,3862.68305712244,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2010,3325.85341042473,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2009,2773.76158750498,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2008,2806.73796014751,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2007,2398.01440289223,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2006,1980.79743730656,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2005,1707.02059798912,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2004,1466.6203016094,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2003,1268.97683722015,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2002,1150.99187863541,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2001,1146.54808805581,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2000,1162.75663874146,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2023,900.963258115437,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2022,763.322724840016,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2021,680.052723595917,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2020,651.453378446489,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2019,676.709800653852,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2018,654.345171301588,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2017,645.984738347678,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2016,633.70146846597,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2015,705.461511003203,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2014,734.426583108791,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2013,703.228181224633,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2012,699.373833339977,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2011,759.603634175631,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2010,720.040587689248,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2009,673.128726341786,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2008,695.768549201921,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2007,595.01309887914,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2006,503.102893955903,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2005,445.817806425398,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2004,384.208003278207,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2003,338.280060678198,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2002,312.02868416744,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2001,292.091682554271,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XM', 'value': 'Low income'}",,2000,317.586553973794,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2023,2415.59854513004,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2022,2423.84146733947,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2021,2300.761243364,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2020,2057.14629082262,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2019,2152.16187917576,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2018,2076.456710545,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2017,2017.256137593,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2016,1891.00255065343,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2015,1841.84526127088,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2014,1872.37394400472,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2013,1761.33745303126,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2012,1692.33125256858,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2011,1628.26623605523,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2010,1484.05182543658,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2009,1254.57756949057,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2008,1224.05482773831,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2007,1125.94158264403,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2006,936.479121752834,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2005,813.930174048513,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2004,719.260394131015,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2003,636.907411775998,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2002,571.963511657848,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2001,552.570371841833,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XN', 'value': 'Lower middle income'}",,2000,557.8144293004,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2023,8499.84306394222,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2022,8986.09895923688,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2021,7801.40393400528,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2020,6650.85368826242,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2019,7590.75451796732,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2018,7732.44296580288,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2017,7340.26873932877,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2016,7156.79613508213,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2015,7228.30889534971,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2014,8372.74262763337,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2013,8500.60091633852,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2012,8823.39627549638,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2011,8379.04712965393,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2010,7103.44175223725,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2009,6161.91280951067,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2008,7011.10363519529,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2007,5749.01574596503,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2006,4977.18911142521,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2005,4335.68487753999,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2004,3697.37167350412,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2003,3206.88593622116,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2002,2944.47313511223,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2001,3028.86353301732,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2000,3112.37412193799,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2023,3797.10418034163,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2022,4030.08692997644,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2021,3653.70376970852,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2020,3175.61706654976,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2019,3594.10876400589,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2018,3682.71025533449,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2017,3768.7597495354,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2016,3830.71300891916,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2015,3803.87110555447,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2014,4312.21641273822,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2013,4458.35527673203,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2012,4906.91313645694,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2011,4649.16166856547,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2010,4040.01754603376,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2009,3551.66107682022,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2008,3723.89508216659,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2007,3075.06061242127,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2006,2553.99417126231,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2005,2223.35002565662,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2004,1938.07729335777,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2003,1668.03909053501,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2002,1549.3508174048,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2001,1636.04338864997,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2000,1647.90580225671,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2023,3802.1797249029,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2022,4032.80400418252,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2021,3653.41158751434,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2020,3174.94415084122,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2019,3593.38666747385,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2018,3684.084605003,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2017,3770.44041543684,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2016,3834.13658237327,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2015,3809.84668165081,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2014,4322.94916352776,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2013,4471.07414613341,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2012,4927.28576533117,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2011,4668.63183526322,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2010,4056.24081091784,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2009,3566.43761004016,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2008,3742.10461291541,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2007,3090.14007372324,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2006,2564.44639588737,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2005,2230.53554382217,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2004,1943.50669070306,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2003,1672.33598110716,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2002,1553.43725482924,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2001,1639.14244474804,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2000,1649.66631723283,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2023,6254.08764955685,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2022,6137.8170764372,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2021,5906.22674978762,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2020,5049.55823705701,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2019,5267.9276273194,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2018,5202.51034300538,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2017,4939.46308269855,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2016,4566.49285052469,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2015,4565.92744572991,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2014,4763.02572364617,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2013,4610.54219718134,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2012,4398.51781287515,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2011,4182.81321400152,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2010,3590.83653455468,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2009,2984.35382585037,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2008,3015.08154902374,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2007,2573.08721674157,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2006,2121.94174849257,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2005,1825.52911737642,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2004,1566.72610202175,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2003,1353.77755628539,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2002,1226.22247879312,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2001,1221.81919160791,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2000,1236.42545603559,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2023,79640.4296229555,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2022,75686.4898291323,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2021,69382.1728474769,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2020,62271.1969150653,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2019,63634.786103642,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2018,61512.7212012788,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2017,58796.5168500385,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2016,56618.0479576143,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2015,55702.089462785,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2014,54877.6040655634,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2013,53341.4164237547,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2012,51881.4589732398,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2011,50289.1719473757,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2010,48553.0160737571,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2009,46581.4123313324,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2008,48398.372260079,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2007,47727.7733811193,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2006,45741.25142685,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2005,43368.5717044575,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2004,40788.4830356565,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2003,38395.5452969729,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2002,36652.0031278509,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2001,35831.4544724133,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XU', 'value': 'North America'}",NAC,2000,35151.3741865271,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2023,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2022,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2021,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2020,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2019,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2018,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2017,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2016,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2015,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2014,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2013,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2012,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2011,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2010,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2009,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2008,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2007,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2006,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2005,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2004,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2003,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2002,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2001,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'XY', 'value': 'Not classified'}",,2000,,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2023,46724.0157104114,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2022,44026.85925455,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2021,43133.7860734899,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2020,38686.327403326,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2019,39764.8216112273,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2018,39573.0447485009,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2017,37639.2781863476,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2016,36253.8002803221,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2015,35784.8705175556,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2014,38167.820305509,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2013,37624.0640382303,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2012,37325.2021922766,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2011,37600.196426279,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2010,35124.6030348471,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2009,33710.3827183277,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2008,36287.7415690242,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2007,34439.6562151847,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2006,31680.2149353876,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2005,30239.7438405322,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2004,28793.3649320856,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2003,26047.3194282837,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2002,23456.5071141032,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2001,22648.1438161001,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'OE', 'value': 'OECD members'}",OED,2000,23025.500703002,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2023,16728.2675733784,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2022,16066.2729688356,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2021,15120.1040765783,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2020,13071.2236222876,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2019,14425.2470146907,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2018,14455.7757539518,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2017,13345.5544904233,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2016,12174.1574245522,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2015,11735.6880833152,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2014,13159.4093952693,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2013,12935.0786745544,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2012,12547.69603025,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2011,12759.230536339,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2010,11292.7690040419,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2009,10734.5041933051,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2008,12581.1714677643,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2007,11624.5888361306,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2006,9876.14166356476,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2005,8975.37397552563,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2004,8042.06114868207,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2003,6870.21876875993,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2002,5684.08316798855,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2001,5324.24587169112,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2000,5414.34177228679,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2023,4146.4362061875,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2022,3892.77833317117,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2021,3638.30140671833,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2020,3666.59898132535,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2019,4170.32118081193,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2018,4245.78718413539,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2017,4097.0009326156,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2016,3844.35513216019,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2015,3710.01234754574,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2014,3847.34192203401,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2013,3586.99115572964,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2012,3494.91244207853,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2011,3341.48828136858,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2010,2903.74318440817,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2009,2670.95296237891,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2008,2991.50976118533,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2007,2821.90373188277,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2006,2589.16489945306,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2005,2494.43644460592,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2004,2272.93160533629,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2003,1999.39245403568,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2002,1697.33561681711,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2001,1639.28206962823,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2000,1688.38767317609,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2023,54041.539692952,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2022,51063.6197488498,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2021,49980.4043268261,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2020,44858.1104615819,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2019,45916.4122663126,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2018,45562.8677932304,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2017,43153.6162371413,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2016,41527.3663304955,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2015,40778.3409479148,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2014,43293.4983124527,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2013,42626.330455677,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2012,42350.2886484502,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2011,42607.6628380994,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2010,39764.7050814575,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2009,38302.2646474915,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2008,40878.7953061808,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2007,38821.5839576953,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2006,35777.5948241471,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2005,34181.5023075417,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2004,32637.935974592,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2003,29520.5258687973,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2002,26457.7324451577,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2001,25491.5973373962,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2000,25863.3247780056,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2023,1453.26226755311,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2022,1567.28039263333,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2021,1404.30365764781,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2020,1313.17035996031,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2019,1469.63291800162,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2018,1432.1297922805,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2017,1320.99787807449,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2016,1300.83530095102,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2015,1501.73812551821,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2014,1816.54049000952,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2013,1764.45211574454,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2012,1656.47257454939,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2011,1569.07453638517,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2010,1394.91487442291,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2009,1229.7763068552,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2008,1397.62971557673,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2007,1153.86052406111,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2006,980.679604433525,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2005,802.800968402786,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2004,663.796143031797,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2003,548.762783015462,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2002,519.046330458289,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2001,464.939636150915,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2000,502.708126340942,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2023,15086.0915547842,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2022,14371.4935939925,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2021,13092.4975736111,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2020,11381.557900564,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2019,12739.8388742478,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2018,12723.981268455,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2017,11875.6287573479,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2016,10942.7122470745,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2015,10690.6175098911,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2014,11677.6587312097,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2013,11440.0449192309,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2012,11149.6078319649,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2011,11198.9995772564,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2010,10087.5144699907,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2009,9577.41204965688,,,1
+"{'id': 'NY.GDP.PCAP.CD', 'value': 'GDP per capita (current US$)'}","{'id': 'S1', 'value': 'Small states'}",SST,2008,10964.6757847196,,,1

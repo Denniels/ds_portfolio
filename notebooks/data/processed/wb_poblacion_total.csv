@@ -1,0 +1,1001 @@
+indicator,country,countryiso3code,date,value,unit,obs_status,decimal
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2023,750503764.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2022,731821393.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2021,713090928.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2020,694446100.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2019,675950189.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2018,657801085.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2017,640058741.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2016,623369401.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2015,607123269.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2014,590968990.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2013,575202699.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2012,559609961.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2011,544737983.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2010,530308387.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2009,516003448.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2008,502070763.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2007,488580707.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2006,475606210.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2005,463076637.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2004,450928044.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2003,439173286.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2002,427820358.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2001,416807868.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZH', 'value': 'Africa Eastern and Southern'}",AFE,2000,406156661.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2023,509398589.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2022,497387180.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2021,485920997.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2020,474569351.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2019,463365429.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2018,452195915.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2017,440882906.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2016,429454743.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2015,418127845.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2014,406992047.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2013,396030207.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2012,385360349.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2011,374790143.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2010,364358270.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2009,354343844.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2008,344586109.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2007,334984176.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2006,325663158.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2005,316588476.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2004,307725100.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2003,299142845.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2002,290841795.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2001,282780717.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZI', 'value': 'Africa Western and Central'}",AFW,2000,274968446.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2023,481667539.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2022,471352066.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2021,460646603.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2020,453723239.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2019,444281315.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2018,435998060.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2017,428315886.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2016,419808341.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2015,410190679.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2014,400231008.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2013,390954281.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2012,381030177.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2011,372054934.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2010,363568534.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2009,356386673.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2008,347684619.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2007,338947976.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2006,330526310.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2005,322628451.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2004,315060277.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2003,307815105.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2002,300691509.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2001,293580252.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '1A', 'value': 'Arab World'}",ARB,2000,286548096.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2023,3152394.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2022,3131505.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2021,3111609.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2020,3092577.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2019,3079149.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2018,3048465.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2017,3009507.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2016,2987438.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2015,2964524.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2014,2941203.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2013,2917125.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2012,2893251.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2011,2873088.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2010,2855621.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2009,2836793.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2008,2816379.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2007,2795667.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2006,2774985.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2005,2754974.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2004,2735189.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2003,2712281.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2002,2686785.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2001,2661520.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S3', 'value': 'Caribbean small states'}",CSS,2000,2636455.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2023,100175859.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2022,100289401.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2021,100647592.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2020,102046650.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2019,102282674.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2018,102439383.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2017,102656954.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2016,102926796.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2015,103206007.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2014,103459388.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2013,103691959.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2012,103928128.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2011,104174038.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2010,104421447.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2009,104800475.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2008,105001883.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2007,105378748.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2006,105772481.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2005,106041911.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2004,106331716.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2003,106624167.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2002,106959751.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2001,107660041.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'B8', 'value': 'Central Europe and the Baltics'}",CEB,2000,108447824.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2023,3511076811.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2022,3470644834.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2021,3432026092.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2020,3396051187.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2019,3355014793.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2018,3314245247.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2017,3274060446.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2016,3233033717.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2015,3190318707.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2014,3146800078.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2013,3103677284.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2012,3058869436.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2011,3013476947.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2010,2967104472.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2009,2921563644.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2008,2875943965.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2007,2830531957.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2006,2784726644.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2005,2738846905.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2004,2693184997.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2003,2647109296.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2002,2601917557.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2001,2556335424.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V2', 'value': 'Early-demographic dividend'}",EAR,2000,2509431470.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2023,2384463611.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2022,2379648296.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2021,2375144416.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2020,2369438682.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2019,2359771090.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2018,2347576325.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2017,2333475520.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2016,2317076058.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2015,2300844269.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2014,2284385542.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2013,2267072102.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2012,2249081393.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2011,2230826576.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2010,2214613815.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2009,2199148703.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2008,2183472438.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2007,2167046538.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2006,2150688938.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2005,2134573057.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2004,2118747885.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2003,2102761941.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2002,2086144389.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2001,2068682053.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z4', 'value': 'East Asia & Pacific'}",EAS,2000,2050149617.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2023,2137527754.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2022,2133560408.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2021,2128553744.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2020,2121866294.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2019,2112289891.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2018,2100698838.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2017,2087238522.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2016,2071486140.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2015,2056050896.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2014,2040383789.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2013,2023850158.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2012,2006566431.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2011,1989106668.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2010,1973602166.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2009,1959017463.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2008,1944305887.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2007,1929185103.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2006,1914002124.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2005,1898853723.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2004,1883675167.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2003,1868409996.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2002,1852659155.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2001,1836260943.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '4E', 'value': 'East Asia & Pacific (excluding high income)'}",EAP,2000,1819011507.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2023,2111139152.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2022,2107261123.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2021,2102350702.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2020,2095759417.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2019,2086281644.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2018,2074796982.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2017,2061449949.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2016,2045816761.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2015,2030504270.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2014,2014960984.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2013,1998548872.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2012,1981382735.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2011,1964036970.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2010,1948643347.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2009,1934167856.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2008,1919570287.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2007,1904568042.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2006,1889507244.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2005,1874487158.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2004,1859450104.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2003,1844349334.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2002,1828744767.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2001,1812475067.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T4', 'value': 'East Asia & Pacific (IDA & IBRD countries)'}",TEA,2000,1795374943.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2023,349670802.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2022,348627172.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2021,347094588.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2020,346922366.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2019,346454019.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2018,346105839.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2017,345333240.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2016,344655545.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2015,343698622.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2014,342713336.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2013,341575309.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2012,340447763.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2011,339719975.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2010,340460814.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2009,339676755.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2008,338594025.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2007,336965048.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2006,335243820.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2005,333700554.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2004,331997265.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2003,330200359.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2002,328438861.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2001,326858314.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XC', 'value': 'Euro area'}",EMU,2000,325789631.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2023,924969865.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2022,925385334.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2021,925075848.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2020,925088545.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2019,922811778.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2018,919738352.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2017,916236104.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2016,912576858.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2015,908458970.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2014,904324263.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2013,900033335.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2012,895889705.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2011,892361936.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2010,890448752.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2009,887281039.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2008,883840223.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2007,880338408.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2006,877911050.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2005,875366720.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2004,872926624.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2003,870443479.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2002,868204040.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2001,866587785.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'Z7', 'value': 'Europe & Central Asia'}",ECS,2000,865392493.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2023,249146208.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2022,250834021.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2021,252183790.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2020,250655325.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2019,248858341.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2018,246654915.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2017,244530211.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2016,242407763.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2015,240230296.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2014,238112723.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2013,235981960.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2012,233914075.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2011,231988171.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2010,230106440.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2009,228250911.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2008,226524480.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2007,225016071.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2006,224417513.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2005,223360134.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2004,222413289.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2003,221399692.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2002,220400259.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2001,219435055.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': '7E', 'value': 'Europe & Central Asia (excluding high income)'}",ECA,2000,218486597.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2023,459025452.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2022,461440170.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2021,463790894.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2020,463913014.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2019,462573906.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2018,460515553.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2017,458504366.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2016,456330266.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2015,454002756.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2014,451696196.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2013,449310524.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2012,446979977.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2011,444846099.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2010,442936599.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2009,441304973.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2008,439732746.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2007,438680282.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2006,438714358.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2005,438333195.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2004,438136035.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2003,437905932.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2002,437806951.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2001,438100367.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T7', 'value': 'Europe & Central Asia (IDA & IBRD countries)'}",TEC,2000,438423540.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2023,448804042.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2022,447847220.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2021,446564156.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2020,447653554.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2019,447303223.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2018,446953938.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2017,446177810.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2016,445487171.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2015,444550397.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2014,443589388.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2013,442486978.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2012,441416943.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2011,440766686.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2010,441546320.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2009,440928484.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2008,439886269.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2007,438478066.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2006,437007921.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2005,435591941.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2004,434050396.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2003,432426935.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2002,430893295.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2001,429906426.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'EU', 'value': 'European Union'}",EUU,2000,429339162.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2023,1058789534.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2022,1038158122.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2021,1018693078.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2020,996691242.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2019,974824119.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2018,953648681.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2017,933013886.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2016,912614026.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2015,892657785.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2014,873158163.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2013,853223055.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2012,832872724.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2011,812764221.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2010,793160547.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2009,773810618.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2008,754858953.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2007,736917394.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2006,719788972.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2005,702638957.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2004,685830138.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2003,669470707.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2002,653056220.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2001,637301077.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'F1', 'value': 'Fragile and conflict affected situations'}",FCS,2000,622883185.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2023,917304254.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2022,893906294.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2021,870930036.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2020,847743308.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2019,824649053.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2018,802020674.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2017,779389964.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2016,756895035.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2015,735429414.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2014,714769441.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2013,694622934.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2012,675397557.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2011,656783491.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2010,638796398.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2009,621337653.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2008,604007702.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2007,587432384.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2006,571454590.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2005,555358929.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2004,539803501.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2003,524773987.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2002,509679981.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2001,495197350.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XE', 'value': 'Heavily indebted poor countries (HIPC)'}",HPC,2000,481984327.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2023,1400465513.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2022,1393036569.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2021,1387107942.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2020,1389524835.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2019,1383372477.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2018,1379152141.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2017,1374784294.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2016,1368877184.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2015,1360842914.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2014,1352458637.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2013,1344779557.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2012,1336612791.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2011,1329029726.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2010,1323506149.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2009,1317794172.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2008,1309846534.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2007,1300879925.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2006,1292314271.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2005,1284667419.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2004,1277825278.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2003,1270975826.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2002,1264453056.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2001,1258081884.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XD', 'value': 'High income'}",,2000,1251758606.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2023,4952574126.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2022,4928694202.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2021,4905899020.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2020,4879367453.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2019,4845715724.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2018,4807550491.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2017,4766267453.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2016,4721984235.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2015,4677114235.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2014,4630871647.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2013,4582140476.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2012,4532139461.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2011,4483152361.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2010,4436714947.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2009,4391389527.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2008,4346234014.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2007,4302067550.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2006,4258827055.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2005,4214082145.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2004,4168676771.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2003,4122775918.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2002,4077229003.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2001,4031080605.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XF', 'value': 'IBRD only'}",IBD,2000,3983328255.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2023,6858957145.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2022,6795222291.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2021,6733337540.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2020,6667541078.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2019,6594857152.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2018,6518627024.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2017,6440496862.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2016,6360570925.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2015,6281302513.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2014,6201871546.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2013,6120638810.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2012,6038997419.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2011,5956718726.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2010,5876645582.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2009,5797994405.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2008,5720065907.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2007,5643505922.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2006,5568236362.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2005,5492481029.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2004,5417128228.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2003,5341840046.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2002,5267145775.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2001,5192348769.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZT', 'value': 'IDA & IBRD total'}",IBT,2000,5116723506.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2023,633230238.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2022,621500917.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2021,609556583.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2020,597524859.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2019,585824310.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2018,574487740.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2017,563290702.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2016,552474265.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2015,541987714.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2014,531341156.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2013,520502873.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2012,509513096.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2011,498002443.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2010,485934443.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2009,473612630.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2008,461461442.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2007,449445968.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2006,437847651.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2005,427064487.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2004,416552454.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2003,406185760.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2002,396280295.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2001,386483472.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XH', 'value': 'IDA blend'}",IDB,2000,376430953.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2023,1273152781.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2022,1245027172.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2021,1217881937.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2020,1190648766.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2019,1163317118.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2018,1136588793.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2017,1110938707.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2016,1086112425.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2015,1062200564.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2014,1039658743.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2013,1017995461.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2012,997344862.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2011,975563922.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2010,953996192.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2009,932992248.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2008,912370451.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2007,891992404.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2006,871561656.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2005,851334397.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2004,831899003.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2003,812878368.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2002,793636477.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2001,774784692.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XI', 'value': 'IDA only'}",IDX,2000,756964298.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2023,1906383019.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2022,1866528089.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2021,1827438520.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2020,1788173625.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2019,1749141428.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2018,1711076533.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2017,1674229409.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2016,1638586690.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2015,1604188278.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2014,1570999899.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2013,1538498334.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2012,1506857958.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2011,1473566365.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2010,1439930635.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2009,1406604878.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2008,1373831893.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2007,1341438372.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2006,1309409307.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2005,1278398884.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2004,1248451457.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2003,1219064128.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2002,1189916772.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2001,1161268164.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XG', 'value': 'IDA total'}",IDA,2000,1133395251.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2023,2326658047.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2022,2324072105.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2021,2320366261.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2020,2316785459.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2019,2309008599.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2018,2298520431.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2017,2285977088.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2016,2270944240.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2015,2256211694.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2014,2241185411.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2013,2225043647.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2012,2209331950.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2011,2193156337.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2010,2179522412.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2009,2167303374.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2008,2153941306.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2007,2139958607.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2006,2126122277.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2005,2112603350.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2004,2099412662.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2003,2086139068.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2002,2072599555.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2001,2058600485.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V3', 'value': 'Late-demographic dividend'}",LTE,2000,2043581321.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2023,657611624.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2022,653104771.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2021,649234475.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2020,645497618.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2019,640853375.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2018,635680745.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2017,630329435.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2016,624664026.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2015,618806527.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2014,612799258.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2013,606644957.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2012,600393759.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2011,594072097.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2010,587749565.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2009,581388129.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2008,574908733.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2007,568345245.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2006,561751999.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2005,555120780.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2004,548455563.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2003,541643365.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2002,534691591.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2001,527572583.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZJ', 'value': 'Latin America & Caribbean'}",LCN,2000,520272118.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2023,594995068.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2022,590730587.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2021,586944219.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2020,583125825.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2019,578311232.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2018,572668977.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2017,566870356.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2016,561307280.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2015,555893183.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2014,550428711.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2013,544834859.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2012,539167194.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2011,533432539.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2010,527703442.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2009,521959738.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2008,516099421.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2007,510173588.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2006,504231967.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2005,498267811.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2004,492232564.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2003,486116511.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2002,479874713.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2001,473472090.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XJ', 'value': 'Latin America & Caribbean (excluding high income)'}",LAC,2000,466891427.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2023,642397939.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2022,637837815.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2021,633862610.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2020,630051021.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2019,625467307.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2018,620274430.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2017,614776664.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2016,609017063.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2015,603091701.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2014,597023419.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2013,590809938.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2012,584524334.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2011,578171855.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2010,571822092.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2009,565454932.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2008,558968822.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2007,552399650.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2006,545805913.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2005,539188798.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2004,532556401.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2003,525787222.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2002,518881965.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2001,511809816.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T2', 'value': 'Latin America & the Caribbean (IDA & IBRD countries)'}",TLA,2000,504556065.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2023,1160824674.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2022,1134585604.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2021,1109175268.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2020,1083636132.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2019,1058013514.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2018,1033110314.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2017,1008993468.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2016,985414939.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2015,962508256.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2014,940284138.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2013,918269633.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2012,896684951.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2011,875685078.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2010,855348118.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2009,835687108.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2008,816268129.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2007,797516000.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2006,779230030.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2005,760741611.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2004,742717957.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2003,725111768.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2002,707266809.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2001,689878805.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XL', 'value': 'Least developed countries: UN classification'}",LDC,2000,673630102.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2023,6633109634.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2022,6568731933.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2021,6505838578.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2020,6438169877.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2019,6364581440.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2018,6287535114.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2017,6208763934.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2016,6128880429.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2015,6050054834.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2014,5971198209.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2013,5890623212.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2012,5809649768.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2011,5727986725.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2010,5648351983.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2009,5569896557.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2008,5492228861.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2007,5415642173.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2006,5340182185.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2005,5264191084.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2004,5188460859.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2003,5112795945.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2002,5037637869.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2001,4962048189.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XO', 'value': 'Low & middle income'}",LMY,2000,4885599511.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2023,736466395.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2022,716865783.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2021,698215206.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2020,679560744.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2019,660718366.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2018,642186195.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2017,624557000.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2016,607867476.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2015,592175402.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2014,577586377.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2013,563526633.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2012,549451656.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2011,534808724.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2010,520054110.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2009,505585022.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2008,491406380.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2007,477551564.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2006,463744491.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2005,450155667.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2004,437382851.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2003,425077105.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2002,412670845.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2001,400757289.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XM', 'value': 'Low income'}",,2000,390079731.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2023,3079778780.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2022,3041203716.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2021,3004162907.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2020,2966396716.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2019,2926690682.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2018,2886705487.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2017,2846133568.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2016,2804867051.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2015,2763351401.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2014,2721462078.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2013,2678274094.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2012,2635615131.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2011,2592374919.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2010,2548857608.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2009,2505415842.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2008,2462681283.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2007,2420211545.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2006,2377469865.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2005,2335616862.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2004,2293999532.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2003,2251947497.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2002,2210311164.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2001,2168260748.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XN', 'value': 'Lower middle income'}",,2000,2125376113.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2023,508311359.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2022,498070255.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2021,488100624.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2020,482334398.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2019,474057593.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2018,466691130.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2017,459925735.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2016,452184895.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2015,443111159.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2014,433660485.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2013,424768481.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2012,415046283.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2011,405960097.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2010,397305528.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2009,390285866.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2008,381817362.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2007,373340745.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2006,364791715.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2005,356352432.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2004,348239858.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2003,340495691.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2002,333592427.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2001,326923042.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'ZQ', 'value': 'Middle East & North Africa'}",MEA,2000,319840863.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2023,440118189.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2022,432229148.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2021,424980589.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2020,418461302.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2019,411833977.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2018,404775501.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2017,397804712.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2016,390998434.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2015,384230039.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2014,377506892.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2013,370454605.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2012,363339829.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2011,356552266.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2010,349872902.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2009,343195616.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2008,336700258.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2007,330435022.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2006,324051680.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2005,317382998.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2004,310771929.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2003,304445309.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2002,298939850.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2001,293668448.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XQ', 'value': 'Middle East & North Africa (excluding high income)'}",MNA,2000,287971068.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2023,434952414.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2022,427185536.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2021,420057840.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2020,413658033.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2019,407148671.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2018,400206414.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2017,393349907.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2016,386631346.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2015,379959947.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2014,373333494.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2013,366377897.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2012,359359831.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2011,352669280.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2010,346086741.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2009,339506517.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2008,333108281.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2007,326940526.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2006,320645346.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2005,314062602.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2004,307535303.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2003,301290340.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2002,295864477.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2001,290670664.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'T3', 'value': 'Middle East & North Africa (IDA & IBRD countries)'}",TMN,2000,285048915.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2023,5896643239.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2022,5851866150.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2021,5807623372.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2020,5758609133.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2019,5703863074.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2018,5645348919.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2017,5584206934.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2016,5521012953.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2015,5457879432.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2014,5393611832.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2013,5327096579.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2012,5260198112.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2011,5193178001.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2010,5128297873.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2009,5064311535.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2008,5000822481.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2007,4938090609.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2006,4876437694.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2005,4814035417.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2004,4751078008.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2003,4687718840.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2002,4624967024.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2001,4561290900.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XP', 'value': 'Middle income'}",MIC,2000,4495519780.5,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2023,375077354.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2022,372275216.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2021,370353489.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2020,369619953.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2019,366012555.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2018,363974650.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2017,361730781.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2016,359246007.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2015,356506956.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2014,353883924.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2013,351204513.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2012,348654703.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2011,345986435.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2010,343396770.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2009,340465163.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2008,337404564.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2007,334183103.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2006,331013939.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2005,327822042.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2004,324806660.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2003,321812780.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2002,319046534.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2001,316051677.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XU', 'value': 'North America'}",NAC,2000,312909691.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2023,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2022,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2021,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2020,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2019,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2018,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2017,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2016,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2015,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2014,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2013,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2012,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2011,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2010,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2009,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2008,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2007,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2006,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2005,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2004,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2003,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2002,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2001,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'XY', 'value': 'Not classified'}",,2000,,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2023,1385723403.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2022,1378506989.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2021,1371769252.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2020,1370013876.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2019,1362497757.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2018,1355260023.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2017,1347317014.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2016,1339441048.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2015,1331189869.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2014,1323087907.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2013,1314705887.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2012,1306608465.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2011,1298741317.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2010,1292108663.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2009,1283513127.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2008,1274326608.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2007,1264410318.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2006,1255490764.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2005,1246459292.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2004,1237753724.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2003,1228926236.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2002,1220070536.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2001,1211106223.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'OE', 'value': 'OECD members'}",OED,2000,1202226474.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2023,14411921.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2022,14217718.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2021,14040798.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2020,13884095.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2019,13761088.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2018,13634874.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2017,13487767.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2016,13273445.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2015,13091061.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2014,12904905.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2013,12719557.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2012,12554229.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2011,12420968.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2010,12341009.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2009,12167982.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2008,11966136.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2007,11769660.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2006,11561776.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2005,11368666.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2004,11194800.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2003,11034074.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2002,10846687.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2001,10622995.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S4', 'value': 'Other small states'}",OSS,2000,10425820.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2023,2689224.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2022,2656049.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2021,2625493.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2020,2595522.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2019,2568656.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2018,2542009.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2017,2509999.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2016,2477794.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2015,2445989.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2014,2414338.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2013,2382931.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2012,2351924.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2011,2320899.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2010,2289399.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2009,2262456.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2008,2240739.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2007,2218230.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2006,2194265.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2005,2170029.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2004,2145505.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2003,2120592.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2002,2095273.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2001,2069097.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S2', 'value': 'Pacific island small states'}",PSS,2000,2042274.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2023,1119236161.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2022,1117561802.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2021,1117015201.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2020,1117765361.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2019,1113651656.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2018,1110512190.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2017,1106644744.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2016,1102507839.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2015,1097599410.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2014,1092805112.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2013,1087808342.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2012,1083068159.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2011,1078564678.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2010,1075615574.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2009,1070658067.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2008,1065219261.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2007,1058829365.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2006,1052610469.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2005,1046942910.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2004,1041747900.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2003,1036412650.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2002,1031271721.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2001,1026102991.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V4', 'value': 'Post-demographic dividend'}",PST,2000,1021150563.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2023,1078224044.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2022,1051201551.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2021,1024960313.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2020,998624261.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2019,972302503.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2018,946317177.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2017,920568701.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2016,895239872.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2015,870587800.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2014,846420736.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2013,822138419.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2012,798002725.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2011,774567417.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2010,752046672.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2009,730293963.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2008,708796270.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2007,688722596.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2006,670229212.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2005,651320620.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2004,632445407.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2003,614269146.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2002,596114535.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2001,578587390.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'V1', 'value': 'Pre-demographic dividend'}",PRE,2000,562428025.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2023,20253539.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2022,20005272.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2021,19777900.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2020,19572194.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2019,19408893.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2018,19225348.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2017,19007273.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2016,18738677.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2015,18501574.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2014,18260446.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2013,18019613.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2012,17799404.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2011,17614955.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2010,17486029.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2009,17267231.0,,,0
+"{'id': 'SP.POP.TOTL', 'value': 'Population, total'}","{'id': 'S1', 'value': 'Small states'}",SST,2008,17023254.0,,,0
