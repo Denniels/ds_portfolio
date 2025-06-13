@@ -121,7 +121,7 @@ class DataSciencePortfolio:
             "co2_emissions": {
                 "name": "Emisiones CO2 Chile",
                 "description": "Análisis comprehensivo de emisiones de gases de efecto invernadero en Chile basado en datos del RETC 2023. Incluye análisis regional, sectorial y por tipos de fuente.",
-                "file": "co2_emissions_app_v2.py",
+                "file": "co2_emissions_app.py",
                 "icon": "🏭",
                 "tags": ["Cambio Climático", "RETC", "Análisis Ambiental", "GEI"],
                 "status": "Disponible"

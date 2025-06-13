@@ -1,0 +1,70 @@
+site_name: Portafolio de Data Science
+site_url: https://tu-usuario.github.io/ds_portfolio
+repo_url: https://github.com/tu-usuario/ds_portfolio
+repo_name: tu-usuario/ds_portfolio
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: green
+  language: es
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/chart-box-outline
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - footnotes
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tu-usuario
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/tu-usuario
+
+nav:
+  - Inicio: index.md
+  - Aplicaciones:
+    - Análisis de Presupuesto: analisis_presupuesto_publico.md
+    - Calidad del Agua: analisis_calidad_agua.md
+    - Emisiones CO2: analisis_emisiones_co2.md
+    - Análisis Demográfico: analisis_demografico_bigquery.md
+  - Despliegue:
+    - Google Cloud Run: roadmap_google_cloud_run.md
+    - GitHub Pages: despliegue_github_pages.md
+  - Actualizaciones:
+    - Junio 2025: ACTUALIZACIONES_JUNIO_2025.md
+  - Sobre el Proyecto: about.md
