@@ -243,7 +243,7 @@ class DataSciencePortfolio:
                 "file": "services_display_fixed.py",
                 "icon": "💼",
                 "tags": ["Servicios", "Tarifas", "Profesional"],
-                "status": "Nuevo"
+                "status": "Disponible"
             }
         }
         return apps

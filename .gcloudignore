@@ -35,6 +35,7 @@ ds_portfolio_env/
 # Documentation
 docs/
 *.md
+!SERVICIOS.md
 LICENSE
 
 # Tests

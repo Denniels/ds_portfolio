@@ -43,6 +43,9 @@ RUN mkdir -p ./notebooks/visualizaciones/demographics
 COPY ./notebooks/data ./notebooks/data
 COPY ./notebooks/visualizaciones ./notebooks/visualizaciones
 
+# Copiar archivo de servicios
+COPY ./SERVICIOS.md ./SERVICIOS.md
+
 # Intentar copiar archivos específicos de datos, ignorando errores si no existen
 RUN cp -f ./notebooks/notebooks/data/nombres_demografia.csv ./notebooks/data/ 2>/dev/null || echo "Archivo no encontrado"
 RUN cp -f ./notebooks/data/nombres_demografia.csv ./notebooks/data/ 2>/dev/null || echo "Archivo no encontrado"
