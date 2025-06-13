@@ -36,7 +36,16 @@ jobs:
         service: ${{ env.SERVICE_NAME }}
         region: ${{ env.REGION }}
         source: .
-        flags: --allow-unauthenticated --memory=512Mi --cpu=1 --port=8080
+        flags: >-
+          --allow-unauthenticated 
+          --memory=512Mi 
+          --cpu=1 
+          --port=8080
+          --timeout=300
+          --cpu-boost
+          --max-instances=5
+          --min-instances=0
+          --set-env-vars="FIRESTORE_COLLECTION=portfolio_feedback,GCP_PROJECT_ID=${{ env.PROJECT_ID }},GCP_LOCATION=${{ env.REGION }}"
 
     - name: Show Output
       run: echo ${{ steps.deploy.outputs.url }}

@@ -4,6 +4,30 @@
 
 Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos gubernamentales, ambientales y demográficos, con visualizaciones avanzadas, mapas interactivos y análisis presupuestario.
 
+## 🔥 Actualización (13 de Junio 2025)
+
+- ✅ **Despliegue completo en Google Cloud Run** - Plataforma totalmente operativa en la nube
+- ✅ **Sistema de comentarios con Firestore** - Almacenamiento eficiente optimizado para la capa gratuita 
+- ✅ **Integraciones mejoradas** - Todas las aplicaciones funcionan perfectamente en la nube
+- ✅ **Optimizaciones de rendimiento** - Tiempo de carga reducido y experiencia fluida
+- ✅ **Documentación actualizada** - Guías detalladas para despliegue y contribución
+
+### 📣 Sistema de Comentarios con Firestore
+Se ha implementado un sistema de feedback optimizado específicamente para aprovechar la capa gratuita de Google Cloud:
+
+- � **Almacenamiento Serverless**: Utilizando Firestore para reducir costos (dentro de límites gratuitos)
+- � **Sistema de respaldo local**: Se activa automáticamente si no hay conexión a Firestore
+- 📊 **Panel de administración**: Para revisión y gestión de comentarios recibidos
+- 📱 **Diseño responsive**: Funcional en dispositivos móviles y tablets
+- 🛡️ **Sistema robusto**: Manejo de errores avanzado para evitar pérdida de datos
+
+**Aprovechamiento de límites gratuitos de GCP:**
+- 1GB de almacenamiento gratuito (suficiente para miles de comentarios)
+- 50,000 lecturas diarias gratuitas
+- 20,000 escrituras/eliminaciones diarias gratuitas
+
+Consulta el archivo [INTEGRACION_COMENTARIOS.md](INTEGRACION_COMENTARIOS.md) para más detalles técnicos sobre la implementación.
+
 ## 🚀 Inicio Rápido
 
 ### Requisitos Previos

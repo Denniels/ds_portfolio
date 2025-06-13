@@ -34,7 +34,7 @@ class FeedbackSystem:
             self.local_dir = local_dir
 
     def save_feedback(self, feedback_data):
-        """Guarda el feedback en Cloud Storage o localmente"""
+        """Guarda el feedback en Firestore o localmente"""
         # Genera ID único si no se proporciona nombre
         user_id = feedback_data.get('name', str(uuid.uuid4())[:8])
         feedback_id = str(uuid.uuid4())
@@ -44,38 +44,71 @@ class FeedbackSystem:
             'id': feedback_id,
             'timestamp': datetime.now().isoformat(),
             'user_id': user_id,
+            'user_name': feedback_data.get('name', 'Anónimo'),
             'email': feedback_data.get('email', 'anónimo'),
             'message': feedback_data['message'],
-            'category': feedback_data.get('category', 'general')
+            'content': feedback_data['message'],  # Duplicado para compatibilidad
+            'category': feedback_data.get('category', 'general'),
+            'app_section': feedback_data.get('category', 'general'),
+            'rating': feedback_data.get('rating', 5),
+            'status': 'pending'  # Por defecto, comentarios requieren aprobación
         }
         
-        # Guarda en Cloud Storage o localmente
+        # Guarda en Firestore o localmente
         try:
-            if self.bucket:
-                blob = self.bucket.blob(f"feedback/{feedback_entry['id']}.json")
-                blob.upload_from_string(
-                    json.dumps(feedback_entry),
-                    content_type='application/json'
-                )
+            if self.is_firestore_available:
+                # Guardar en Firestore
+                self.collection.document(feedback_id).set(feedback_entry)
+                print(f"Feedback guardado en Firestore con ID: {feedback_id}")
             else:
-                # Guardar localmente si no hay bucket
+                # Guardar localmente si no hay Firestore
                 local_path = Path(__file__).parent.parent.parent / "feedback_data" / f"{feedback_entry['id']}.json"
                 with open(local_path, 'w', encoding='utf-8') as f:
                     json.dump(feedback_entry, f, ensure_ascii=False, indent=2)
-                    
-            # Guardar una copia en la base de datos
-            self._save_to_database(feedback_entry)
+                print(f"Feedback guardado localmente con ID: {feedback_id}")
                 
         except Exception as e:
             st.error(f"Error al guardar feedback: {str(e)}")
+            # Intento de guardar localmente como respaldo
+            try:
+                local_path = Path(__file__).parent.parent.parent / "feedback_data" / f"{feedback_entry['id']}.json"
+                with open(local_path, 'w', encoding='utf-8') as f:
+                    json.dump(feedback_entry, f, ensure_ascii=False, indent=2)
+                print(f"Feedback guardado localmente (respaldo) con ID: {feedback_id}")
+            except Exception as e2:
+                print(f"Error al guardar respaldo local: {str(e2)}")
         
         return feedback_id
         
-    def _save_to_database(self, feedback_entry):
-        """Guarda una copia en la base de datos (simulado)"""
-        # Esta función es un placeholder para futura implementación de base de datos
-        # Por ahora solo imprime un mensaje de log
-        print(f"Feedback guardado con ID: {feedback_entry['id']}")
+    def get_comments(self, limit=5, only_approved=True):
+        """Obtiene comentarios recientes de Firestore o almacenamiento local"""
+        comments = []
+        
+        try:
+            if self.is_firestore_available:
+                # Obtener de Firestore
+                query = self.collection
+                if only_approved:
+                    query = query.where('status', '==', 'approved')
+                results = query.order_by('timestamp', direction=firestore.Query.DESCENDING).limit(limit).stream()
+                
+                for doc in results:
+                    comments.append(doc.to_dict())
+            else:
+                # Obtener de almacenamiento local
+                files = list(self.local_dir.glob('*.json'))
+                files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+                
+                for file_path in files[:limit]:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        comment = json.load(f)
+                        if not only_approved or comment.get('status') == 'approved':
+                            comments.append(comment)
+                            
+        except Exception as e:
+            print(f"Error al obtener comentarios: {str(e)}")
+            
+        return comments
 
 # CSS personalizado
 st.markdown("""
@@ -121,7 +154,7 @@ class FeedbackApp:
     
     def __init__(self):
         """Inicializa la aplicación"""
-        self.bucket_name = "ds-portfolio-feedback"
+        self.feedback_system = FeedbackSystem()
         
     def render_header(self):
         """Renderiza el encabezado principal"""
@@ -148,6 +181,7 @@ class FeedbackApp:
                 "Categoría",
                 ["General", "Sugerencia", "Error/Bug", "Nueva Funcionalidad"]
             )
+            rating = st.slider("Calificación", 1, 5, 5)
             message = st.text_area(
                 "Tu mensaje",
                 height=150,
@@ -158,12 +192,11 @@ class FeedbackApp:
             
             if submit and message:  # Asegurarse de que hay un mensaje
                 try:
-                    # Usar self porque FeedbackSystem está definida en este mismo archivo
-                    feedback_system = FeedbackSystem()
-                    feedback_id = feedback_system.save_feedback({
+                    feedback_id = self.feedback_system.save_feedback({
                         'name': name,
                         'email': email,
                         'category': category,
+                        'rating': rating,
                         'message': message
                     })
                     st.markdown(f"""
@@ -181,6 +214,27 @@ class FeedbackApp:
                     """, unsafe_allow_html=True)
             elif submit:
                 st.warning("Por favor, escribe un mensaje antes de enviar.")
+    
+    def render_recent_comments(self):
+        """Muestra comentarios recientes aprobados"""
+        st.subheader("Comentarios recientes")
+        
+        comments = self.feedback_system.get_comments(limit=5, only_approved=True)
+        
+        if not comments:
+            st.info("No hay comentarios para mostrar todavía. ¡Sé el primero en opinar!")
+            return
+            
+        for comment in comments:
+            with st.container():
+                col1, col2 = st.columns([5, 1])
+                with col1:
+                    st.markdown(f"**{comment.get('user_name', 'Anónimo')}**")
+                    st.caption(f"Fecha: {comment.get('timestamp', 'Desconocido').split('T')[0]}")
+                    st.write(comment.get('message', comment.get('content', '')))
+                with col2:
+                    st.write("⭐" * comment.get('rating', 5))
+                st.divider()
                 
     def render_information(self):
         """Renderiza información adicional"""
@@ -213,7 +267,16 @@ class FeedbackApp:
         """Ejecuta la aplicación principal"""
         # Renderizar componentes
         self.render_header()
-        self.render_feedback_form()
+        
+        # Crear pestañas para separar formulario y comentarios recientes
+        tab1, tab2 = st.tabs(["Dejar un comentario", "Ver comentarios recientes"])
+        
+        with tab1:
+            self.render_feedback_form()
+            
+        with tab2:
+            self.render_recent_comments()
+            
         self.render_information()
         
         # Footer
@@ -232,72 +295,9 @@ class FeedbackApp:
 # Crear instancia global de la aplicación
 app = FeedbackApp()
 
-class FeedbackSystem:
-    def __init__(self):
-        """Inicializa el sistema de feedback"""
-        self.bucket_name = "ds-portfolio-feedback"
-        self.client = storage.Client()
-        self._ensure_bucket_exists()
-
-    def _ensure_bucket_exists(self):
-        """Asegura que el bucket existe, si no, lo crea"""
-        try:
-            self.bucket = self.client.get_bucket(self.bucket_name)
-        except Exception:
-            try:
-                self.bucket = self.client.create_bucket(
-                    self.bucket_name,
-                    location="us-central1"
-                )
-            except Exception as e:
-                st.error(f"No se pudo acceder o crear el bucket: {str(e)}")
-                # Crear un directorio local para almacenar el feedback si falla el bucket
-                local_dir = Path(__file__).parent.parent.parent / "feedback_data"
-                local_dir.mkdir(exist_ok=True)
-                self.bucket = None
-
-    def save_feedback(self, feedback_data):
-        """Guarda el feedback en Cloud Storage o localmente"""
-        # Genera ID único si no se proporciona nombre
-        user_id = feedback_data.get('name', str(uuid.uuid4())[:8])
-        feedback_id = str(uuid.uuid4())
-        
-        # Estructura del feedback
-        feedback_entry = {
-            'id': feedback_id,
-            'timestamp': datetime.now().isoformat(),
-            'user_id': user_id,
-            'email': feedback_data.get('email', 'anónimo'),
-            'message': feedback_data['message'],
-            'category': feedback_data.get('category', 'general')
-        }
-        
-        # Guarda en Cloud Storage o localmente
-        try:
-            if self.bucket:
-                blob = self.bucket.blob(f"feedback/{feedback_entry['id']}.json")
-                blob.upload_from_string(
-                    json.dumps(feedback_entry),
-                    content_type='application/json'
-                )
-            else:
-                # Guardar localmente si no hay bucket
-                local_path = Path(__file__).parent.parent.parent / "feedback_data" / f"{feedback_entry['id']}.json"
-                with open(local_path, 'w', encoding='utf-8') as f:
-                    json.dump(feedback_entry, f, ensure_ascii=False, indent=2)
-                    
-            # Guardar una copia en la base de datos
-            self._save_to_database(feedback_entry)
-                
-        except Exception as e:
-            st.error(f"Error al guardar feedback: {str(e)}")
-        
-        return feedback_id
-        
-    def _save_to_database(self, feedback_entry):
-        """Guarda una copia en la base de datos (simulado)"""
-        # Esta función es un placeholder para futura implementación de base de datos
-        # Por ahora solo imprime un mensaje de log
-        print(f"Feedback guardado con ID: {feedback_entry['id']}")
-
-# Función eliminada ya que ahora está integrada en la clase FeedbackApp
+def run():
+    """Punto de entrada principal para Streamlit"""
+    app.run()
+    
+if __name__ == "__main__":
+    run()

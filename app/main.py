@@ -221,15 +221,23 @@ class DataSciencePortfolio:
                 "icon": "💰",
                 "tags": ["Finanzas Públicas", "Datos Gubernamentales", "Visualización Interactiva", "Análisis Avanzado"],
                 "status": "Disponible"
-            },
-            # Sistema de Feedback
+            },            # Sistema de Feedback
             "feedback": {
                 "name": "Feedback y Sugerencias",
                 "description": "¿Tienes comentarios o sugerencias? ¡Me encantaría escucharlos! Ayúdame a mejorar este portafolio compartiendo tus ideas.",
-                "file": "feedback_system.py",
-                "icon": "�",
+                "file": "firestore_feedback_system.py",  # Nueva versión con Firestore
+                "icon": "📝",
                 "tags": ["Feedback", "Sugerencias", "Mejoras"],
                 "status": "Disponible"
+            },
+            # Sistema de Feedback (versión anterior)
+            "feedback_legacy": {
+                "name": "Feedback (Versión Original)",
+                "description": "Versión original del sistema de feedback (mantenida para compatibilidad).",
+                "file": "feedback_system.py",
+                "icon": "💬",
+                "tags": ["Feedback", "Legacy"],
+                "status": "Mantenimiento"
             }
         }
         return apps
@@ -261,7 +269,13 @@ class DataSciencePortfolio:
         st.markdown("""
         <div class="main-header">
             <h1>📊 Portafolio de Data Science</h1>
-            <p>Aplicaciones interactivas y análisis de datos ambientales y demográficos</p>
+            <p style='font-size: 1.2rem; color: #4a4a4a; margin-bottom: 2rem;'>
+                Aplicaciones interactivas y análisis de datos ambientales y demográficos
+                Explora una colección de análisis interactivos sobre datos ambientales y demográficos de Chile.
+                Cada proyecto demuestra diferentes aspectos del análisis de datos, visualización y machine learning.
+                La intencion de este portafolio es presentar mis habilidades y proyectos en el campo de la ciencia de datos.
+                Esta es mi oportunidad de mostrar lo que he aprendido los ultimos 4 años de estudio practicas, bootcamps y muchos mas contenidos!
+            </p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -455,12 +469,13 @@ class DataSciencePortfolio:
             # Importar y ejecutar la aplicación
             spec = importlib.util.spec_from_file_location("app_module", app_path)
             app_module = importlib.util.module_from_spec(spec)
-            
-            # Agregar el directorio de apps al path para imports relativos
+              # Agregar el directorio de apps al path para imports relativos
             if str(self.apps_dir) not in sys.path:
                 sys.path.insert(0, str(self.apps_dir))
             
-            spec.loader.exec_module(app_module)            # Ejecutar la aplicación basada en la clase disponible
+            # Ejecutar la aplicación basada en la clase disponible
+            spec.loader.exec_module(app_module)
+            
             if hasattr(app_module, 'BudgetAnalysisApp'):
                 app_instance = app_module.BudgetAnalysisApp()
                 app_instance.run()
@@ -473,11 +488,16 @@ class DataSciencePortfolio:
             elif hasattr(app_module, 'DemographicsApp'):
                 app_instance = app_module.DemographicsApp()
                 app_instance.run()
+            elif hasattr(app_module, 'FirestoreFeedbackApp'):
+                # Nueva versión con Firestore
+                app_instance = app_module.FirestoreFeedbackApp()
+                app_instance.run()
             elif hasattr(app_module, 'FeedbackApp'):
+                # Versión anterior
                 app_instance = app_module.FeedbackApp()
                 app_instance.run()
             elif hasattr(app_module, 'run'):
-                app_module.run()            
+                app_module.run()
             elif hasattr(app_module, 'main'):
                 app_module.main()
             elif hasattr(app_module, 'app'):

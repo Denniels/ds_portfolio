@@ -147,7 +147,12 @@ class DataSciencePortfolio:
         st.markdown("""
         <div class="main-header">
             <h1>📊 Portafolio de Data Science</h1>
-            <p>Aplicaciones interactivas y análisis de datos ambientales</p>
+            <p>< style='font-size: 1.2rem; color: #4a4a4a; margin-bottom: 2rem;'>
+                Explora una colección de análisis interactivos sobre datos ambientales y demográficos de Chile.
+                Cada proyecto demuestra diferentes aspectos del análisis de datos, visualización y machine learning.
+                La intencion de este portafolio es presentar mis habilidades y proyectos en el campo de la ciencia de datos.
+                Esta es mi oportunidad de mostrar lo que he aprendido los ultimos 4 años de estudio practicas, bootcamps y muchos mas contenidos!
+            </p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -167,9 +172,9 @@ class DataSciencePortfolio:
             
             # Enlaces útiles
             st.markdown("### 🔗 Enlaces")
-            st.markdown("- [GitHub Repository](https://github.com)")
-            st.markdown("- [LinkedIn](https://linkedin.com)")
-            st.markdown("- [Documentación](https://docs.streamlit.io)")
+            st.markdown("- [GitHub Repository](https://github.com/Denniels/ds_portfolio)")
+            st.markdown("- [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)")
+            st.markdown("- [Documentación](https://github.com/Denniels/ds_portfolio/tree/main/docs)")
         
         # Contenido principal
         if selected_app == "🏠 Inicio":
