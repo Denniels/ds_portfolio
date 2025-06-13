@@ -1,12 +1,12 @@
-# 📊 Portafolio de Data Science - Análisis Ambientales Chile
+# 📊 Portafolio de Data Science - Análisis Ambientales y Demográficos
 
-> **Estado:** ✅ **Completamente Funcional** - Sistema modular con arquitectura escalable
+> **Estado:** ✅ **Completamente Funcional** - Sistema modular con arquitectura escalable e integración con BigQuery
 
-Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos ambientales con visualizaciones avanzadas y mapas interactivos.
+Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos ambientales y demográficos con visualizaciones avanzadas y mapas interactivos.
 
 ## 🎯 Objetivos del Proyecto
 
-Este portafolio está diseñado como una **plataforma evolutiva** para análisis ambientales, con un enfoque modular que permite agregar nuevos análisis y funcionalidades de manera incremental.
+Este portafolio está diseñado como una **plataforma evolutiva** para análisis ambientales y demográficos, con un enfoque modular que permite agregar nuevos análisis y funcionalidades de manera incremental.
 
 ## 🏗️ Arquitectura del Sistema
 
@@ -15,7 +15,7 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 - **`app/apps/`**: Aplicaciones modulares independientes
 - **`app/apps/modules/`**: Biblioteca de utilidades reutilizables
 
-### 💧 Aplicaciones Activas
+### 📊 Análisis y Aplicaciones
 
 #### 1. **Calidad del Agua en Chile** ✅ Operativa
 - **Análisis temporal** de parámetros físico-químicos
@@ -29,6 +29,13 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 - **Visualizaciones geográficas** por región
 - **Tendencias temporales** y patrones estacionales
 - **Datos oficiales** del Registro RETC Chile
+
+#### 3. **Análisis Demográfico con BigQuery** ✅ Operativo
+- **Exploración de datos de nombres** históricos (1910-2013)
+- **Análisis de tendencias** por género y década
+- **Visualizaciones interactivas** de evolución de nombres populares
+- **Integración con Google Cloud** usando BigQuery
+- **Visualizaciones exportables** en formatos HTML y PNG
 
 ### 📈 Roadmap de Expansión
 - 🔄 **Próximo**: Análisis de Calidad del Aire
@@ -49,17 +56,10 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 - **Sistema de coordenadas inteligente** con cache automático
 - **Carga de datos optimizada** con validación automática
 
-### 🗺️ **Sistema de Mapas Avanzado**
-- **Geocodificación inteligente** específica para Chile
-- **Cache de coordenadas** para rendimiento optimizado
-- **Clusters automáticos** para mejor visualización
-- **Múltiples capas base** (OpenStreetMap, CartoDB)
-
-### 📊 **Análisis de Datos Robusto**
-- **Procesamiento de datos oficiales** de fuentes gubernamentales
-- **Validación automática** de calidad de datos
-- **Estadísticas descriptivas** y análisis multivariado
-- **Exportación de resultados** en múltiples formatos
+### ☁️ **Integración con Cloud**
+- **BigQuery** para análisis de grandes conjuntos de datos
+- **Exportación de visualizaciones** en múltiples formatos
+- **Manejo seguro de credenciales** con variables de entorno
 
 ## 📦 Estructura Actualizada del Proyecto
 ```
@@ -70,6 +70,7 @@ ds_portfolio/
 │   │   ├── __init__.py              # 📦 Inicializador del paquete
 │   │   ├── water_quality_app.py     # 💧 Análisis calidad del agua
 │   │   ├── co2_emissions_app.py     # 🏭 Análisis emisiones CO2
+│   │   ├── demography_analysis_app.py # 👥 Análisis demográfico
 │   │   ├── config.py                # ⚙️ Configuración de apps
 │   │   ├── utils.py                 # 🛠️ Utilidades generales
 │   │   └── modules/                 # 🔧 Biblioteca modular
@@ -81,6 +82,7 @@ ds_portfolio/
 │   │       ├── chart_utils.py       # 📊 Gráficos y visualizaciones
 │   │       ├── water_quality.py     # 💧 Lógica calidad agua
 │   │       ├── emissions.py         # 🏭 Lógica emisiones
+│   │       ├── demography.py        # 👥 Lógica análisis demográfico
 │   │       └── *_config.py          # ⚙️ Configs específicas
 │   ├── data/                        # 📊 Datos de aplicación
 │   │   ├── estaciones_coordenadas.json    # 🗺️ Coordenadas verificadas
@@ -89,6 +91,7 @@ ds_portfolio/
 ├── 📓 notebooks/                    # Análisis y exploración
 │   ├── 01_Analisis_Emisiones_CO2_Chile.ipynb
 │   ├── 02_Analisis_Calidad_Del_Agua.ipynb
+│   ├── 03_Analisis_Demografico.ipynb
 │   ├── utils/                       # 🛠️ Utilidades para notebooks
 │   │   ├── README.md                # 📚 Documentación utils
 │   │   └── geocodificador_chile.py  # 🗺️ Geocodificador especializado
@@ -125,6 +128,11 @@ ds_portfolio/
 - **Geocoding APIs** - Conversión de direcciones a coordenadas
 - **OpenStreetMap & CartoDB** - Capas base de mapas
 
+### ☁️ **Cloud y Big Data**
+- **Google Cloud Platform** - Infraestructura en la nube
+- **BigQuery** - Análisis de grandes volúmenes de datos
+- **APIs de Google** - Integración y autenticación segura
+
 ### 🔧 **Infraestructura**
 - **Git & GitHub** - Control de versiones
 - **Virtual Environment** - Gestión de dependencias
@@ -135,6 +143,7 @@ ds_portfolio/
 ### Prerrequisitos
 - Python 3.8 o superior
 - Git (para clonar el repositorio)
+- Cuenta de Google Cloud con acceso a BigQuery (para análisis demográficos)
 
 ### Pasos de Instalación
 1. **Clonar el repositorio**:
@@ -165,13 +174,16 @@ ds_portfolio/
    pip install -r requirements.txt
    ```
 
-5. **Ejecutar el portafolio**:
+5. **Configurar credenciales de Google Cloud** (si se utiliza el análisis demográfico):
+   - Seguir instrucciones en la [documentación de Google Cloud](https://cloud.google.com/docs/authentication/getting-started)
+
+6. **Ejecutar el portafolio**:
    ```bash
    cd app
    streamlit run main.py
    ```
 
-6. **Acceder a la aplicación**:
+7. **Acceder a la aplicación**:
    - Abrir navegador en: `http://localhost:8501`
 
 ## 🎯 Navegación y Uso del Portafolio
@@ -227,12 +239,31 @@ ds_portfolio/
 - **Sectores**: Minería, manufactura, energía, química, otros
 - **Años**: Serie temporal desde 2013 hasta presente
 
+### 👥 Aplicación de Análisis Demográfico
+
+#### **📊 Funcionalidades Principales**
+- **📈 Análisis de Tendencias**: Evolución de nombres por década y género
+- **🗺️ Mapas de Calor**: Distribución geográfica de nombres populares
+- **📊 Gráficos Interactivos**: Visualización de cambios en la popularidad de nombres
+- **🔄 Exportación de Resultados**: Descarga de análisis se esta trabajando en implementar una forma para poder descargar en formatos HTML y PNG las visualizaciones.
+
+#### **📅 Rango de Datos**
+- **Desde**: 1910
+- **Hasta**: 2013
+- **Frecuencia**: Anual
+
+#### **🔗 Integración con BigQuery**
+- **Consulta de Datos**: Acceso a grandes volúmenes de datos históricos
+- **Autenticación Segura**: Uso de credenciales de Google Cloud
+- **Manejo de Errores**: Validación y control de errores en consultas
+
 ## 📊 Estado del Sistema y Optimizaciones
 
 ### ✅ **Componentes Operativos**
 - **🚀 Aplicación Principal**: Funcionando completamente
 - **💧 Calidad del Agua**: Sistema completo con mapas y análisis
 - **🏭 Emisiones CO2**: Dashboard interactivo operativo
+- **👥 Análisis Demográfico**: Integración con BigQuery y visualizaciones operativas
 - **🗺️ Sistema de Mapas**: Geocodificación inteligente implementada
 - **📊 Visualizaciones**: Gráficos interactivos optimizados
 
