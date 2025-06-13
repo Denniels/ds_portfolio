@@ -295,6 +295,76 @@ class DemographicsApp:
             - Posibles sesgos en el registro histórico
             """)
     
+    def create_name_trends_visualization(self):
+        """Crea visualización de tendencias de nombres populares"""
+        if self.data is None:
+            return None
+            
+        # Preparar datos
+        df_trends = self.data.groupby(['decade', 'name', 'gender'])['total_count'].sum().reset_index()
+        df_trends = df_trends.sort_values(['decade', 'total_count'], ascending=[True, False])
+        
+        # Crear figura con subplots
+        fig = make_subplots(
+            rows=2, cols=1,
+            subplot_titles=('Nombres Masculinos más Populares por Década', 
+                          'Nombres Femeninos más Populares por Década'),
+            vertical_spacing=0.12,
+            row_heights=[0.5, 0.5]
+        )
+        
+        # Procesar datos por género
+        for idx, (gender, title) in enumerate([('M', 'Masculinos'), ('F', 'Femeninos')]):
+            df_gender = df_trends[df_trends['gender'] == gender]
+            top_names = []
+            
+            # Obtener top 5 nombres por década
+            for decade in DECADES:
+                decade_names = df_gender[df_gender['decade'] == decade] \
+                    .nlargest(5, 'total_count')['name'].tolist()
+                top_names.extend(decade_names)
+            
+            top_names = list(set(top_names))  # Eliminar duplicados
+            
+            # Crear líneas para cada nombre
+            for name in top_names:
+                name_data = df_gender[df_gender['name'] == name]
+                
+                fig.add_trace(
+                    go.Scatter(
+                        x=name_data['decade'],
+                        y=name_data['total_count'],
+                        name=name,
+                        mode='lines+markers',
+                        line=dict(width=2),
+                        marker=dict(size=6),
+                        showlegend=True
+                    ),
+                    row=idx+1, col=1
+                )
+        
+        # Actualizar layout
+        fig.update_layout(
+            height=800,
+            title_text="Tendencias de Nombres Populares (1910-2013)",
+            showlegend=True,
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=-0.2,
+                xanchor="center",
+                x=0.5
+            )
+        )
+        
+        # Actualizar ejes
+        fig.update_xaxes(title_text="Década", row=1, col=1)
+        fig.update_xaxes(title_text="Década", row=2, col=1)
+        fig.update_yaxes(title_text="Número de Nacimientos", row=1, col=1)
+        fig.update_yaxes(title_text="Número de Nacimientos", row=2, col=1)
+        
+        return fig
+    
     def run(self):
         """Ejecuta la aplicación principal"""
         # Cargar datos
