@@ -4,10 +4,13 @@
 
 Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos gubernamentales, ambientales y demográficos, con visualizaciones avanzadas, mapas interactivos y análisis presupuestario.
 
+[![Ver Servicios Profesionales](https://img.shields.io/badge/Servicios_Profesionales-Ver_Catálogo_y_Precios-blue?style=for-the-badge)](SERVICIOS.md)
+
 ## 🔥 Actualización (13 de Junio 2025)
 
 - ✅ **Despliegue completo en Google Cloud Run** - Plataforma totalmente operativa en la nube
-- ✅ **Sistema de comentarios con Firestore** - Almacenamiento eficiente optimizado para la capa gratuita 
+- ✅ **Sistema de comentarios con Firestore** - Almacenamiento eficiente optimizado para la capa gratuita
+- ✅ **Catálogo de servicios profesionales** - Listado completo con tarifas en pesos chilenos
 - ✅ **Integraciones mejoradas** - Todas las aplicaciones funcionan perfectamente en la nube
 - ✅ **Optimizaciones de rendimiento** - Tiempo de carga reducido y experiencia fluida
 - ✅ **Documentación actualizada** - Guías detalladas para despliegue y contribución

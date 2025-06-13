@@ -229,8 +229,7 @@ class DataSciencePortfolio:
                 "icon": "📝",
                 "tags": ["Feedback", "Sugerencias", "Mejoras"],
                 "status": "Disponible"
-            },
-            # Sistema de Feedback (versión anterior)
+            },            # Sistema de Feedback (versión anterior)
             "feedback_legacy": {
                 "name": "Feedback (Versión Original)",
                 "description": "Versión original del sistema de feedback (mantenida para compatibilidad).",
@@ -238,6 +237,15 @@ class DataSciencePortfolio:
                 "icon": "💬",
                 "tags": ["Feedback", "Legacy"],
                 "status": "Mantenimiento"
+            },
+            # Servicios profesionales
+            "servicios": {
+                "name": "Servicios Profesionales",
+                "description": "Catálogo de servicios profesionales de Data Science con tarifas referenciales en pesos chilenos.",
+                "file": "services_display.py",
+                "icon": "💼",
+                "tags": ["Servicios", "Tarifas", "Profesional"],
+                "status": "Nuevo"
             }
         }
         return apps
@@ -416,10 +424,10 @@ class DataSciencePortfolio:
         
         with col1:
             st.markdown("""
-            ### 🎯 Enfoque en Datos Ambientales
+            ### 🎯 Enfoque en Datos reales
             
-            Este portafolio se especializa en el **análisis de datos ambientales** con aplicaciones reales 
-            basadas en fuentes oficiales del gobierno de Chile:
+            Este portafolio se especializa en el **análisis de datos reales** con aplicaciones basadas 
+            en fuentes oficiales:
             
             - 💧 Calidad del Agua**: Análisis de 174 estaciones de monitoreo del DGA
             - 🏭 Emisiones CO2**: Estudio comprehensivo del RETC 2023 con 285K+ registros

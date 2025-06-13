@@ -86,8 +86,26 @@ Se ha actualizado la aplicación de análisis del presupuesto con una versión 2
 - Implementar machine learning
 - Expandir análisis regionales
 
+### 5. Catálogo de Servicios Profesionales
+
+Se ha incorporado un completo catálogo de servicios profesionales de Data Science con tarifas en pesos chilenos:
+
+#### Características
+- **Categorización detallada** de servicios por especialidad
+- **Precios referenciales** basados en el mercado chileno
+- **Integración con Streamlit** para visualización interactiva
+- **Formulario de contacto** para consultas de servicios
+- **Documento de justificación de precios** para referencia interna
+
+#### Documentos relacionados
+- [SERVICIOS.md](../SERVICIOS.md) - Catálogo completo de servicios
+- [JUSTIFICACION_PRECIOS.md](JUSTIFICACION_PRECIOS.md) - Metodología y justificación de tarifas
+- [services_display.py](../app/apps/services_display.py) - Visualizador Streamlit de servicios
+
 ## 📚 Referencias
 - [Documentación de Streamlit](https://docs.streamlit.io/)
 - [API datos.gob.cl](https://datos.gob.cl/)
 - [Plotly Documentation](https://plotly.com/python/)
 - [Python Type Hints](https://docs.python.org/3/library/typing.html)
+- [Google Cloud Firestore](https://cloud.google.com/firestore/docs)
+- [Mercado de servicios Data Science Chile 2025](https://www.getonbrd.com/)

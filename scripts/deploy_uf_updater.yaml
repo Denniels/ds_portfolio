@@ -1,0 +1,33 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - 'functions'
+  - 'deploy'
+  - 'update_uf_value'
+  - '--trigger-http'
+  - '--runtime=python310'
+  - '--entry-point=update_uf_value'
+  - '--source=scripts/'
+  - '--timeout=120s'
+  - '--memory=128MB'
+  - '--service-account=${_SERVICE_ACCOUNT}'
+  - '--set-env-vars=FIRESTORE_COLLECTION=indicadores_economicos,UF_DOCUMENT_ID=valor_uf'
+
+# Programar la ejecución diaria a las 10:00 AM (hora de Chile)
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - 'scheduler'
+  - 'jobs'
+  - 'create'
+  - 'http'
+  - 'daily-uf-update'
+  - '--schedule=0 10 * * *'
+  - '--time-zone=America/Santiago'
+  - '--uri=https://us-central1-${PROJECT_ID}.cloudfunctions.net/update_uf_value'
+  - '--http-method=GET'
+  - '--oidc-service-account-email=${_SERVICE_ACCOUNT}'
+  - '--oidc-token-audience=https://us-central1-${PROJECT_ID}.cloudfunctions.net/update_uf_value'
+
+substitutions:
+  _SERVICE_ACCOUNT: ds-portfolio-cloud-functions@${PROJECT_ID}.iam.gserviceaccount.com
+  PROJECT_ID: retc-emissions-analysis
