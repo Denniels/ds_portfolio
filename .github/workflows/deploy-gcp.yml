@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'app/**'
+      - 'requirements.txt'
+      - 'Dockerfile'
   workflow_dispatch:
 
 env:
