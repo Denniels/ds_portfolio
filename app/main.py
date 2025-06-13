@@ -265,11 +265,11 @@ class DataSciencePortfolio:
     def run_portfolio(self):
         """Ejecuta la aplicación principal del portafolio"""
         
-        # Header principal
+        # Header principal  #style='font-size: 1.2rem; color: #4a4a4a; margin-bottom: 2rem;'
         st.markdown("""
         <div class="main-header">
             <h1>📊 Portafolio de Data Science</h1>
-            <p style='font-size: 1.2rem; color: #4a4a4a; margin-bottom: 2rem;'>
+            <p>
                 Aplicaciones interactivas y análisis de datos ambientales y demográficos
                 Explora una colección de análisis interactivos sobre datos ambientales y demográficos de Chile.
                 Cada proyecto demuestra diferentes aspectos del análisis de datos, visualización y machine learning.
