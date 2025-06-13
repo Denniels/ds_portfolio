@@ -127,6 +127,7 @@ class ServicesDisplay:
             Para solicitar una cotización personalizada o para discutir un proyecto específico, 
             por favor utiliza el formulario de contacto o escríbeme directamente.
             """)
+            
             # Botón para ver justificación de precios
             if st.button("📋 Ver Justificación de Precios"):
                 st.session_state.show_price_justification = True
@@ -177,7 +178,8 @@ class ServicesDisplay:
             - **Ventaja competitiva**: Valor diferencial que aporta al negocio del cliente
             
             ### 💰 Referencias de mercado por categoría
-              - **Dashboard y Visualización**: Entre $1.200.000 y $3.000.000 CLP para soluciones corporativas
+            
+            - **Dashboard y Visualización**: Entre $1.200.000 y $3.000.000 CLP para soluciones corporativas
             - **Análisis Geoespacial**: Entre $1.000.000 y $3.500.000 CLP según complejidad
             - **Análisis Sectorial**: Entre $2.200.000 y $3.500.000 CLP para estudios completos
             - **Machine Learning e IA**: Entre $2.500.000 y $5.000.000 CLP según complejidad
@@ -241,7 +243,7 @@ class ServicesDisplay:
                             cols = list(display_df.columns)
                             clp_index = cols.index('Valor Desde (CLP)')
                             cols.insert(clp_index + 1, cols.pop(-1))
-                            display_df = display_df[cols]                        
+                            display_df = display_df[cols]
                         except Exception as e:
                             st.warning(f"No se pudieron convertir los valores a UF: {str(e)}")
                 

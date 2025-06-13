@@ -205,11 +205,10 @@ class DataSciencePortfolio:
                 "icon": "🏭",
                 "tags": ["Cambio Climático", "RETC", "Análisis Ambiental", "GEI"],
                 "status": "Disponible"
-            },
-            "demographics": {
+            },            "demographics": {
                 "name": "Análisis Demográfico",
                 "description": "Análisis de tendencias en nombres de EE.UU. (1910-2013) utilizando BigQuery. Explora patrones históricos, cambios generacionales y diferencias por género en la elección de nombres.",
-                "file": "demographics_app.py",
+                "file": "demographics_app_new.py",
                 "icon": "👤",
                 "tags": ["Demografía", "BigQuery", "Cloud", "Visualización"],
                 "status": "Disponible"
@@ -237,12 +236,11 @@ class DataSciencePortfolio:
                 "icon": "💬",
                 "tags": ["Feedback", "Legacy"],
                 "status": "Mantenimiento"
-            },
-            # Servicios profesionales
+            },            # Servicios profesionales
             "servicios": {
                 "name": "Servicios Profesionales",
                 "description": "Catálogo de servicios profesionales de Data Science con tarifas referenciales en pesos chilenos.",
-                "file": "services_display.py",
+                "file": "services_display_fixed.py",
                 "icon": "💼",
                 "tags": ["Servicios", "Tarifas", "Profesional"],
                 "status": "Nuevo"

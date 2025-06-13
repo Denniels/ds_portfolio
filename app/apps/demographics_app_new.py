@@ -98,25 +98,32 @@ CUSTOM_CSS = """
     }
     .insight-box {
         background: #f9f9f9;
-        border-left: 4px solid #1f77b4;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 0 5px 5px 0;
+        border-radius: 8px;
+        padding: 1.2rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    .insight-box.gender-f {
-        border-left-color: #e377c2;
+    .insight-box h4 {
+        color: #1f77b4;
+        margin-bottom: 1rem;
+    }
+    .insight-box ul {
+        margin-bottom: 0;
+        padding-left: 1.2rem;
     }
     .section-header {
-        background: #f0f0f0;
-        padding: 0.8rem;
-        border-radius: 5px;
-        margin: 1.5rem 0 1rem 0;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid #e377c2;
+        color: #1f77b4;
     }
     .conclusion-box {
-        background: #eff7ff;
-        padding: 1rem;
-        border-radius: 5px;
+        background: #f0f7ff;
+        border-radius: 10px;
+        padding: 1.5rem;
         margin: 1rem 0;
         border: 1px solid #d0e3ff;
     }
@@ -315,102 +322,8 @@ class DemographicsApp:
                 })
         
         self.name_length_data = pd.DataFrame(length_records)
-        """Genera datos sintéticos adicionales para visualizaciones avanzadas"""
-        # 1. Datos anuales por género
-        years = list(range(1910, 2014))
-        gender_year_records = []
-        
-        for year in years:
-            # Factor para simular Baby Boom y otros eventos históricos
-            factor_m = 1.0
-            factor_f = 1.0
-            
-            # Baby Boom (1946-1964)
-            if 1946 <= year <= 1964:
-                factor_m = 1.5
-                factor_f = 1.5
-            # Gran Depresión (1929-1939)
-            elif 1929 <= year <= 1939:
-                factor_m = 0.8
-                factor_f = 0.8
-            # Post 2a Guerra Mundial
-            elif 1945 <= year <= 1946:
-                factor_m = 1.3
-                factor_f = 1.3
-            
-            # Tendencia base
-            base_m = 100000 + (year - 1910) * 1000
-            base_f = 95000 + (year - 1910) * 950
-            
-            # Añadir fluctuación y tendencia
-            count_m = int(base_m * factor_m * (0.9 + 0.2 * np.random.random()))
-            count_f = int(base_f * factor_f * (0.9 + 0.2 * np.random.random()))
-            
-            gender_year_records.append({
-                'year': year,
-                'gender': 'M',
-                'count': count_m
-            })
-            gender_year_records.append({
-                'year': year,
-                'gender': 'F',
-                'count': count_f
-            })
-        
-        self.gender_year_data = pd.DataFrame(gender_year_records)
-        
-        # 2. Datos de diversidad de nombres
-        diversity_records = []
-        for decade in DECADES:
-            for gender in ['Masculino', 'Femenino']:
-                # Simular tendencia hacia mayor diversidad con el tiempo
-                time_factor = (decade - 1910) / 100  # 0 para 1910, ~1 para 2010
-                
-                # Las mujeres tienen más diversidad de nombres que los hombres
-                gender_factor = 1.1 if gender == 'Femenino' else 1.0
-                
-                # Calcular concentración (más alta en el pasado)
-                concentration = 70 - (40 * time_factor * gender_factor)
-                
-                # Añadir fluctuación
-                concentration = concentration * (0.95 + 0.1 * np.random.random())
-                
-                diversity_records.append({
-                    'decade': f"{decade}s",
-                    'gender': gender,
-                    'top_n': 'Top 25',
-                    'percentage': concentration,
-                    'metric': 'Concentración'
-                })
-        
-        self.name_diversity_data = pd.DataFrame(diversity_records)
-        
-        # 3. Datos de longitud de nombres
-        length_records = []
-        for year in years:
-            # Tendencia: nombres más largos con el tiempo
-            time_factor = (year - 1910) / 103  # 0 para 1910, 1 para 2013
-            
-            # Longitud base más larga para mujeres
-            base_length_m = 5.2 + (0.8 * time_factor)
-            base_length_f = 5.5 + (1.0 * time_factor)
-            
-            # Añadir fluctuación
-            length_m = base_length_m * (0.98 + 0.04 * np.random.random())
-            length_f = base_length_f * (0.98 + 0.04 * np.random.random())
-            
-            length_records.append({
-                'year': year,
-                'gender': 'Masculino',
-                'avg_length': length_m
-            })
-            length_records.append({
-                'year': year,
-                'gender': 'Femenino',
-                'avg_length': length_f
-            })
-        
-        self.name_length_data = pd.DataFrame(length_records)    @st.cache_data(ttl=3600)
+
+    @st.cache_data(ttl=3600)
     def create_name_trends_visualization(self):
         """Crea visualización de tendencias de nombres populares con contexto histórico"""
         if self.data is None:
@@ -424,69 +337,68 @@ class DemographicsApp:
         fig = make_subplots(
             rows=2, cols=1,
             subplot_titles=('Nombres Masculinos más Populares por Década', 
-                          'Nombres Femeninos más Populares por Década'),
-            vertical_spacing=0.12,
-            row_heights=[0.5, 0.5]
+                           'Nombres Femeninos más Populares por Década'),
+            vertical_spacing=0.15,
+            shared_xaxes=True,
+            x_title="Década"
         )
         
-        # Procesar datos por género
-        for idx, (gender, title) in enumerate([('M', 'Masculinos'), ('F', 'Femeninos')]):
-            df_gender = df_trends[df_trends['gender'] == gender]
-            top_names = []
+        # Para cada género, mostrar los 5 nombres más populares por década
+        for gender_idx, gender in enumerate(['M', 'F']):
+            # Filtrar por género
+            gender_data = df_trends[df_trends['gender'] == gender]
             
-            # Obtener top 5 nombres por década
-            for decade in DECADES:
-                decade_names = df_gender[df_gender['decade'] == decade] \
-                    .nlargest(5, 'total_count')['name'].tolist()
-                top_names.extend(decade_names)
+            # Agrupar por década
+            decades_groups = gender_data.groupby('decade')
             
-            top_names = list(set(top_names))[:15]  # Eliminar duplicados y limitar a 15 nombres
-            
-            # Crear líneas para cada nombre
-            for name in top_names:
-                name_data = df_gender[df_gender['name'] == name]
+            # Para cada década, obtener los 5 nombres más populares
+            for decade, group in decades_groups:
+                top_names = group.nlargest(5, 'total_count')
                 
-                fig.add_trace(
-                    go.Scatter(
-                        x=name_data['decade'],
-                        y=name_data['total_count'],
-                        name=name,
-                        mode='lines+markers',
-                        line=dict(width=2),
-                        marker=dict(size=6),
-                        showlegend=True,
-                        hovertemplate='<b>%{x}s</b><br>' +
-                                    'Nombre: <b>%{fullData.name}</b><br>' +
-                                    'Registros: %{y:,.0f}<extra></extra>'
-                    ),
-                    row=idx+1, col=1
-                )
-            
-            # Añadir eventos históricos relevantes como anotaciones
-            for decade in DECADES:
-                # Buscar si hay un evento histórico relevante en esta década
-                event_years = [year for year in HISTORICAL_EVENTS.keys() 
-                              if decade <= year < decade + 10]
-                
-                for year in event_years:
-                    # Encontrar valor Y aproximado para la anotación
-                    max_y = df_gender[df_gender['decade'] == decade]['total_count'].max()
-                    y_pos = max_y * 1.1 if max_y else 10000
+                # Para cada nombre en el top 5 de la década
+                for _, row in top_names.iterrows():
+                    # Buscar este nombre en todas las décadas para crear una línea temporal
+                    name_history = df_trends[(df_trends['name'] == row['name']) & 
+                                             (df_trends['gender'] == gender)]
                     
-                    fig.add_annotation(
-                        x=decade,
-                        y=y_pos,
-                        text=f"{year}: {HISTORICAL_EVENTS[year]}",
-                        showarrow=True,
-                        arrowhead=2,
-                        ax=0,
-                        ay=-40,
-                        row=idx+1, col=1,
-                        bgcolor="rgba(255, 255, 255, 0.8)",
-                        bordercolor="#c7c7c7",
-                        borderwidth=1,
-                        font=dict(size=10)
+                    # Agregar trazo al gráfico correspondiente al género
+                    fig.add_trace(
+                        go.Scatter(
+                            x=name_history['decade'],
+                            y=name_history['total_count'],
+                            mode='lines+markers',
+                            name=row['name'],
+                            line=dict(width=2),
+                            marker=dict(size=6),
+                            showlegend=decade == 2010,  # Solo mostrar en leyenda para la última década
+                            legendgroup=row['name']
+                        ),
+                        row=gender_idx+1, col=1
                     )
+                    
+        # Agregar eventos históricos como anotaciones
+        for gender_idx in range(2):
+            for year, event in HISTORICAL_EVENTS.items():
+                # Encontrar la década más cercana para el evento
+                decade = (year // 10) * 10
+                if decade not in DECADES:
+                    continue
+                
+                # Agregar una anotación para el evento
+                fig.add_annotation(
+                    x=decade,
+                    y=0.9,  # Posición relativa al eje y
+                    text=f"{year}: {event}",
+                    showarrow=True,
+                    arrowhead=2,
+                    ax=0,
+                    ay=-40,
+                    row=gender_idx+1, col=1,
+                    bgcolor="rgba(255, 255, 255, 0.8)",
+                    bordercolor="#c7c7c7",
+                    borderwidth=1,
+                    font=dict(size=10)
+                )
         
         # Actualizar layout
         fig.update_layout(
@@ -507,7 +419,7 @@ class DemographicsApp:
         # Actualizar ejes
         fig.update_xaxes(title_text="Década", row=1, col=1, tickmode='array', tickvals=DECADES)
         fig.update_xaxes(title_text="Década", row=2, col=1, tickmode='array', tickvals=DECADES)
-        fig.update_yaxes(title_text="Número de Nacimientos", row=1, col=1)        
+        fig.update_yaxes(title_text="Número de Nacimientos", row=1, col=1)
         fig.update_yaxes(title_text="Número de Nacimientos", row=2, col=1)
         
         return fig
@@ -568,27 +480,6 @@ class DemographicsApp:
                             'gender': 'Género'},
                     title='Evolución de la longitud promedio de nombres por género (1910-2013)')
         
-        # Añadir eventos sociológicos relevantes
-        events = [
-            {"year": 1960, "event": "Movimiento contracultural", "y": 5.9},
-            {"year": 1980, "event": "Individualismo y nombres únicos", "y": 6.1},
-            {"year": 1995, "event": "Globalización e Internet", "y": 6.3}
-        ]
-        
-        for event in events:
-            fig.add_annotation(
-                x=event["year"],
-                y=event["y"],
-                text=event["event"],
-                showarrow=True,
-                arrowhead=2,
-                arrowsize=1,
-                arrowwidth=1,
-                arrowcolor="#636363",
-                ax=-50,
-                ay=-30
-            )
-        
         # Mejorar diseño
         fig.update_layout(
             height=500,
@@ -598,35 +489,113 @@ class DemographicsApp:
             font=dict(size=12)
         )
         
+        # Añadir suavizado para ver tendencias más claras
+        fig.update_traces(line=dict(shape='spline', smoothing=1.3))
+        
+        return fig
+    
+    @st.cache_data(ttl=3600)
+    def create_historical_trends_visualization(self):
+        """Crea visualización de tendencias históricas de nacimientos"""
+        if self.gender_year_data is None:
+            return None
+        
+        # Preparar datos
+        plot_df = self.gender_year_data.copy()
+        
+        # Agregar columna para el total por año
+        yearly_totals = plot_df.groupby('year')['count'].sum().reset_index()
+        yearly_totals.rename(columns={'count': 'total'}, inplace=True)
+        
+        # Unir con los datos originales
+        plot_df = pd.merge(plot_df, yearly_totals, on='year')
+        
+        # Crear gráfico
+        fig = go.Figure()
+        
+        # Agregar área para cada género
+        for gender, gender_name in GENDER_NAMES.items():
+            gender_data = plot_df[plot_df['gender'] == gender]
+            fig.add_trace(go.Scatter(
+                x=gender_data['year'], 
+                y=gender_data['count'],
+                mode='lines',
+                name=gender_name,
+                line=dict(width=0),
+                stackgroup='one',
+                fillcolor=GENDER_COLORS[gender]
+            ))
+        
+        # Agregar eventos históricos
+        for year, event in HISTORICAL_EVENTS.items():
+            if year < min(plot_df['year']) or year > max(plot_df['year']):
+                continue
+                
+            fig.add_vline(
+                x=year,
+                line_width=1,
+                line_dash="dash",
+                line_color="rgba(0, 0, 0, 0.3)",
+                annotation_text=f"{year}: {event}",
+                annotation_position="top",
+                annotation=dict(
+                    font_size=10,
+                    font_color="black",
+                    bgcolor="white",
+                    bordercolor="black",
+                    borderwidth=1
+                )
+            )
+        
+        # Mejorar diseño
+        fig.update_layout(
+            title='Nacimientos por Género a lo Largo del Tiempo (1910-2013)',
+            yaxis_title='Número de Nacimientos',
+            xaxis_title='Año',
+            height=600,
+            template='plotly_white',
+            hovermode="x unified",
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            )
+        )
+        
         return fig
     
     @st.cache_data(ttl=3600)
     def create_top_names_visualization(self):
-        """Crea visualización de los nombres más populares por género"""
+        """Crea visualización de los nombres más populares de todos los tiempos"""
         if self.data is None:
             return None, None
-            
-        # Agrupar por nombre y género para obtener totales
-        df_grouped = self.data.groupby(['name', 'gender'])['total_count'].sum().reset_index()
         
-        # Separar por género
-        df_m = df_grouped[df_grouped['gender'] == 'M'].sort_values('total_count', ascending=False).head(10)
-        df_f = df_grouped[df_grouped['gender'] == 'F'].sort_values('total_count', ascending=False).head(10)
+        # Agrupar por nombre y género
+        top_names = self.data.groupby(['name', 'gender'])['total_count'].sum().reset_index()
         
-        # Crear gráficos
+        # Separar por género y obtener los 10 más populares
+        male_top = top_names[top_names['gender'] == 'M'].nlargest(10, 'total_count')
+        female_top = top_names[top_names['gender'] == 'F'].nlargest(10, 'total_count')
+        
+        # Crear barras horizontales para nombres masculinos
         fig_m = px.bar(
-            df_m, 
-            x='name', 
-            y='total_count',
+            male_top,
+            y='name',
+            x='total_count',
+            orientation='h',
             title='Top 10 Nombres Masculinos de Todos los Tiempos',
             labels={'total_count': 'Número total de registros', 'name': 'Nombre'},
             color_discrete_sequence=[GENDER_COLORS['M']]
         )
         
+        # Crear barras horizontales para nombres femeninos
         fig_f = px.bar(
-            df_f, 
-            x='name', 
-            y='total_count',
+            female_top,
+            y='name',
+            x='total_count',
+            orientation='h',
             title='Top 10 Nombres Femeninos de Todos los Tiempos',
             labels={'total_count': 'Número total de registros', 'name': 'Nombre'},
             color_discrete_sequence=[GENDER_COLORS['F']]
@@ -635,12 +604,13 @@ class DemographicsApp:
         # Mejorar diseño
         for fig in [fig_m, fig_f]:
             fig.update_layout(
-                height=400,                template="plotly_white",
+                height=400,
+                template="plotly_white",
                 xaxis=dict(categoryorder='total descending')
             )
         
         return fig_m, fig_f
-        
+    
     def render_name_trends(self):
         """Muestra tendencias de nombres populares con explicaciones"""
         st.markdown('<div class="section-header">📈 Tendencias de Nombres a lo Largo del Tiempo</div>', unsafe_allow_html=True)
