@@ -14,6 +14,75 @@ from pathlib import Path
 import os
 import sys
 
+# Sistema de almacenamiento de feedback
+class FeedbackSystem:
+    def __init__(self):
+        """Inicializa el sistema de feedback"""
+        self.bucket_name = "ds-portfolio-feedback"
+        self.client = storage.Client()
+        self._ensure_bucket_exists()
+
+    def _ensure_bucket_exists(self):
+        """Asegura que el bucket existe, si no, lo crea"""
+        try:
+            self.bucket = self.client.get_bucket(self.bucket_name)
+        except Exception:
+            try:
+                self.bucket = self.client.create_bucket(
+                    self.bucket_name,
+                    location="us-central1"
+                )
+            except Exception as e:
+                st.error(f"No se pudo acceder o crear el bucket: {str(e)}")
+                # Crear un directorio local para almacenar el feedback si falla el bucket
+                local_dir = Path(__file__).parent.parent.parent / "feedback_data"
+                local_dir.mkdir(exist_ok=True)
+                self.bucket = None
+
+    def save_feedback(self, feedback_data):
+        """Guarda el feedback en Cloud Storage o localmente"""
+        # Genera ID único si no se proporciona nombre
+        user_id = feedback_data.get('name', str(uuid.uuid4())[:8])
+        feedback_id = str(uuid.uuid4())
+        
+        # Estructura del feedback
+        feedback_entry = {
+            'id': feedback_id,
+            'timestamp': datetime.now().isoformat(),
+            'user_id': user_id,
+            'email': feedback_data.get('email', 'anónimo'),
+            'message': feedback_data['message'],
+            'category': feedback_data.get('category', 'general')
+        }
+        
+        # Guarda en Cloud Storage o localmente
+        try:
+            if self.bucket:
+                blob = self.bucket.blob(f"feedback/{feedback_entry['id']}.json")
+                blob.upload_from_string(
+                    json.dumps(feedback_entry),
+                    content_type='application/json'
+                )
+            else:
+                # Guardar localmente si no hay bucket
+                local_path = Path(__file__).parent.parent.parent / "feedback_data" / f"{feedback_entry['id']}.json"
+                with open(local_path, 'w', encoding='utf-8') as f:
+                    json.dump(feedback_entry, f, ensure_ascii=False, indent=2)
+                    
+            # Guardar una copia en la base de datos
+            self._save_to_database(feedback_entry)
+                
+        except Exception as e:
+            st.error(f"Error al guardar feedback: {str(e)}")
+        
+        return feedback_id
+        
+    def _save_to_database(self, feedback_entry):
+        """Guarda una copia en la base de datos (simulado)"""
+        # Esta función es un placeholder para futura implementación de base de datos
+        # Por ahora solo imprime un mensaje de log
+        print(f"Feedback guardado con ID: {feedback_entry['id']}")
+
 # CSS personalizado
 st.markdown("""
 <style>
@@ -77,7 +146,7 @@ class FeedbackApp:
             <p>Nos encantaría conocer tu opinión sobre el portafolio, sugerencias de mejora o ideas para nuevos análisis.</p>
         </div>
         """, unsafe_allow_html=True)
-
+        
         with st.form("feedback_form"):
             name = st.text_input("Nombre (opcional)", "")
             email = st.text_input("Email (opcional)", "")
@@ -95,6 +164,7 @@ class FeedbackApp:
             
             if submit and message:  # Asegurarse de que hay un mensaje
                 try:
+                    # Usar self porque FeedbackSystem está definida en este mismo archivo
                     feedback_system = FeedbackSystem()
                     feedback_id = feedback_system.save_feedback({
                         'name': name,
@@ -237,33 +307,3 @@ class FeedbackSystem:
         print(f"Feedback guardado con ID: {feedback_entry['id']}")
 
 # Función eliminada ya que ahora está integrada en la clase FeedbackApp
-
-    with st.form("feedback_form"):
-        name = st.text_input("Nombre (opcional)", "")
-        email = st.text_input("Email (opcional)", "")
-        category = st.selectbox(
-            "Categoría",
-            ["General", "Sugerencia", "Error/Bug", "Nueva Funcionalidad"]
-        )
-        message = st.text_area(
-            "Tu mensaje",
-            height=150,
-            placeholder="Escribe aquí tu comentario o sugerencia..."
-        )
-        
-        submit = st.form_submit_button("Enviar Feedback")
-        
-        if submit and message:  # Asegurarse de que hay un mensaje
-            try:
-                feedback_system = FeedbackSystem()
-                feedback_id = feedback_system.save_feedback({
-                    'name': name,
-                    'email': email,
-                    'category': category,
-                    'message': message
-                })
-                st.success(f"¡Gracias por tu feedback! ID: {feedback_id}")
-            except Exception as e:
-                st.error(f"No se pudo guardar el feedback: {str(e)}")
-        elif submit:
-            st.warning("Por favor, escribe un mensaje antes de enviar.")
