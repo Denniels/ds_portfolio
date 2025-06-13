@@ -1,20 +1,16 @@
 # 📊 Portafolio de Data Science - Análisis de Datos Gubernamentales
 
-> **Estado:** ✅ **Versión Estable Desplegada (Junio 2025)** - Sistema modular completamente desplegado en Google Cloud Run con integración de Firestore, visualizaciones interactivas y optimizaciones de rendimiento.
+> **Estado:** ✅ **Completamente Funcional y Actualizado (Junio 2025)** - Sistema modular con arquitectura escalable, integraciones múltiples y mejoras continuas
 
 Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos gubernamentales, ambientales y demográficos, con visualizaciones avanzadas, mapas interactivos y análisis presupuestario.
 
-## 🎉 Versión Actual: 2.5.0 (13 de Junio 2025)
-
-Esta versión representa la culminación de múltiples fases de desarrollo e incluye:
+## 🔥 Actualización (13 de Junio 2025)
 
 - ✅ **Despliegue completo en Google Cloud Run** - Plataforma totalmente operativa en la nube
 - ✅ **Sistema de comentarios con Firestore** - Almacenamiento eficiente optimizado para la capa gratuita 
 - ✅ **Integraciones mejoradas** - Todas las aplicaciones funcionan perfectamente en la nube
 - ✅ **Optimizaciones de rendimiento** - Tiempo de carga reducido y experiencia fluida
 - ✅ **Documentación actualizada** - Guías detalladas para despliegue y contribución
-- ✅ **Panel de administración** - Para gestión de comentarios y feedback
-- ✅ **Arquitectura modular refinada** - Mayor mantenibilidad y escalabilidad
 
 ### 📣 Sistema de Comentarios con Firestore
 Se ha implementado un sistema de feedback optimizado específicamente para aprovechar la capa gratuita de Google Cloud:
@@ -195,33 +191,20 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 - **Notebooks de Análisis**: `/notebooks/`
 - **Documentación Técnica**: `/docs/`
 - **Guías de Despliegue**:
-  - [Despliegue en Google Cloud Run](/docs/despliegue_google_cloud_run.md)
+  - [Despliegue en Google Cloud Run](/docs/roadmap_google_cloud_run.md)
   - [Despliegue en VM de Google Cloud](/docs/despliegue_vm_gcp.md)
   - [Despliegue en GitHub Pages](/docs/despliegue_github_pages.md)
 - **Guías de Usuario**: Integradas en cada aplicación
-- **Estado del Proyecto**: [Estado Final Junio 2025](/ESTADO_FINAL_JUNIO_2025.md)
-- **Compartir y Feedback**: [Guía para LinkedIn](/docs/COMPARTIR_EN_LINKEDIN.md)
+- **Metodología**: Documentada en cada módulo
 
 ## 🤝 Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, revisa las guías de contribución en `CONTRIBUTING.md`.
 
-## 💬 Feedback
-
-Tu opinión es extremadamente valiosa. Utiliza el formulario de feedback dentro de la aplicación o [crea un issue](https://github.com/tu-usuario/ds_portfolio/issues) en este repositorio.
-
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo `LICENSE` para más detalles.
 
-## 🙋‍♂️ Contacto
+## 🙋‍♂️ Soporte
 
-Si tienes preguntas, sugerencias o estás interesado en colaborar, no dudes en contactarme a través de:
-
-- LinkedIn: [Tu Perfil de LinkedIn](https://linkedin.com/in/tu-perfil)
-- Email: tu.email@ejemplo.com
-- Twitter: [@tu_usuario](https://twitter.com/tu_usuario)
-
----
-
-> Este portafolio es un proyecto en constante evolución. ¡Gracias por tu interés y apoyo!
+Si tienes preguntas o encuentras problemas, por favor abre un issue en el repositorio.

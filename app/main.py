@@ -230,15 +230,6 @@ class DataSciencePortfolio:
                 "tags": ["Feedback", "Sugerencias", "Mejoras"],
                 "status": "Disponible"
             },
-            # Visor de comentarios
-            "feedback_viewer": {
-                "name": "Ver Comentarios",
-                "description": "Visualiza todos los comentarios y sugerencias enviados por los usuarios del portafolio. Filtra por fecha y aplicación.",
-                "file": "feedback_viewer_app.py",
-                "icon": "📊",
-                "tags": ["Feedback", "Administración", "Datos"],
-                "status": "Disponible"
-            },
             # Sistema de Feedback (versión anterior)
             "feedback_legacy": {
                 "name": "Feedback (Versión Original)",
@@ -425,15 +416,15 @@ class DataSciencePortfolio:
         
         with col1:
             st.markdown("""
-            ### 🎯 Enfoque en Datos Rales
+            ### 🎯 Enfoque en Datos Ambientales
             
-            Este portafolio se enfoca **En Mostrar Mis habilidades** con aplicaciones
-            basadas en distintas fuentes oficiales:
+            Este portafolio se especializa en el **análisis de datos ambientales** con aplicaciones reales 
+            basadas en fuentes oficiales del gobierno de Chile:
             
             - 💧 Calidad del Agua**: Análisis de 174 estaciones de monitoreo del DGA
             - 🏭 Emisiones CO2**: Estudio comprehensivo del RETC 2023 con 285K+ registros
-            - 👤 Análisis demográfico: Análisis Demográfico con BigQuery
-            - 💰 Análisis del Presupuesto Público: Extracion desde base de datos BigQuery
+            - 👤 Análisis demográfico
+            - 💰 Análisis del Presupuesto Público
             - 📊 Visualizaciones Interactivas**: Dashboards dinámicos con Plotly y Folium
             - 🔬 Metodología Científica**: Análisis estadístico robusto y conclusiones fundamentadas
             
@@ -464,21 +455,21 @@ class DataSciencePortfolio:
             - NumPy Computing
             
             **Impacto:**
-            - Análisis política pública            - Insights ambientales
+            - Análisis política pública
+            - Insights ambientales
             - Herramientas decisión
             - Código open source
             """)
-            
+    
     def _run_app(self, app_info):
         """Ejecuta una aplicación específica"""
         try:
             app_path = self.apps_dir / app_info['file']
-            app_file = app_info['file']
             
             # Importar y ejecutar la aplicación
             spec = importlib.util.spec_from_file_location("app_module", app_path)
             app_module = importlib.util.module_from_spec(spec)
-            # Agregar el directorio de apps al path para imports relativos
+              # Agregar el directorio de apps al path para imports relativos
             if str(self.apps_dir) not in sys.path:
                 sys.path.insert(0, str(self.apps_dir))
             
@@ -505,9 +496,6 @@ class DataSciencePortfolio:
                 # Versión anterior
                 app_instance = app_module.FeedbackApp()
                 app_instance.run()
-            elif app_file == 'feedback_viewer_app.py' and hasattr(app_module, 'main'):
-                # Ejecutar el visor de feedback
-                app_module.main()
             elif hasattr(app_module, 'run'):
                 app_module.run()
             elif hasattr(app_module, 'main'):
