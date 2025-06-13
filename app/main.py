@@ -168,23 +168,15 @@ class DataSciencePortfolio:
                 "tags": ["Finanzas Públicas", "Datos Gubernamentales", "Visualización Interactiva", "Análisis Avanzado"],
                 "status": "Disponible"
             },
-            # Aquí se pueden agregar más aplicaciones en el futuro
-            #"coming_soon_1": {
-            #    "name": "Análisis de Mercado Financiero",
-            #    "description": "Análisis de tendencias del mercado financiero con machine learning predictivo.",
-            #   "file": None,
-            #    "icon": "📈",
-            #    "tags": ["Finanzas", "Machine Learning", "Predicción"],
-            #   "status": "Próximamente"
-            #},
-            #"coming_soon_2": {
-            #    "name": "Dashboard de Ventas",
-            #   "description": "Dashboard interactivo para análisis de ventas y métricas de negocio.",
-            #    "file": None,
-            #    "icon": "🛒",
-            #    "tags": ["Business Intelligence", "KPIs", "Dashboard"],
-            #    "status": "Próximamente"
-            #}
+            # Sistema de Feedback
+            "feedback": {
+                "name": "Feedback y Sugerencias",
+                "description": "¿Tienes comentarios o sugerencias? ¡Me encantaría escucharlos! Ayúdame a mejorar este portafolio compartiendo tus ideas.",
+                "file": "feedback_system.py",
+                "icon": "�",
+                "tags": ["Feedback", "Sugerencias", "Mejoras"],
+                "status": "Disponible"
+            }
         }
         return apps
     
