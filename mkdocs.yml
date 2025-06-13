@@ -61,9 +61,9 @@ nav:
     - Análisis de Presupuesto: analisis_presupuesto_publico.md
     - Calidad del Agua: analisis_calidad_agua.md
     - Emisiones CO2: analisis_emisiones_co2.md
-    - Análisis Demográfico: analisis_demografico_bigquery.md
-  - Despliegue:
+    - Análisis Demográfico: analisis_demografico_bigquery.md  - Despliegue:
     - Google Cloud Run: roadmap_google_cloud_run.md
+    - VM de Google Cloud: despliegue_vm_gcp.md
     - GitHub Pages: despliegue_github_pages.md
   - Actualizaciones:
     - Junio 2025: ACTUALIZACIONES_JUNIO_2025.md

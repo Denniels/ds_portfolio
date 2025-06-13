@@ -305,6 +305,36 @@ app/data/
 - [ ] API REST (`api_utils.py`)
 - [ ] Módulo de reportes (`report_generator.py`)
 
+## 🚀 Consideraciones para Despliegue
+
+Los módulos están diseñados para funcionar eficientemente en diferentes entornos de despliegue:
+
+### ⚙️ Configuración por Entorno
+- **Desarrollo**: Configuración por defecto para entorno local
+- **Producción**: Optimizaciones automáticas para cloud
+  ```python
+  # Ejemplo de uso en producción
+  from modules.cloud_config import CloudConfig
+  if IS_PRODUCTION:
+      df = CloudConfig.optimize_dataframe(df)
+  ```
+
+### 🔄 Adaptación para Cloud
+- **Optimización de Memoria**: Conversión automática de tipos de datos
+- **Gestión de Caché**: TTL ajustable según entorno
+- **Manejo de APIs Externas**: Reintentos y timeouts configurables
+- **Registro de Eventos**: Nivel de detalle ajustable
+
+### 📦 Compatibilidad con Contenedores
+- **Paths Relativos**: Independientes del sistema de archivos
+- **Variables de Entorno**: Configuración sin hardcoding
+- **Gestión de Recursos**: Optimización para entornos limitados
+
+Para instrucciones detalladas sobre despliegue:
+- [Despliegue en Google Cloud Run](../../../../docs/roadmap_google_cloud_run.md)
+- [Despliegue en VM de GCP](../../../../docs/despliegue_vm_gcp.md)
+- [Despliegue en GitHub Pages](../../../../docs/despliegue_github_pages.md)
+
 ### Mejoras Planificadas
 - [ ] Cache distribuido con Redis
 - [ ] Paralelización de cálculos
@@ -321,6 +351,6 @@ Para dudas sobre la arquitectura modular:
 
 ---
 
-**Última actualización**: Enero 2025  
-**Versión de arquitectura**: 2.0 (Modular)  
+**Última actualización**: Junio 2025  
+**Versión de arquitectura**: 2.1 (Optimizada para Cloud)
 **Compatibilidad**: Python 3.8+, Streamlit 1.0+

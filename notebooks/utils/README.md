@@ -35,7 +35,33 @@ Los archivos en este directorio están diseñados para integrarse perfectamente 
 - `01_Analisis_Emisiones_CO2_Chile.ipynb`
 - `02_Analisis_Calidad_Del_Agua.ipynb`
 
-## 🛠️ Mantenimiento
+## � Despliegue y Exportación
+
+Estas utilidades también incluyen funciones para exportar resultados y visualizaciones para despliegue:
+
+### Exportación para GitHub Pages
+```python
+from utils.export_utils import export_map_for_github_pages
+
+# Exportar mapa para GitHub Pages
+export_map_for_github_pages(mapa, "mapa_estaciones_calidad_agua.html", 
+                           thumbnail=True, optimize=True)
+```
+
+### Preparación para Despliegue Cloud
+```python
+from utils.cloud_utils import prepare_data_for_cloud
+
+# Optimizar datos para despliegue
+df_optimized = prepare_data_for_cloud(df_original)
+```
+
+Para instrucciones detalladas sobre el despliegue de las visualizaciones y aplicaciones:
+- [Despliegue en Google Cloud Run](../../docs/roadmap_google_cloud_run.md)
+- [Despliegue en VM de GCP](../../docs/despliegue_vm_gcp.md)
+- [Despliegue en GitHub Pages](../../docs/despliegue_github_pages.md)
+
+## �🛠️ Mantenimiento
 
 - Cache de geocodificación se almacena localmente
 - Logs de progreso se muestran en consola

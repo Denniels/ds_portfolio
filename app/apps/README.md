@@ -80,3 +80,28 @@ Cada aplicación tiene su correspondiente notebook de desarrollo en la carpeta `
 - **Type Hints**: Uso de anotaciones de tipo para mejor mantenibilidad
 - **Modularidad**: Separación de lógica de negocio y presentación
 - **Caché**: Optimización de rendimiento con decoradores de caché
+
+## 🚀 Despliegue de las Aplicaciones
+
+Las aplicaciones de este portafolio están diseñadas para ser desplegadas en diferentes entornos:
+
+### 🔄 Entorno de Desarrollo Local
+- Ejecutar con `streamlit run app/main.py` desde la raíz del proyecto
+- Acceder desde `http://localhost:8501`
+
+### 🐳 Despliegue con Docker
+- Contenedor único con todas las aplicaciones
+- Configurado para entornos de producción
+- Optimizado para rendimiento y seguridad
+
+### ☁️ Opciones de Despliegue en la Nube
+- **Google Cloud Run**: Servicio serverless para contenedores
+- **Google Compute Engine**: VM con capa gratuita (e2-micro)
+- **GitHub Pages**: Documentación y visualizaciones estáticas exportadas
+
+### 📝 Consideraciones para Producción
+- Ajuste de cachés para optimizar rendimiento
+- Manejo seguro de credenciales con variables de entorno
+- Configuración de seguridad y HTTPS
+
+Para instrucciones detalladas sobre cada opción de despliegue, consulta las guías en la carpeta `/docs/`.

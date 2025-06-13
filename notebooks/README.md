@@ -135,7 +135,35 @@ jupyter notebook
 streamlit run app/main.py
 ```
 
-## 📖 Documentación Adicional
+## � Despliegue e Integración
+
+Los análisis desarrollados en estos notebooks pueden desplegarse como aplicaciones interactivas:
+
+### 🔄 Proceso de Integración
+1. **Desarrollo en Notebooks**: Prototipado y análisis exploratorio
+2. **Refactorización a Módulos**: Conversión a código modular y mantenible
+3. **Integración en Streamlit**: Creación de interfaz interactiva
+4. **Despliegue en Producción**: Publicación en plataformas cloud
+
+### 📋 Opciones de Despliegue
+- **Google Cloud Run**: Para aplicaciones interactivas con Streamlit
+- **Google Compute Engine**: VM con Docker (capa gratuita)
+- **GitHub Pages**: Para visualizaciones estáticas exportadas
+
+### 📦 Exportación de Visualizaciones
+Los notebooks incluyen funcionalidad para exportar visualizaciones como HTML estático o imágenes para su inclusión en GitHub Pages o documentación:
+
+```python
+# Ejemplo de exportación de visualización Plotly
+fig.write_html("../github_pages/visualizations/presupuesto_distribucion.html")
+```
+
+Para instrucciones detalladas sobre las opciones de despliegue, consulta:
+- [Despliegue en Google Cloud Run](../docs/roadmap_google_cloud_run.md)
+- [Despliegue en VM de Google Cloud](../docs/despliegue_vm_gcp.md)
+- [Despliegue en GitHub Pages](../docs/despliegue_github_pages.md)
+
+## �📖 Documentación Adicional
 
 - **[Metodología](../docs/DOCUMENTATION.md)**: Documentación detallada
 - **[Deployment](../docs/despliegue_google_cloud_run.md)**: Guía de despliegue

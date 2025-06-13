@@ -49,6 +49,26 @@ Un portafolio interactivo desarrollado con Streamlit que presenta múltiples apl
    - Abrir navegador en `http://localhost:8501`
    - Seleccionar una aplicación del menú lateral
 
+### Despliegue
+
+El portafolio puede desplegarse en diferentes plataformas según tus necesidades:
+
+1. **Despliegue Local con Docker**
+   ```bash
+   # Construir imagen Docker
+   docker build -t ds-portfolio .
+   
+   # Ejecutar contenedor
+   docker run -p 8501:8501 ds-portfolio
+   ```
+
+2. **Despliegue en la Nube (Opciones)**
+   - **Google Cloud Run**: Serverless, escalado automático
+   - **Google Compute Engine**: VM con capa gratuita (e2-micro)
+   - **GitHub Pages**: Para documentación y visualizaciones estáticas
+
+   Consulta las guías detalladas en la carpeta `/docs/` para instrucciones paso a paso.
+
 ## 🎯 Objetivos del Proyecto
 
 Este portafolio está diseñado como una **plataforma evolutiva** para análisis ambientales y demográficos, con un enfoque modular que permite agregar nuevos análisis y funcionalidades de manera incremental.
@@ -123,11 +143,22 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 - **BigQuery** para análisis de grandes conjuntos de datos
 - **Exportación de visualizaciones** en múltiples formatos
 - **Manejo seguro de credenciales** con variables de entorno
+- **Opciones de despliegue** documentadas para Google Cloud y GitHub Pages
+
+### 🚀 **Opciones de Despliegue**
+- **Google Cloud Run**: Despliegue serverless con Docker
+- **Google Compute Engine**: VM con capa gratuita e2-micro
+- **GitHub Pages**: Documentación y visualizaciones estáticas
+- **Estrategia híbrida**: Combinación de plataformas para óptimo rendimiento
 
 ## 📚 Documentación
 
 - **Notebooks de Análisis**: `/notebooks/`
 - **Documentación Técnica**: `/docs/`
+- **Guías de Despliegue**:
+  - [Despliegue en Google Cloud Run](/docs/roadmap_google_cloud_run.md)
+  - [Despliegue en VM de Google Cloud](/docs/despliegue_vm_gcp.md)
+  - [Despliegue en GitHub Pages](/docs/despliegue_github_pages.md)
 - **Guías de Usuario**: Integradas en cada aplicación
 - **Metodología**: Documentada en cada módulo
 
