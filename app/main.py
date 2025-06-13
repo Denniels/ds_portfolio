@@ -425,15 +425,15 @@ class DataSciencePortfolio:
         
         with col1:
             st.markdown("""
-            ### 🎯 Enfoque en Datos Ambientales
+            ### 🎯 Enfoque en Datos Rales
             
-            Este portafolio se especializa en el **análisis de datos ambientales** con aplicaciones reales 
-            basadas en fuentes oficiales del gobierno de Chile:
+            Este portafolio se enfoca **En Mostrar Mis habilidades** con aplicaciones
+            basadas en distintas fuentes oficiales:
             
             - 💧 Calidad del Agua**: Análisis de 174 estaciones de monitoreo del DGA
             - 🏭 Emisiones CO2**: Estudio comprehensivo del RETC 2023 con 285K+ registros
-            - 👤 Análisis demográfico
-            - 💰 Análisis del Presupuesto Público
+            - 👤 Análisis demográfico: Análisis Demográfico con BigQuery
+            - 💰 Análisis del Presupuesto Público: Extracion desde base de datos BigQuery
             - 📊 Visualizaciones Interactivas**: Dashboards dinámicos con Plotly y Folium
             - 🔬 Metodología Científica**: Análisis estadístico robusto y conclusiones fundamentadas
             
