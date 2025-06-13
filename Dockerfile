@@ -11,8 +11,12 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el código de la aplicación
+# Copiar el código de la aplicación y datos necesarios
 COPY ./app ./app
+COPY ./notebooks/data ./notebooks/data
+
+# Crear directorio para visualizaciones
+RUN mkdir -p ./notebooks/visualizaciones
 
 # Configuración para producción
 ENV PORT=8080

@@ -27,6 +27,27 @@ if 'initialized' not in st.session_state:
     st.session_state['selected_app'] = "🏠 Inicio"
     st.session_state['current_app'] = None
 
+# Mensaje de bienvenida personalizado
+def show_welcome():
+    st.markdown("""
+        <div style='text-align: center; padding: 2rem;'>
+            <h1 style='color: #1e3c72; margin-bottom: 1rem;'>👋 ¡Bienvenido a mi Portafolio de Data Science!</h1>
+            <p style='font-size: 1.2rem; color: #4a4a4a; margin-bottom: 2rem;'>
+                Explora una colección de análisis interactivos sobre datos ambientales y demográficos de Chile.
+                Cada proyecto demuestra diferentes aspectos del análisis de datos, visualización y machine learning.
+            </p>
+            <div style='background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;'>
+                <h3 style='color: #2a5298; margin-bottom: 1rem;'>🚀 Novedades - Junio 2025</h3>
+                <ul style='text-align: left; color: #4a4a4a;'>
+                    <li>✨ Nuevo despliegue en Google Cloud Run (capa gratuita)</li>
+                    <li>📊 Visualizaciones interactivas mejoradas</li>
+                    <li>🔄 Actualizaciones automáticas vía GitHub Actions</li>
+                    <li>📱 Interfaz adaptativa para móviles y tablets</li>
+                </ul>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
 # CSS personalizado para el portafolio
 st.markdown("""
 <style>

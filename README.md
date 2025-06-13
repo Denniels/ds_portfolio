@@ -51,23 +51,34 @@ Un portafolio interactivo desarrollado con Streamlit que presenta múltiples apl
 
 ### Despliegue
 
-El portafolio puede desplegarse en diferentes plataformas según tus necesidades:
+El portafolio está desplegado y accesible en:
+🔗 [https://ds-portfolio-482495249955.us-central1.run.app](https://ds-portfolio-482495249955.us-central1.run.app)
 
-1. **Despliegue Local con Docker**
+#### 🚀 Opciones de Despliegue
+
+1. **Google Cloud Run (Actual)**
+   - Despliegue serverless en la capa gratuita
+   - Actualizaciones automáticas vía GitHub Actions
+   - Escalado automático según demanda
+   - Costos optimizados (solo pagas por uso)
+
+2. **Despliegue Local con Docker**
    ```bash
    # Construir imagen Docker
    docker build -t ds-portfolio .
    
    # Ejecutar contenedor
-   docker run -p 8501:8501 ds-portfolio
+   docker run -p 8080:8080 ds-portfolio
    ```
 
-2. **Despliegue en la Nube (Opciones)**
-   - **Google Cloud Run**: Serverless, escalado automático
-   - **Google Compute Engine**: VM con capa gratuita (e2-micro)
-   - **GitHub Pages**: Para documentación y visualizaciones estáticas
+3. **Características del Despliegue Actual**
+   - ✨ CI/CD automatizado con GitHub Actions
+   - 🔒 HTTPS y dominio seguro
+   - 📱 Interfaz responsive
+   - 💰 Optimizado para la capa gratuita de GCP
+   - 🔄 Actualizaciones automáticas al hacer push
 
-   Consulta las guías detalladas en la carpeta `/docs/` para instrucciones paso a paso.
+Consulta las guías detalladas en la carpeta `/docs/` para más información.
 
 ## 🎯 Objetivos del Proyecto
 
