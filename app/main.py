@@ -253,7 +253,7 @@ class DataSciencePortfolio:
         with col1:
             st.markdown("""
             <div class="stat-box">
-                <div class="stat-number">3</div>
+                <div class="stat-number">4</div>
                 <div class="stat-label">Apps Activas</div>
             </div>
             """, unsafe_allow_html=True)
