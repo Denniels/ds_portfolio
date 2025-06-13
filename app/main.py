@@ -27,7 +27,7 @@ if 'initialized' not in st.session_state:
     st.session_state['selected_app'] = "🏠 Inicio"
     st.session_state['current_app'] = None
 
-# Mensaje de bienvenida personalizado
+# Funciones de navegación
 def show_welcome():
     st.markdown("""
         <div style='text-align: center; padding: 2rem;'>
@@ -43,6 +43,7 @@ def show_welcome():
                     <li>📊 Visualizaciones interactivas mejoradas</li>
                     <li>🔄 Actualizaciones automáticas vía GitHub Actions</li>
                     <li>📱 Interfaz adaptativa para móviles y tablets</li>
+                    <li>📝 ¡Nuevo! Sistema de feedback y sugerencias</li>
                 </ul>
             </div>
         </div>
@@ -53,10 +54,10 @@ def show_feedback():
     from apps.feedback_system import render_feedback_form
     render_feedback_form()
 
-def show_feedback_dashboard():
-    """Muestra el dashboard de administración de feedback"""
-    from apps.feedback_dashboard import show_feedback_dashboard
-    show_feedback_dashboard()
+def show_feedback():
+    """Muestra el formulario de feedback"""
+    from apps.feedback_system import render_feedback_form
+    render_feedback_form()
 
 # CSS personalizado para el portafolio
 st.markdown("""
@@ -252,7 +253,7 @@ class DataSciencePortfolio:
         with col1:
             st.markdown("""
             <div class="stat-box">
-                <div class="stat-number">4</div>
+                <div class="stat-number">3</div>
                 <div class="stat-label">Apps Activas</div>
             </div>
             """, unsafe_allow_html=True)
