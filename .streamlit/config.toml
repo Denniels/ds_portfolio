@@ -1,14 +1,15 @@
 [server]
-# Configuración para ejecución en entornos con recursos limitados
+# Configuración para ejecución local
 maxUploadSize = 50
 enableCORS = true
 enableXsrfProtection = true
 headless = true
 port = 8501
-address = "0.0.0.0"
+address = "localhost"
 
 [browser]
 gatherUsageStats = false
+serverAddress = "localhost"
 
 [runner]
 # Reducir la magnitud del parámetro fastReruns para disminuir el uso de memoria
@@ -16,10 +17,10 @@ fastReruns = false
 
 [theme]
 # Tema personalizado para la aplicación
-primaryColor = "#3B82F6"
+primaryColor = "#6366f1"
 backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F1F5F9"
-textColor = "#1E293B"
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#262730"
 font = "sans serif"
 
 [logger]

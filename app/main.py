@@ -126,6 +126,14 @@ class DataSciencePortfolio:
                 "tags": ["Cambio Climático", "RETC", "Análisis Ambiental", "GEI"],
                 "status": "Disponible"
             },
+            "demographics": {
+                "name": "Análisis Demográfico",
+                "description": "Análisis de tendencias en nombres de EE.UU. (1910-2013) utilizando BigQuery. Explora patrones históricos, cambios generacionales y diferencias por género en la elección de nombres.",
+                "file": "demographics_app.py",
+                "icon": "👤",
+                "tags": ["Demografía", "BigQuery", "Cloud", "Visualización"],
+                "status": "Disponible"
+            },
             # Aquí se pueden agregar más aplicaciones en el futuro
             "coming_soon_1": {
                 "name": "Análisis de Mercado Financiero",
@@ -153,7 +161,7 @@ class DataSciencePortfolio:
         st.markdown("""
         <div class="main-header">
             <h1>📊 Portafolio de Data Science</h1>
-            <p>Aplicaciones interactivas y análisis de datos ambientales</p>
+            <p>Aplicaciones interactivas y análisis de datos ambientales y demográficos</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -206,7 +214,7 @@ class DataSciencePortfolio:
         with col1:
             st.markdown("""
             <div class="stat-box">
-                <div class="stat-number">2</div>
+                <div class="stat-number">3</div>
                 <div class="stat-label">Apps Activas</div>
             </div>
             """, unsafe_allow_html=True)
@@ -352,21 +360,27 @@ class DataSciencePortfolio:
             
             spec.loader.exec_module(app_module)
             
-            # Ejecutar la aplicación
+            # Ejecutar la aplicación basada en la clase disponible
             if hasattr(app_module, 'WaterQualityApp'):
                 app_instance = app_module.WaterQualityApp()
                 app_instance.run()
             elif hasattr(app_module, 'CO2EmissionsApp'):
                 app_instance = app_module.CO2EmissionsApp()
                 app_instance.run()
+            elif hasattr(app_module, 'DemographicsApp'):
+                app_instance = app_module.DemographicsApp()
+                app_instance.run()
+            elif hasattr(app_module, 'run'):
+                app_module.run()
             elif hasattr(app_module, 'main'):
                 app_module.main()
             else:
-                st.error("No se encontró una función main() o clase de aplicación en el módulo.")
+                st.error("No se encontró una función main(), run() o clase de aplicación en el módulo.")
                 
         except Exception as e:
             st.error(f"Error al cargar la aplicación: {str(e)}")
-            st.exception(e)
+            if st.session_state.get('debug_mode', False):
+                st.exception(e)
 
 def main():
     """Función principal"""
