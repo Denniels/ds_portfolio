@@ -35,6 +35,8 @@ def show_welcome():
             <p style='font-size: 1.2rem; color: #4a4a4a; margin-bottom: 2rem;'>
                 Explora una colección de análisis interactivos sobre datos ambientales y demográficos de Chile.
                 Cada proyecto demuestra diferentes aspectos del análisis de datos, visualización y machine learning.
+                La intencion de este portafolio es presentar mis habilidades y proyectos en el campo de la ciencia de datos.
+                Esta es mi oportunidad de mostrar lo que he aprendido los ultimos 4 años de estudio practicas, bootcamps y muchos mas contenidos!
             </p>
             <div style='background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;'>
                 <h3 style='color: #2a5298; margin-bottom: 1rem;'>🚀 Novedades - Junio 2025</h3>

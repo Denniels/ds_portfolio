@@ -48,9 +48,11 @@ test_*.py
 *.swp
 .DS_Store
 
-# Notebooks (si no son necesarios en producción)
-notebooks/
-*.ipynb
+# Notebooks (excluyendo datos necesarios para la aplicación)
+notebooks/*.ipynb
+notebooks/*.py
+!notebooks/data/
+!notebooks/visualizaciones/
 .ipynb_checkpoints/
 
 # Caches

@@ -31,11 +31,17 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar el código de la aplicación
 COPY ./app ./app
 
-# Crear directorios necesarios para datos y visualizaciones
+# Asegurarse de que los directorios existan
 RUN mkdir -p ./notebooks/data
 RUN mkdir -p ./notebooks/visualizaciones
 
-# Crear archivos de datos vacíos si son necesarios
+# Copiar directorios de datos y visualizaciones
+COPY ./notebooks/data ./notebooks/data
+COPY ./notebooks/visualizaciones ./notebooks/visualizaciones
+COPY ./notebooks/notebooks/data/nombres_demografia.csv ./notebooks/data/
+COPY ./notebooks/data/nombres_demografia.csv ./notebooks/data/
+
+# Asegurarse de que los archivos existan (si no fueron copiados)
 RUN touch ./notebooks/data/cache_coordenadas_chile.json
 RUN touch ./notebooks/data/estaciones_coordenadas.json
 
