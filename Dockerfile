@@ -11,16 +11,22 @@ RUN apt-get update && apt-get install -y \
 # Copiar solo requirements.txt primero para aprovechar la cache
 COPY requirements.txt .
 
-# Instalar dependencias en una ubicación específica
-RUN pip install --no-cache-dir -r requirements.txt --target=/python-deps
+# Instalar dependencias
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Stage 2: Runtime
 FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copiar solo las dependencias necesarias del builder
-COPY --from=builder /python-deps /usr/local/lib/python3.9/site-packages
+# Instalar dependencias del sistema necesarias
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar requirements.txt e instalar dependencias directamente
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el código de la aplicación
 COPY ./app ./app
@@ -43,6 +49,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Configuración de la cache de streamlit
 ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 ENV STREAMLIT_SERVER_FILE_WATCHER_TYPE=none
+
+# Verificar la instalación de streamlit
+RUN which streamlit || echo "Streamlit no está instalado correctamente"
 
 # Comando para ejecutar la aplicación
 CMD ["streamlit", "run", "--server.port=8080", "--server.address=0.0.0.0", "app/main.py"]
