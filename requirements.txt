@@ -13,7 +13,8 @@ seaborn>=0.13.0
 openpyxl>=3.1.5
 ipykernel>=6.0.0  # Para Jupyter notebooks
 
-# Dependencias para BigQuery
+# Dependencias para servicios de Google Cloud
 google-cloud-bigquery>=3.11.0
 google-cloud-bigquery-storage>=2.22.0
+google-cloud-storage>=2.10.0  # Para el sistema de feedback
 pyarrow>=14.0.1  # Requerido para optimizar el rendimiento de BigQuery

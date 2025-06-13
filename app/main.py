@@ -48,6 +48,11 @@ def show_welcome():
         </div>
     """, unsafe_allow_html=True)
 
+def show_feedback():
+    """Muestra el formulario de feedback"""
+    from apps.feedback_system import render_feedback_form
+    render_feedback_form()
+
 # CSS personalizado para el portafolio
 st.markdown("""
 <style>
