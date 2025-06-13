@@ -49,10 +49,11 @@ def show_welcome():
         </div>
     """, unsafe_allow_html=True)
 
-def show_feedback():
-    """Muestra el formulario de feedback"""
-    from apps.feedback_system import render_feedback_form
-    render_feedback_form()
+def load_and_run_feedback():
+    """Carga y ejecuta la aplicación de feedback"""
+    from apps.feedback_system import FeedbackApp
+    app = FeedbackApp()
+    app.run()
 
 # CSS personalizado para el portafolio
 st.markdown("""
@@ -124,8 +125,61 @@ st.markdown("""
         color: #666;
         font-size: 0.9rem;
     }
+    
+    /* Botón de Feedback */
+    .feedback-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+        font-weight: bold;
+    }
+    
+    .feedback-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Estilos para el modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1001;
+        max-width: 500px;
+        width: 90%;
+    }
+    
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
 </style>
 """, unsafe_allow_html=True)
+
+def initialize_feedback_state():
+    """Inicializa el estado para el sistema de feedback"""
+    if 'show_feedback' not in st.session_state:
+        st.session_state.show_feedback = False
 
 class DataSciencePortfolio:
     """Clase principal para el portafolio de Data Science"""
@@ -133,7 +187,8 @@ class DataSciencePortfolio:
     def __init__(self):
         self.apps_dir = Path(__file__).parent / "apps"
         self.available_apps = self._get_available_apps()
-        
+        initialize_feedback_state()
+
     def _get_available_apps(self):
         """Obtiene la lista de aplicaciones disponibles"""
         apps = {
@@ -160,7 +215,8 @@ class DataSciencePortfolio:
                 "icon": "👤",
                 "tags": ["Demografía", "BigQuery", "Cloud", "Visualización"],
                 "status": "Disponible"
-            },            "budget_analysis": {
+            },
+            "budget_analysis": {
                 "name": "Análisis del Presupuesto Público",
                 "description": "Análisis interactivo y detallado del Presupuesto del Sector Público de Chile v2.0. Incluye análisis de concentración, curvas de Lorenz, evolución temporal y métricas avanzadas de distribución presupuestaria.",
                 "file": "budget_analysis_app_v2.py",
@@ -179,6 +235,26 @@ class DataSciencePortfolio:
             }
         }
         return apps
+    
+    def show_feedback_button(self):
+        """Muestra el botón flotante de feedback"""
+        # Añadir botón de feedback flotante
+        st.markdown("""
+            <button class="feedback-button" onclick="document.getElementById('feedbackModal').style.display='block';">
+                💭 Dejar Feedback
+            </button>
+            
+            <div id="feedbackModal" class="modal">
+                <div class="modal-content">
+                    <h2>📝 ¿Tienes algún comentario o sugerencia?</h2>
+                    <form id="feedbackForm">
+                        <input type="text" placeholder="Nombre (opcional)">
+                        <textarea placeholder="Tu mensaje aquí..."></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
     
     def run_portfolio(self):
         """Ejecuta la aplicación principal del portafolio"""

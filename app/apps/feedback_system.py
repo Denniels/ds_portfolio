@@ -13,6 +13,19 @@ import uuid
 from pathlib import Path
 import os
 
+class FeedbackApp:
+    """Aplicación principal de feedback"""
+    
+    def __init__(self):
+        """Inicializa la aplicación"""
+        pass
+        
+    def run(self):
+        """Ejecuta la aplicación principal"""
+        render_feedback_form()
+        
+app = FeedbackApp()
+
 class FeedbackSystem:
     def __init__(self):
         """Inicializa el sistema de feedback"""
@@ -63,6 +76,20 @@ def render_feedback_form():
             ¡Tu opinión es importante! Ayúdame a mejorar este portafolio dejando tus comentarios o sugerencias.
         </p>
     </div>
+    
+    <script>
+    // Función para cerrar el modal
+    function closeFeedbackModal() {
+        document.getElementById('feedbackModal').style.display = 'none';
+    }
+    
+    // Cerrar modal al hacer click fuera
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('feedbackModal')) {
+            closeFeedbackModal();
+        }
+    }
+    </script>
     """, unsafe_allow_html=True)
 
     with st.form("feedback_form"):
