@@ -121,7 +121,7 @@ class DataSciencePortfolio:
             "co2_emissions": {
                 "name": "Emisiones CO2 Chile",
                 "description": "Análisis comprehensivo de emisiones de gases de efecto invernadero en Chile basado en datos del RETC 2023. Incluye análisis regional, sectorial y por tipos de fuente.",
-                "file": "co2_emissions_app.py",
+                "file": "co2_emissions_app_v2.py",
                 "icon": "🏭",
                 "tags": ["Cambio Climático", "RETC", "Análisis Ambiental", "GEI"],
                 "status": "Disponible"
@@ -133,24 +133,31 @@ class DataSciencePortfolio:
                 "icon": "👤",
                 "tags": ["Demografía", "BigQuery", "Cloud", "Visualización"],
                 "status": "Disponible"
+            },            "budget_analysis": {
+                "name": "Análisis del Presupuesto Público",
+                "description": "Análisis interactivo y detallado del Presupuesto del Sector Público de Chile v2.0. Incluye análisis de concentración, curvas de Lorenz, evolución temporal y métricas avanzadas de distribución presupuestaria.",
+                "file": "budget_analysis_app_v2.py",
+                "icon": "💰",
+                "tags": ["Finanzas Públicas", "Datos Gubernamentales", "Visualización Interactiva", "Análisis Avanzado"],
+                "status": "Disponible"
             },
             # Aquí se pueden agregar más aplicaciones en el futuro
-            "coming_soon_1": {
-                "name": "Análisis de Mercado Financiero",
-                "description": "Análisis de tendencias del mercado financiero con machine learning predictivo.",
-                "file": None,
-                "icon": "📈",
-                "tags": ["Finanzas", "Machine Learning", "Predicción"],
-                "status": "Próximamente"
-            },
-            "coming_soon_2": {
-                "name": "Dashboard de Ventas",
-                "description": "Dashboard interactivo para análisis de ventas y métricas de negocio.",
-                "file": None,
-                "icon": "🛒",
-                "tags": ["Business Intelligence", "KPIs", "Dashboard"],
-                "status": "Próximamente"
-            }
+            #"coming_soon_1": {
+            #    "name": "Análisis de Mercado Financiero",
+            #    "description": "Análisis de tendencias del mercado financiero con machine learning predictivo.",
+            #   "file": None,
+            #    "icon": "📈",
+            #    "tags": ["Finanzas", "Machine Learning", "Predicción"],
+            #   "status": "Próximamente"
+            #},
+            #"coming_soon_2": {
+            #    "name": "Dashboard de Ventas",
+            #   "description": "Dashboard interactivo para análisis de ventas y métricas de negocio.",
+            #    "file": None,
+            #    "icon": "🛒",
+            #    "tags": ["Business Intelligence", "KPIs", "Dashboard"],
+            #    "status": "Próximamente"
+            #}
         }
         return apps
     
@@ -189,9 +196,9 @@ class DataSciencePortfolio:
             
             # Enlaces útiles
             st.markdown("### 🔗 Enlaces")
-            st.markdown("- [GitHub Repository](https://github.com)")
-            st.markdown("- [LinkedIn](https://linkedin.com)")
-            st.markdown("- [Documentación](https://docs.streamlit.io)")
+            st.markdown("- [GitHub Repository](https://github.com/Denniels/ds_portfolio)")
+            st.markdown("- [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)")
+            st.markdown("- [Documentación](https://github.com/Denniels/ds_portfolio/tree/main/docs)")
           # Contenido principal
         if st.session_state['selected_app'] == "🏠 Inicio":
             self._show_home_page()
@@ -307,10 +314,12 @@ class DataSciencePortfolio:
             Este portafolio se especializa en el **análisis de datos ambientales** con aplicaciones reales 
             basadas en fuentes oficiales del gobierno de Chile:
             
-            - **💧 Calidad del Agua**: Análisis de 174 estaciones de monitoreo del DGA
-            - **🏭 Emisiones CO2**: Estudio comprehensivo del RETC 2023 con 285K+ registros
-            - **📊 Visualizaciones Interactivas**: Dashboards dinámicos con Plotly y Folium
-            - **🔬 Metodología Científica**: Análisis estadístico robusto y conclusiones fundamentadas
+            - 💧 Calidad del Agua**: Análisis de 174 estaciones de monitoreo del DGA
+            - 🏭 Emisiones CO2**: Estudio comprehensivo del RETC 2023 con 285K+ registros
+            - 👤 Análisis demográfico
+            - 💰 Análisis del Presupuesto Público
+            - 📊 Visualizaciones Interactivas**: Dashboards dinámicos con Plotly y Folium
+            - 🔬 Metodología Científica**: Análisis estadístico robusto y conclusiones fundamentadas
             
             ### 💡 Características Técnicas
             
@@ -358,10 +367,11 @@ class DataSciencePortfolio:
             if str(self.apps_dir) not in sys.path:
                 sys.path.insert(0, str(self.apps_dir))
             
-            spec.loader.exec_module(app_module)
-            
-            # Ejecutar la aplicación basada en la clase disponible
-            if hasattr(app_module, 'WaterQualityApp'):
+            spec.loader.exec_module(app_module)            # Ejecutar la aplicación basada en la clase disponible
+            if hasattr(app_module, 'BudgetAnalysisApp'):
+                app_instance = app_module.BudgetAnalysisApp()
+                app_instance.run()
+            elif hasattr(app_module, 'WaterQualityApp'):
                 app_instance = app_module.WaterQualityApp()
                 app_instance.run()
             elif hasattr(app_module, 'CO2EmissionsApp'):
@@ -371,11 +381,13 @@ class DataSciencePortfolio:
                 app_instance = app_module.DemographicsApp()
                 app_instance.run()
             elif hasattr(app_module, 'run'):
-                app_module.run()
+                app_module.run()            
             elif hasattr(app_module, 'main'):
                 app_module.main()
+            elif hasattr(app_module, 'app'):
+                app_module.app()
             else:
-                st.error("No se encontró una función main(), run() o clase de aplicación en el módulo.")
+                st.error("No se encontró una función main(), run(), app() o clase de aplicación en el módulo.")
                 
         except Exception as e:
             st.error(f"Error al cargar la aplicación: {str(e)}")

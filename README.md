@@ -1,8 +1,8 @@
-# 📊 Portafolio de Data Science - Análisis Ambientales y Demográficos
+# 📊 Portafolio de Data Science - Análisis de Datos Gubernamentales
 
-> **Estado:** ✅ **Completamente Funcional** - Sistema modular con arquitectura escalable e integración con BigQuery
+> **Estado:** ✅ **Completamente Funcional y Actualizado (Junio 2025)** - Sistema modular con arquitectura escalable, integraciones múltiples y mejoras continuas
 
-Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos ambientales y demográficos con visualizaciones avanzadas y mapas interactivos.
+Un portafolio interactivo desarrollado con Streamlit que presenta múltiples aplicaciones de análisis de datos gubernamentales, ambientales y demográficos, con visualizaciones avanzadas, mapas interactivos y análisis presupuestario.
 
 ## 🚀 Inicio Rápido
 
@@ -57,7 +57,7 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 
 ### 🚀 Aplicación Principal
 - **`app/main.py`**: Hub central del portafolio con navegación intuitiva
-- **`app/apps/`**: Aplicaciones modulares independientes
+- **`app/apps/`**: Aplicaciones modulares independientes  - `budget_analysis_app.py`: Análisis del Presupuesto Público
   - `water_quality_app.py`: Análisis de calidad del agua
   - `co2_emissions_app.py`: Análisis de emisiones CO2
   - `demographics_app.py`: Análisis demográfico con BigQuery
@@ -65,7 +65,19 @@ Este portafolio está diseñado como una **plataforma evolutiva** para análisis
 
 ### 📊 Análisis y Aplicaciones Disponibles
 
-#### 1. **Calidad del Agua en Chile** ✅ Operativa
+#### 1. **Análisis del Presupuesto Público** ✅ Actualizada (Junio 2025)
+- **Nueva versión 2.0**: Visualizaciones mejoradas y análisis avanzados
+- **Análisis interactivo** del Presupuesto del Sector Público de Chile
+- **Curvas de Lorenz** y análisis de concentración presupuestaria
+- **Simulación de evolución temporal** para análisis de tendencias
+- **Métricas de concentración**: Índice HHI y porcentajes acumulados
+- **Exportación de datos** en formato CSV para análisis complementarios
+- **Integración con API** de datos.gob.cl con sistema de caché optimizado
+- **Rutas**: 
+  - `app/apps/budget_analysis_app.py` (versión estable)
+  - `app/apps/budget_analysis_app_v2.py` (versión mejorada)
+
+#### 2. **Calidad del Agua en Chile** ✅ Operativa
 - **Análisis temporal** de parámetros físico-químicos
 - **Mapas interactivos** con geocodificación inteligente
 - **Sistema de evaluación** según estándares internacionales

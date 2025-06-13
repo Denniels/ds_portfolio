@@ -13,7 +13,22 @@ Esta sección contiene notebooks de Jupyter que sirven como **laboratorio de an�
 
 ## 📓 Notebooks Disponibles
 
-### 1. ✅ **Análisis de Emisiones CO2 en Chile** 
+### 1. ✨ **Análisis del Presupuesto Público** (Actualizado Junio 2025)
+**[04_Analisis_Presupuesto_Publico.ipynb](04_Analisis_Presupuesto_Publico.ipynb)**
+
+**🔗 Estado**: Integrado y Mejorado - Disponible en dos versiones:
+- Versión estable: `budget_analysis_app.py`
+- Versión avanzada: `budget_analysis_app_v2.py` (Junio 2025)
+
+**📋 Características Actualizadas**:
+- Análisis avanzado de concentración presupuestaria con curvas de Lorenz
+- Simulación de evolución temporal para tendencias presupuestarias
+- Métricas de concentración (Índice HHI, concentración Top 3/10)
+- Exportación de datos en formato CSV
+- Sistema mejorado de caché y optimización de rendimiento
+- Interfaz renovada con diseño responsivo y explicaciones contextuales
+
+### 2. ✅ **Análisis de Emisiones CO2 en Chile** 
 **[01_Analisis_Emisiones_CO2_Chile.ipynb](01_Analisis_Emisiones_CO2_Chile.ipynb)**
 
 **🔗 Estado**: Integrado en la aplicación Streamlit (`co2_emissions_app.py`)
