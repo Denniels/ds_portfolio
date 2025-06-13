@@ -53,6 +53,11 @@ def show_feedback():
     from apps.feedback_system import render_feedback_form
     render_feedback_form()
 
+def show_feedback_dashboard():
+    """Muestra el dashboard de administración de feedback"""
+    from apps.feedback_dashboard import show_feedback_dashboard
+    show_feedback_dashboard()
+
 # CSS personalizado para el portafolio
 st.markdown("""
 <style>
@@ -247,7 +252,7 @@ class DataSciencePortfolio:
         with col1:
             st.markdown("""
             <div class="stat-box">
-                <div class="stat-number">3</div>
+                <div class="stat-number">4</div>
                 <div class="stat-label">Apps Activas</div>
             </div>
             """, unsafe_allow_html=True)
