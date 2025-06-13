@@ -292,7 +292,7 @@ class DataSciencePortfolio:
                 "tags": ["Servicios", "Tarifas", "Profesional"],
                 "status": "Disponible"
             }
-        }
+        
         return apps
     
     def show_feedback_button(self):
