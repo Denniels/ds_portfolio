@@ -10,6 +10,10 @@ credentials/
 */**/credentials/
 */**/*.json
 
+# Visualizaciones
+notebooks/visualizaciones/*.html
+!notebooks/visualizaciones/*.png
+
 # Python
 __pycache__/
 *.py[cod]
