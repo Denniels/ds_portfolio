@@ -497,10 +497,14 @@ class DataSciencePortfolio:
             elif hasattr(app_module, 'FirestoreFeedbackApp'):
                 # Nueva versión con Firestore
                 app_instance = app_module.FirestoreFeedbackApp()
-                app_instance.run()
+                app_instance.run()            
             elif hasattr(app_module, 'FeedbackApp'):
                 # Versión anterior
                 app_instance = app_module.FeedbackApp()
+                app_instance.run()
+            elif hasattr(app_module, 'ServicesDisplay'):
+                # Servicios Profesionales
+                app_instance = app_module.ServicesDisplay()
                 app_instance.run()
             elif hasattr(app_module, 'run'):
                 app_module.run()

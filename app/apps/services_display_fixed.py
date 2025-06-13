@@ -12,6 +12,14 @@ from pathlib import Path
 import re
 import sys
 
+# Configuración de la página si se ejecuta directamente
+if __name__ == "__main__":
+    st.set_page_config(
+        page_title="💼 Servicios Profesionales - Data Science Portfolio",
+        page_icon="💼",
+        layout="wide"
+    )
+
 # Importar el componente de valor UF
 components_dir = Path(__file__).parent / "components"
 if str(components_dir) not in sys.path:
@@ -29,6 +37,13 @@ class ServicesDisplay:
         # Inicializar variables de estado de sesión si no existen
         if 'show_price_justification' not in st.session_state:
             st.session_state.show_price_justification = False
+            
+        # Inicializar estado para detalles de servicios
+        for service_type in ["📊 Análisis de Datos y Dashboards", "🌎 Análisis Geoespacial", 
+                           "🔍 Análisis Sectorial y Datos Gubernamentales", "🧠 Machine Learning e IA", 
+                           "🚀 Desarrollo e Implementación", "👨‍🏫 Capacitación y Consultoría"]:
+            if f"show_details_{service_type}" not in st.session_state:
+                st.session_state[f"show_details_{service_type}"] = False
         
     def _extract_tables_from_md(self, md_content):
         """Extrae las tablas de markdown y las convierte a DataFrames"""
