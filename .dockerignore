@@ -23,10 +23,29 @@ var/
 *.egg
 venv/
 .venv/
+ds_portfolio_env/
 .DS_Store
 node_modules/
 .idea/
 .vscode/
-notebooks/
-docs/
+*.swp
+*.swo
+*~
+
+# Mantener notebooks/ y docs/ comentados para incluirlos en la imagen
+# notebooks/
+# docs/
 tests/
+
+# Archivos de registro y caché
+*.log
+.cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Archivos específicos de desarrollo local
+.env
+.env.*
+!.env.example
