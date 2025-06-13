@@ -22,12 +22,16 @@ WORKDIR /app
 # Copiar solo las dependencias necesarias del builder
 COPY --from=builder /python-deps /usr/local/lib/python3.9/site-packages
 
-# Copiar el código de la aplicación y datos necesarios
+# Copiar el código de la aplicación
 COPY ./app ./app
-COPY ./notebooks/data ./notebooks/data
 
-# Crear directorio para visualizaciones
+# Crear directorios necesarios para datos y visualizaciones
+RUN mkdir -p ./notebooks/data
 RUN mkdir -p ./notebooks/visualizaciones
+
+# Crear archivos de datos vacíos si son necesarios
+RUN touch ./notebooks/data/cache_coordenadas_chile.json
+RUN touch ./notebooks/data/estaciones_coordenadas.json
 
 # Configuración para producción
 ENV PORT=8080
