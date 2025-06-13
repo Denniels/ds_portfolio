@@ -49,11 +49,7 @@ def show_welcome():
         </div>
     """, unsafe_allow_html=True)
 
-def load_and_run_feedback():
-    """Carga y ejecuta la aplicación de feedback"""
-    from apps.feedback_system import FeedbackApp
-    app = FeedbackApp()
-    app.run()
+# Función eliminada ya que no es necesaria con el nuevo enfoque
 
 # CSS personalizado para el portafolio
 st.markdown("""
@@ -475,12 +471,19 @@ class DataSciencePortfolio:
             elif hasattr(app_module, 'DemographicsApp'):
                 app_instance = app_module.DemographicsApp()
                 app_instance.run()
+            elif hasattr(app_module, 'FeedbackApp'):
+                app_instance = app_module.FeedbackApp()
+                app_instance.run()
             elif hasattr(app_module, 'run'):
                 app_module.run()            
             elif hasattr(app_module, 'main'):
                 app_module.main()
             elif hasattr(app_module, 'app'):
-                app_module.app()
+                # Asegurarse de que app es una función o un objeto llamable
+                if callable(app_module.app):
+                    app_module.app()
+                else:
+                    app_module.app.run()
             else:
                 st.error("No se encontró una función main(), run(), app() o clase de aplicación en el módulo.")
                 
