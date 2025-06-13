@@ -25,49 +25,14 @@ jobs:
       with:
         project_id: ${{ env.PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
-        export_default_credentials: true
+        export_default_credentials: true    - name: Deploy to Cloud Run
+      id: deploy
+      uses: google-github-actions/deploy-cloudrun@v1
+      with:
+        service: ${{ env.SERVICE_NAME }}
+        region: ${{ env.REGION }}
+        source: .
+        flags: --allow-unauthenticated --memory=512Mi --cpu=1 --port=8080
 
-    - name: Deploy to Cloud Run
-      run: |
-        gcloud run deploy ${{ env.SERVICE_NAME }} \
-          --project ${{ env.PROJECT_ID }} \
-          --source . \
-          --platform managed \
-          --region ${{ env.REGION }} \
-          --allow-unauthenticated \
-          --memory 512Mi \
-          --cpu 1
-
-    # Para Google Compute Engine (VM)
-    - name: Deploy to Compute Engine
-      if: true  # Cambiar a false si prefieres Cloud Run
-      run: |
-        # Instalar Docker en la VM si no está instalado
-        gcloud compute ssh ds-portfolio --zone=us-central1-a --command="
-          if ! command -v docker &> /dev/null; then
-            sudo apt-get update
-            sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-            curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-            sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable'
-            sudo apt-get update
-            sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-            sudo usermod -aG docker $USER
-          fi
-        "
-        
-        # Copiar archivos necesarios a la VM
-        gcloud compute scp --recurse ./* ds-portfolio:~/ds_portfolio --zone=us-central1-a
-        
-        # Construir y ejecutar Docker en la VM
-        gcloud compute ssh ds-portfolio --zone=us-central1-a --command="
-          cd ~/ds_portfolio
-          docker build -t ds-portfolio:latest .
-          docker stop ds-portfolio || true
-          docker rm ds-portfolio || true
-          docker run -d \
-            --name ds-portfolio \
-            -p 8501:8501 \
-            --restart unless-stopped \
-            --memory=800m \
-            ds-portfolio:latest
-        "
+    - name: Show Output
+      run: echo ${{ steps.deploy.outputs.url }}
