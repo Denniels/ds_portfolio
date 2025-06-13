@@ -31,19 +31,28 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar el código de la aplicación
 COPY ./app ./app
 
+# Copiar la configuración de Streamlit
+COPY ./.streamlit ./.streamlit
+
 # Asegurarse de que los directorios existan
 RUN mkdir -p ./notebooks/data
 RUN mkdir -p ./notebooks/visualizaciones
+RUN mkdir -p ./notebooks/visualizaciones/demographics
 
 # Copiar directorios de datos y visualizaciones
 COPY ./notebooks/data ./notebooks/data
 COPY ./notebooks/visualizaciones ./notebooks/visualizaciones
-COPY ./notebooks/notebooks/data/nombres_demografia.csv ./notebooks/data/
-COPY ./notebooks/data/nombres_demografia.csv ./notebooks/data/
+
+# Intentar copiar archivos específicos de datos, ignorando errores si no existen
+RUN cp -f ./notebooks/notebooks/data/nombres_demografia.csv ./notebooks/data/ 2>/dev/null || echo "Archivo no encontrado"
+RUN cp -f ./notebooks/data/nombres_demografia.csv ./notebooks/data/ 2>/dev/null || echo "Archivo no encontrado"
 
 # Asegurarse de que los archivos existan (si no fueron copiados)
 RUN touch ./notebooks/data/cache_coordenadas_chile.json
 RUN touch ./notebooks/data/estaciones_coordenadas.json
+RUN touch ./notebooks/visualizaciones/demographics/historical_trends.html
+RUN touch ./notebooks/visualizaciones/demographics/name_diversity.html
+RUN touch ./notebooks/visualizaciones/demographics/name_length.html
 
 # Configuración para producción
 ENV PORT=8080

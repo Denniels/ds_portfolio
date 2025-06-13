@@ -12,6 +12,7 @@ matplotlib>=3.8.0
 seaborn>=0.13.0
 openpyxl>=3.1.5
 ipykernel>=6.0.0  # Para Jupyter notebooks
+scipy>=1.11.0     # Para filtros de señal y análisis estadístico
 
 # Dependencias para servicios de Google Cloud
 google-cloud-bigquery>=3.11.0
@@ -22,3 +23,8 @@ pyarrow>=14.0.1  # Requerido para optimizar el rendimiento de BigQuery
 # Dependencias para sistema de comentarios con Firestore
 google-cloud-firestore>=2.11.1
 firebase-admin>=6.2.0
+
+# Optimizaciones y herramientas adicionales
+cachetools>=5.3.0  # Para implementar caché personalizado
+streamlit-extras>=0.3.0  # Componentes adicionales para Streamlit
+watchdog>=3.0.0  # Mejorar el rendimiento de recarga en desarrollo

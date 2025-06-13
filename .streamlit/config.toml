@@ -1,19 +1,23 @@
 [server]
-# Configuración para ejecución local
-maxUploadSize = 50
-enableCORS = true
-enableXsrfProtection = true
+# Configuración optimizada para Google Cloud Run
+enableCORS = false
+enableXsrfProtection = false
 headless = true
-port = 8501
-address = "localhost"
+port = 8080
+address = "0.0.0.0"
+enableHealthEndpoint = true
+fileWatcherType = "none"  # Desactivar el vigilante de archivos para mejorar el rendimiento
+maxUploadSize = 50
 
 [browser]
 gatherUsageStats = false
-serverAddress = "localhost"
+serverAddress = "0.0.0.0"
+serverPort = 8080
 
 [runner]
-# Reducir la magnitud del parámetro fastReruns para disminuir el uso de memoria
-fastReruns = false
+# Optimizaciones para reducir uso de memoria
+magicEnabled = true
+fastReruns = false  # Desactivado para reducir uso de memoria
 
 [theme]
 # Tema personalizado para la aplicación
@@ -36,3 +40,12 @@ toolbarMode = "minimal"
 enable = true
 memoryLimit = 1000
 diskLimit = 2000
+
+[global]
+# Optimizaciones de memoria
+dataFrameSerialization = "arrow"
+
+[deprecation]
+# Desactivar advertencias de deprecación
+showfileUploaderEncoding = false
+showPyplotGlobalUse = false
