@@ -18,3 +18,4 @@ from .budget_analysis_app import BudgetAnalysisApp
 from .water_quality_app import WaterQualityApp
 from .co2_emissions_app import CO2EmissionsApp
 from .demographics_app import DemographicsApp
+from .feedback_viewer_app import main as feedback_viewer

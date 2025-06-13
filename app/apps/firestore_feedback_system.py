@@ -19,7 +19,7 @@ import os
 import sys
 
 # Sistema de almacenamiento de feedback con Firestore
-class FirestoreFeedbackSystem:
+class FirestoreFeedbackSystem:    
     def __init__(self):
         """Inicializa el sistema de feedback con Firestore"""
         try:
@@ -27,14 +27,37 @@ class FirestoreFeedbackSystem:
             self.db = firestore.Client()
             self.collection = self.db.collection('portfolio_feedback')
             self.is_firestore_available = True
-            print("Conexión exitosa a Firestore")
+            print("✅ Conexión exitosa a Firestore")
         except Exception as e:
-            print(f"Error al conectar con Firestore: {str(e)}")
+            error_message = str(e)
+            print(f"❌ Error al conectar con Firestore: {error_message}")
+            
+            # Verificar si es un error de API no habilitada (error 403)
+            if "403" in error_message and "SERVICE_DISABLED" in error_message:
+                print("🛑 La API de Firestore no está habilitada en este proyecto.")
+                print("ℹ️  Para habilitar Firestore, ejecuta el script en /scripts/enable_firestore.bat")
+                # Mensaje especial para StreamLit
+                if "streamlit" in sys.modules:
+                    st.warning("""
+                    ### ⚠️ Firestore no está habilitado
+                    
+                    La API de Cloud Firestore no está habilitada en tu proyecto. Para habilitar Firestore:
+                    
+                    1. Ve a la [Consola de Google Cloud](https://console.cloud.google.com/firestore/databases?project=retc-emissions-analysis)
+                    2. Selecciona tu proyecto "retc-emissions-analysis"
+                    3. Haz clic en "Crear base de datos"
+                    4. Selecciona "modo Nativo" y la región "us-central1"
+                    
+                    Alternativamente, ejecuta el script `scripts/enable_firestore.bat` desde una terminal.
+                    
+                    **Mientras tanto, los comentarios se guardarán localmente.**
+                    """)
+            
             self.is_firestore_available = False
             # Crear directorio local para almacenamiento de respaldo
             local_dir = Path(__file__).parent.parent.parent / "feedback_data"
             local_dir.mkdir(exist_ok=True)
-            print(f"Usando almacenamiento local en: {local_dir}")
+            print(f"📁 Usando almacenamiento local en: {local_dir}")
             self.local_dir = local_dir
 
     def save_feedback(self, feedback_data):

@@ -230,6 +230,15 @@ class DataSciencePortfolio:
                 "tags": ["Feedback", "Sugerencias", "Mejoras"],
                 "status": "Disponible"
             },
+            # Visor de comentarios
+            "feedback_viewer": {
+                "name": "Ver Comentarios",
+                "description": "Visualiza todos los comentarios y sugerencias enviados por los usuarios del portafolio. Filtra por fecha y aplicación.",
+                "file": "feedback_viewer_app.py",
+                "icon": "📊",
+                "tags": ["Feedback", "Administración", "Datos"],
+                "status": "Disponible"
+            },
             # Sistema de Feedback (versión anterior)
             "feedback_legacy": {
                 "name": "Feedback (Versión Original)",
@@ -270,7 +279,7 @@ class DataSciencePortfolio:
         <div class="main-header">
             <h1>📊 Portafolio de Data Science</h1>
             <p>
-                Aplicaciones interactivas y análisis de datos ambientales y demográficos
+                Aplicaciones interactivas y análisis de datos ambientales y demográficos.
                 Explora una colección de análisis interactivos sobre datos ambientales y demográficos de Chile.
                 Cada proyecto demuestra diferentes aspectos del análisis de datos, visualización y machine learning.
                 La intencion de este portafolio es presentar mis habilidades y proyectos en el campo de la ciencia de datos.
@@ -455,21 +464,21 @@ class DataSciencePortfolio:
             - NumPy Computing
             
             **Impacto:**
-            - Análisis política pública
-            - Insights ambientales
+            - Análisis política pública            - Insights ambientales
             - Herramientas decisión
             - Código open source
             """)
-    
+            
     def _run_app(self, app_info):
         """Ejecuta una aplicación específica"""
         try:
             app_path = self.apps_dir / app_info['file']
+            app_file = app_info['file']
             
             # Importar y ejecutar la aplicación
             spec = importlib.util.spec_from_file_location("app_module", app_path)
             app_module = importlib.util.module_from_spec(spec)
-              # Agregar el directorio de apps al path para imports relativos
+            # Agregar el directorio de apps al path para imports relativos
             if str(self.apps_dir) not in sys.path:
                 sys.path.insert(0, str(self.apps_dir))
             
@@ -496,6 +505,9 @@ class DataSciencePortfolio:
                 # Versión anterior
                 app_instance = app_module.FeedbackApp()
                 app_instance.run()
+            elif app_file == 'feedback_viewer_app.py' and hasattr(app_module, 'main'):
+                # Ejecutar el visor de feedback
+                app_module.main()
             elif hasattr(app_module, 'run'):
                 app_module.run()
             elif hasattr(app_module, 'main'):
