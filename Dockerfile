@@ -1,12 +1,16 @@
-FROM python:3.9-slim
+FROM python:3.9-slim-bookworm
 
 WORKDIR /app
 
-# Instalar dependencias del sistema necesarias
+# Instalar dependencias del sistema necesarias y actualizar paquetes para mitigar vulnerabilidades
 RUN apt-get update && apt-get install -y \
     build-essential \
     software-properties-common \
     git \
+    && apt-get upgrade -y \
+    && apt-get dist-upgrade -y \
+    && apt-get autoremove -y \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Copiar requirements.txt
