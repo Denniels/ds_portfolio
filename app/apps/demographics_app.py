@@ -23,8 +23,21 @@ import re
 from scipy.signal import savgol_filter
 
 # Optimizaciones para la capa gratuita de Google Cloud Run
-# Usar st.cache_data para minimizar recálculos
-# Cargar datos de manera eficiente
+# Configuración para minimizar costos en Cloud Run
+IS_CLOUD_RUN = os.environ.get('K_SERVICE') is not None
+
+# Si estamos en Cloud Run, reducir las cargas de trabajo
+if IS_CLOUD_RUN:
+    # Limitar el tamaño de los datasets
+    MAX_ROWS_CLOUD = 5000
+    # Incrementar el TTL del caché para reducir procesamiento
+    CACHE_TTL = 24*3600  # 24 horas
+    # Deshabilitar algunas visualizaciones pesadas
+    DISABLE_HEAVY_VISUALIZATIONS = True
+else:
+    MAX_ROWS_CLOUD = None
+    CACHE_TTL = 3600  # 1 hora
+    DISABLE_HEAVY_VISUALIZATIONS = False
 
 # Configuración de directorios
 PROJECT_DIR = Path(__file__).resolve().parent.parent.parent
@@ -667,8 +680,85 @@ class DemographicsApp:
                     un ciclo generacional donde nombres de "abuelos" vuelven a ser populares.</li>
                 </ul>
             </div>
-            """, unsafe_allow_html=True)
-    
+            """, unsafe_allow_html=True)    @st.cache_data(ttl=3600)
+    def create_historical_trends_visualization(self, _self=None):
+        """Crea visualización de tendencias históricas de nacimientos"""
+        if self.gender_year_data is None:
+            return None
+        
+        # Preparar datos
+        plot_df = self.gender_year_data.copy()
+        
+        # Agregar columna para el total por año
+        yearly_totals = plot_df.groupby('year')['count'].sum().reset_index()
+        yearly_totals.rename(columns={'count': 'total'}, inplace=True)
+        
+        # Fusionar con los datos originales
+        plot_df = plot_df.merge(yearly_totals, on='year', how='left')
+        
+        # Calcular porcentajes
+        plot_df['percentage'] = (plot_df['count'] / plot_df['total']) * 100
+        
+        # Crear figura
+        fig = px.line(
+            plot_df, 
+            x='year', 
+            y='percentage', 
+            color='gender',
+            title='Tendencias Históricas de Nacimientos por Género (1910-2013)',
+            labels={
+                'year': 'Año',
+                'percentage': 'Porcentaje (%)',
+                'gender': 'Género'
+            },
+            color_discrete_map={'M': '#2986cc', 'F': '#cc29b7'}
+        )
+        
+        # Añadir eventos históricos
+        historical_events = [
+            {'year': 1929, 'event': 'Inicio de la Gran Depresión', 'y': 50},
+            {'year': 1941, 'event': 'EE.UU. entra en la Segunda Guerra Mundial', 'y': 48},
+            {'year': 1946, 'event': 'Inicio del Baby Boom', 'y': 52},
+            {'year': 1973, 'event': 'Crisis del petróleo', 'y': 47},
+            {'year': 1991, 'event': 'Fin de la Guerra Fría', 'y': 51},
+            {'year': 2008, 'event': 'Gran Recesión', 'y': 49}
+        ]
+        
+        for event in historical_events:
+            fig.add_shape(
+                type="line",
+                x0=event['year'], y0=0,
+                x1=event['year'], y1=100,
+                line=dict(color="gray", width=1, dash="dot"),
+            )
+            fig.add_annotation(
+                x=event['year'], y=event['y'],
+                text=event['event'],
+                showarrow=False,
+                font=dict(size=10, color="black"),
+                bgcolor="rgba(255,255,255,0.8)",
+                bordercolor="gray",
+                borderwidth=1,
+            )
+        
+        # Mejorar diseño
+        fig.update_layout(
+            hovermode="x unified",
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            ),
+            margin=dict(l=20, r=20, t=60, b=20),
+        )
+        
+        # Añadir suavizado para ver tendencias más claras
+        fig.update_traces(line=dict(shape='spline', smoothing=1.3))
+        
+        return fig
+        
     def render_historical_trends(self):
         """Muestra tendencias históricas de nacimientos con análisis contextual"""
         st.markdown('<div class="section-header">🔍 Tendencias Demográficas e Influencias Históricas</div>', unsafe_allow_html=True)

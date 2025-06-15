@@ -75,7 +75,10 @@
 
 ## 🔍 Consideraciones
 
+- Todos los servicios tienen un **recargo del 15% por costos operacionales** sobre el valor total del proyecto.
 - Los valores son referenciales para proyectos estándar y pueden ajustarse según requerimientos específicos.
+- **Estos precios son simulaciones y no constituyen una cotización formal**. Para obtener un presupuesto detallado y ajustado a sus necesidades específicas, por favor contáctenos.
+- El valor total final queda sujeto a evaluación comercial según la complejidad y alcance del proyecto.
 - Todos los servicios incluyen reuniones de levantamiento, informes de avance y documentación final.
 - Los precios no incluyen IVA ni otros impuestos aplicables.
 - Para proyectos que requieran licencias de software adicionales, estas se cotizarán por separado.
@@ -92,13 +95,24 @@ Para contratos a plazo fijo o de un mínimo de un año, ofrecemos la opción de 
 
 > **Valor referencial UF:** $39.000 CLP (actualizado al 13/06/2025)
 
+### Ejemplo de Cálculo con Costos Operacionales
+
+**Proyecto: Dashboard Interactivo Básico**
+- Valor base: $1.500.000 CLP
+- Costos operacionales (15%): $225.000 CLP
+- **Valor total referencial: $1.725.000 CLP**
+
+*Recuerde que este es un ejemplo demostrativo y el presupuesto final estará sujeto a evaluación comercial detallada.*
+
 ## 📞 Contacto
 
 Para solicitar una cotización personalizada o agendar una reunión para discutir tus necesidades específicas:
 
-- **Email**: contacto@datascience-portfolio.com
-- **Web**: [www.datascience-portfolio.com](https://www.datascience-portfolio.com)
-- **LinkedIn**: [linkedin.com/in/datascientist-portfolio](https://linkedin.com/in/datascientist-portfolio)
+- **Email**: contacto@inetgralservicespa.cl
+- **Web**: [www.datascience-portfolio.com](https://github.com/Denniels/ds_portfolio)
+- **LinkedIn**: [linkedin.com/in/datascientist-portfolio](www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+
+**IMPORTANTE:** Esta es una simulación con fines demostrativos. Los precios son referenciales y no constituyen una oferta formal. Para solicitar un presupuesto detallado, por favor contáctenos directamente.
 
 ---
 

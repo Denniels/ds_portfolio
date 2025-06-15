@@ -75,12 +75,15 @@ gcloud run deploy $ServiceName `
     --image="$ImageName`:$Tag" `
     --platform=managed `
     --region=$Region `
-    --memory=4Gi `
+    --memory=512Mi `
     --cpu=1 `
     --allow-unauthenticated `
     --min-instances=0 `
     --max-instances=1 `
-    --concurrency=80
+    --concurrency=40 `
+    --timeout=30s `
+    --no-cpu-throttling `
+    --no-cpu-boost
 if (-not $?) {
     Write-Host "[ERROR] Error durante el despliegue en Cloud Run. Abortando..." -ForegroundColor Red
     exit 1
