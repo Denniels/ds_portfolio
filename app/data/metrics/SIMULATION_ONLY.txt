@@ -1,0 +1,18 @@
+
+        ¡ADVERTENCIA! - SIMULACIÓN LOCAL ÚNICAMENTE
+        
+        Este es un simulador de costos que opera COMPLETAMENTE EN MODO LOCAL.
+        - NO se conecta a Google Cloud Platform
+        - NO genera costos reales
+        - NO requiere credenciales de GCP
+        - Todos los valores son simulados para fines de demostración
+        
+        Los costos mostrados son estimaciones aproximadas basadas en:
+        1. Uso local de CPU
+        2. Uso local de memoria
+        3. Contadores locales de solicitudes
+        
+        NO USE ESTOS VALORES PARA DECISIONES FINANCIERAS REALES.
+        
+        Última actualización: 2025-06-16 01:17:57
+        

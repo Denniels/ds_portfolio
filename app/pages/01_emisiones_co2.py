@@ -3,8 +3,77 @@ Página para el análisis de emisiones de CO2 en Chile
 """
 
 import streamlit as st
+
+# Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
+st.set_page_config(
+    page_title="Emisiones de CO2 Chile - DS Portfolio",
+    page_icon="🏭",
+    layout="wide"
+)
+
 import sys
 from pathlib import Path
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import folium
+from folium import plugins
+import branca.colormap as cm
+
+"""
+Página para el análisis de emisiones de CO2 en Chile
+"""
+
+# Función para generar el mapa de emisiones
+def generar_mapa_emisiones(df_emisiones):
+    """
+    Genera un mapa interactivo de emisiones CO2 usando folium
+    """
+    # Crear mapa base centrado en Chile
+    m = folium.Map(
+        location=[-35.6751, -71.5430],
+        zoom_start=5,
+        tiles='cartodbpositron'
+    )
+
+    # Crear escala de colores para las emisiones
+    max_emission = df_emisiones['emisiones'].max()
+    min_emission = df_emisiones['emisiones'].min()
+    
+    colormap = cm.LinearColormap(
+        colors=['green', 'yellow', 'orange', 'red'],
+        vmin=min_emission,
+        vmax=max_emission,
+        caption='Emisiones de CO2 (Mt)'
+    )
+    m.add_child(colormap)
+
+    # Agregar marcadores y heatmap
+    heat_data = []
+    for _, row in df_emisiones.iterrows():
+        # Agregar punto al heatmap
+        heat_data.append([row['lat'], row['lon'], row['emisiones']])
+        
+        # Agregar marcador con popup
+        folium.CircleMarker(
+            location=[row['lat'], row['lon']],
+            radius=row['emisiones']/2,
+            popup=f"{row['Region']}<br>Emisiones: {row['emisiones']:.1f} Mt CO2",
+            color=colormap(row['emisiones']),
+            fill=True,
+            fill_opacity=0.7
+        ).add_to(m)
+
+    # Agregar heatmap
+    plugins.HeatMap(
+        heat_data,
+        min_opacity=0.3,
+        radius=25,
+        blur=15,
+        max_zoom=1,
+    ).add_to(m)
+
+    return m
 
 # Verificar si se ejecuta directamente con Python o a través de streamlit
 if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
@@ -12,13 +81,6 @@ if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
     print(f"\nstreamlit run {__file__}\n")
     print("Ejecutando este archivo directamente con Python puede causar advertencias.")
     print("Las advertencias 'missing ScriptRunContext' pueden ser ignoradas en modo bare.")
-
-# Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
-st.set_page_config(
-    page_title="Análisis Emisiones CO2 - DS Portfolio",
-    page_icon="🏭",
-    layout="wide"
-)
 
 # Agregar el directorio raíz al path
 parent_dir = Path(__file__).parent.parent
@@ -187,6 +249,63 @@ with col2:
     # Mostrar gráfico
     st.plotly_chart(fig_paises, use_container_width=True)
 
+# Agregar sección del mapa después de los gráficos
+st.markdown("---")
+st.markdown("### 🗺️ Distribución Geográfica de Emisiones")
+st.markdown("""
+Este mapa muestra la distribución espacial de las emisiones de CO2 en Chile, 
+permitiendo identificar las zonas con mayor concentración de emisiones y los principales focos emisores.
+""")
+
+# Datos de ejemplo para el mapa con más regiones de Chile
+data_regiones = {
+    'Region': [
+        'Metropolitana', 'Valparaíso', 'Biobío', 'Antofagasta', 
+        'O\'Higgins', 'Maule', 'Los Lagos', 'Tarapacá',
+        'Coquimbo', 'Araucanía', 'Magallanes', 'Arica y Parinacota'
+    ],
+    'lat': [
+        -33.4489, -33.0458, -36.8201, -23.6509,
+        -34.1708, -35.4264, -41.4718, -20.2348,
+        -29.9533, -38.9489, -53.1638, -18.4783
+    ],
+    'lon': [
+        -70.6693, -71.6197, -73.0443, -70.3975,
+        -70.7444, -71.6553, -72.9424, -70.1385,
+        -71.3436, -72.3311, -70.9171, -70.3126
+    ],
+    'emisiones': [
+        25.3, 15.8, 12.4, 8.6,
+        7.2, 6.5, 5.2, 4.2,
+        3.8, 3.2, 2.8, 1.8
+    ]
+}
+
+df_regional = pd.DataFrame(data_regiones)
+
+# Generar y mostrar el mapa
+try:
+    mapa = generar_mapa_emisiones(df_regional)
+    
+    # Convertir el mapa a HTML
+    mapa_html = mapa._repr_html_()
+    
+    # Mostrar el mapa usando componente HTML
+    st.components.v1.html(mapa_html, height=500, scrolling=False)
+    
+    # Agregar leyenda explicativa
+    with st.expander("ℹ️ Información sobre el mapa"):
+        st.markdown("""
+        - Los círculos rojos indican zonas de alta emisión (>20 Mt CO2/año)
+        - Los círculos amarillos indican zonas de emisión media (10-20 Mt CO2/año)
+        - Los círculos verdes indican zonas de baja emisión (<10 Mt CO2/año)
+        - El tamaño de los círculos es proporcional a la cantidad de emisiones
+        - El mapa de calor muestra la concentración de emisiones en el territorio
+        """)
+except Exception as e:
+    st.error(f"Error al generar el mapa: {str(e)}")
+    st.info("Por favor, verifica que los datos de ubicación y emisiones estén correctamente formateados.")
+
 with tab3:
     st.header("Conclusiones")
     
@@ -340,3 +459,57 @@ metrics = optimizer.stop_monitoring()
 # Footer
 st.markdown("---")
 st.caption("Los datos mostrados son pre-procesados para optimizar el rendimiento y reducir costos.")
+
+def generar_mapa_emisiones(df_emisiones):
+    """
+    Genera un mapa interactivo de emisiones CO2 usando folium
+    """
+    import folium
+    from folium import plugins
+    import branca.colormap as cm
+
+    # Crear mapa base centrado en Chile
+    m = folium.Map(
+        location=[-35.6751, -71.5430],
+        zoom_start=5,
+        tiles='cartodbpositron'
+    )
+
+    # Crear escala de colores para las emisiones
+    max_emission = df_emisiones['emisiones'].max()
+    min_emission = df_emisiones['emisiones'].min()
+    
+    colormap = cm.LinearColormap(
+        colors=['green', 'yellow', 'orange', 'red'],
+        vmin=min_emission,
+        vmax=max_emission,
+        caption='Emisiones de CO2 (Mt)'
+    )
+    m.add_child(colormap)
+
+    # Agregar marcadores y heatmap
+    heat_data = []
+    for _, row in df_emisiones.iterrows():
+        # Agregar punto al heatmap
+        heat_data.append([row['lat'], row['lon'], row['emisiones']])
+        
+        # Agregar marcador con popup
+        folium.CircleMarker(
+            location=[row['lat'], row['lon']],
+            radius=row['emisiones']/2,
+            popup=f"{row['Region']}<br>Emisiones: {row['emisiones']:.1f} Mt CO2",
+            color=colormap(row['emisiones']),
+            fill=True,
+            fill_opacity=0.7
+        ).add_to(m)
+
+    # Agregar heatmap
+    plugins.HeatMap(
+        heat_data,
+        min_opacity=0.3,
+        radius=25,
+        blur=15,
+        max_zoom=1,
+    ).add_to(m)
+
+    return m
