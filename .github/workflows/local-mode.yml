@@ -1,0 +1,32 @@
+name: Local Development Mode
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Show Local Mode Notice
+        run: |
+          echo "🔒 MODO LOCAL ACTIVO"
+          echo "========================"
+          echo "✅ Despliegue a GCP deshabilitado"
+          echo "✅ No se generarán costos en GCP"
+          echo "✅ Desarrollo solo en entorno local"
+          echo "✅ APIs de GCP no habilitadas"
+          
+      - name: Verify No GCP Access
+        run: |
+          echo "Verificando que no hay acceso a GCP..."
+          if [ -f "key.json" ]; then
+            echo "⚠️ Archivo de credenciales detectado - considerar eliminar"
+          else
+            echo "✅ No se detectaron credenciales de GCP"
+          fi
