@@ -6,6 +6,7 @@ folium>=0.15.0
 streamlit-folium>=0.15.0
 gdown>=4.7.1
 python-dotenv>=1.0.0
+markdown>=3.4.0
 
 # Dependencias para análisis de datos
 matplotlib>=3.8.0

@@ -17,24 +17,49 @@ st.set_page_config(
 
 # Importaciones
 from utils.cache_manager import CacheManager
-from utils.cloud_cost_simulator import CloudCostSimulator
 import streamlit.components.v1 as components
 from datetime import datetime
+import os
 
-# Cargar estilos personalizados
-with open('static/css/style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+# Determinar el entorno
+IS_STREAMLIT_CLOUD = os.getenv('IS_STREAMLIT_CLOUD', 'false').lower() == 'true'
+IS_CLOUD_RUN = os.getenv('CLOUD_RUN_SERVICE', 'false').lower() == 'true'
 
-# Inicializar gestor de caché
-cache_manager = CacheManager()
+# Configuración según plataforma
+if IS_STREAMLIT_CLOUD:
+    # Configuración específica para Streamlit Cloud
+    from utils.streamlit_cloud_optimizer import StreamlitCloudOptimizer
+    optimizer = StreamlitCloudOptimizer()
+elif IS_CLOUD_RUN:
+    # Configuración específica para Cloud Run
+    from utils.cloud_cost_simulator import CloudCostSimulator
+    optimizer = CloudCostSimulator()
+else:
+    # Configuración para desarrollo local
+    from utils.local_optimizer import LocalOptimizer
+    optimizer = LocalOptimizer()
 
-# Inicializar simulador de costos
-cost_simulator = CloudCostSimulator()
+# Inicializar gestor de caché con optimizaciones
+cache_manager = CacheManager(platform='streamlit_cloud' if IS_STREAMLIT_CLOUD else 'cloud_run' if IS_CLOUD_RUN else 'local')
+
+# Cargar estilos optimizados según plataforma
+css_path = 'static/css/style.min.css' if IS_STREAMLIT_CLOUD else 'static/css/style.css'
+try:
+    with open(css_path) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+except FileNotFoundError:
+    # Fallback a estilos básicos si no se encuentra el archivo
+    st.markdown("""
+        <style>
+        .main-container { padding: 2rem; }
+        .hero-section { background: #f0f7ff; padding: 2rem; border-radius: 10px; }
+        </style>
+    """, unsafe_allow_html=True)
 
 # Estructura principal de la página
 def main():
     # Iniciar medición de recursos
-    cost_simulator.start_measurement()
+    optimizer.start_measurement()
 
     # Banner principal
     st.markdown("""

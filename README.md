@@ -211,3 +211,35 @@ Este proyecto está bajo la Licencia MIT - ver el archivo `LICENSE` para más de
 ## 🙋‍♂️ Soporte
 
 Si tienes preguntas o encuentras problemas, por favor abre un issue en el repositorio.
+
+## 🚀 Cómo Ejecutar la Aplicación
+
+### Método 1: Usando el script de ejecución rápida
+Simplemente haz doble clic en el archivo `ejecutar_app.bat` que se encuentra en la carpeta raíz del proyecto. Esto abrirá un terminal y ejecutará la aplicación con la configuración correcta.
+
+### Método 2: Desde la línea de comandos
+```bash
+# Navegar al directorio del proyecto
+cd ruta/a/ds_portfolio
+
+# Activar el entorno virtual (si es necesario)
+.\ds_portfolio_env\Scripts\activate
+
+# Ejecutar la aplicación (importante: usar localhost en lugar de 0.0.0.0)
+streamlit run app/main_simplified.py --server.address=127.0.0.1 --server.port=8080
+```
+
+### ⚠️ Nota importante sobre el acceso a la aplicación
+Cuando Streamlit informa que la aplicación está disponible en `http://0.0.0.0:8080`, debes acceder a ella usando:
+
+- **URL correcta:** http://localhost:8080 o http://127.0.0.1:8080
+
+No utilices directamente `0.0.0.0` en tu navegador, ya que esto generará un error de conexión.
+
+### 💡 Solución de problemas comunes
+Si ves el mensaje "No se puede acceder a este sitio" en el navegador, asegúrate de:
+1. Usar `localhost` o `127.0.0.1` en lugar de `0.0.0.0`
+2. Verificar que el puerto (8080) no esté siendo usado por otra aplicación
+3. Comprobar que la aplicación Streamlit siga ejecutándose en la terminal
+
+## 📋 Requisitos del Sistema
