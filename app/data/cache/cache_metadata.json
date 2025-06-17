@@ -29,5 +29,15 @@
     "streamlit_community_cloud": true,
     "desarrollo_local": true
   },
-  "ultima_actualizacion": "17/06/2025 13:03"
+  "ultima_actualizacion": "17/06/2025 13:03",
+  "calidad_agua": {
+    "last_update": "2025-06-17T15:53:24.056452",
+    "pipeline_version": "1.1",
+    "status": "active",
+    "files": [
+      "calidad_agua_metadata.json",
+      "calidad_agua_estaciones.json",
+      "calidad_agua_conclusiones.json"
+    ]
+  }
 }

@@ -9,6 +9,7 @@ import os
 import sys
 import shutil
 import datetime
+import subprocess
 
 # Agregar directorio raíz al path
 ROOT_DIR = Path(__file__).parent.parent
@@ -25,6 +26,42 @@ FEEDBACK_DIR = DATA_DIR / "feedback"
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 FEEDBACK_DIR.mkdir(parents=True, exist_ok=True)
+
+def update_agua_data():
+    """Actualiza específicamente los datos de calidad del agua"""
+    print("🚀 Actualizando datos de calidad del agua...")
+    
+    # Ejecutar el script de extracción de calidad del agua
+    extract_script = NOTEBOOK_DIR / "extract_agua_data.py"
+    
+    if not extract_script.exists():
+        print(f"❌ Script de extracción no encontrado: {extract_script}")
+        return False
+    
+    try:
+        # Ejecutar el script de extracción
+        result = subprocess.run(
+            [sys.executable, str(extract_script)],
+            cwd=str(NOTEBOOK_DIR),
+            capture_output=True,
+            text=True,
+            timeout=300  # 5 minutos máximo
+        )
+        
+        if result.returncode == 0:
+            print("✅ Datos de calidad del agua actualizados exitosamente")
+            return True
+        else:
+            print("❌ Error al actualizar datos de calidad del agua:")
+            print(result.stderr)
+            return False
+            
+    except subprocess.TimeoutExpired:
+        print("❌ Timeout: El script de calidad del agua tardó más de 5 minutos")
+        return False
+    except Exception as e:
+        print(f"❌ Error al ejecutar script de calidad del agua: {e}")
+        return False
 
 def ensure_feedback_file():
     """Asegura que existe el archivo de comentarios para el sistema de feedback"""
@@ -164,15 +201,42 @@ def main():
     # Ejecutar funciones de actualización
     ensure_feedback_file()
     create_servicios_json()
+    
+    # Actualizar datos específicos de calidad del agua
+    agua_success = update_agua_data()
+    
+    # Actualizar el resto de datos desde archivos procesados
     update_success = update_app_data()
     
-    if update_success:
-        print("\n✅ Actualización completada")
+    # Verificar que los archivos de calidad del agua estén presentes
+    agua_files = [
+        "calidad_agua_metadata.json",
+        "calidad_agua_estaciones.json", 
+        "calidad_agua_conclusiones.json"
+    ]
+    
+    agua_files_present = all((CACHE_DIR / f).exists() for f in agua_files)
+    
+    if agua_success and update_success and agua_files_present:
+        print("\n✅ Actualización completada exitosamente")
         print(f"📂 Datos de la aplicación actualizados en: {DATA_DIR}")
+        print("💧 Datos de calidad del agua incluidos y actualizados")
         print("🚀 La aplicación Streamlit está lista para ejecutarse")
+        
+        # Mostrar resumen de archivos generados
+        print("\n📋 Archivos generados:")
+        for file in CACHE_DIR.glob("*.json"):
+            print(f"   ✓ {file.name}")
+            
     else:
         print("\n⚠️ Actualización incompleta")
-        print("Ejecuta primero el script process_notebooks.py para generar los datos procesados")
+        if not agua_success:
+            print("❌ Falló la actualización de datos de calidad del agua")
+        if not update_success:
+            print("❌ Falló la actualización de datos generales")
+        if not agua_files_present:
+            print("❌ Archivos de calidad del agua no encontrados")
+        print("Revise los mensajes de error anteriores")
 
 if __name__ == "__main__":
     main()
