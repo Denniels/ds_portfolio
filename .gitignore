@@ -10,6 +10,10 @@ credentials/
 */**/credentials/
 */**/*.json
 !app/data/feedback/comments.json
+!app/data/cache/emisiones_anuales.json
+!app/data/cache/emisiones_regionales.json
+!app/data/cache/cache_metadata.json
+!app/config/*.json
 
 # Visualizaciones
 notebooks/visualizaciones/*.html

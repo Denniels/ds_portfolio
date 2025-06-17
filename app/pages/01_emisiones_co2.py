@@ -27,31 +27,20 @@ parent_dir = Path(__file__).parent.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
 
+# Importar gestor de datos optimizado para Streamlit Cloud
+from utils.streamlit_cloud_data import StreamlitCloudDataManager
+
 # Rutas para datos reales
 DATA_CACHE_DIR = parent_dir / "data" / "cache"
 DATA_DIR = parent_dir / "data"
 
-# Funciones para cargar datos reales
+# Funciones para cargar datos reales con fallback robusto
 @st.cache_data
 def load_real_co2_data():
-    """Cargar datos reales de emisiones CO2 desde los archivos JSON generados por el notebook"""
-    try:
-        # Cargar datos anuales
-        with open(DATA_CACHE_DIR / "emisiones_anuales.json", "r", encoding="utf-8") as f:
-            emisiones_anuales = json.load(f)
-        
-        # Cargar datos regionales
-        with open(DATA_CACHE_DIR / "emisiones_regionales.json", "r", encoding="utf-8") as f:
-            emisiones_regionales = json.load(f)
-        
-        # Cargar metadata
-        with open(DATA_CACHE_DIR / "cache_metadata.json", "r", encoding="utf-8") as f:
-            metadata = json.load(f)
-        
-        return emisiones_anuales, emisiones_regionales, metadata
-    except Exception as e:
-        st.error(f"Error cargando datos reales: {e}")
-        return None, None, None
+    """Cargar datos reales de emisiones CO2 con fallback para Streamlit Cloud"""
+    manager = StreamlitCloudDataManager()
+    data = manager.load_co2_data()
+    return data['emisiones_anuales'], data['emisiones_regionales'], data['metadata']
 
 @st.cache_data
 def process_regional_data_for_visualization(emisiones_regionales):
@@ -98,30 +87,37 @@ except ImportError:
 
 # ===== INICIO DE LA APLICACIÓN =====
 
-# Cargar datos reales
+# Cargar datos reales con fallback robusto
 emisiones_anuales, emisiones_regionales, metadata = load_real_co2_data()
 
-# Verificar si los datos se cargaron correctamente
-if emisiones_anuales is None or emisiones_regionales is None or metadata is None:
-    st.error("❌ No se pudieron cargar los datos de emisiones. Verifica que el notebook haya sido ejecutado.")
-    st.info("💡 Ejecuta el notebook `01_Analisis_Emisiones_CO2_Chile.ipynb` para generar los datos necesarios.")
-    st.stop()
+# Crear gestor de datos para estadísticas
+manager = StreamlitCloudDataManager()
+data_dict = {
+    'emisiones_anuales': emisiones_anuales,
+    'emisiones_regionales': emisiones_regionales, 
+    'metadata': metadata
+}
 
 # Procesar datos para visualización
 df_regiones = process_regional_data_for_visualization(emisiones_regionales)
 
-# Extraer estadísticas de metadata
-stats = metadata.get('estadisticas', {})
+# Calcular estadísticas usando el gestor
+stats = manager.get_stats(data_dict)
 total_emisiones_mt = round(stats.get('total_emisiones_ton', 0) / 1000000, 1)
 region_mayor = stats.get('region_mayor_emision', {})
 region_menor = stats.get('region_menor_emision', {})
 fecha_analisis = metadata.get('ultima_actualizacion', 'No disponible')
 
+# Detectar si estamos usando datos de demo
+is_demo = metadata.get('tipo') == 'datos_demostración'
+data_source_label = "DEMOSTRACIÓN" if is_demo else "RETC 2023"
+data_warning = "⚠️ Datos de demostración - " if is_demo else ""
+
 # Configurar página con datos reales
 st.markdown(f"""
 <div class="co2-header">
     <h1 class="co2-title">🏭 Análisis de Emisiones de CO₂ en Chile</h1>
-    <p class="co2-subtitle"><strong>Fuente:</strong> Registro de Emisiones y Transferencias de Contaminantes (RETC) 2023</p>
+    <p class="co2-subtitle"><strong>Fuente:</strong> {data_warning}Registro de Emisiones y Transferencias de Contaminantes ({data_source_label})</p>
     <p class="co2-source"><strong>Última actualización:</strong> {fecha_analisis}</p>
 </div>
 """, unsafe_allow_html=True)
