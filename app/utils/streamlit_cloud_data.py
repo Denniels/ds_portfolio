@@ -17,11 +17,28 @@ class StreamlitCloudDataManager:
         self.is_cloud = os.getenv('IS_STREAMLIT_CLOUD', 'false').lower() == 'true'
         
         if base_path is None:
-            # En Streamlit Cloud la estructura es diferente
-            if self.is_cloud:
-                self.base_path = Path(__file__).parent.parent / 'data' / 'cache'
-            else:
-                self.base_path = Path(__file__).parent / 'data' / 'cache'
+            # Probar múltiples rutas posibles para Streamlit Cloud
+            possible_paths = [
+                # Ruta estándar para Streamlit Cloud
+                Path('/mount/src/ds_portfolio/app/data/cache'),
+                # Ruta desde el archivo actual
+                Path(__file__).parent.parent / 'data' / 'cache',
+                # Ruta desde el directorio de trabajo
+                Path.cwd() / 'app' / 'data' / 'cache',
+                # Ruta relativa
+                Path('./app/data/cache'),
+            ]
+            
+            # Buscar la primera ruta que existe y tiene archivos
+            self.base_path = None
+            for path in possible_paths:
+                if path.exists() and (path / 'emisiones_anuales.json').exists():
+                    self.base_path = path
+                    break
+            
+            # Si no encuentra ninguna, usar la ruta por defecto
+            if self.base_path is None:
+                self.base_path = possible_paths[1]  # Ruta desde archivo actual
         else:
             self.base_path = Path(base_path)
     
@@ -58,9 +75,8 @@ class StreamlitCloudDataManager:
         for name, path in files.items():
             with open(path, 'r', encoding='utf-8') as f:
                 data[name] = json.load(f)
-        
-        # Validar datos
-        if not data['emisiones_regionales'] or not data['emisiones_anuales']:
+          # Validar datos
+        if not data['emisiones_regionales'] or len(data['emisiones_anuales']) == 0:
             raise ValueError("Datos vacíos o inválidos")
         
         return data
