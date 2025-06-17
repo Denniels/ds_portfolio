@@ -1,18 +1,13 @@
 [server]
-# Configuración optimizada para Google Cloud Run
+# Configuración optimizada para Streamlit Cloud
 enableCORS = false
-enableXsrfProtection = false
+enableXsrfProtection = true
 headless = true
-port = 8080
-address = "0.0.0.0"
-enableHealthEndpoint = true
-fileWatcherType = "none"  # Desactivar el vigilante de archivos para mejorar el rendimiento
 maxUploadSize = 50
+fileWatcherType = "none"  # Desactivar el vigilante de archivos para mejorar el rendimiento
 
 [browser]
 gatherUsageStats = false
-serverAddress = "0.0.0.0"
-serverPort = 8080
 
 [runner]
 # Optimizaciones para reducir uso de memoria
@@ -21,17 +16,17 @@ fastReruns = false  # Desactivado para reducir uso de memoria
 
 [theme]
 # Tema personalizado para la aplicación
-primaryColor = "#6366f1"
+primaryColor = "#3B82F6"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#f8f9fa"
-textColor = "#262730"
+textColor = "#1F2937"
 font = "sans serif"
 
 [logger]
 level = "warning"
 
 [client]
-# Optimización para contenedores y entornos cloud
+# Optimización para entornos cloud
 showErrorDetails = false
 toolbarMode = "minimal"
 
