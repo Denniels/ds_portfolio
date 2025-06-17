@@ -93,7 +93,6 @@ def main():
                             st.rerun()
 
     # Agregar footer al final de la página
-    add_page_footer()
 
     add_page_footer()
     add_sidebar_contact()
