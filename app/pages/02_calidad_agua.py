@@ -266,9 +266,23 @@ with st.expander("Metodología"):
     st.subheader("Estrategias de optimización")
     st.markdown(agua_data_info["optimization"])
 
+# Importar componente de contacto
+try:
+    from utils.contact_components import add_page_footer, add_sidebar_contact
+except ImportError:
+    # Fallback por si no encuentra el módulo
+    def add_page_footer():
+        st.markdown("---")
+        st.markdown("© 2025 DS Portfolio")
+    def add_sidebar_contact():
+        st.sidebar.markdown("---")
+
 # Detener el monitoreo al final
 metrics = optimizer.stop_monitoring()
 
 # Footer
-st.markdown("---")
-st.caption("Los datos mostrados son pre-procesados para optimizar el rendimiento y reducir costos.")
+add_page_footer()
+
+# Sidebar - Contacto
+with st.sidebar:
+    add_sidebar_contact()

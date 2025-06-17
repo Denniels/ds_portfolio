@@ -19,10 +19,31 @@ import plotly.express as px
 import folium
 from folium import plugins
 import branca.colormap as cm
+from datetime import datetime
 
-"""
-Página para el análisis de emisiones de CO2 en Chile
-"""
+# Importar componente de contacto
+try:
+    from utils.contact_components import add_page_footer, add_sidebar_contact
+except ImportError:
+    # Fallback por si no encuentra el módulo
+    def add_page_footer():
+        st.markdown("---")
+        st.markdown("© 2025 DS Portfolio")
+    def add_sidebar_contact():
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("### 📱 Contacto")
+        st.sidebar.markdown("""
+        <div style="display:flex;gap:10px">
+            <a href="https://www.linkedin.com/in/tu-perfil-linkedin/" target="_blank" style="text-decoration:none">
+                🔗 LinkedIn
+            </a>
+            <a href="https://github.com/tu-usuario-github" target="_blank" style="text-decoration:none">
+                💻 GitHub
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+        st.sidebar.markdown("---")
+        st.sidebar.markdown(f"Actualizado: {datetime.now().strftime('%d/%m/%Y')}")
 
 # Función para generar el mapa de emisiones
 def generar_mapa_emisiones(df_emisiones):
@@ -513,3 +534,9 @@ def generar_mapa_emisiones(df_emisiones):
     ).add_to(m)
 
     return m
+
+# Agregar enlaces de contacto en la barra lateral
+add_sidebar_contact()
+
+# Agregar footer al final de la página
+add_page_footer()

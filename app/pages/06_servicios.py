@@ -7,6 +7,17 @@ from datetime import datetime
 import plotly.graph_objects as go
 from pathlib import Path
 
+# Importar componente de contacto
+try:
+    from utils.contact_components import add_page_footer, add_sidebar_contact
+except ImportError:
+    # Fallback por si no encuentra el módulo
+    def add_page_footer():
+        st.markdown("---")
+        st.markdown("© 2025 DS Portfolio")
+    def add_sidebar_contact():
+        st.sidebar.markdown("---")
+
 st.set_page_config(
     page_title="Servicios Profesionales - Data Science",
     page_icon="💼",
@@ -108,6 +119,9 @@ def main():
     # Título y descripción
     st.title("💼 Servicios Profesionales de Data Science")
     
+    # Agregar enlaces de contacto en la barra lateral
+    add_sidebar_contact()
+    
     st.info("""
     **Nota Importante**: Los valores mostrados son referenciales y pueden variar según los requerimientos específicos de cada proyecto.
     Cada servicio se adapta a las necesidades particulares del cliente y puede incluir funcionalidades adicionales.
@@ -163,6 +177,11 @@ def main():
     
     **Última actualización de precios**: {}
     """.format(datetime.now().strftime("%d/%m/%Y")))
+    
+    # Agregar footer al final de la página
+    add_page_footer()
+
+    add_page_footer()
 
 if __name__ == "__main__":
     main()

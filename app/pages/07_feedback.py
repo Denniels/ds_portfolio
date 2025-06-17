@@ -29,11 +29,25 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Importar componente de contacto
+try:
+    from utils.contact_components import add_page_footer, add_sidebar_contact
+except ImportError:
+    # Fallback por si no encuentra el módulo
+    def add_page_footer():
+        st.markdown("---")
+        st.markdown("© 2025 DS Portfolio")
+    def add_sidebar_contact():
+        st.sidebar.markdown("---")
+
 def main():
     # Header
     st.markdown('<div class="feedback-header">', unsafe_allow_html=True)
     st.title("💭 Feedback y Comentarios")
     st.markdown("</div>", unsafe_allow_html=True)
+    
+    # Agregar enlaces de contacto en la barra lateral
+    add_sidebar_contact()
     
     # Inicializar manager
     feedback_manager = FeedbackManager()
@@ -77,6 +91,12 @@ def main():
                         if st.button("Rechazar", key=f"reject_{comment['id']}"):
                             feedback_manager.update_comment_status(comment["id"], "rejected")
                             st.rerun()
+
+    # Agregar footer al final de la página
+    add_page_footer()
+
+    add_page_footer()
+    add_sidebar_contact()
 
 if __name__ == "__main__":
     main()

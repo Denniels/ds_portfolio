@@ -311,6 +311,11 @@ with st.expander("Fuentes de datos y optimización"):
 # Detener el monitoreo al final
 metrics = optimizer.stop_monitoring()
 
-# Footer
-st.markdown("---")
-st.caption("Los datos mostrados son pre-procesados para optimizar el rendimiento y reducir costos.")
+# Importar componente de contacto
+from utils.contact_components import add_page_footer, add_sidebar_contact
+
+# Agregar enlaces de contacto en la barra lateral
+add_sidebar_contact()
+
+# Agregar footer al final de la página
+add_page_footer()
