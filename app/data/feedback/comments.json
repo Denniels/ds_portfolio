@@ -1,0 +1,53 @@
+{
+  "comments": [
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "name": "Usuario Demo",
+      "email": "usuario@ejemplo.com",
+      "comment": "¡Excelente portafolio! Me gustaron especialmente los análisis de datos demográficos.",
+      "parent_id": null,
+      "created_at": "2024-06-15T14:32:10.123456",
+      "status": "approved",
+      "likes": 3,
+      "dislikes": 0
+    },
+    {
+      "id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
+      "name": "Analista de Datos",
+      "email": "analista@ejemplo.com",
+      "comment": "Los gráficos interactivos sobre la calidad del agua son muy informativos. ¿Has considerado añadir series temporales para ver la evolución?",
+      "parent_id": null,
+      "created_at": "2024-06-16T10:15:22.987654",
+      "status": "approved",
+      "likes": 2,
+      "dislikes": 0
+    },
+    {
+      "id": "6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b",
+      "name": "Desarrollador",
+      "email": "dev@ejemplo.com",
+      "comment": "Me interesa saber qué librerías de visualización has utilizado para los mapas interactivos.",
+      "parent_id": null,
+      "created_at": "2024-06-17T08:45:33.567890",
+      "status": "approved",
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "id": "3f333df6-90a4-4fda-8dd3-9485d27cee36",
+      "name": "Administrador",
+      "email": "admin@ejemplo.com",
+      "comment": "Para los mapas interactivos he utilizado principalmente Folium y Plotly para combinar visualizaciones geoespaciales con datos estadísticos.",
+      "parent_id": "6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b",
+      "created_at": "2024-06-17T09:30:45.123456",
+      "status": "approved",
+      "likes": 1,
+      "dislikes": 0
+    }
+  ],
+  "metadata": {
+    "created_at": "2024-06-15T14:30:00.000000",
+    "last_updated": "2024-06-17T09:30:45.123456",
+    "count": 4
+  }
+}

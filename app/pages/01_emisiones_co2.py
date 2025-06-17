@@ -21,6 +21,11 @@ from folium import plugins
 import branca.colormap as cm
 from datetime import datetime
 
+# Agregar el directorio raíz al path
+parent_dir = Path(__file__).parent.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
 # Importar componente de contacto
 try:
     from utils.contact_components import add_page_footer, add_sidebar_contact
@@ -126,13 +131,16 @@ with col2:
     # Importar la función de navegación
     import sys
     from pathlib import Path
-    
-    # Añadir el directorio raíz al path si no está
+      # Agregar el directorio raíz al path
     parent_dir = Path(__file__).parent.parent
     if str(parent_dir) not in sys.path:
         sys.path.append(str(parent_dir))
     
+    # Importar módulos
     from utils.navigation import create_back_button
+    from utils.optimization import DataManager, ResourceOptimizer
+
+    # Crear botón de regreso
     create_back_button()
 
 # Contenido principal

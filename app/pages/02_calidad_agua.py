@@ -205,16 +205,20 @@ with tab2:
     '''
     
     m.get_root().html.add_child(folium.Element(legend_html))
-    
-    # Mostrar el mapa en Streamlit
+      # Mostrar el mapa en Streamlit
     try:
-        folium_static(m, width=800, height=500)
-    except:
-        # Si streamlit_folium no está disponible, mostrar mensaje alternativo
-        st.warning("La biblioteca streamlit_folium no está instalada. Instalando...")
-        st.code("pip install streamlit-folium", language="bash")
-        st.image("https://via.placeholder.com/800x500?text=Mapa+Interactivo+de+Estaciones", 
-                caption="Vista previa del mapa interactivo de estaciones")
+        from streamlit_folium import st_folium
+        st_folium(m, width=800, height=500, returned_objects=[])
+    except ImportError:
+        try:
+            from streamlit_folium import folium_static
+            folium_static(m, width=800, height=500)
+        except ImportError:
+            # Si streamlit_folium no está disponible, mostrar mensaje alternativo
+            st.warning("La biblioteca streamlit_folium no está instalada. Instalando...")
+            st.code("pip install streamlit-folium", language="bash")
+            st.image("https://via.placeholder.com/800x500?text=Mapa+Interactivo+de+Estaciones", 
+                    caption="Vista previa del mapa interactivo de estaciones")
     
     st.markdown("""
     El mapa muestra la distribución de 120 estaciones de monitoreo a lo largo del país,

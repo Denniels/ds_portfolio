@@ -6,7 +6,15 @@ import pandas as pd
 import plotly.express as px
 from pathlib import Path
 import json
+import sys
+import os
+from datetime import datetime
+import streamlit.components.v1 as components
 
+# Asegurarse de que app/ esté en el path de Python
+current_dir = Path(__file__).parent
+if str(current_dir) not in sys.path:
+    sys.path.append(str(current_dir))
 
 # Configuración de la página
 st.set_page_config(
@@ -18,9 +26,6 @@ st.set_page_config(
 
 # Importaciones
 from utils.cache_manager import CacheManager
-import streamlit.components.v1 as components
-from datetime import datetime
-import os
 from utils.contact_components import add_page_footer, add_sidebar_contact
 
 # Determinar el entorno
@@ -71,20 +76,11 @@ def main():
     # Iniciar medición de recursos
     optimizer.start_measurement()
     
-    # Crear sidebar y obtener la sección seleccionada
-    selected = create_sidebar()
+    # Crear sidebar simplificado solo con enlaces de contacto
+    create_simple_sidebar()
 
-    # Renderizar sección seleccionada
-    if selected == "principal":
-        render_main_page()
-    elif selected == "emisiones":
-        render_emissions()
-    elif selected == "agua":
-        st.switch_page("pages/02_calidad_agua.py")
-    elif selected == "demografia":
-        st.switch_page("pages/03_demografia_bigquery.py")
-    elif selected == "presupuesto":
-        st.switch_page("pages/04_presupuesto_publico.py")
+    # Renderizar página principal
+    render_main_page()
     
     # Agregar footer con enlaces en la parte inferior de la página principal
     add_footer()
@@ -230,31 +226,13 @@ def render_objective():
     """, unsafe_allow_html=True)
 
 # Función para crear el sidebar con enlaces a redes sociales
-def create_sidebar():
+def create_simple_sidebar():
+    """
+    Crea una barra lateral simplificada solo con enlaces de contacto y monitoreo
+    """
     with st.sidebar:
-        st.title("🔍 Navegación")
-        
-        menu_options = {
-            "principal": "📊 Principal",
-            "emisiones": "🏭 Emisiones de CO2",
-            "agua": "💧 Calidad del Agua",
-            "demografia": "👥 Demografía",
-            "presupuesto": "💰 Presupuesto Público"
-        }
-        
-        selected = st.radio(
-            "Selecciona una sección:",
-            options=list(menu_options.keys()),
-            format_func=lambda x: menu_options[x]
-        )
-        
-        # Agregar separador
-        st.markdown("---")
-        
         # Agregar enlaces a redes sociales usando el componente reutilizable
         add_sidebar_contact()
-        
-    return selected
 
 def add_footer():
     """
@@ -273,6 +251,7 @@ def render_main_page():
     - 💧 Estudios de calidad del agua
     - 👥 Análisis demográficos
     - 💰 Análisis de presupuesto público
+    - 📄 Mi currículum vitae y experiencia profesional
     """)
     
     # Descripción del proyecto
@@ -296,14 +275,21 @@ def render_main_page():
         
         if st.button("💰 Presupuesto Público", use_container_width=True):
             st.switch_page("pages/04_presupuesto_publico.py")
-    
-    # Sección de servicios
+      # Sección de servicios
     st.markdown("---")
     st.subheader("💼 Servicios Profesionales")
     st.write("Ofrezco servicios de análisis de datos y desarrollo de dashboards personalizados.")
     
     if st.button("Ver Servicios Disponibles", use_container_width=True):
         st.switch_page("pages/06_servicios.py")
+    
+    # Sección de currículum
+    st.markdown("---")
+    st.subheader("📄 Sobre Mí")
+    st.write("Conoce más sobre mi formación, experiencia y habilidades profesionales.")
+    
+    if st.button("Ver Currículum Vitae", use_container_width=True):
+        st.switch_page("pages/05_curriculum.py")
     
     # Sección de feedback
     st.markdown("---")
@@ -319,20 +305,6 @@ def render_main_page():
         Última actualización: {datetime.now().strftime('%d/%m/%Y')}
     </div>
     """, unsafe_allow_html=True)
-
-def render_emissions():
-    """Renderiza la sección de emisiones de CO2"""
-    st.title("🏭 Análisis de Emisiones de CO2 en Chile")
-    
-    # Descripción
-    st.markdown("""
-    Este estudio analiza las emisiones de CO2 en Chile entre 2010-2023, evaluando su evolución, 
-    distribución por sectores y comparación con otros países latinoamericanos.
-    """)
-    
-    # Botón para ir a la página completa
-    if st.button("Ver análisis completo", use_container_width=True):
-        st.switch_page("pages/01_emisiones_co2.py")
 
 # Funciones de caché con optimización para GCP
 @st.cache_data(ttl=3600)  # 1 hora de caché
