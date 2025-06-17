@@ -249,7 +249,7 @@ def render_main_page():
     La transición de la electricidad y la automatización industrial al mundo de los datos ha sido un desafío apasionante. 
         Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.        
         Aqui encontraras estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
-        Los estudion aun no contienen la carga de datos realies, estos se encuentran en preparación.
+        Los estudios aun no contienen la carga de datos reales, estos se encuentran en preparación.
     ## Proyectos Destacados
     - 🏭 Análisis de emisiones de CO2
     - 💧 Estudios de calidad del agua
