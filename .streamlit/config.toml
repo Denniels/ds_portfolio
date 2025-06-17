@@ -1,0 +1,46 @@
+[server]
+# Configuración optimizada para Streamlit Cloud
+enableCORS = false
+enableXsrfProtection = true
+headless = true
+maxUploadSize = 50
+fileWatcherType = "none"  # Desactivar el vigilante de archivos para mejorar el rendimiento
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+# Optimizaciones para reducir uso de memoria
+magicEnabled = true
+fastReruns = false  # Desactivado para reducir uso de memoria
+
+[theme]
+# Tema personalizado para la aplicación
+primaryColor = "#3B82F6"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#1F2937"
+font = "sans serif"
+
+[logger]
+level = "warning"
+
+[client]
+# Optimización para entornos cloud
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[caching]
+# Configuración de caché para mejorar rendimiento y reducir uso de memoria
+enable = true
+memoryLimit = 1000
+diskLimit = 2000
+
+[global]
+# Optimizaciones de memoria
+dataFrameSerialization = "arrow"
+
+[deprecation]
+# Desactivar advertencias de deprecación
+showfileUploaderEncoding = false
+showPyplotGlobalUse = false
