@@ -18,7 +18,7 @@ if str(current_dir) not in sys.path:
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Portfolio Data Science | Chile",
+    page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -246,7 +246,10 @@ def render_main_page():
     st.title("📊 Portafolio de Data Science")
     
     st.markdown("""
-    Bienvenido a mi portafolio de análisis de datos, donde encontrarás:
+    La transición de la electricidad y la automatización industrial al mundo de los datos ha sido un desafío apasionante. 
+        Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.        
+        Aqui encontraras estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
+    ## Proyectos Destacados
     - 🏭 Análisis de emisiones de CO2
     - 💧 Estudios de calidad del agua
     - 👥 Análisis demográficos
