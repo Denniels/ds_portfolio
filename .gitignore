@@ -16,7 +16,11 @@ credentials/
 !app/data/cache/calidad_agua_metadata.json
 !app/data/cache/calidad_agua_estaciones.json
 !app/data/cache/calidad_agua_conclusiones.json
+!app/data/cache/demografia_data.json
 !app/config/*.json
+
+# Archivos de datos demográficos incluidos para despliegue
+# demografia_data.json se incluye para que esté disponible en Streamlit Community Cloud
 
 # Visualizaciones
 notebooks/visualizaciones/*.html
