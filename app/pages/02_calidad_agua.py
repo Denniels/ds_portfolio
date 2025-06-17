@@ -44,25 +44,92 @@ data_dir = Path(__file__).parent.parent / "data" / "cache"
 def load_agua_data():
     """Carga los datos de calidad del agua desde los archivos JSON"""
     try:
+        # Intentar múltiples rutas posibles
+        possible_data_dirs = [
+            Path(__file__).parent.parent / "data" / "cache",
+            Path(__file__).parent.parent / "data",
+            Path(__file__).parent / "data" / "cache",
+            Path.cwd() / "app" / "data" / "cache",
+            Path.cwd() / "data" / "cache"
+        ]
+        
+        data_dir = None
+        for dir_path in possible_data_dirs:
+            if dir_path.exists() and (dir_path / "calidad_agua_metadata.json").exists():
+                data_dir = dir_path
+                break
+        
+        if data_dir is None:
+            st.warning("📁 Archivos de datos no encontrados en las rutas esperadas. Usando datos de ejemplo.")
+            return None, None, None
+        
         # Cargar metadatos
-        with open(data_dir / "calidad_agua_metadata.json", 'r', encoding='utf-8') as f:
+        metadata_file = data_dir / "calidad_agua_metadata.json"
+        if not metadata_file.exists():
+            st.error(f"❌ Archivo de metadatos no encontrado: {metadata_file}")
+            return None, None, None
+            
+        with open(metadata_file, 'r', encoding='utf-8') as f:
             metadata = json.load(f)
         
         # Cargar estaciones
-        with open(data_dir / "calidad_agua_estaciones.json", 'r', encoding='utf-8') as f:
+        estaciones_file = data_dir / "calidad_agua_estaciones.json"
+        if not estaciones_file.exists():
+            st.error(f"❌ Archivo de estaciones no encontrado: {estaciones_file}")
+            return metadata, [], None
+            
+        with open(estaciones_file, 'r', encoding='utf-8') as f:
             estaciones = json.load(f)
         
         # Cargar conclusiones
-        with open(data_dir / "calidad_agua_conclusiones.json", 'r', encoding='utf-8') as f:
-            conclusiones = json.load(f)
+        conclusiones_file = data_dir / "calidad_agua_conclusiones.json"
+        if not conclusiones_file.exists():
+            st.warning(f"⚠️ Archivo de conclusiones no encontrado: {conclusiones_file}")
+            conclusiones = generate_default_conclusions()
+        else:
+            with open(conclusiones_file, 'r', encoding='utf-8') as f:
+                conclusiones = json.load(f)
         
+        # Validar datos cargados
+        if not metadata or not isinstance(estaciones, list):
+            st.error("❌ Datos cargados son inválidos o corruptos")
+            return None, None, None
+        
+        st.success(f"✅ Datos cargados correctamente desde: {data_dir}")
         return metadata, estaciones, conclusiones
-    except FileNotFoundError:
-        st.error("❌ Los datos de calidad del agua no están disponibles. Ejecute primero el script de extracción.")
+        
+    except FileNotFoundError as e:
+        st.error(f"❌ Archivo no encontrado: {e}")
+        st.info("💡 Ejecute el script de extracción: `python notebooks/extract_agua_data.py`")
+        return None, None, None
+    except json.JSONDecodeError as e:
+        st.error(f"❌ Error al decodificar JSON: {e}")
         return None, None, None
     except Exception as e:
-        st.error(f"❌ Error al cargar datos: {e}")
+        st.error(f"❌ Error inesperado al cargar datos: {e}")
+        st.info("📋 Usando datos de ejemplo para demostración")
         return None, None, None
+
+def generate_default_conclusions():
+    """Genera conclusiones por defecto si no se encuentra el archivo"""
+    return {
+        "resumen_ejecutivo": "Análisis de calidad del agua basado en datos de la DGA. Los datos están siendo procesados.",
+        "hallazgos_principales": [
+            {
+                "categoria": "Datos en Procesamiento",
+                "descripcion": "Los datos están siendo actualizados desde la fuente oficial",
+                "impacto": "medio"
+            }
+        ],
+        "recomendaciones": [
+            "Verificar la conectividad con la fuente de datos",
+            "Ejecutar el script de extracción de datos",
+            "Contactar al administrador si el problema persiste"
+        ],
+        "alertas_criticas": [
+            "Datos temporalmente no disponibles"
+        ]
+    }
 
 # Cargar datos
 metadata, estaciones_data, conclusiones_data = load_agua_data()

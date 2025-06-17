@@ -1,0 +1,116 @@
+{
+  "fecha_actualizacion": "2025-06-17T16:03:01.735754",
+  "total_estaciones": 174,
+  "estaciones_georreferenciadas": 80,
+  "total_mediciones": 12994,
+  "periodo_datos": {
+    "inicio": "1960-02-04T00:00:00",
+    "fin": "2023-12-20T00:00:00"
+  },
+  "parametros_analizados": [
+    "pH a 25°C",
+    "Temperatura Temperatura muestra °C",
+    "Conductividad Específica (µS/cm a 25°C)",
+    "Transparencia secchi (m)"
+  ],
+  "distribucion_contaminacion": {
+    "Excelente": 47,
+    "Regular": 21,
+    "Mala": 8,
+    "Buena": 3,
+    "Muy Mala": 1
+  },
+  "estadisticas_zona": {
+    "Norte": {
+      "total_estaciones": 3,
+      "contaminacion_promedio": 70.95666666666666,
+      "temperatura_promedio": 8.163333333333332,
+      "ph_promedio": 8.983333333333334
+    },
+    "Centro": {
+      "total_estaciones": 47,
+      "contaminacion_promedio": 29.31336170212766,
+      "temperatura_promedio": 14.304666666666664,
+      "ph_promedio": 7.811702127659573
+    },
+    "Sur": {
+      "total_estaciones": 30,
+      "contaminacion_promedio": 15.431266666666666,
+      "temperatura_promedio": 13.139666666666667,
+      "ph_promedio": 7.4513333333333325
+    }
+  },
+  "top_estaciones_contaminadas": [
+    {
+      "codigo": 5703005,
+      "nombre": "EMBALSE EL YESO (LM)",
+      "indice_contaminacion": 90.0,
+      "nivel": "Muy Mala",
+      "lat": -34.15,
+      "lon": -71.55,
+      "region": "O'Higgins"
+    },
+    {
+      "codigo": 1010015,
+      "nombre": "LAGO CHUNGARA-RIO CHUNGARA",
+      "indice_contaminacion": 79.36999999999999,
+      "nivel": "Mala",
+      "lat": -18.25,
+      "lon": -69.17,
+      "region": "Arica y Parinacota"
+    },
+    {
+      "codigo": 6053001,
+      "nombre": "LAGO RAPEL EN LLALLAUQUEN",
+      "indice_contaminacion": 78.687,
+      "nivel": "Mala",
+      "lat": -34.15,
+      "lon": -71.55,
+      "region": "O'Higgins"
+    },
+    {
+      "codigo": 5716008,
+      "nombre": "LAGUNA DE ACULEO FRENTE A CASA DE BOMBAS",
+      "indice_contaminacion": 77.311,
+      "nivel": "Mala",
+      "lat": -33.85,
+      "lon": -70.95,
+      "region": "Metropolitana"
+    },
+    {
+      "codigo": 6045001,
+      "nombre": "EMBALSE RAPEL EN SECTOR BRAZO ALHUE",
+      "indice_contaminacion": 71.77,
+      "nivel": "Mala",
+      "lat": -34.15,
+      "lon": -71.55,
+      "region": "O'Higgins"
+    }
+  ],
+  "parametros_estadisticas": {
+    "Temperatura Temperatura muestra °C": {
+      "promedio": 14.220076671261202,
+      "mediana": 12.6,
+      "min": 0.409,
+      "max": 1415.0,
+      "std": 25.95741355864278,
+      "count": 11608
+    },
+    "Conductividad Específica (µS/cm a 25°C)": {
+      "promedio": 242.6745280026709,
+      "mediana": 57.0,
+      "min": 0.42,
+      "max": 25772.0,
+      "std": 1184.2265873764982,
+      "count": 11981
+    },
+    "Transparencia secchi (m)": {
+      "promedio": 6.230250192401078,
+      "mediana": 4.1,
+      "min": 0.0,
+      "max": 115.0,
+      "std": 6.686352141740709,
+      "count": 12994
+    }
+  }
+}

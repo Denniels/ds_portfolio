@@ -116,20 +116,23 @@ def calcular_indice_contaminacion(row):
     score = 0
     
     # pH (óptimo entre 6.5-8.5)
-    ph = row.get('Ph a 25°C')
-    if pd.notna(ph):
+    ph_col = 'Ph a 25°C_mean'
+    if ph_col in row.index and pd.notna(row[ph_col]):
+        ph = row[ph_col]
         if ph < 6.5 or ph > 8.5:
             score += abs(ph - 7.5) * 10  # Penalizar desviación del neutral
     
     # Conductividad (menor es mejor para agua dulce)
-    cond = row.get('Conductividad Específica (µS/cm a 25°C)')
-    if pd.notna(cond):
+    cond_col = 'Conductividad Específica (µS/cm a 25°C)_mean'
+    if cond_col in row.index and pd.notna(row[cond_col]):
+        cond = row[cond_col]
         # Normalizar: >500 µS/cm indica contaminación significativa
         score += min(cond / 10, 50)  # Máximo 50 puntos
     
     # Transparencia (mayor es mejor)
-    trans = row.get('Transparencia secchi (m)')
-    if pd.notna(trans):
+    trans_col = 'Transparencia secchi (m)_mean'
+    if trans_col in row.index and pd.notna(row[trans_col]):
+        trans = row[trans_col]
         # Penalizar baja transparencia
         if trans < 2:
             score += (2 - trans) * 20  # Máximo 40 puntos adicionales

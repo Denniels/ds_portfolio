@@ -13,6 +13,9 @@ credentials/
 !app/data/cache/emisiones_anuales.json
 !app/data/cache/emisiones_regionales.json
 !app/data/cache/cache_metadata.json
+!app/data/cache/calidad_agua_metadata.json
+!app/data/cache/calidad_agua_estaciones.json
+!app/data/cache/calidad_agua_conclusiones.json
 !app/config/*.json
 
 # Visualizaciones

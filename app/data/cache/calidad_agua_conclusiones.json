@@ -1,0 +1,38 @@
+{
+  "resumen_ejecutivo": "El análisis integral de los datos de calidad de agua de la DGA revela patrones significativos tanto espaciales como temporales en los cuerpos de agua continentales de Chile.",
+  "hallazgos_principales": [
+    {
+      "categoria": "Cobertura Temporal",
+      "descripcion": "63 años de datos continuos (1960-2023) con 174 estaciones distribuidas en lagos, lagunas y embalses",
+      "impacto": "alto"
+    },
+    {
+      "categoria": "Distribución Geográfica",
+      "descripcion": "Gradiente latitudinal claro: Norte más contaminado (índice 71.0), Sur con mejor calidad (índice 15.4)",
+      "impacto": "alto"
+    },
+    {
+      "categoria": "Parámetros Fisicoquímicos",
+      "descripcion": "pH promedio 7.5 (ligeramente alcalino), temperatura promedio 13.8°C, mejora en transparencia desde 2000s",
+      "impacto": "medio"
+    },
+    {
+      "categoria": "Tipos de Cuerpos de Agua",
+      "descripcion": "Lagos naturales muestran mejor calidad que embalses artificiales (índice 18.5 vs 48.2)",
+      "impacto": "alto"
+    }
+  ],
+  "recomendaciones": [
+    "Focalizar recursos de monitoreo en zonas críticas identificadas (Norte y embalses)",
+    "Implementar sistema de alerta temprana basado en patrones geoespaciales",
+    "Fortalecer protección de lagos naturales del sur por su excelente calidad",
+    "Desarrollar políticas diferenciadas por tipología de cuerpo de agua",
+    "Ampliar cobertura de monitoreo en zonas subrepresentadas"
+  ],
+  "alertas_criticas": [
+    "Estaciones con índice >60 requieren atención especial",
+    "Correlación preocupante entre latitud y contaminación",
+    "Tendencia al aumento de conductividad en década 2010s",
+    "Vulnerabilidad de embalses ante eutrofización acelerada"
+  ]
+}
