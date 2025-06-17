@@ -8,11 +8,10 @@
 ### 🎓 Formación
 
 - **Data Science**, Academia Desafío Latam (2023-2024)
-- **Ingeniero en Mantenimiento Industrial**, Universidad Técnica Federico Santa María (2008-2013)
 
 ### 💼 Experiencia Profesional
 
-#### Ingeniero de Mantenimiento Senior | Integral Service
+#### CEO y Tecnico de Servicios en terreno | Integral Service
 *2015 - Presente*
 - Optimización de procesos industriales
 - Análisis de datos para mantenimiento predictivo
@@ -20,7 +19,7 @@
 - Implementación de sistemas de monitoreo
 - Reducción de costos operacionales en 15%
 
-#### Ingeniero de Planta | Nutraseed
+#### Jefe de mantenimiento | Nutraseed
 *2013 - 2015*
 - Implementación de programas de mantenimiento
 - Mejora continua de procesos
@@ -80,10 +79,10 @@
 
 ### 📚 Formación Continua
 
-- **Google Cloud Platform** - Coursera (2024)
-- **Machine Learning Fundamentals** - EdX (2024)
-- **SQL para Data Science** - DataCamp (2023)
-- **Python para Análisis de Datos** - Udemy (2023)
+- **Google Cloud Platform** - Platzi (2024)
+- **Machine Learning Fundamentals** - Academia DesafioLATAM - DataCamp (2024)
+- **SQL para Data Science** - Academia DesafioLATAM - DataCamp (2023)
+- **Python para Análisis de Datos** - Academia DesafioLATAM - DataCamp (2023)
 
 ### 🌐 Idiomas
 

@@ -10,7 +10,9 @@
 ## 🌟 Características Principales
 
 - **5 Análisis Especializados**: CO2, calidad del agua, demografía, presupuesto público y currículum profesional
+- **Análisis CO2 Avanzado**: Estudio exhaustivo de 55+ millones de toneladas de emisiones CO2 en Chile 2023
 - **Visualizaciones Interactivas**: Mapas dinámicos, gráficos interactivos y dashboards responsivos
+- **Notebooks Jupyter**: Análisis detallados con código documentado y reproducible
 - **Optimización de Rendimiento**: Sistema de caché inteligente y preprocesamiento de datos
 - **Diseño Responsivo**: Interfaz adaptable a dispositivos móviles y desktop
 - **Navegación Simplificada**: Sin menús complejos, acceso directo desde página principal
