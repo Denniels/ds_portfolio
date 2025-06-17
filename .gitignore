@@ -9,6 +9,7 @@ credentials/
 *.json
 */**/credentials/
 */**/*.json
+!app/data/feedback/comments.json
 
 # Visualizaciones
 notebooks/visualizaciones/*.html
@@ -47,7 +48,8 @@ ds_portfolio_env/
 venv/
 ENV/
 env/
-.venv
+.venv/
+.venv/**/*
 
 # IDEs
 .vscode/
