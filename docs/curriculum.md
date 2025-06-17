@@ -99,4 +99,5 @@
 
 ---
 
-*"La transición del mantenimiento industrial al análisis de datos me ha permitido combinar mi experiencia técnica con nuevas habilidades analíticas, creando soluciones innovadoras para problemas industriales complejos."*
+*"La transición del mantenimiento industrial al análisis de datos me ha permitido combinar mi experiencia técnica con nuevas habilidades analíticas, creando soluciones innovadoras para problemas industriales complejos. 
+Busco la oportunidad para integrarme como junior en áreas de desarrollo, programación, análisis de datos, ciencia de datos e inteligencia artificial."*
