@@ -95,8 +95,8 @@
 - **LinkedIn**: [daniel-andres-mardones-sanhueza](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
 - **GitHub**: [Denniels](https://github.com/Denniels)
 - **Email**: daniel.mardones@integralservicespa.cl
-- **Teléfono**: +56 9 XXXX XXXX
-- **Ubicación**: Santiago, Chile
+- **Teléfono**: +56 9 6366 6300
+- **Ubicación**: Temuco, Chile
 
 ---
 
