@@ -17,7 +17,7 @@ def main():
     notebooks = [
         "01_Analisis_Emisiones_CO2_Chile.ipynb",
         "02_Analisis_Calidad_Del_Agua.ipynb",
-        "03_Analisis_BigQuery_Demografia.ipynb",
+        "03_Analisis_Demografia.ipynb",
         "04_Analisis_Presupuesto_Publico.ipynb"
     ]
     

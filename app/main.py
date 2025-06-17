@@ -271,7 +271,7 @@ def render_main_page():
             st.switch_page("pages/01_emisiones_co2.py")
         
         if st.button("👥 Demografía", use_container_width=True):
-            st.switch_page("pages/03_demografia_bigquery.py")
+            st.switch_page("pages/03_demografia.py")
     
     with col2:
         if st.button("💧 Calidad del Agua", use_container_width=True):

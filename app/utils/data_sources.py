@@ -52,7 +52,7 @@ def get_data_source_info(source_id=None):
                 - Optimización de mapas de calor para renderizado eficiente
             """
         },
-        "03_Analisis_BigQuery_Demografia": {
+        "03_Analisis_Demografia": {
             "sources": ["Instituto Nacional de Estadísticas (INE) - Censo 2017", 
                        "Google BigQuery Public Datasets - Population demographics",
                        "CEPAL - Proyecciones de población"],
