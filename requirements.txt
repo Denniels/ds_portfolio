@@ -1,21 +1,12 @@
-pip streamlit>=1.24.0
+# Dependencias principales para el portafolio de Data Science
+streamlit>=1.24.0
 pandas>=2.0.0
 numpy>=1.24.0
 plotly>=5.14.0
 folium>=0.15.0
 streamlit-folium>=0.15.0
-gdown>=4.7.1
-python-dotenv>=1.0.0
-markdown>=3.4.0
-
-# Dependencias para análisis de datos
-matplotlib>=3.8.0
-seaborn>=0.13.0
-openpyxl>=3.1.5
-ipykernel>=6.0.0  # Para Jupyter notebooks
-scipy>=1.11.0     # Para filtros de señal y análisis estadístico
-
-# Optimizaciones y herramientas adicionales
-cachetools>=5.3.0  # Para implementar caché personalizado
-streamlit-extras>=0.3.0  # Componentes adicionales para Streamlit
-watchdog>=3.0.0  # Mejorar el rendimiento de recarga en desarrollo
+matplotlib>=3.7.0
+seaborn>=0.12.0
+psutil>=5.9.0
+cachetools>=5.3.0
+python-dateutil>=2.8.0
