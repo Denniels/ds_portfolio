@@ -1,5 +1,5 @@
 """
-Página para el análisis de emisiones de CO2 en Chile
+Página para el análisis de emisiones de CO2 en Chile - VERSIÓN CON DATOS REALES
 """
 
 import streamlit as st
@@ -20,11 +20,57 @@ import folium
 from folium import plugins
 import branca.colormap as cm
 from datetime import datetime
+import json
 
 # Agregar el directorio raíz al path
 parent_dir = Path(__file__).parent.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
+
+# Rutas para datos reales
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+# Funciones para cargar datos reales
+@st.cache_data
+def load_real_co2_data():
+    """Cargar datos reales de emisiones CO2 desde los archivos JSON generados por el notebook"""
+    try:
+        # Cargar datos anuales
+        with open(DATA_CACHE_DIR / "emisiones_anuales.json", "r", encoding="utf-8") as f:
+            emisiones_anuales = json.load(f)
+        
+        # Cargar datos regionales
+        with open(DATA_CACHE_DIR / "emisiones_regionales.json", "r", encoding="utf-8") as f:
+            emisiones_regionales = json.load(f)
+        
+        # Cargar metadata
+        with open(DATA_CACHE_DIR / "cache_metadata.json", "r", encoding="utf-8") as f:
+            metadata = json.load(f)
+        
+        return emisiones_anuales, emisiones_regionales, metadata
+    except Exception as e:
+        st.error(f"Error cargando datos reales: {e}")
+        return None, None, None
+
+@st.cache_data
+def process_regional_data_for_visualization(emisiones_regionales):
+    """Procesar datos regionales para visualización"""
+    if not emisiones_regionales:
+        return pd.DataFrame()
+    
+    # Convertir a DataFrame para facilitar el manejo
+    data_list = []
+    for region, data in emisiones_regionales.items():
+        data_list.append({
+            'Region': region,
+            'lat': data['lat'],
+            'lon': data['lon'],
+            'emisiones': data['emisiones'],
+            'emisiones_mt': round(data['emisiones'] / 1000000, 2)  # Convertir a mega toneladas
+        })
+    
+    return pd.DataFrame(data_list)
 
 # Importar componente de contacto
 try:
@@ -50,501 +96,696 @@ except ImportError:
         st.sidebar.markdown("---")
         st.sidebar.markdown(f"Actualizado: {datetime.now().strftime('%d/%m/%Y')}")
 
-# Función para generar el mapa de emisiones
-def generar_mapa_emisiones(df_emisiones):
-    """
-    Genera un mapa interactivo de emisiones CO2 usando folium
-    """
-    # Crear mapa base centrado en Chile
-    m = folium.Map(
-        location=[-35.6751, -71.5430],
-        zoom_start=5,
-        tiles='cartodbpositron'
-    )
+# ===== INICIO DE LA APLICACIÓN =====
 
-    # Crear escala de colores para las emisiones
-    max_emission = df_emisiones['emisiones'].max()
-    min_emission = df_emisiones['emisiones'].min()
-    
-    colormap = cm.LinearColormap(
-        colors=['green', 'yellow', 'orange', 'red'],
-        vmin=min_emission,
-        vmax=max_emission,
-        caption='Emisiones de CO2 (Mt)'
-    )
-    m.add_child(colormap)
+# Cargar datos reales
+emisiones_anuales, emisiones_regionales, metadata = load_real_co2_data()
 
-    # Agregar marcadores y heatmap
-    heat_data = []
-    for _, row in df_emisiones.iterrows():
-        # Agregar punto al heatmap
-        heat_data.append([row['lat'], row['lon'], row['emisiones']])
-        
-        # Agregar marcador con popup
-        folium.CircleMarker(
-            location=[row['lat'], row['lon']],
-            radius=row['emisiones']/2,
-            popup=f"{row['Region']}<br>Emisiones: {row['emisiones']:.1f} Mt CO2",
-            color=colormap(row['emisiones']),
-            fill=True,
-            fill_opacity=0.7
-        ).add_to(m)
+# Verificar si los datos se cargaron correctamente
+if emisiones_anuales is None or emisiones_regionales is None or metadata is None:
+    st.error("❌ No se pudieron cargar los datos de emisiones. Verifica que el notebook haya sido ejecutado.")
+    st.info("💡 Ejecuta el notebook `01_Analisis_Emisiones_CO2_Chile.ipynb` para generar los datos necesarios.")
+    st.stop()
 
-    # Agregar heatmap
-    plugins.HeatMap(
-        heat_data,
-        min_opacity=0.3,
-        radius=25,
-        blur=15,
-        max_zoom=1,
-    ).add_to(m)
+# Procesar datos para visualización
+df_regiones = process_regional_data_for_visualization(emisiones_regionales)
 
-    return m
+# Extraer estadísticas de metadata
+stats = metadata.get('estadisticas', {})
+total_emisiones_mt = round(stats.get('total_emisiones_ton', 0) / 1000000, 1)
+region_mayor = stats.get('region_mayor_emision', {})
+region_menor = stats.get('region_menor_emision', {})
+fecha_analisis = metadata.get('ultima_actualizacion', 'No disponible')
 
-# Verificar si se ejecuta directamente con Python o a través de streamlit
-if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
-    print("\n¡ATENCIÓN! Este es un archivo de Streamlit y debe ejecutarse con el comando:")
-    print(f"\nstreamlit run {__file__}\n")
-    print("Ejecutando este archivo directamente con Python puede causar advertencias.")
-    print("Las advertencias 'missing ScriptRunContext' pueden ser ignoradas en modo bare.")
+# Configurar página con datos reales
+st.markdown(f"""
+<div class="co2-header">
+    <h1 class="co2-title">🏭 Análisis de Emisiones de CO₂ en Chile</h1>
+    <p class="co2-subtitle"><strong>Fuente:</strong> Registro de Emisiones y Transferencias de Contaminantes (RETC) 2023</p>
+    <p class="co2-source"><strong>Última actualización:</strong> {fecha_analisis}</p>
+</div>
+""", unsafe_allow_html=True)
 
-# Agregar el directorio raíz al path
-parent_dir = Path(__file__).parent.parent
-if str(parent_dir) not in sys.path:
-    sys.path.append(str(parent_dir))
+# Información del estudio real
+st.markdown(f"""
+## 🔬 Análisis del RETC Chile 2023
 
-from utils.optimization import DataManager, ResourceOptimizer
+Este análisis presenta los resultados reales del Registro de Emisiones y Transferencias de Contaminantes 
+de Chile para el año 2023, procesados desde los datasets oficiales del Ministerio del Medio Ambiente.
 
-# Iniciar monitoreo
-optimizer = ResourceOptimizer()
-optimizer.start_monitoring()
+### Datos Procesados:
+- **Datasets analizados:** {len(metadata.get('fuentes_datos', []))} fuentes oficiales
+- **Regiones cubiertas:** {stats.get('total_regiones', 0)} regiones
+- **Instalaciones analizadas:** {stats.get('total_instalaciones', 0)} principales emisores
+- **Período:** {metadata.get('periodo_analisis', '2023')}
 
-# Inicializar gestor de datos
-data_manager = DataManager()
-
-# Título y descripción
-col1, col2 = st.columns([0.85, 0.15])
-with col1:
-    st.title("🏭 Análisis de Emisiones CO2 en Chile")
-    st.markdown(f"*Última actualización: {data_manager.get_last_update('01_Analisis_Emisiones_CO2_Chile')}*")
-with col2:
-    # Importar la función de navegación
-    import sys
-    from pathlib import Path
-      # Agregar el directorio raíz al path
-    parent_dir = Path(__file__).parent.parent
-    if str(parent_dir) not in sys.path:
-        sys.path.append(str(parent_dir))
-    
-    # Importar módulos
-    from utils.navigation import create_back_button
-    from utils.optimization import DataManager, ResourceOptimizer
-
-    # Crear botón de regreso
-    create_back_button()
-
-# Contenido principal
-st.markdown("""
-## Descripción del Estudio
-
-Este estudio analiza las emisiones de CO₂ en Chile entre 2010-2023, evaluando su evolución, 
-distribución por sectores y comparación con otros países latinoamericanos. 
-El análisis incluye la identificación de tendencias y patrones temporales.
-
-## Objetivos
-
-1. Mapear la evolución temporal de las emisiones totales de CO₂ en Chile
-2. Identificar los sectores económicos con mayor contribución
-3. Evaluar el impacto de políticas de mitigación implementadas
-4. Comparar la situación de Chile con otros países de la región
+### Objetivos del Análisis:
+1. Caracterizar las fuentes principales de emisiones CO₂ por tipo
+2. Analizar distribución geográfica y sectorial real
+3. Identificar patrones en los datos del RETC 2023
+4. Generar visualizaciones basadas en datos oficiales
 """)
 
 # Pestañas para organizar el contenido
-tab1, tab2, tab3 = st.tabs(["Resultados Principales", "Visualizaciones", "Conclusiones"])
+tab1, tab2, tab3, tab4 = st.tabs(["Resultados Principales", "Visualizaciones", "Conclusiones", "Próximos Avances"])
 
 with tab1:
-    st.header("Hallazgos Clave")
+    st.header("📊 Hallazgos Clave del RETC 2023")
+    
+    # Contenedor de métricas con clase CSS
+    st.markdown('<div class="co2-metrics-grid">', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.metric(
-            label="Emisiones totales 2023",
-            value="85.2 Mt CO₂",
-            delta="4.3%",
-            delta_color="inverse"
+            label="Emisiones totales RETC 2023",
+            value=f"{total_emisiones_mt} Mt CO₂",
+            help="Datos reales procesados del RETC Chile 2023"
         )
         
-        st.markdown("""
-        ### Sectores con Mayor Impacto
-        1. **Energía**: 42.3%
-        2. **Transporte**: 27.8%
-        3. **Industria**: 18.6%
+        st.markdown(f"""
+        ### 🏆 Región con Mayores Emisiones
+        **{region_mayor.get('nombre', 'N/A')}**  
+        📊 {round(region_mayor.get('emisiones', 0) / 1000000, 1)} Mt CO₂
+        
+        ### 📋 Cobertura del Análisis
+        - **{stats.get('total_regiones', 0)}** regiones analizadas
+        - **{stats.get('total_instalaciones', 0)}** instalaciones principales
+        - **3** tipos de emisiones (EFD, EFP, TR)
         """)
     
     with col2:
         st.metric(
-            label="Tasa de cambio anual",
-            value="1.8%",
-            delta="-0.6%",
-            delta_color="normal"
+            label="Concentración máxima",
+            value=f"{round((region_mayor.get('emisiones', 0) / stats.get('total_emisiones_ton', 1)) * 100, 1)}%",
+            delta="Una sola región",
+            help=f"Porcentaje de emisiones de {region_mayor.get('nombre', 'N/A')}"
         )
         
-        st.markdown("""
-        ### Ranking Regional
-        - Posición de Chile: 5to lugar
-        - Emisiones per cápita: 4.3t CO₂/persona
+        st.markdown(f"""
+        ### 📉 Región con Menores Emisiones  
+        **{region_menor.get('nombre', 'N/A')}**  
+        📊 {round(region_menor.get('emisiones', 0) / 1000000, 2)} Mt CO₂
+        
+        ### 📈 Dispersión de Datos
+        - **Rango:** {round((region_mayor.get('emisiones', 0) - region_menor.get('emisiones', 0)) / 1000000, 1)} Mt CO₂        - **Ratio:** {round(region_mayor.get('emisiones', 1) / max(region_menor.get('emisiones', 1), 1), 1)}:1
         """)
+    
+    # Cerrar contenedor de métricas
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Agregar análisis estadístico mejorado
+    st.markdown("### 📊 Análisis Estadístico Avanzado")
+    
+    if not df_regiones.empty and total_emisiones_mt > 0:
+        # Crear contenedor para estadísticas
+        stats_col1, stats_col2, stats_col3 = st.columns(3)
+        
+        # Calcular estadísticas descriptivas
+        media_emisiones = df_regiones['emisiones_mt'].mean()
+        mediana_emisiones = df_regiones['emisiones_mt'].median()
+        std_emisiones = df_regiones['emisiones_mt'].std()
+        
+        with stats_col1:
+            st.metric(
+                label="Media Nacional",
+                value=f"{media_emisiones:.2f} Mt CO₂",
+                help="Promedio de emisiones por región"
+            )
+        
+        with stats_col2:
+            st.metric(
+                label="Mediana Nacional", 
+                value=f"{mediana_emisiones:.2f} Mt CO₂",
+                help="Valor central de la distribución"
+            )
+            
+        with stats_col3:
+            st.metric(
+                label="Desviación Estándar",
+                value=f"{std_emisiones:.2f} Mt CO₂",
+                help="Variabilidad entre regiones"
+            )
 
 with tab2:
-    st.header("Visualizaciones")
+    st.header("📈 Visualizaciones de Datos Reales")
     
-    st.markdown("### Evolución Temporal de Emisiones")
-    # En lugar de usar imágenes de placeholder, generamos un gráfico real con datos simulados
-    import numpy as np
-    import pandas as pd
-    import plotly.express as px
+    st.markdown("### 🗺️ Distribución Regional de Emisiones CO₂")
+    
+    # Crear gráfico de barras con datos reales
+    if not df_regiones.empty:
+        # Ordenar por emisiones
+        df_sorted = df_regiones.sort_values('emisiones_mt', ascending=True)
+        
+        fig_regiones = px.bar(
+            df_sorted, 
+            x='emisiones_mt', 
+            y='Region',
+            title='Emisiones de CO₂ por Región (RETC 2023)',
+            labels={'emisiones_mt': 'Emisiones (Mt CO₂)', 'Region': 'Región'},
+            orientation='h',
+            color='emisiones_mt',
+            color_continuous_scale='Reds'
+        )
+        fig_regiones.update_layout(
+            height=600,
+            showlegend=False,
+            plot_bgcolor='rgba(240,240,240,0.3)'
+        )
+        
+        st.plotly_chart(fig_regiones, use_container_width=True)
+        
+        # Mostrar tabla de datos
+        st.markdown("### 📋 Tabla de Datos por Región")
+        display_df = df_regiones[['Region', 'emisiones_mt']].copy()
+        display_df['emisiones_mt'] = display_df['emisiones_mt'].round(2)
+        display_df = display_df.sort_values('emisiones_mt', ascending=False)
+        display_df.columns = ['Región', 'Emisiones (Mt CO₂)']
+        st.dataframe(display_df, use_container_width=True)
+    else:
+        st.warning("No hay datos regionales disponibles para mostrar")
 
-    # Simulación de datos de emisiones (basados en tendencias reales)
-    años = list(range(2010, 2024))
-    base_emisiones = np.array([70.5, 72.3, 74.8, 76.1, 77.5, 79.2, 80.6, 81.8, 82.5, 83.6, 79.8, 80.5, 83.7, 85.2])
-    # Añadimos un poco de variabilidad
-    np.random.seed(42)
-    emisiones = base_emisiones + np.random.normal(0, 1, len(base_emisiones))
-
-    # Crear DataFrame
-    df_emisiones = pd.DataFrame({
-        'Año': años,
-        'Emisiones_CO2_Mt': emisiones
-    })
-
-    # Crear gráfico interactivo con Plotly
-    fig = px.line(df_emisiones, x='Año', y='Emisiones_CO2_Mt', 
-                  title='Emisiones anuales de CO₂ en Chile (2010-2023)',
-                  markers=True, line_shape='spline')
-    fig.update_traces(line=dict(width=3, color='firebrick'))
-    fig.update_layout(
-        xaxis_title='Año',
-        yaxis_title='Emisiones CO₂ (Mt)',
-        plot_bgcolor='rgba(240,240,240,0.8)',
-        height=400
-    )
-
-    # Mostrar gráfico
-    st.plotly_chart(fig, use_container_width=True)
-
-    # División en columnas para gráficos adicionales
+    # División en columnas para métricas adicionales
     col1, col2 = st.columns(2)
 
-with col1:
-    st.markdown("### Distribución por Sectores")
+    with col1:
+        st.markdown("### 🎯 Top 5 Regiones - Mayores Emisiones")
+        if not df_regiones.empty:
+            top5 = df_regiones.nlargest(5, 'emisiones_mt')[['Region', 'emisiones_mt']]
+            for idx, row in top5.iterrows():
+                st.write(f"**{row['Region']}:** {row['emisiones_mt']} Mt CO₂")
+        
+    with col2:
+        st.markdown("### 🎯 Top 5 Regiones - Menores Emisiones")
+        if not df_regiones.empty:
+            bottom5 = df_regiones.nsmallest(5, 'emisiones_mt')[['Region', 'emisiones_mt']]
+            for idx, row in bottom5.iterrows():
+                st.write(f"**{row['Region']}:** {row['emisiones_mt']} Mt CO₂")
     
-    # Datos de distribución por sectores
-    sectores = ['Energía', 'Transporte', 'Industria', 'Residencial', 'Agricultura', 'Otros']
-    porcentajes = [42.3, 27.8, 18.6, 6.2, 3.5, 1.6]
+    # Mapa interactivo
+    st.markdown("### 🗺️ Mapa Interactivo de Emisiones")
+    if not df_regiones.empty:
+        # Crear mapa centrado en Chile
+        mapa = folium.Map(
+            location=[-35.6751, -71.5430],
+            zoom_start=5,
+            tiles='cartodbpositron'
+        )
+        
+        # Agregar marcadores para cada región
+        for _, row in df_regiones.iterrows():
+            # Determinar color según emisiones
+            if row['emisiones_mt'] > 1.0:
+                color = 'red'
+                radius = 15
+            elif row['emisiones_mt'] > 0.5:
+                color = 'orange'
+                radius = 10
+            else:
+                color = 'green'
+                radius = 7
+            
+            folium.CircleMarker(
+                location=[row['lat'], row['lon']],
+                radius=radius,
+                popup=f"""
+                <b>{row['Region']}</b><br>
+                Emisiones: {row['emisiones_mt']} Mt CO₂<br>
+                Coordenadas: ({row['lat']:.2f}, {row['lon']:.2f})
+                """,
+                color=color,
+                fill=True,
+                fillColor=color,
+                fillOpacity=0.7,
+                weight=2
+            ).add_to(mapa)
+        
+        # Mostrar mapa
+        st.components.v1.html(mapa._repr_html_(), height=500)
+    else:
+        st.warning("No hay datos de coordenadas disponibles para el mapa")
     
-    # Crear gráfico de pastel interactivo
-    fig_sectores = px.pie(
-        names=sectores, 
-        values=porcentajes,
-        title="Distribución sectorial de emisiones CO₂",
-        color_discrete_sequence=px.colors.sequential.RdBu,
-        hole=0.3
-    )
-    fig_sectores.update_traces(textposition='inside', textinfo='percent+label')
-    fig_sectores.update_layout(height=300)
+    # Nuevas visualizaciones avanzadas
+    st.markdown("---")
+    st.markdown("### 📈 Análisis Avanzado de Distribución")
     
-    # Mostrar gráfico
-    st.plotly_chart(fig_sectores, use_container_width=True)
-
-with col2:
-    st.markdown("### Comparativa Regional")
+    if not df_regiones.empty:
+        # Gráfico de distribución (histograma)
+        col_hist1, col_hist2 = st.columns(2)
+        
+        with col_hist1:
+            fig_hist = px.histogram(
+                df_regiones, 
+                x='emisiones_mt',
+                nbins=8,
+                title='Distribución de Emisiones por Región',
+                labels={'emisiones_mt': 'Emisiones (Mt CO₂)', 'count': 'Número de Regiones'},
+                color_discrete_sequence=['#FF6B6B']
+            )
+            fig_hist.update_layout(
+                showlegend=False,
+                plot_bgcolor='rgba(240,240,240,0.3)'
+            )
+            st.plotly_chart(fig_hist, use_container_width=True)
+        
+        with col_hist2:
+            # Gráfico de caja (boxplot)
+            fig_box = px.box(
+                df_regiones,
+                y='emisiones_mt',
+                title='Análisis de Distribución (Boxplot)',
+                labels={'emisiones_mt': 'Emisiones (Mt CO₂)'},
+                color_discrete_sequence=['#4ECDC4']
+            )
+            fig_box.update_layout(
+                showlegend=False,
+                plot_bgcolor='rgba(240,240,240,0.3)'
+            )
+            st.plotly_chart(fig_box, use_container_width=True)
     
-    # Datos de comparativa regional
-    paises = ['Brasil', 'México', 'Argentina', 'Chile', 'Colombia', 'Perú', 'Ecuador']
-    emisiones_paises = [450.2, 350.6, 180.5, 85.2, 75.8, 50.3, 35.7]
+    # Gráfico de barras apiladas por cuartiles
+    st.markdown("### 📊 Clasificación por Niveles de Emisión")
     
-    # Crear gráfico de barras interactivo
-    fig_paises = px.bar(
-        x=paises, 
-        y=emisiones_paises,
-        title="Emisiones de CO₂ en países latinoamericanos",
-        labels={'x': 'País', 'y': 'Emisiones CO₂ (Mt)'},
-        color=emisiones_paises,
-        color_continuous_scale='Reds'
-    )
-    fig_paises.update_layout(height=300)
+    if not df_regiones.empty:
+        # Clasificar regiones por cuartiles
+        df_classified = df_regiones.copy()
+        q1 = df_regiones['emisiones_mt'].quantile(0.25)
+        q2 = df_regiones['emisiones_mt'].quantile(0.50)
+        q3 = df_regiones['emisiones_mt'].quantile(0.75)
+        
+        def classify_emissions(value):
+            if value <= q1:
+                return 'Bajo (Q1)'
+            elif value <= q2:
+                return 'Medio-Bajo (Q2)'
+            elif value <= q3:
+                return 'Medio-Alto (Q3)'
+            else:
+                return 'Alto (Q4)'
+        
+        df_classified['Nivel'] = df_classified['emisiones_mt'].apply(classify_emissions)
+        
+        # Contar regiones por nivel
+        nivel_counts = df_classified['Nivel'].value_counts()
+        
+        # Crear gráfico de dona
+        fig_dona = px.pie(
+            values=nivel_counts.values,
+            names=nivel_counts.index,
+            title='Distribución de Regiones por Nivel de Emisiones',
+            hole=0.4,
+            color_discrete_sequence=['#FF9999', '#FFB366', '#FFCC66', '#FF6B6B']
+        )
+        fig_dona.update_traces(textposition='inside', textinfo='percent+label')
+        st.plotly_chart(fig_dona, use_container_width=True)
+        
+        # Mostrar clasificación detallada
+        col_class1, col_class2 = st.columns(2)
+        
+        with col_class1:
+            st.markdown("#### 📋 Clasificación por Cuartiles")
+            st.write(f"**Q1 (Bajo):** ≤ {q1:.2f} Mt CO₂")
+            st.write(f"**Q2 (Medio-Bajo):** {q1:.2f} - {q2:.2f} Mt CO₂")
+            st.write(f"**Q3 (Medio-Alto):** {q2:.2f} - {q3:.2f} Mt CO₂")
+            st.write(f"**Q4 (Alto):** > {q3:.2f} Mt CO₂")
+        
+        with col_class2:
+            st.markdown("#### 🎯 Regiones por Nivel")
+            for nivel in ['Alto (Q4)', 'Medio-Alto (Q3)', 'Medio-Bajo (Q2)', 'Bajo (Q1)']:
+                regiones_nivel = df_classified[df_classified['Nivel'] == nivel]['Region'].tolist()
+                if regiones_nivel:
+                    st.write(f"**{nivel}:** {', '.join(regiones_nivel)}")
     
-    # Mostrar gráfico
-    st.plotly_chart(fig_paises, use_container_width=True)
-
-# Agregar sección del mapa después de los gráficos
-st.markdown("---")
-st.markdown("### 🗺️ Distribución Geográfica de Emisiones")
-st.markdown("""
-Este mapa muestra la distribución espacial de las emisiones de CO2 en Chile, 
-permitiendo identificar las zonas con mayor concentración de emisiones y los principales focos emisores.
-""")
-
-# Datos de ejemplo para el mapa con más regiones de Chile
-data_regiones = {
-    'Region': [
-        'Metropolitana', 'Valparaíso', 'Biobío', 'Antofagasta', 
-        'O\'Higgins', 'Maule', 'Los Lagos', 'Tarapacá',
-        'Coquimbo', 'Araucanía', 'Magallanes', 'Arica y Parinacota'
-    ],
-    'lat': [
-        -33.4489, -33.0458, -36.8201, -23.6509,
-        -34.1708, -35.4264, -41.4718, -20.2348,
-        -29.9533, -38.9489, -53.1638, -18.4783
-    ],
-    'lon': [
-        -70.6693, -71.6197, -73.0443, -70.3975,
-        -70.7444, -71.6553, -72.9424, -70.1385,
-        -71.3436, -72.3311, -70.9171, -70.3126
-    ],
-    'emisiones': [
-        25.3, 15.8, 12.4, 8.6,
-        7.2, 6.5, 5.2, 4.2,
-        3.8, 3.2, 2.8, 1.8
-    ]
-}
-
-df_regional = pd.DataFrame(data_regiones)
-
-# Generar y mostrar el mapa
-try:
-    mapa = generar_mapa_emisiones(df_regional)
+    # Análisis comparativo con benchmarks internacionales
+    st.markdown("---")
+    st.markdown("### 🌍 Contexto Internacional (Estimación)")
     
-    # Convertir el mapa a HTML
-    mapa_html = mapa._repr_html_()
+    benchmark_col1, benchmark_col2 = st.columns(2)
     
-    # Mostrar el mapa usando componente HTML
-    st.components.v1.html(mapa_html, height=500, scrolling=False)
+    with benchmark_col1:
+        # Datos estimados para comparación (ejemplo)
+        paises_referencia = {
+            'Chile (RETC 2023)': total_emisiones_mt,
+            'Uruguay (est.)': 2.1,
+            'Costa Rica (est.)': 3.8,
+            'Dinamarca (est.)': 31.2,
+            'Nueva Zelanda (est.)': 37.8
+        }
+        
+        fig_benchmark = px.bar(
+            x=list(paises_referencia.keys()),
+            y=list(paises_referencia.values()),
+            title='Comparación Internacional - Emisiones CO₂ Totales',
+            labels={'x': 'País', 'y': 'Emisiones (Mt CO₂)'},
+            color=list(paises_referencia.values()),
+            color_continuous_scale='Viridis'
+        )
+        fig_benchmark.update_layout(showlegend=False)
+        st.plotly_chart(fig_benchmark, use_container_width=True)
     
-    # Agregar leyenda explicativa
-    with st.expander("ℹ️ Información sobre el mapa"):
+    with benchmark_col2:
         st.markdown("""
-        - Los círculos rojos indican zonas de alta emisión (>20 Mt CO2/año)
-        - Los círculos amarillos indican zonas de emisión media (10-20 Mt CO2/año)
-        - Los círculos verdes indican zonas de baja emisión (<10 Mt CO2/año)
-        - El tamaño de los círculos es proporcional a la cantidad de emisiones
-        - El mapa de calor muestra la concentración de emisiones en el territorio
+        #### 📊 Análisis Contextual
+        
+        **Nota:** Los datos de comparación internacional son estimaciones 
+        referenciales basadas en informes públicos y pueden no corresponder 
+        exactamente al mismo año o metodología.
+        
+        **Observaciones:**
+        - Chile muestra un perfil típico de país en desarrollo con sector minero
+        - Las emisiones están concentradas en pocas regiones (patrón común)
+        - Se requiere análisis per cápita para comparación más precisa
+        
+        **Fuentes sugeridas para análisis futuro:**
+        - Global Carbon Atlas
+        - UNFCCC National Inventory Reports
+        - IEA CO₂ Emissions Statistics
         """)
-except Exception as e:
-    st.error(f"Error al generar el mapa: {str(e)}")
-    st.info("Por favor, verifica que los datos de ubicación y emisiones estén correctamente formateados.")
 
 with tab3:
-    st.header("Conclusiones")
+    st.header("📋 Conclusiones del Análisis RETC 2023")
     
-    st.markdown("""
-    ### Hallazgos principales basados en análisis de datos
+    st.markdown(f"""
+    ### 🎯 **Hallazgos Principales**
     
-    Tras un análisis exhaustivo de los datos históricos de emisiones de CO₂ en Chile (2010-2023), 
-    podemos establecer las siguientes conclusiones respaldadas por evidencia cuantitativa:
+    El análisis de los datos del Registro de Emisiones y Transferencias de Contaminantes (RETC) 
+    de Chile para 2023 revela patrones significativos en la distribución de emisiones de CO₂:
     
-    - **Tendencia creciente con desaceleración**: Los datos muestran un crecimiento anual promedio del 1.8% 
-      en emisiones totales, con una notable desaceleración desde 2019 (reducción del 4.6% en 2020 
-      seguida de una recuperación moderada de 0.9% y 3.9% en los años posteriores).
+    #### 🏭 **Concentración Regional**
+    - **Región Metropolitana** lidera con **{round(region_mayor.get('emisiones', 0) / 1000000, 1)} Mt CO₂** 
+      ({round((region_mayor.get('emisiones', 0) / stats.get('total_emisiones_ton', 1)) * 100, 1)}% del total nacional)
+    - Esta concentración refleja la alta densidad industrial y poblacional del área metropolitana
+    - **Dispersión significativa**: La región con mayores emisiones supera en 
+      **{round(region_mayor.get('emisiones', 1) / max(region_menor.get('emisiones', 1), 1), 1)}x** 
+      a la región con menores emisiones
     
-    - **Composición sectorial desequilibrada**: El análisis sectorial revela que energía (42.3%) y 
-      transporte (27.8%) representan más del 70% de las emisiones totales, lo que indica dónde deben 
-      concentrarse los esfuerzos de mitigación para obtener resultados significativos.
+    #### 📊 **Distribución Nacional**  
+    - **{stats.get('total_regiones', 0)} regiones** reportaron emisiones en el RETC 2023
+    - **Total nacional**: {total_emisiones_mt} Mt CO₂ registradas oficialmente
+    - **{stats.get('total_instalaciones', 0)} instalaciones principales** identificadas como mayores emisores
     
-    - **Posición regional moderada**: El análisis comparativo muestra que Chile ocupa el 4° lugar 
-      en emisiones absolutas entre países latinoamericanos, pero al normalizar por PIB, se observa 
-      una eficiencia superior a la media regional (0.21 kg CO₂/USD vs. 0.27 kg CO₂/USD).
+    #### 🔍 **Calidad de Datos**
+    - Datos procesados desde **{len(metadata.get('fuentes_datos', []))} fuentes oficiales** del MMA
+    - Análisis basado en **3 tipos de emisiones**: Fugitivas Difusas (EFD), Fugitivas Puntuales (EFP) y Transferencias (TR)
+    - Cobertura geográfica completa de Chile continental
     """)
     
-    # Crear una visualización adicional: Evolución de la intensidad de carbono
-    st.markdown("### Análisis avanzado: Evolución de la intensidad de carbono")
-    
-    # Datos simulados de intensidad de carbono
-    años = list(range(2010, 2024))
-    base_intensidad = np.array([0.28, 0.275, 0.27, 0.265, 0.26, 0.255, 0.25, 0.245, 0.24, 0.235, 0.22, 0.215, 0.21, 0.205])
-    # Añadimos variabilidad
-    np.random.seed(42)
-    intensidad = base_intensidad + np.random.normal(0, 0.005, len(base_intensidad))
-    
-    # Crear DataFrame
-    df_intensidad = pd.DataFrame({
-        'Año': años,
-        'Intensidad_Carbono': intensidad
-    })
-    
-    # Crear gráfico
-    fig_intensidad = px.line(df_intensidad, x='Año', y='Intensidad_Carbono',
-                             title='Evolución de la intensidad de carbono (kg CO₂/USD)',
-                             markers=True)
-    fig_intensidad.update_traces(line=dict(width=2, color='darkgreen'))
-    fig_intensidad.add_hline(y=0.27, line_dash="dash", line_color="red", 
-                           annotation_text="Promedio regional", annotation_position="top right")
-    fig_intensidad.update_layout(height=300)
-    
-    # Mostrar gráfico
-    st.plotly_chart(fig_intensidad, use_container_width=True)
-    
-    st.info("""
-    **Recomendaciones basadas en análisis de datos**:
-    
-    1. **Transición energética acelerada**: Los datos indican que una reducción del 15% en emisiones 
-       del sector energético tendría el mismo impacto que reducir un 45% las emisiones agrícolas.
-       
-    2. **Electrificación del transporte**: El análisis muestra que la tasa actual de adopción de 
-       vehículos eléctricos (2.3%) necesitaría quintuplicarse para cumplir los objetivos de 
-       carbono-neutralidad para 2050.
-       
-    3. **Eficiencia industrial**: Los datos sugieren que implementar las mejores prácticas disponibles 
-       en el sector industrial podría reducir sus emisiones en un 22% con un periodo de retorno de 
-       inversión promedio de 4.3 años.
-    """)
-
-# Obtener información de la fuente de datos
-from utils.data_sources import get_data_source_info
-co2_data_info = get_data_source_info("01_Analisis_Emisiones_CO2_Chile")
-
-# Añadir información de métodos detallada
-with st.expander("Metodología y proceso de análisis"):
-    st.markdown("""
-    ## Metodología detallada
-    
-    ### Fuentes de datos
-    Este análisis utilizó datos de las siguientes fuentes:""")
-    
-    # Mostrar las fuentes reales
-    for source in co2_data_info["sources"]:
-        st.markdown(f"- **{source}**")
-      ### Proceso de análisis y optimización
-    
-    #### 1. Preprocesamiento de datos
-    st.markdown(co2_data_info["preprocessing"])
-    
-    # Ejemplo de preprocesamiento con pandas
-    st.code("""
-    # Ejemplo de preprocesamiento con pandas
-    import pandas as pd
-    import numpy as np
-    
-    # Carga de datos
-    df = pd.read_csv('emisiones_raw.csv')
-    
-    # Limpieza y transformación
-    df['fecha'] = pd.to_datetime(df['fecha'])
-    df = df.fillna(method='ffill')  # Forward fill para datos faltantes
-    
-    # Agregación por sector
-    sectores_df = df.groupby(['año', 'sector']).agg({
-        'emisiones_co2': 'sum',
-        'pib': 'first'
-    }).reset_index()
-    
-    # Cálculo de intensidad de carbono
-    sectores_df['intensidad'] = sectores_df['emisiones_co2'] / sectores_df['pib']
-    
-    # Exportación de datos preprocesados (optimizado para carga rápida)
-    sectores_df.to_parquet('data/preprocessed/sectores_emisiones.parquet', compression='snappy')
-    """, language="python")
-    
-    #### 2. Optimización para capa gratuita de GCP
-    st.markdown(co2_data_info["optimization"])
-    
-    st.code("""
-    @st.cache_data
-    def load_emissions_data():
-        # Esta función carga datos preprocesados, evitando costosos cálculos en cada vista
-        return pd.read_parquet('data/preprocessed/sectores_emisiones.parquet')
-    
-    # Sistema de monitoreo de recursos
-    class ResourceMonitor:
-        def start(self):
-            self.start_time = time.time()
-            self.start_memory = psutil.Process().memory_info().rss
-            
-        def end(self):
-            elapsed = time.time() - self.start_time
-            memory_used = psutil.Process().memory_info().rss - self.start_memory
-            return {"time": elapsed, "memory": memory_used}
-    """, language="python")
-      #### 3. Análisis estadístico
-    
-    st.markdown("""
-    - Pruebas de normalidad Shapiro-Wilk para series temporales
-    - Análisis de correlación entre emisiones y variables económicas
-    - Descomposición de series temporales (tendencia, estacionalidad, residuos)
-    - Proyecciones mediante modelos ARIMA y regresión
+    st.info(f"""
+    **📅 Metadata del Análisis:**
+    - **Versión de datos:** {metadata.get('version', 'N/A')}
+    - **Generado:** {metadata.get('generado_en', 'N/A').split('T')[0] if metadata.get('generado_en') else 'N/A'}
+    - **Optimizado para:** Streamlit Community Cloud
+    - **Fuente oficial:** Ministerio del Medio Ambiente de Chile
     """)
     
+    # Sección de recomendaciones basadas en datos reales
     st.markdown("""
-    ### Verificabilidad y rigor metodológico
+    ### 💡 **Recomendaciones Basadas en Datos**
     
-    Los datos han sido tratados siguiendo las directrices del IPCC 2006 para inventarios nacionales de gases de efecto invernadero.
-    El código fuente completo está disponible para auditoría, garantizando la transparencia total del proceso analítico.
+    #### Para Política Pública:
+    1. **Focalizar esfuerzos** en la Región Metropolitana debido a su alta concentración de emisiones
+    2. **Desarrollar estrategias diferenciadas** según el perfil de emisiones de cada región
+    3. **Fortalecer el sistema RETC** para capturar más instalaciones medianas y pequeñas
+    
+    #### Para Investigación:
+    1. **Análisis temporal** comparando con años anteriores del RETC
+    2. **Correlación con variables socioeconómicas** por región
+    3. **Estudios sectoriales específicos** en las principales fuentes identificadas
+    
+    #### Para el Sector Privado:
+    1. **Benchmarking sectorial** usando datos RETC como referencia
+    2. **Oportunidades de mejora** en regiones con alta intensidad de emisiones
+    3. **Desarrollo de tecnologías limpias** focalizadas en los sectores más emisores
+    """)
+    
+    # Nota metodológica
+    st.markdown("""
+    ---
+    ### 📚 **Nota Metodológica**
+    
+    Este análisis utiliza exclusivamente datos oficiales del **Registro de Emisiones y Transferencias 
+    de Contaminantes (RETC)** del Ministerio del Medio Ambiente de Chile para el año 2023. 
+    
+    Los datos fueron procesados mediante análisis estadístico exploratorio, incluyendo:
+    - Limpieza y validación de datos
+    - Detección de outliers
+    - Agregación por región y tipo de emisión
+    - Optimización para visualización web
+    
+    **Limitaciones:** Los datos RETC representan emisiones reportadas por instalaciones reguladas 
+    y pueden no incluir todas las fuentes de CO₂ del país.
     """)
 
-# Detener el monitoreo al final
-metrics = optimizer.stop_monitoring()
-
-# Footer
-st.markdown("---")
-st.caption("Los datos mostrados son pre-procesados para optimizar el rendimiento y reducir costos.")
-
-def generar_mapa_emisiones(df_emisiones):
-    """
-    Genera un mapa interactivo de emisiones CO2 usando folium
-    """
-    import folium
-    from folium import plugins
-    import branca.colormap as cm
-
-    # Crear mapa base centrado en Chile
-    m = folium.Map(
-        location=[-35.6751, -71.5430],
-        zoom_start=5,
-        tiles='cartodbpositron'
-    )
-
-    # Crear escala de colores para las emisiones
-    max_emission = df_emisiones['emisiones'].max()
-    min_emission = df_emisiones['emisiones'].min()
+with tab4:
+    st.header("🚀 Próximos Avances del Estudio de Emisiones CO₂")
     
-    colormap = cm.LinearColormap(
-        colors=['green', 'yellow', 'orange', 'red'],
-        vmin=min_emission,
-        vmax=max_emission,
-        caption='Emisiones de CO2 (Mt)'
-    )
-    m.add_child(colormap)
-
-    # Agregar marcadores y heatmap
-    heat_data = []
-    for _, row in df_emisiones.iterrows():
-        # Agregar punto al heatmap
-        heat_data.append([row['lat'], row['lon'], row['emisiones']])
+    st.markdown("""
+    Esta sección presenta las **líneas de investigación futuras** y **mejoras planificadas** 
+    para profundizar el análisis de emisiones de CO₂ en Chile.
+    """)
+    
+    # Roadmap visual
+    st.markdown("### 🗺️ Roadmap de Desarrollo")
+    
+    roadmap_col1, roadmap_col2 = st.columns(2)
+    
+    with roadmap_col1:
+        st.markdown("""
+        #### 📅 **Corto Plazo (3-6 meses)**
         
-        # Agregar marcador con popup
-        folium.CircleMarker(
-            location=[row['lat'], row['lon']],
-            radius=row['emisiones']/2,
-            popup=f"{row['Region']}<br>Emisiones: {row['emisiones']:.1f} Mt CO2",
-            color=colormap(row['emisiones']),
-            fill=True,
-            fill_opacity=0.7
-        ).add_to(m)
+        **🔄 Análisis Temporal**
+        - Comparación con años anteriores (2020-2022)
+        - Identificación de tendencias post-COVID
+        - Análisis de estacionalidad de emisiones
+        
+        **📊 Mejoras en Visualización**
+        - Dashboard interactivo en tiempo real
+        - Mapas de calor dinámicos
+        - Filtros avanzados por sector y período
+        
+        **🔍 Validación de Datos**
+        - Cross-validation con otras fuentes oficiales
+        - Análisis de consistencia inter-anual
+        - Detección automatizada de anomalías
+        """)
+    
+    with roadmap_col2:
+        st.markdown("""
+        #### 📅 **Mediano Plazo (6-12 meses)**
+        
+        **🌍 Análisis Comparativo Internacional**
+        - Benchmarking con países similares
+        - Análisis per cápita y por PIB
+        - Estudio de mejores prácticas globales
+        
+        **🏭 Análisis Sectorial Profundo**
+        - Desagregación por industrias específicas
+        - Análisis de eficiencia energética
+        - Identificación de oportunidades de reducción
+        
+        **🤖 Machine Learning**
+        - Modelos predictivos de emisiones
+        - Clustering de patrones regionales
+        - Forecasting con variables climáticas
+        """)
+    
+    # Metodologías avanzadas
+    st.markdown("---")
+    st.markdown("### 🔬 Metodologías Avanzadas a Implementar")
+    
+    metodologias_col1, metodologias_col2, metodologias_col3 = st.columns(3)
+    
+    with metodologias_col1:
+        st.markdown("""
+        #### 📈 **Análisis Estadístico**
+        - **Análisis de series temporales**
+          - ARIMA para forecasting
+          - Detección de puntos de cambio
+          - Análisis de estacionalidad
+        
+        - **Análisis multivariado**
+          - PCA para reducción dimensional
+          - Clustering k-means por perfiles
+          - Análisis de correlación espacial
+        """)
+    
+    with metodologias_col2:
+        st.markdown("""
+        #### 🌐 **Análisis Geoespacial**
+        - **Análisis de hotspots**
+          - Identificación de clusters de emisión
+          - Análisis de proximidad geográfica
+          - Correlación con uso de suelo
+        
+        - **Modelado espacial**
+          - Interpolación kriging
+          - Análisis de autocorrelación espacial
+          - Modelos de difusión geográfica
+        """)
+    
+    with metodologias_col3:
+        st.markdown("""
+        #### 🤖 **Machine Learning**
+        - **Modelos predictivos**
+          - Random Forest para clasificación
+          - Redes neuronales para forecasting
+          - Ensemble methods
+        
+        - **Análisis de patrones**
+          - Algoritmos de asociación
+          - Detección de anomalías
+          - Segmentación automática
+        """)
+    
+    # Integración de datos
+    st.markdown("---")
+    st.markdown("### 🔄 Integración de Nuevas Fuentes de Datos")
+    
+    integracion_col1, integracion_col2 = st.columns(2)
+    
+    with integracion_col1:
+        st.markdown("""
+        #### 📊 **Fuentes de Datos Planificadas**
+        
+        **Datos Oficiales:**
+        - **INE Chile**: Datos económicos y demográficos
+        - **CNE**: Consumo energético por región
+        - **SINIA**: Indicadores ambientales complementarios
+        - **SII**: Datos de actividad económica por sector
+        
+        **Datos Satelitales:**
+        - **Sentinel-5P**: Concentraciones atmosféricas CO₂
+        - **MODIS**: Uso de suelo y vegetación
+        - **Landsat**: Cambios en cobertura terrestre
+        
+        **APIs Internacionales:**
+        - **Global Carbon Atlas**: Comparación internacional
+        - **World Bank Open Data**: Indicadores socioeconómicos
+        - **UNFCCC**: Inventarios nacionales de GEI
+        """)
+    
+    with integracion_col2:
+        st.markdown("""
+        #### 🛠️ **Herramientas y Tecnologías**
+        
+        **Pipeline de Datos:**
+        - **Apache Airflow**: Automatización ETL
+        - **Google Earth Engine**: Procesamiento satelital
+        - **PostGIS**: Base de datos geoespacial
+        
+        **Análisis y Modelado:**
+        - **scikit-learn**: Machine learning
+        - **geopandas**: Análisis geoespacial
+        - **statsmodels**: Modelado estadístico
+        
+        **Visualización Avanzada:**
+        - **Plotly Dash**: Dashboards interactivos
+        - **Folium**: Mapas web avanzados
+        - **Streamlit**: Prototipos rápidos
+        """)
+    
+    # Impacto esperado
+    st.markdown("---")
+    st.markdown("### 🎯 Impacto Esperado de los Avances")
+    
+    st.success("""
+    #### 🌟 **Valor Agregado del Estudio Expandido**
+    
+    **Para Tomadores de Decisión:**
+    - Predicciones más precisas para políticas públicas
+    - Identificación temprana de tendencias preocupantes
+    - Optimización de recursos para reducción de emisiones
+    
+    **Para la Comunidad Científica:**
+    - Metodología replicable para otros países latinoamericanos
+    - Datasets procesados y validados disponibles públicamente
+    - Publicaciones en revistas especializadas
+    
+    **Para el Sector Privado:**
+    - Benchmarking sectorial detallado
+    - Herramientas de autodiagnóstico empresarial
+    - Identificación de oportunidades de negocio verde
+    """)
+    
+    # Cronograma de implementación
+    st.markdown("### 📅 Cronograma de Implementación")
+    
+    # Crear datos para gráfico de Gantt simplificado
+    import plotly.express as px
+    import pandas as pd
+    from datetime import datetime, timedelta
+    
+    # Datos del cronograma
+    tareas = [
+        {"Tarea": "Análisis Temporal", "Inicio": "2025-07-01", "Fin": "2025-09-30", "Tipo": "Corto Plazo"},
+        {"Tarea": "Mejoras Visualización", "Inicio": "2025-07-15", "Fin": "2025-10-15", "Tipo": "Corto Plazo"},
+        {"Tarea": "Validación Datos", "Inicio": "2025-08-01", "Fin": "2025-10-30", "Tipo": "Corto Plazo"},
+        {"Tarea": "Análisis Internacional", "Inicio": "2025-10-01", "Fin": "2026-03-31", "Tipo": "Mediano Plazo"},
+        {"Tarea": "Análisis Sectorial", "Inicio": "2025-11-01", "Fin": "2026-04-30", "Tipo": "Mediano Plazo"},
+        {"Tarea": "Machine Learning", "Inicio": "2026-01-01", "Fin": "2026-06-30", "Tipo": "Mediano Plazo"},
+    ]
+    
+    df_cronograma = pd.DataFrame(tareas)
+    df_cronograma['Inicio'] = pd.to_datetime(df_cronograma['Inicio'])
+    df_cronograma['Fin'] = pd.to_datetime(df_cronograma['Fin'])
+    
+    fig_gantt = px.timeline(
+        df_cronograma, 
+        x_start="Inicio", 
+        x_end="Fin", 
+        y="Tarea",
+        color="Tipo",
+        title="Cronograma de Implementación de Avances",
+        color_discrete_map={"Corto Plazo": "#FF6B6B", "Mediano Plazo": "#4ECDC4"}
+    )
+    fig_gantt.update_yaxes(autorange="reversed")
+    fig_gantt.update_layout(height=400)
+    st.plotly_chart(fig_gantt, use_container_width=True)
+    
+    # Call to action
+    st.markdown("---")
+    st.info("""
+    ### 🤝 **¿Interesado en Colaborar?**
+    
+    Este roadmap está abierto a colaboraciones con:
+    - **Instituciones académicas** interesadas en investigación ambiental
+    - **Organizaciones públicas** que requieran análisis especializados
+    - **Empresas privadas** buscando soluciones de monitoreo ambiental
+    - **Investigadores independientes** con expertise complementario
+    
+    📧 **Contacto para colaboraciones:** [LinkedIn Profile](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+    """)
 
-    # Agregar heatmap
-    plugins.HeatMap(
-        heat_data,
-        min_opacity=0.3,
-        radius=25,
-        blur=15,
-        max_zoom=1,
-    ).add_to(m)
+# Footer con información adicional
+st.markdown("---")
+st.markdown("### 📊 Información Técnica")
 
-    return m
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown(f"""
+    **Datos utilizados:**
+    - Emisiones totales: {total_emisiones_mt} Mt CO₂
+    - Regiones analizadas: {stats.get('total_regiones', 0)}
+    - Fuentes de datos: {len(metadata.get('fuentes_datos', []))}
+    """)
 
-# Agregar enlaces de contacto en la barra lateral
-add_sidebar_contact()
+with col2:
+    st.markdown(f"""
+    **Última actualización:**
+    - Datos: {fecha_analisis}
+    - Versión: {metadata.get('version', 'N/A')}
+    - Tipo: Datos reales RETC 2023
+    """)
 
-# Agregar footer al final de la página
-add_page_footer()
+# Importar componentes de contacto
+try:
+    from utils.contact_components import add_page_footer, add_sidebar_contact
+    add_sidebar_contact()
+    add_page_footer()
+except ImportError:
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 📱 Contacto")
+    st.sidebar.markdown("🔗 LinkedIn | 💻 GitHub")
+    st.sidebar.markdown("---")
+    st.sidebar.markdown(f"Actualizado: {datetime.now().strftime('%d/%m/%Y')}")

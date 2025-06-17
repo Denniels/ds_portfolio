@@ -1,0 +1,200 @@
+/* Archivo principal de estilos - Combina todos los estilos del portafolio */
+
+/* Importar estilos base */
+@import url('main.css');
+@import url('co2_analysis.css');
+@import url('components.css');
+
+/* Estilos adicionales para optimización */
+.stApp {
+    background-color: #F8FAFC;
+}
+
+/* Optimizaciones para Streamlit */
+.stSelectbox > div > div {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.stMetric {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stPlotlyChart {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para tablas */
+.stDataFrame {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para alertas */
+.stAlert {
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Estilos para la barra lateral */
+.stSidebar {
+    background-color: #F1F5F9;
+}
+
+.stSidebar .stSelectbox {
+    margin-bottom: 1rem;
+}
+
+/* Estilos para botones */
+.stButton > button {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    background-color: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Estilos para la navegación */
+.nav-container {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.nav-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .co2-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .co2-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Estilos para gráficos interactivos */
+.plot-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Estilos para insights y conclusiones */
+.insight-box {
+    background: linear-gradient(135deg, #EBF8FF 0%, #BEE3F8 100%);
+    border-left: 4px solid #3182CE;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.insight-title {
+    font-weight: 600;
+    color: #2C5282;
+    margin-bottom: 0.5rem;
+}
+
+.insight-text {
+    color: #2D3748;
+    line-height: 1.6;
+}
+
+/* Estilos para indicadores de estado */
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-success {
+    background-color: #10B981;
+}
+
+.status-warning {
+    background-color: #F59E0B;
+}
+
+.status-error {
+    background-color: #EF4444;
+}
+
+/* Estilos para cards de información */
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E5E7EB;
+}
+
+.info-card-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.info-card-icon {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}

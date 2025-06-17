@@ -10,24 +10,24 @@ st.set_page_config(
     layout="wide"
 )
 
-# Configurar estilo
-st.markdown("""
-<style>
-    .feedback-header {
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .feedback-form {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-    .comment-section {
-        max-width: 900px;
-        margin: 2rem auto;
-    }
-</style>
-""", unsafe_allow_html=True)
+# Configurar estilo - Los estilos ahora están en static/css/components.css
+# st.markdown("""
+# <style>
+#     .feedback-header {
+#         text-align: center;
+#         padding: 2rem 0;
+#     }
+#     .feedback-form {
+#         max-width: 800px;
+#         margin: 0 auto;
+#         padding: 2rem;
+#     }
+#     .comment-section {
+#         max-width: 900px;
+#         margin: 2rem auto;
+#     }
+# </style>
+# """, unsafe_allow_html=True)
 
 # Importar componente de contacto
 try:

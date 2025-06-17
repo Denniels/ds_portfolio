@@ -92,26 +92,36 @@ def format_currency(value):
 def create_service_card(service_name, details):
     """Crea una tarjeta visual para un servicio"""
     with st.container():
-        st.subheader(service_name)
-        col1, col2 = st.columns([2,1])
+        st.markdown(f'''
+        <div class="service-card">
+            <div class="service-header">
+                <div class="service-icon">💼</div>
+                <h3 class="service-title">{service_name}</h3>
+            </div>
+            <p class="service-description">{details["descripcion"]}</p>
+            <div style="margin: 1rem 0;">
+                <strong>✅ Incluye:</strong>
+                <ul class="service-features">
+        ''', unsafe_allow_html=True)
         
-        with col1:
-            st.write(details["descripcion"])
-            st.write("**Incluye:**")
-            for item in details["incluye"]:
-                st.write(f"✓ {item}")
+        for item in details["incluye"]:
+            st.markdown(f'                <li>{item}</li>', unsafe_allow_html=True)
         
-        with col2:
-            st.metric("Valor Referencial", format_currency(details["precio"]))
-            st.write(f"⏱️ Duración estimada: {details['duracion']}")
-            
-            # Botón de contacto
-            if st.button("📬 Solicitar información", key=f"btn_{service_name}"):
-                st.markdown("""
-                Para solicitar este servicio, por favor contáctame a través de:
-                - 📧 [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
-                - 💼 [Correo directo](mailto:tu_correo@ejemplo.com)
-                """)
+        st.markdown(f'''
+                </ul>
+            </div>
+            <div class="service-price">{format_currency(details["precio"])}</div>
+            <p><strong>⏱️ Duración estimada:</strong> {details["duracion"]}</p>
+        </div>
+        ''', unsafe_allow_html=True)
+        
+        # Botón de contacto
+        if st.button("📬 Solicitar información", key=f"btn_{service_name}"):
+            st.markdown("""
+            Para solicitar este servicio, por favor contáctame a través de:
+            - 📧 [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+            - 💼 [Correo directo](mailto:tu_correo@ejemplo.com)
+            """)
         
         st.markdown("---")
 
@@ -137,11 +147,14 @@ def main():
         "Selecciona una categoría de servicios:",
         list(services.keys())
     )
-    
-    # Mostrar servicios de la categoría seleccionada
+      # Mostrar servicios de la categoría seleccionada
     st.subheader(f"📊 {categoria}")
+    
+    # Contenedor grid para servicios
+    st.markdown('<div class="services-grid">', unsafe_allow_html=True)
     for service_name, details in services[categoria].items():
         create_service_card(service_name, details)
+    st.markdown('</div>', unsafe_allow_html=True)
     
     # Información adicional
     with st.expander("ℹ️ Información Adicional"):
