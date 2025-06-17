@@ -47,7 +47,7 @@ def main():
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Agregar enlaces de contacto en la barra lateral
-    add_sidebar_contact()
+    #add_sidebar_contact()
     
     # Inicializar manager
     feedback_manager = FeedbackManager()
