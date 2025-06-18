@@ -290,7 +290,6 @@ def render_main_page():
             Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.
             <br><br>
             Aquí encontrarás estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
-            Los estudios aún no contienen la carga de datos reales, estos se encuentran en preparación.
         </p>
     </div>
     """, unsafe_allow_html=True)
