@@ -207,7 +207,7 @@ def main():
     
     # Agregar footer al final de la página
 
-    add_page_footer()
+    # add_page_footer()
 
 if __name__ == "__main__":
     main()
