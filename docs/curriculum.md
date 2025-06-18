@@ -60,9 +60,9 @@
 - Mapas interactivos con Folium
 - Dashboard en Streamlit
 
-#### Análisis Demográfico con BigQuery
-- Consultas optimizadas en BigQuery
-- Análisis de datos censales
+#### Análisis Demográfico
+- Consultas a la API Banco Mundial
+- Estadísticas del INE Chile
 - Visualizaciones de distribución poblacional
 
 #### Presupuesto Público de Chile
