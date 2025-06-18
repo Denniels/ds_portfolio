@@ -5,6 +5,12 @@
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 🚀 Aplicación en Vivo
+
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Aplicación%20en%20Vivo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://dsportfolio-jm67tsp8uwfsbnpfetysnh.streamlit.app/)
+
+**🌐 Explora el portafolio interactivo:** [https://dsportfolio-jm67tsp8uwfsbnpfetysnh.streamlit.app/](https://dsportfolio-jm67tsp8uwfsbnpfetysnh.streamlit.app/)
+
 ## 🌟 Descripción General
 
 **Portfolio interactivo de análisis de datos** enfocado en Chile, desarrollado con **Streamlit**. Este proyecto presenta análisis comprehensivos de datos públicos chilenos utilizando técnicas avanzadas de ciencia de datos, visualización interactiva y machine learning.
@@ -384,7 +390,8 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
+**Daniel Andrés Mardones Sanhueza**
+- 🚀 **Portfolio en Vivo**: [dsportfolio-jm67tsp8uwfsbnpfetysnh.streamlit.app](https://dsportfolio-jm67tsp8uwfsbnpfetysnh.streamlit.app/)
 - 📧 Email: tu.email@ejemplo.com
 - 💼 LinkedIn: [Daniel Andrés Mardones Sanhueza](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
 - 🐱 GitHub: [@Denniels](https://github.com/Denniels)
@@ -408,6 +415,8 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 ---
 
 **⭐ Si este proyecto te resulta útil, ¡no olvides darle una estrella!**
+
+[![Streamlit App](https://img.shields.io/badge/🚀%20Ver%20Aplicación-Streamlit%20Community%20Cloud-FF4B4B?style=for-the-badge)](https://dsportfolio-jm67tsp8uwfsbnpfetysnh.streamlit.app/)
 
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Denniels.ds_portfolio)
 ![GitHub stars](https://img.shields.io/github/stars/Denniels/ds_portfolio?style=social)
