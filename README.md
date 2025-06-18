@@ -1,4 +1,4 @@
-# 📊 Portfolio de Ciencia de Datos - Chile
+# 📊 Portfolio de Ciencia de Datos - Daniel Mardones
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.29-red)
