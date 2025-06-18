@@ -19,6 +19,11 @@ credentials/
 !app/data/cache/demografia_data.json
 !app/config/*.json
 
+# ARCHIVOS JSON CRÍTICOS PARA STREAMLIT CLOUD - PRESUPUESTO PÚBLICO
+!app/data/processed/resumen_ejecutivo.json
+!app/data/processed/datos_visualizacion.json
+!app/data/processed/metadatos.json
+
 # Archivos de datos demográficos incluidos para despliegue
 # demografia_data.json se incluye para que esté disponible en Streamlit Community Cloud
 

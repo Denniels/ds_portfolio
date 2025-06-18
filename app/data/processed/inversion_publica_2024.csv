@@ -1,0 +1,559 @@
+año,region,sector_inversion,proyecto,inversion_total,inversion_ejecutada,porcentaje_avance,fecha_inicio,fecha_termino_estimada
+2025,Arica y Parinacota,Educación,Proyecto Educación 1 - Arica y Parinacota,1906357182,1306989244,68.6,2024-05-01,2025-12-30
+2025,Arica y Parinacota,Educación,Proyecto Educación 2 - Arica y Parinacota,947082230,170455796,18.0,2024-11-01,2025-10-30
+2025,Arica y Parinacota,Educación,Proyecto Educación 3 - Arica y Parinacota,1242118522,827819903,66.6,2024-06-01,2025-10-30
+2025,Arica y Parinacota,Educación,Proyecto Educación 4 - Arica y Parinacota,1942828719,1488117647,76.6,2024-06-01,2025-07-30
+2025,Arica y Parinacota,Educación,Proyecto Educación 5 - Arica y Parinacota,445467437,109907333,24.7,2024-12-01,2025-07-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 1 - Arica y Parinacota,113425979,13435300,11.8,2024-11-01,2025-08-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 2 - Arica y Parinacota,859735846,118069699,13.7,2024-12-01,2025-12-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 3 - Arica y Parinacota,966532970,703772060,72.8,2024-03-01,2025-09-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 4 - Arica y Parinacota,1077045432,618150467,57.4,2024-03-01,2025-10-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 5 - Arica y Parinacota,1254335218,296549053,23.6,2024-07-01,2025-07-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 6 - Arica y Parinacota,1902882520,1660275705,87.3,2024-02-01,2025-07-30
+2025,Arica y Parinacota,Salud,Proyecto Salud 7 - Arica y Parinacota,678766161,120913836,17.8,2024-04-01,2025-09-30
+2025,Arica y Parinacota,Infraestructura,Proyecto Infraestructura 1 - Arica y Parinacota,331872646,164655801,49.6,2024-03-01,2025-11-30
+2025,Arica y Parinacota,Infraestructura,Proyecto Infraestructura 2 - Arica y Parinacota,843015154,207203742,24.6,2024-04-01,2025-07-30
+2025,Arica y Parinacota,Infraestructura,Proyecto Infraestructura 3 - Arica y Parinacota,907796161,241794530,26.6,2024-04-01,2025-11-30
+2025,Arica y Parinacota,Infraestructura,Proyecto Infraestructura 4 - Arica y Parinacota,159495255,123421865,77.4,2024-12-01,2025-07-30
+2025,Arica y Parinacota,Infraestructura,Proyecto Infraestructura 5 - Arica y Parinacota,850785448,715788847,84.1,2024-08-01,2025-11-30
+2025,Arica y Parinacota,Agua Potable,Proyecto Agua Potable 1 - Arica y Parinacota,185931848,66984600,36.0,2024-02-01,2025-12-30
+2025,Arica y Parinacota,Agua Potable,Proyecto Agua Potable 2 - Arica y Parinacota,1674601267,645395785,38.5,2024-12-01,2025-09-30
+2025,Arica y Parinacota,Agua Potable,Proyecto Agua Potable 3 - Arica y Parinacota,1131122558,240634311,21.3,2024-01-01,2025-06-30
+2025,Arica y Parinacota,Agua Potable,Proyecto Agua Potable 4 - Arica y Parinacota,1975085179,1417707877,71.8,2024-12-01,2025-12-30
+2025,Arica y Parinacota,Agua Potable,Proyecto Agua Potable 5 - Arica y Parinacota,1649376714,1097636905,66.5,2024-03-01,2025-08-30
+2025,Arica y Parinacota,Energía,Proyecto Energía 1 - Arica y Parinacota,1251323952,1052414376,84.1,2024-10-01,2025-06-30
+2025,Arica y Parinacota,Energía,Proyecto Energía 2 - Arica y Parinacota,1838423383,1434026977,78.0,2024-12-01,2025-07-30
+2025,Arica y Parinacota,Transporte,Proyecto Transporte 1 - Arica y Parinacota,220760865,76998267,34.9,2024-08-01,2025-10-30
+2025,Arica y Parinacota,Transporte,Proyecto Transporte 2 - Arica y Parinacota,1486251738,906681894,61.0,2024-11-01,2025-08-30
+2025,Arica y Parinacota,Conectividad,Proyecto Conectividad 1 - Arica y Parinacota,827561062,726076981,87.7,2024-03-01,2025-06-30
+2025,Arica y Parinacota,Conectividad,Proyecto Conectividad 2 - Arica y Parinacota,1471286090,424889672,28.9,2024-07-01,2025-08-30
+2025,Arica y Parinacota,Desarrollo Social,Proyecto Desarrollo Social 1 - Arica y Parinacota,1450259490,273682321,18.9,2024-12-01,2025-10-30
+2025,Arica y Parinacota,Desarrollo Social,Proyecto Desarrollo Social 2 - Arica y Parinacota,483266484,394640667,81.7,2024-01-01,2025-09-30
+2025,Tarapacá,Educación,Proyecto Educación 1 - Tarapacá,1066284313,880807546,82.6,2024-07-01,2025-12-30
+2025,Tarapacá,Educación,Proyecto Educación 2 - Tarapacá,879727553,619716079,70.4,2024-04-01,2025-10-30
+2025,Tarapacá,Educación,Proyecto Educación 3 - Tarapacá,246261828,81709960,33.2,2024-06-01,2025-09-30
+2025,Tarapacá,Educación,Proyecto Educación 4 - Tarapacá,1866425539,1393279766,74.6,2024-09-01,2025-10-30
+2025,Tarapacá,Educación,Proyecto Educación 5 - Tarapacá,1755775121,1304431462,74.3,2024-12-01,2025-09-30
+2025,Tarapacá,Educación,Proyecto Educación 6 - Tarapacá,1795862097,954453641,53.1,2024-10-01,2025-12-30
+2025,Tarapacá,Salud,Proyecto Salud 1 - Tarapacá,776965892,641356404,82.5,2024-01-01,2025-06-30
+2025,Tarapacá,Salud,Proyecto Salud 2 - Tarapacá,1330611229,133615058,10.0,2024-09-01,2025-08-30
+2025,Tarapacá,Salud,Proyecto Salud 3 - Tarapacá,113209048,57577877,50.9,2024-09-01,2025-11-30
+2025,Tarapacá,Salud,Proyecto Salud 4 - Tarapacá,522004839,102256725,19.6,2024-12-01,2025-12-30
+2025,Tarapacá,Salud,Proyecto Salud 5 - Tarapacá,419752980,115436844,27.5,2024-08-01,2025-06-30
+2025,Tarapacá,Infraestructura,Proyecto Infraestructura 1 - Tarapacá,790896244,693952664,87.7,2024-04-01,2025-09-30
+2025,Tarapacá,Infraestructura,Proyecto Infraestructura 2 - Tarapacá,578386362,287920039,49.8,2024-01-01,2025-10-30
+2025,Tarapacá,Infraestructura,Proyecto Infraestructura 3 - Tarapacá,641196939,83041132,13.0,2024-01-01,2025-07-30
+2025,Tarapacá,Infraestructura,Proyecto Infraestructura 4 - Tarapacá,1055090144,148960792,14.1,2024-05-01,2025-06-30
+2025,Tarapacá,Infraestructura,Proyecto Infraestructura 5 - Tarapacá,1305267554,841328947,64.5,2024-05-01,2025-09-30
+2025,Tarapacá,Agua Potable,Proyecto Agua Potable 1 - Tarapacá,1972735862,579282478,29.4,2024-04-01,2025-12-30
+2025,Tarapacá,Agua Potable,Proyecto Agua Potable 2 - Tarapacá,1547077269,448822640,29.0,2024-06-01,2025-10-30
+2025,Tarapacá,Agua Potable,Proyecto Agua Potable 3 - Tarapacá,1301381078,789708970,60.7,2024-11-01,2025-12-30
+2025,Tarapacá,Energía,Proyecto Energía 1 - Tarapacá,386363333,195715832,50.7,2024-03-01,2025-09-30
+2025,Tarapacá,Energía,Proyecto Energía 2 - Tarapacá,719321919,198671562,27.6,2024-10-01,2025-08-30
+2025,Tarapacá,Transporte,Proyecto Transporte 1 - Tarapacá,762465375,134911569,17.7,2024-09-01,2025-06-30
+2025,Tarapacá,Transporte,Proyecto Transporte 2 - Tarapacá,855386840,439840837,51.4,2024-08-01,2025-06-30
+2025,Tarapacá,Transporte,Proyecto Transporte 3 - Tarapacá,1383811222,952301375,68.8,2024-02-01,2025-12-30
+2025,Tarapacá,Transporte,Proyecto Transporte 4 - Tarapacá,1128751150,741169067,65.7,2024-07-01,2025-09-30
+2025,Tarapacá,Conectividad,Proyecto Conectividad 1 - Tarapacá,1966119852,1009226451,51.3,2024-01-01,2025-07-30
+2025,Tarapacá,Conectividad,Proyecto Conectividad 2 - Tarapacá,1992882029,1738461703,87.2,2024-05-01,2025-10-30
+2025,Tarapacá,Conectividad,Proyecto Conectividad 3 - Tarapacá,1777009052,445968296,25.1,2024-09-01,2025-08-30
+2025,Tarapacá,Desarrollo Social,Proyecto Desarrollo Social 1 - Tarapacá,1479315789,1209619077,81.8,2024-08-01,2025-11-30
+2025,Tarapacá,Desarrollo Social,Proyecto Desarrollo Social 2 - Tarapacá,1581763537,970610151,61.4,2024-11-01,2025-06-30
+2025,Tarapacá,Desarrollo Social,Proyecto Desarrollo Social 3 - Tarapacá,407094556,333346670,81.9,2024-04-01,2025-11-30
+2025,Tarapacá,Desarrollo Social,Proyecto Desarrollo Social 4 - Tarapacá,117474398,21283686,18.1,2024-03-01,2025-06-30
+2025,Antofagasta,Educación,Proyecto Educación 1 - Antofagasta,639449852,220156885,34.4,2024-02-01,2025-11-30
+2025,Antofagasta,Educación,Proyecto Educación 2 - Antofagasta,952005871,852584061,89.6,2024-04-01,2025-06-30
+2025,Antofagasta,Educación,Proyecto Educación 3 - Antofagasta,134343190,66515325,49.5,2024-04-01,2025-12-30
+2025,Antofagasta,Educación,Proyecto Educación 4 - Antofagasta,1469785856,509205301,34.6,2024-12-01,2025-08-30
+2025,Antofagasta,Educación,Proyecto Educación 5 - Antofagasta,798660025,249311226,31.2,2024-06-01,2025-11-30
+2025,Antofagasta,Educación,Proyecto Educación 6 - Antofagasta,846885676,689057728,81.4,2024-11-01,2025-08-30
+2025,Antofagasta,Salud,Proyecto Salud 1 - Antofagasta,765148974,471395038,61.6,2024-01-01,2025-10-30
+2025,Antofagasta,Salud,Proyecto Salud 2 - Antofagasta,537352009,268329253,49.9,2024-04-01,2025-08-30
+2025,Antofagasta,Salud,Proyecto Salud 3 - Antofagasta,1560252627,210451582,13.5,2024-12-01,2025-09-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 1 - Antofagasta,1912464296,1590962815,83.2,2024-03-01,2025-09-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 2 - Antofagasta,129367571,109012211,84.3,2024-01-01,2025-11-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 3 - Antofagasta,1936644156,1686615613,87.1,2024-01-01,2025-09-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 4 - Antofagasta,659452894,269108339,40.8,2024-07-01,2025-06-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 5 - Antofagasta,702151809,165422892,23.6,2024-09-01,2025-07-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 6 - Antofagasta,1878694070,1233971048,65.7,2024-08-01,2025-11-30
+2025,Antofagasta,Infraestructura,Proyecto Infraestructura 7 - Antofagasta,284635338,168505765,59.2,2024-06-01,2025-12-30
+2025,Antofagasta,Agua Potable,Proyecto Agua Potable 1 - Antofagasta,582910933,195993583,33.6,2024-10-01,2025-06-30
+2025,Antofagasta,Agua Potable,Proyecto Agua Potable 2 - Antofagasta,1712472610,358415491,20.9,2024-06-01,2025-12-30
+2025,Antofagasta,Agua Potable,Proyecto Agua Potable 3 - Antofagasta,657824504,491716531,74.7,2024-03-01,2025-07-30
+2025,Antofagasta,Energía,Proyecto Energía 1 - Antofagasta,1261876050,208556998,16.5,2024-07-01,2025-06-30
+2025,Antofagasta,Energía,Proyecto Energía 2 - Antofagasta,1292999388,330256821,25.5,2024-08-01,2025-11-30
+2025,Antofagasta,Transporte,Proyecto Transporte 1 - Antofagasta,1791010149,663383220,37.0,2024-12-01,2025-07-30
+2025,Antofagasta,Transporte,Proyecto Transporte 2 - Antofagasta,278565685,156727771,56.3,2024-06-01,2025-08-30
+2025,Antofagasta,Transporte,Proyecto Transporte 3 - Antofagasta,984636234,525909679,53.4,2024-06-01,2025-07-30
+2025,Antofagasta,Transporte,Proyecto Transporte 4 - Antofagasta,1734768774,520779474,30.0,2024-10-01,2025-11-30
+2025,Antofagasta,Transporte,Proyecto Transporte 5 - Antofagasta,676204477,358162481,53.0,2024-05-01,2025-06-30
+2025,Antofagasta,Transporte,Proyecto Transporte 6 - Antofagasta,1672951107,530717528,31.7,2024-12-01,2025-10-30
+2025,Antofagasta,Transporte,Proyecto Transporte 7 - Antofagasta,968803807,749484509,77.4,2024-04-01,2025-11-30
+2025,Antofagasta,Conectividad,Proyecto Conectividad 1 - Antofagasta,1311116812,892704125,68.1,2024-02-01,2025-09-30
+2025,Antofagasta,Conectividad,Proyecto Conectividad 2 - Antofagasta,1457730697,193665373,13.3,2024-08-01,2025-12-30
+2025,Antofagasta,Conectividad,Proyecto Conectividad 3 - Antofagasta,923689401,642180382,69.5,2024-10-01,2025-10-30
+2025,Antofagasta,Conectividad,Proyecto Conectividad 4 - Antofagasta,450233981,74152804,16.5,2024-09-01,2025-09-30
+2025,Antofagasta,Desarrollo Social,Proyecto Desarrollo Social 1 - Antofagasta,210567831,175228439,83.2,2024-02-01,2025-11-30
+2025,Antofagasta,Desarrollo Social,Proyecto Desarrollo Social 2 - Antofagasta,278359251,68557878,24.6,2024-05-01,2025-06-30
+2025,Antofagasta,Desarrollo Social,Proyecto Desarrollo Social 3 - Antofagasta,1914244033,1321436219,69.0,2024-05-01,2025-11-30
+2025,Antofagasta,Desarrollo Social,Proyecto Desarrollo Social 4 - Antofagasta,1487074701,205473427,13.8,2024-10-01,2025-08-30
+2025,Antofagasta,Desarrollo Social,Proyecto Desarrollo Social 5 - Antofagasta,1539907609,171722475,11.2,2024-12-01,2025-10-30
+2025,Antofagasta,Desarrollo Social,Proyecto Desarrollo Social 6 - Antofagasta,278898277,97371936,34.9,2024-04-01,2025-10-30
+2025,Atacama,Educación,Proyecto Educación 1 - Atacama,132606093,94242028,71.1,2024-05-01,2025-12-30
+2025,Atacama,Educación,Proyecto Educación 2 - Atacama,757978210,357567921,47.2,2024-05-01,2025-12-30
+2025,Atacama,Educación,Proyecto Educación 3 - Atacama,191311955,164397536,85.9,2024-04-01,2025-07-30
+2025,Atacama,Educación,Proyecto Educación 4 - Atacama,595697884,66863294,11.2,2024-03-01,2025-07-30
+2025,Atacama,Educación,Proyecto Educación 5 - Atacama,1051975779,559127187,53.2,2024-04-01,2025-12-30
+2025,Atacama,Salud,Proyecto Salud 1 - Atacama,150371490,85504306,56.9,2024-11-01,2025-09-30
+2025,Atacama,Salud,Proyecto Salud 2 - Atacama,1193400937,489933977,41.1,2024-12-01,2025-06-30
+2025,Atacama,Salud,Proyecto Salud 3 - Atacama,970680491,520763707,53.6,2024-05-01,2025-09-30
+2025,Atacama,Infraestructura,Proyecto Infraestructura 1 - Atacama,1658811003,1030433186,62.1,2024-11-01,2025-09-30
+2025,Atacama,Infraestructura,Proyecto Infraestructura 2 - Atacama,620526141,168579141,27.2,2024-02-01,2025-10-30
+2025,Atacama,Infraestructura,Proyecto Infraestructura 3 - Atacama,279441625,180632580,64.6,2024-01-01,2025-07-30
+2025,Atacama,Infraestructura,Proyecto Infraestructura 4 - Atacama,706053697,547827239,77.6,2024-10-01,2025-11-30
+2025,Atacama,Agua Potable,Proyecto Agua Potable 1 - Atacama,595319603,295772616,49.7,2024-10-01,2025-10-30
+2025,Atacama,Agua Potable,Proyecto Agua Potable 2 - Atacama,761839548,647044438,84.9,2024-08-01,2025-09-30
+2025,Atacama,Agua Potable,Proyecto Agua Potable 3 - Atacama,894097460,781498796,87.4,2024-04-01,2025-07-30
+2025,Atacama,Energía,Proyecto Energía 1 - Atacama,1526168028,1137709109,74.5,2024-01-01,2025-08-30
+2025,Atacama,Energía,Proyecto Energía 2 - Atacama,883973586,351480687,39.8,2024-07-01,2025-12-30
+2025,Atacama,Energía,Proyecto Energía 3 - Atacama,1868438918,1469957326,78.7,2024-01-01,2025-12-30
+2025,Atacama,Energía,Proyecto Energía 4 - Atacama,1526655028,1074206841,70.4,2024-09-01,2025-11-30
+2025,Atacama,Energía,Proyecto Energía 5 - Atacama,1814850522,915051078,50.4,2024-09-01,2025-11-30
+2025,Atacama,Energía,Proyecto Energía 6 - Atacama,665506831,119783183,18.0,2024-04-01,2025-09-30
+2025,Atacama,Transporte,Proyecto Transporte 1 - Atacama,1820225755,314952463,17.3,2024-07-01,2025-09-30
+2025,Atacama,Transporte,Proyecto Transporte 2 - Atacama,1905117737,1639326603,86.0,2024-03-01,2025-07-30
+2025,Atacama,Transporte,Proyecto Transporte 3 - Atacama,1300490703,596608456,45.9,2024-03-01,2025-09-30
+2025,Atacama,Transporte,Proyecto Transporte 4 - Atacama,724462636,462217858,63.8,2024-04-01,2025-10-30
+2025,Atacama,Transporte,Proyecto Transporte 5 - Atacama,1604000183,1173638134,73.2,2024-05-01,2025-07-30
+2025,Atacama,Transporte,Proyecto Transporte 6 - Atacama,1951071596,1749613686,89.7,2024-10-01,2025-10-30
+2025,Atacama,Conectividad,Proyecto Conectividad 1 - Atacama,1786637947,680230256,38.1,2024-02-01,2025-12-30
+2025,Atacama,Conectividad,Proyecto Conectividad 2 - Atacama,371684195,263601593,70.9,2024-12-01,2025-06-30
+2025,Atacama,Conectividad,Proyecto Conectividad 3 - Atacama,292133084,48869613,16.7,2024-08-01,2025-07-30
+2025,Atacama,Conectividad,Proyecto Conectividad 4 - Atacama,853638043,694449510,81.4,2024-02-01,2025-10-30
+2025,Atacama,Desarrollo Social,Proyecto Desarrollo Social 1 - Atacama,261191656,232280786,88.9,2024-01-01,2025-11-30
+2025,Atacama,Desarrollo Social,Proyecto Desarrollo Social 2 - Atacama,1644319177,1410495119,85.8,2024-09-01,2025-10-30
+2025,Atacama,Desarrollo Social,Proyecto Desarrollo Social 3 - Atacama,1531418551,614110582,40.1,2024-03-01,2025-10-30
+2025,Atacama,Desarrollo Social,Proyecto Desarrollo Social 4 - Atacama,818176421,543324363,66.4,2024-10-01,2025-07-30
+2025,Atacama,Desarrollo Social,Proyecto Desarrollo Social 5 - Atacama,727479805,325591935,44.8,2024-02-01,2025-09-30
+2025,Atacama,Desarrollo Social,Proyecto Desarrollo Social 6 - Atacama,1185798747,821496575,69.3,2024-08-01,2025-10-30
+2025,Coquimbo,Educación,Proyecto Educación 1 - Coquimbo,1514002148,976276339,64.5,2024-12-01,2025-11-30
+2025,Coquimbo,Educación,Proyecto Educación 2 - Coquimbo,860423496,414872043,48.2,2024-09-01,2025-06-30
+2025,Coquimbo,Salud,Proyecto Salud 1 - Coquimbo,929038080,689055837,74.2,2024-05-01,2025-11-30
+2025,Coquimbo,Salud,Proyecto Salud 2 - Coquimbo,1856822327,1550989898,83.5,2024-04-01,2025-08-30
+2025,Coquimbo,Salud,Proyecto Salud 3 - Coquimbo,1421281133,227899072,16.0,2024-09-01,2025-06-30
+2025,Coquimbo,Salud,Proyecto Salud 4 - Coquimbo,1421922509,659249987,46.4,2024-05-01,2025-11-30
+2025,Coquimbo,Salud,Proyecto Salud 5 - Coquimbo,1210197192,993482834,82.1,2024-09-01,2025-08-30
+2025,Coquimbo,Salud,Proyecto Salud 6 - Coquimbo,633830060,545302500,86.0,2024-08-01,2025-11-30
+2025,Coquimbo,Salud,Proyecto Salud 7 - Coquimbo,965747830,575688151,59.6,2024-08-01,2025-07-30
+2025,Coquimbo,Infraestructura,Proyecto Infraestructura 1 - Coquimbo,1329011887,545711826,41.1,2024-12-01,2025-07-30
+2025,Coquimbo,Infraestructura,Proyecto Infraestructura 2 - Coquimbo,605282057,235016542,38.8,2024-04-01,2025-08-30
+2025,Coquimbo,Infraestructura,Proyecto Infraestructura 3 - Coquimbo,1426507256,754447011,52.9,2024-01-01,2025-10-30
+2025,Coquimbo,Infraestructura,Proyecto Infraestructura 4 - Coquimbo,1646210537,1066390391,64.8,2024-03-01,2025-10-30
+2025,Coquimbo,Infraestructura,Proyecto Infraestructura 5 - Coquimbo,1887010471,817662859,43.3,2024-05-01,2025-12-30
+2025,Coquimbo,Agua Potable,Proyecto Agua Potable 1 - Coquimbo,894661768,757047388,84.6,2024-02-01,2025-08-30
+2025,Coquimbo,Agua Potable,Proyecto Agua Potable 2 - Coquimbo,185915473,22513170,12.1,2024-01-01,2025-11-30
+2025,Coquimbo,Energía,Proyecto Energía 1 - Coquimbo,1012703155,899512149,88.8,2024-11-01,2025-10-30
+2025,Coquimbo,Energía,Proyecto Energía 2 - Coquimbo,1524198769,631615104,41.4,2024-11-01,2025-08-30
+2025,Coquimbo,Transporte,Proyecto Transporte 1 - Coquimbo,1692824538,804014679,47.5,2024-03-01,2025-12-30
+2025,Coquimbo,Transporte,Proyecto Transporte 2 - Coquimbo,619473436,89885841,14.5,2024-06-01,2025-09-30
+2025,Coquimbo,Conectividad,Proyecto Conectividad 1 - Coquimbo,1115257922,780600915,70.0,2024-03-01,2025-10-30
+2025,Coquimbo,Conectividad,Proyecto Conectividad 2 - Coquimbo,1211784111,825099772,68.1,2024-10-01,2025-07-30
+2025,Coquimbo,Desarrollo Social,Proyecto Desarrollo Social 1 - Coquimbo,569961393,262430349,46.0,2024-01-01,2025-08-30
+2025,Coquimbo,Desarrollo Social,Proyecto Desarrollo Social 2 - Coquimbo,621990414,165313930,26.6,2024-01-01,2025-06-30
+2025,Coquimbo,Desarrollo Social,Proyecto Desarrollo Social 3 - Coquimbo,1538298351,211542442,13.8,2024-08-01,2025-12-30
+2025,Coquimbo,Desarrollo Social,Proyecto Desarrollo Social 4 - Coquimbo,1375989071,710349075,51.6,2024-06-01,2025-08-30
+2025,Valparaíso,Educación,Proyecto Educación 1 - Valparaíso,684776755,515711255,75.3,2024-12-01,2025-10-30
+2025,Valparaíso,Educación,Proyecto Educación 2 - Valparaíso,267975624,196547866,73.3,2024-01-01,2025-12-30
+2025,Valparaíso,Educación,Proyecto Educación 3 - Valparaíso,154687084,108916693,70.4,2024-05-01,2025-11-30
+2025,Valparaíso,Educación,Proyecto Educación 4 - Valparaíso,1437751559,388726800,27.0,2024-06-01,2025-09-30
+2025,Valparaíso,Salud,Proyecto Salud 1 - Valparaíso,766116361,438168109,57.2,2024-11-01,2025-08-30
+2025,Valparaíso,Salud,Proyecto Salud 2 - Valparaíso,1817901519,688265466,37.9,2024-06-01,2025-06-30
+2025,Valparaíso,Salud,Proyecto Salud 3 - Valparaíso,1588940724,662960452,41.7,2024-07-01,2025-07-30
+2025,Valparaíso,Infraestructura,Proyecto Infraestructura 1 - Valparaíso,1425519555,1050860829,73.7,2024-10-01,2025-06-30
+2025,Valparaíso,Infraestructura,Proyecto Infraestructura 2 - Valparaíso,1035020956,317332778,30.7,2024-08-01,2025-10-30
+2025,Valparaíso,Infraestructura,Proyecto Infraestructura 3 - Valparaíso,1962061893,969443941,49.4,2024-11-01,2025-08-30
+2025,Valparaíso,Infraestructura,Proyecto Infraestructura 4 - Valparaíso,556276675,89388467,16.1,2024-09-01,2025-12-30
+2025,Valparaíso,Agua Potable,Proyecto Agua Potable 1 - Valparaíso,363771628,222882802,61.3,2024-08-01,2025-09-30
+2025,Valparaíso,Agua Potable,Proyecto Agua Potable 2 - Valparaíso,756767838,618605284,81.7,2024-03-01,2025-08-30
+2025,Valparaíso,Agua Potable,Proyecto Agua Potable 3 - Valparaíso,1368359703,325472424,23.8,2024-10-01,2025-08-30
+2025,Valparaíso,Agua Potable,Proyecto Agua Potable 4 - Valparaíso,177650370,41774138,23.5,2024-12-01,2025-07-30
+2025,Valparaíso,Energía,Proyecto Energía 1 - Valparaíso,160428894,86466721,53.9,2024-05-01,2025-06-30
+2025,Valparaíso,Energía,Proyecto Energía 2 - Valparaíso,776383820,633043033,81.5,2024-01-01,2025-11-30
+2025,Valparaíso,Energía,Proyecto Energía 3 - Valparaíso,727189075,259800086,35.7,2024-10-01,2025-06-30
+2025,Valparaíso,Energía,Proyecto Energía 4 - Valparaíso,1014176248,659445564,65.0,2024-08-01,2025-11-30
+2025,Valparaíso,Energía,Proyecto Energía 5 - Valparaíso,398257597,160031361,40.2,2024-01-01,2025-07-30
+2025,Valparaíso,Energía,Proyecto Energía 6 - Valparaíso,1749772103,293285612,16.8,2024-03-01,2025-10-30
+2025,Valparaíso,Transporte,Proyecto Transporte 1 - Valparaíso,497763714,197302427,39.6,2024-06-01,2025-11-30
+2025,Valparaíso,Transporte,Proyecto Transporte 2 - Valparaíso,1274684065,503667077,39.5,2024-08-01,2025-07-30
+2025,Valparaíso,Transporte,Proyecto Transporte 3 - Valparaíso,1520194782,196631969,12.9,2024-08-01,2025-08-30
+2025,Valparaíso,Transporte,Proyecto Transporte 4 - Valparaíso,1455364213,1187818017,81.6,2024-11-01,2025-12-30
+2025,Valparaíso,Transporte,Proyecto Transporte 5 - Valparaíso,157897090,125334286,79.4,2024-06-01,2025-08-30
+2025,Valparaíso,Conectividad,Proyecto Conectividad 1 - Valparaíso,560693956,176839837,31.5,2024-05-01,2025-09-30
+2025,Valparaíso,Conectividad,Proyecto Conectividad 2 - Valparaíso,138135275,49405923,35.8,2024-07-01,2025-11-30
+2025,Valparaíso,Conectividad,Proyecto Conectividad 3 - Valparaíso,722244969,141422574,19.6,2024-01-01,2025-10-30
+2025,Valparaíso,Conectividad,Proyecto Conectividad 4 - Valparaíso,1227825661,789837969,64.3,2024-03-01,2025-06-30
+2025,Valparaíso,Desarrollo Social,Proyecto Desarrollo Social 1 - Valparaíso,1011205993,573717415,56.7,2024-06-01,2025-07-30
+2025,Valparaíso,Desarrollo Social,Proyecto Desarrollo Social 2 - Valparaíso,1159710305,660139980,56.9,2024-12-01,2025-08-30
+2025,Valparaíso,Desarrollo Social,Proyecto Desarrollo Social 3 - Valparaíso,819667989,303242293,37.0,2024-04-01,2025-07-30
+2025,Valparaíso,Desarrollo Social,Proyecto Desarrollo Social 4 - Valparaíso,1254354922,370639958,29.5,2024-11-01,2025-10-30
+2025,Valparaíso,Desarrollo Social,Proyecto Desarrollo Social 5 - Valparaíso,727662114,616295944,84.7,2024-05-01,2025-11-30
+2025,Valparaíso,Desarrollo Social,Proyecto Desarrollo Social 6 - Valparaíso,528132315,207178626,39.2,2024-04-01,2025-11-30
+2025,Metropolitana,Educación,Proyecto Educación 1 - Metropolitana,266986486,198822676,74.5,2024-08-01,2025-12-30
+2025,Metropolitana,Educación,Proyecto Educación 2 - Metropolitana,1700396667,240280302,14.1,2024-08-01,2025-10-30
+2025,Metropolitana,Educación,Proyecto Educación 3 - Metropolitana,1966519372,372913274,19.0,2024-02-01,2025-09-30
+2025,Metropolitana,Educación,Proyecto Educación 4 - Metropolitana,1941993823,1538846976,79.2,2024-06-01,2025-11-30
+2025,Metropolitana,Salud,Proyecto Salud 1 - Metropolitana,1032422680,700309728,67.8,2024-09-01,2025-07-30
+2025,Metropolitana,Salud,Proyecto Salud 2 - Metropolitana,1157849496,645258121,55.7,2024-03-01,2025-10-30
+2025,Metropolitana,Infraestructura,Proyecto Infraestructura 1 - Metropolitana,489647364,428145331,87.4,2024-04-01,2025-08-30
+2025,Metropolitana,Infraestructura,Proyecto Infraestructura 2 - Metropolitana,479063161,330073439,68.9,2024-12-01,2025-12-30
+2025,Metropolitana,Infraestructura,Proyecto Infraestructura 3 - Metropolitana,1443737181,1031151169,71.4,2024-06-01,2025-10-30
+2025,Metropolitana,Infraestructura,Proyecto Infraestructura 4 - Metropolitana,1061597517,897699041,84.6,2024-11-01,2025-08-30
+2025,Metropolitana,Infraestructura,Proyecto Infraestructura 5 - Metropolitana,198464719,73289731,36.9,2024-10-01,2025-10-30
+2025,Metropolitana,Agua Potable,Proyecto Agua Potable 1 - Metropolitana,1980924441,708939332,35.8,2024-02-01,2025-09-30
+2025,Metropolitana,Agua Potable,Proyecto Agua Potable 2 - Metropolitana,583817244,376680157,64.5,2024-01-01,2025-06-30
+2025,Metropolitana,Agua Potable,Proyecto Agua Potable 3 - Metropolitana,1231713607,587848807,47.7,2024-07-01,2025-08-30
+2025,Metropolitana,Energía,Proyecto Energía 1 - Metropolitana,302728575,236304467,78.1,2024-12-01,2025-09-30
+2025,Metropolitana,Energía,Proyecto Energía 2 - Metropolitana,876184756,741559366,84.6,2024-11-01,2025-06-30
+2025,Metropolitana,Energía,Proyecto Energía 3 - Metropolitana,489503439,197457301,40.3,2024-01-01,2025-11-30
+2025,Metropolitana,Energía,Proyecto Energía 4 - Metropolitana,191379823,138790865,72.5,2024-11-01,2025-06-30
+2025,Metropolitana,Energía,Proyecto Energía 5 - Metropolitana,1525953657,1128640652,74.0,2024-03-01,2025-10-30
+2025,Metropolitana,Energía,Proyecto Energía 6 - Metropolitana,454169474,131052144,28.9,2024-10-01,2025-11-30
+2025,Metropolitana,Energía,Proyecto Energía 7 - Metropolitana,781777919,626798603,80.2,2024-09-01,2025-07-30
+2025,Metropolitana,Transporte,Proyecto Transporte 1 - Metropolitana,1809368146,1084320377,59.9,2024-01-01,2025-12-30
+2025,Metropolitana,Transporte,Proyecto Transporte 2 - Metropolitana,933614883,524681310,56.2,2024-01-01,2025-06-30
+2025,Metropolitana,Transporte,Proyecto Transporte 3 - Metropolitana,843816009,443413485,52.5,2024-05-01,2025-08-30
+2025,Metropolitana,Transporte,Proyecto Transporte 4 - Metropolitana,1131413690,503730848,44.5,2024-03-01,2025-12-30
+2025,Metropolitana,Transporte,Proyecto Transporte 5 - Metropolitana,1488043359,974629839,65.5,2024-04-01,2025-12-30
+2025,Metropolitana,Transporte,Proyecto Transporte 6 - Metropolitana,1769395319,878219728,49.6,2024-07-01,2025-08-30
+2025,Metropolitana,Transporte,Proyecto Transporte 7 - Metropolitana,1598334701,353775249,22.1,2024-01-01,2025-10-30
+2025,Metropolitana,Conectividad,Proyecto Conectividad 1 - Metropolitana,1579286684,338760765,21.5,2024-04-01,2025-11-30
+2025,Metropolitana,Conectividad,Proyecto Conectividad 2 - Metropolitana,1456721756,721347039,49.5,2024-10-01,2025-06-30
+2025,Metropolitana,Conectividad,Proyecto Conectividad 3 - Metropolitana,295540458,156395601,52.9,2024-04-01,2025-10-30
+2025,Metropolitana,Conectividad,Proyecto Conectividad 4 - Metropolitana,342228458,142993259,41.8,2024-08-01,2025-10-30
+2025,Metropolitana,Conectividad,Proyecto Conectividad 5 - Metropolitana,1024079215,437449919,42.7,2024-02-01,2025-08-30
+2025,Metropolitana,Conectividad,Proyecto Conectividad 6 - Metropolitana,1318180502,863617497,65.5,2024-04-01,2025-07-30
+2025,Metropolitana,Desarrollo Social,Proyecto Desarrollo Social 1 - Metropolitana,1238155793,942780185,76.1,2024-10-01,2025-11-30
+2025,Metropolitana,Desarrollo Social,Proyecto Desarrollo Social 2 - Metropolitana,531966867,233468283,43.9,2024-10-01,2025-11-30
+2025,Metropolitana,Desarrollo Social,Proyecto Desarrollo Social 3 - Metropolitana,1268405499,1052119438,82.9,2024-08-01,2025-11-30
+2025,Metropolitana,Desarrollo Social,Proyecto Desarrollo Social 4 - Metropolitana,291509745,88855792,30.5,2024-08-01,2025-09-30
+2025,O'Higgins,Educación,Proyecto Educación 1 - O'Higgins,1871024736,1033005006,55.2,2024-04-01,2025-10-30
+2025,O'Higgins,Educación,Proyecto Educación 2 - O'Higgins,1852748824,1233543320,66.6,2024-10-01,2025-06-30
+2025,O'Higgins,Educación,Proyecto Educación 3 - O'Higgins,1194947884,699489077,58.5,2024-06-01,2025-08-30
+2025,O'Higgins,Educación,Proyecto Educación 4 - O'Higgins,1499244047,1270599752,84.7,2024-06-01,2025-08-30
+2025,O'Higgins,Salud,Proyecto Salud 1 - O'Higgins,315152287,279815193,88.8,2024-04-01,2025-11-30
+2025,O'Higgins,Salud,Proyecto Salud 2 - O'Higgins,1691232499,618512695,36.6,2024-06-01,2025-12-30
+2025,O'Higgins,Infraestructura,Proyecto Infraestructura 1 - O'Higgins,1223423327,512861705,41.9,2024-09-01,2025-10-30
+2025,O'Higgins,Infraestructura,Proyecto Infraestructura 2 - O'Higgins,736874759,546969429,74.2,2024-05-01,2025-07-30
+2025,O'Higgins,Infraestructura,Proyecto Infraestructura 3 - O'Higgins,733648426,307057510,41.9,2024-09-01,2025-07-30
+2025,O'Higgins,Infraestructura,Proyecto Infraestructura 4 - O'Higgins,1847725671,696734475,37.7,2024-02-01,2025-08-30
+2025,O'Higgins,Agua Potable,Proyecto Agua Potable 1 - O'Higgins,1845063977,1051049143,57.0,2024-11-01,2025-09-30
+2025,O'Higgins,Agua Potable,Proyecto Agua Potable 2 - O'Higgins,1834223979,547664712,29.9,2024-09-01,2025-12-30
+2025,O'Higgins,Agua Potable,Proyecto Agua Potable 3 - O'Higgins,414475303,52681190,12.7,2024-01-01,2025-06-30
+2025,O'Higgins,Energía,Proyecto Energía 1 - O'Higgins,1203117865,728862554,60.6,2024-12-01,2025-07-30
+2025,O'Higgins,Energía,Proyecto Energía 2 - O'Higgins,1360721006,329877924,24.2,2024-04-01,2025-06-30
+2025,O'Higgins,Energía,Proyecto Energía 3 - O'Higgins,382459182,165107361,43.2,2024-12-01,2025-12-30
+2025,O'Higgins,Energía,Proyecto Energía 4 - O'Higgins,1994061078,1000532126,50.2,2024-01-01,2025-10-30
+2025,O'Higgins,Energía,Proyecto Energía 5 - O'Higgins,854904419,377381418,44.1,2024-08-01,2025-08-30
+2025,O'Higgins,Energía,Proyecto Energía 6 - O'Higgins,763835298,362505128,47.5,2024-01-01,2025-10-30
+2025,O'Higgins,Transporte,Proyecto Transporte 1 - O'Higgins,996927195,550177109,55.2,2024-02-01,2025-06-30
+2025,O'Higgins,Transporte,Proyecto Transporte 2 - O'Higgins,1573502471,727951128,46.3,2024-02-01,2025-11-30
+2025,O'Higgins,Transporte,Proyecto Transporte 3 - O'Higgins,937449219,394300936,42.1,2024-06-01,2025-08-30
+2025,O'Higgins,Transporte,Proyecto Transporte 4 - O'Higgins,394956467,96978600,24.6,2024-07-01,2025-12-30
+2025,O'Higgins,Transporte,Proyecto Transporte 5 - O'Higgins,1531167819,486668651,31.8,2024-03-01,2025-11-30
+2025,O'Higgins,Transporte,Proyecto Transporte 6 - O'Higgins,1100499086,815029422,74.1,2024-07-01,2025-09-30
+2025,O'Higgins,Conectividad,Proyecto Conectividad 1 - O'Higgins,1747288144,745021991,42.6,2024-09-01,2025-12-30
+2025,O'Higgins,Conectividad,Proyecto Conectividad 2 - O'Higgins,582388271,149610002,25.7,2024-08-01,2025-11-30
+2025,O'Higgins,Conectividad,Proyecto Conectividad 3 - O'Higgins,744615367,413674651,55.6,2024-03-01,2025-06-30
+2025,O'Higgins,Desarrollo Social,Proyecto Desarrollo Social 1 - O'Higgins,552547283,99211585,18.0,2024-08-01,2025-11-30
+2025,O'Higgins,Desarrollo Social,Proyecto Desarrollo Social 2 - O'Higgins,1246075064,928924187,74.5,2024-04-01,2025-09-30
+2025,O'Higgins,Desarrollo Social,Proyecto Desarrollo Social 3 - O'Higgins,1369361759,361494300,26.4,2024-07-01,2025-07-30
+2025,O'Higgins,Desarrollo Social,Proyecto Desarrollo Social 4 - O'Higgins,124703654,21000946,16.8,2024-07-01,2025-10-30
+2025,O'Higgins,Desarrollo Social,Proyecto Desarrollo Social 5 - O'Higgins,150411187,36873054,24.5,2024-04-01,2025-10-30
+2025,Maule,Educación,Proyecto Educación 1 - Maule,1437497656,1190965662,82.8,2024-05-01,2025-09-30
+2025,Maule,Educación,Proyecto Educación 2 - Maule,738145128,561053678,76.0,2024-03-01,2025-12-30
+2025,Maule,Educación,Proyecto Educación 3 - Maule,165033410,126171938,76.5,2024-05-01,2025-11-30
+2025,Maule,Educación,Proyecto Educación 4 - Maule,1570285594,612735356,39.0,2024-05-01,2025-09-30
+2025,Maule,Educación,Proyecto Educación 5 - Maule,517069997,454834321,88.0,2024-12-01,2025-06-30
+2025,Maule,Salud,Proyecto Salud 1 - Maule,1174975577,1043723579,88.8,2024-07-01,2025-06-30
+2025,Maule,Salud,Proyecto Salud 2 - Maule,1021078897,520715648,51.0,2024-09-01,2025-07-30
+2025,Maule,Salud,Proyecto Salud 3 - Maule,1303608617,399308549,30.6,2024-06-01,2025-11-30
+2025,Maule,Infraestructura,Proyecto Infraestructura 1 - Maule,901237475,185493570,20.6,2024-02-01,2025-12-30
+2025,Maule,Infraestructura,Proyecto Infraestructura 2 - Maule,1398049327,1059815200,75.8,2024-05-01,2025-07-30
+2025,Maule,Infraestructura,Proyecto Infraestructura 3 - Maule,1195381303,381618519,31.9,2024-01-01,2025-10-30
+2025,Maule,Infraestructura,Proyecto Infraestructura 4 - Maule,1337698737,1021725524,76.4,2024-07-01,2025-10-30
+2025,Maule,Agua Potable,Proyecto Agua Potable 1 - Maule,366035223,113817570,31.1,2024-06-01,2025-08-30
+2025,Maule,Agua Potable,Proyecto Agua Potable 2 - Maule,1235084894,716859931,58.0,2024-09-01,2025-10-30
+2025,Maule,Agua Potable,Proyecto Agua Potable 3 - Maule,433205429,360223118,83.2,2024-10-01,2025-10-30
+2025,Maule,Energía,Proyecto Energía 1 - Maule,1564731616,684771694,43.8,2024-02-01,2025-09-30
+2025,Maule,Energía,Proyecto Energía 2 - Maule,1921391636,475538159,24.7,2024-05-01,2025-09-30
+2025,Maule,Energía,Proyecto Energía 3 - Maule,1564873258,241929036,15.5,2024-11-01,2025-08-30
+2025,Maule,Energía,Proyecto Energía 4 - Maule,775778161,523833904,67.5,2024-07-01,2025-08-30
+2025,Maule,Energía,Proyecto Energía 5 - Maule,1903682914,794443999,41.7,2024-08-01,2025-11-30
+2025,Maule,Transporte,Proyecto Transporte 1 - Maule,1491886984,405722101,27.2,2024-04-01,2025-12-30
+2025,Maule,Transporte,Proyecto Transporte 2 - Maule,598301684,344659070,57.6,2024-11-01,2025-06-30
+2025,Maule,Transporte,Proyecto Transporte 3 - Maule,1043095869,602361035,57.7,2024-02-01,2025-06-30
+2025,Maule,Transporte,Proyecto Transporte 4 - Maule,1564733187,289911578,18.5,2024-09-01,2025-06-30
+2025,Maule,Transporte,Proyecto Transporte 5 - Maule,884307746,587127673,66.4,2024-08-01,2025-07-30
+2025,Maule,Transporte,Proyecto Transporte 6 - Maule,973394874,156470041,16.1,2024-02-01,2025-10-30
+2025,Maule,Transporte,Proyecto Transporte 7 - Maule,104444842,91301452,87.4,2024-06-01,2025-07-30
+2025,Maule,Conectividad,Proyecto Conectividad 1 - Maule,785850404,136160887,17.3,2024-11-01,2025-06-30
+2025,Maule,Conectividad,Proyecto Conectividad 2 - Maule,359955398,309629992,86.0,2024-07-01,2025-06-30
+2025,Maule,Conectividad,Proyecto Conectividad 3 - Maule,451752564,241019370,53.4,2024-08-01,2025-08-30
+2025,Maule,Conectividad,Proyecto Conectividad 4 - Maule,1491227284,1111335520,74.5,2024-07-01,2025-10-30
+2025,Maule,Conectividad,Proyecto Conectividad 5 - Maule,1415325472,1103043136,77.9,2024-09-01,2025-07-30
+2025,Maule,Desarrollo Social,Proyecto Desarrollo Social 1 - Maule,1328663346,869663531,65.5,2024-09-01,2025-10-30
+2025,Maule,Desarrollo Social,Proyecto Desarrollo Social 2 - Maule,1372843182,185790094,13.5,2024-07-01,2025-06-30
+2025,Ñuble,Educación,Proyecto Educación 1 - Ñuble,1179095938,981468420,83.2,2024-05-01,2025-12-30
+2025,Ñuble,Educación,Proyecto Educación 2 - Ñuble,664963114,558247809,84.0,2024-02-01,2025-08-30
+2025,Ñuble,Educación,Proyecto Educación 3 - Ñuble,1894106329,907980352,47.9,2024-04-01,2025-12-30
+2025,Ñuble,Salud,Proyecto Salud 1 - Ñuble,706290899,538993454,76.3,2024-01-01,2025-11-30
+2025,Ñuble,Salud,Proyecto Salud 2 - Ñuble,1232912769,350155942,28.4,2024-12-01,2025-10-30
+2025,Ñuble,Salud,Proyecto Salud 3 - Ñuble,246211083,161768319,65.7,2024-08-01,2025-07-30
+2025,Ñuble,Salud,Proyecto Salud 4 - Ñuble,1477056865,224933712,15.2,2024-08-01,2025-06-30
+2025,Ñuble,Infraestructura,Proyecto Infraestructura 1 - Ñuble,1602374013,568845983,35.5,2024-02-01,2025-06-30
+2025,Ñuble,Infraestructura,Proyecto Infraestructura 2 - Ñuble,1783357721,1056979269,59.3,2024-02-01,2025-12-30
+2025,Ñuble,Infraestructura,Proyecto Infraestructura 3 - Ñuble,977691416,872367702,89.2,2024-11-01,2025-12-30
+2025,Ñuble,Infraestructura,Proyecto Infraestructura 4 - Ñuble,452398528,184203611,40.7,2024-03-01,2025-08-30
+2025,Ñuble,Infraestructura,Proyecto Infraestructura 5 - Ñuble,1996074810,759645097,38.1,2024-01-01,2025-10-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 1 - Ñuble,1011763678,609086156,60.2,2024-08-01,2025-09-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 2 - Ñuble,1969758591,1407626385,71.5,2024-09-01,2025-12-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 3 - Ñuble,900578304,621458325,69.0,2024-01-01,2025-08-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 4 - Ñuble,987890456,333514091,33.8,2024-02-01,2025-09-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 5 - Ñuble,1459551298,833822431,57.1,2024-01-01,2025-10-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 6 - Ñuble,1976672540,874121179,44.2,2024-01-01,2025-06-30
+2025,Ñuble,Agua Potable,Proyecto Agua Potable 7 - Ñuble,1391329837,382063500,27.5,2024-10-01,2025-10-30
+2025,Ñuble,Energía,Proyecto Energía 1 - Ñuble,592067038,337977551,57.1,2024-07-01,2025-12-30
+2025,Ñuble,Energía,Proyecto Energía 2 - Ñuble,1894990842,898076351,47.4,2024-02-01,2025-06-30
+2025,Ñuble,Energía,Proyecto Energía 3 - Ñuble,1512370363,229863852,15.2,2024-08-01,2025-09-30
+2025,Ñuble,Energía,Proyecto Energía 4 - Ñuble,1691868897,481261170,28.4,2024-03-01,2025-10-30
+2025,Ñuble,Energía,Proyecto Energía 5 - Ñuble,328643647,45206999,13.8,2024-09-01,2025-07-30
+2025,Ñuble,Energía,Proyecto Energía 6 - Ñuble,169790681,147007524,86.6,2024-08-01,2025-11-30
+2025,Ñuble,Transporte,Proyecto Transporte 1 - Ñuble,209901085,183722663,87.5,2024-01-01,2025-06-30
+2025,Ñuble,Transporte,Proyecto Transporte 2 - Ñuble,1862729338,1668868125,89.6,2024-11-01,2025-07-30
+2025,Ñuble,Transporte,Proyecto Transporte 3 - Ñuble,1078971056,531877781,49.3,2024-01-01,2025-08-30
+2025,Ñuble,Transporte,Proyecto Transporte 4 - Ñuble,1650082937,461284740,28.0,2024-08-01,2025-10-30
+2025,Ñuble,Transporte,Proyecto Transporte 5 - Ñuble,1120251403,643418575,57.4,2024-05-01,2025-07-30
+2025,Ñuble,Transporte,Proyecto Transporte 6 - Ñuble,969120985,400184762,41.3,2024-11-01,2025-09-30
+2025,Ñuble,Conectividad,Proyecto Conectividad 1 - Ñuble,1788621351,1546301074,86.5,2024-12-01,2025-07-30
+2025,Ñuble,Conectividad,Proyecto Conectividad 2 - Ñuble,1638080541,1022479365,62.4,2024-05-01,2025-08-30
+2025,Ñuble,Conectividad,Proyecto Conectividad 3 - Ñuble,265274843,113209374,42.7,2024-06-01,2025-08-30
+2025,Ñuble,Conectividad,Proyecto Conectividad 4 - Ñuble,1474498216,732384130,49.7,2024-06-01,2025-10-30
+2025,Ñuble,Conectividad,Proyecto Conectividad 5 - Ñuble,518348083,335167505,64.7,2024-05-01,2025-10-30
+2025,Ñuble,Conectividad,Proyecto Conectividad 6 - Ñuble,1717293136,851978699,49.6,2024-03-01,2025-07-30
+2025,Ñuble,Desarrollo Social,Proyecto Desarrollo Social 1 - Ñuble,760837495,488771838,64.2,2024-11-01,2025-10-30
+2025,Ñuble,Desarrollo Social,Proyecto Desarrollo Social 2 - Ñuble,607353713,487646719,80.3,2024-03-01,2025-09-30
+2025,Ñuble,Desarrollo Social,Proyecto Desarrollo Social 3 - Ñuble,1716105285,1362305058,79.4,2024-09-01,2025-10-30
+2025,Ñuble,Desarrollo Social,Proyecto Desarrollo Social 4 - Ñuble,1690325323,1112195471,65.8,2024-10-01,2025-09-30
+2025,Biobío,Educación,Proyecto Educación 1 - Biobío,1530161615,347169316,22.7,2024-11-01,2025-10-30
+2025,Biobío,Educación,Proyecto Educación 2 - Biobío,1756502702,216748615,12.3,2024-07-01,2025-07-30
+2025,Biobío,Educación,Proyecto Educación 3 - Biobío,344852748,126938601,36.8,2024-07-01,2025-12-30
+2025,Biobío,Educación,Proyecto Educación 4 - Biobío,102128211,55654298,54.5,2024-12-01,2025-12-30
+2025,Biobío,Salud,Proyecto Salud 1 - Biobío,645372453,383055356,59.4,2024-01-01,2025-06-30
+2025,Biobío,Salud,Proyecto Salud 2 - Biobío,1300445701,400332930,30.8,2024-12-01,2025-10-30
+2025,Biobío,Salud,Proyecto Salud 3 - Biobío,1581706250,293540181,18.6,2024-07-01,2025-07-30
+2025,Biobío,Infraestructura,Proyecto Infraestructura 1 - Biobío,1929684807,720732900,37.3,2024-12-01,2025-12-30
+2025,Biobío,Infraestructura,Proyecto Infraestructura 2 - Biobío,1870853400,340509878,18.2,2024-04-01,2025-09-30
+2025,Biobío,Agua Potable,Proyecto Agua Potable 1 - Biobío,228890412,77999181,34.1,2024-01-01,2025-09-30
+2025,Biobío,Agua Potable,Proyecto Agua Potable 2 - Biobío,227966142,128968737,56.6,2024-01-01,2025-11-30
+2025,Biobío,Agua Potable,Proyecto Agua Potable 3 - Biobío,1279739483,174804257,13.7,2024-02-01,2025-11-30
+2025,Biobío,Agua Potable,Proyecto Agua Potable 4 - Biobío,1949629041,1706124827,87.5,2024-04-01,2025-08-30
+2025,Biobío,Agua Potable,Proyecto Agua Potable 5 - Biobío,347163856,245309645,70.7,2024-07-01,2025-10-30
+2025,Biobío,Energía,Proyecto Energía 1 - Biobío,1660874600,660142551,39.7,2024-03-01,2025-08-30
+2025,Biobío,Energía,Proyecto Energía 2 - Biobío,1398261215,638616889,45.7,2024-02-01,2025-10-30
+2025,Biobío,Energía,Proyecto Energía 3 - Biobío,1894176906,344275926,18.2,2024-09-01,2025-12-30
+2025,Biobío,Energía,Proyecto Energía 4 - Biobío,1101345782,837834060,76.1,2024-11-01,2025-09-30
+2025,Biobío,Transporte,Proyecto Transporte 1 - Biobío,1568363282,445482527,28.4,2024-11-01,2025-08-30
+2025,Biobío,Transporte,Proyecto Transporte 2 - Biobío,1749303212,1522924699,87.1,2024-08-01,2025-09-30
+2025,Biobío,Transporte,Proyecto Transporte 3 - Biobío,1489413127,1232667509,82.8,2024-05-01,2025-08-30
+2025,Biobío,Conectividad,Proyecto Conectividad 1 - Biobío,855429356,273200322,31.9,2024-03-01,2025-08-30
+2025,Biobío,Conectividad,Proyecto Conectividad 2 - Biobío,877734611,715598915,81.5,2024-02-01,2025-10-30
+2025,Biobío,Conectividad,Proyecto Conectividad 3 - Biobío,480682372,381901304,79.4,2024-08-01,2025-09-30
+2025,Biobío,Conectividad,Proyecto Conectividad 4 - Biobío,1169225544,557984792,47.7,2024-11-01,2025-09-30
+2025,Biobío,Conectividad,Proyecto Conectividad 5 - Biobío,452498479,359690378,79.5,2024-05-01,2025-12-30
+2025,Biobío,Desarrollo Social,Proyecto Desarrollo Social 1 - Biobío,1705088133,1208599194,70.9,2024-03-01,2025-10-30
+2025,Biobío,Desarrollo Social,Proyecto Desarrollo Social 2 - Biobío,349365267,44027340,12.6,2024-12-01,2025-07-30
+2025,Biobío,Desarrollo Social,Proyecto Desarrollo Social 3 - Biobío,1271635597,937487698,73.7,2024-09-01,2025-11-30
+2025,Biobío,Desarrollo Social,Proyecto Desarrollo Social 4 - Biobío,322885559,64625103,20.0,2024-12-01,2025-09-30
+2025,Araucanía,Educación,Proyecto Educación 1 - Araucanía,1160984077,325577219,28.0,2024-12-01,2025-12-30
+2025,Araucanía,Educación,Proyecto Educación 2 - Araucanía,1337886986,482629848,36.1,2024-02-01,2025-08-30
+2025,Araucanía,Educación,Proyecto Educación 3 - Araucanía,1970267674,432797891,22.0,2024-05-01,2025-07-30
+2025,Araucanía,Educación,Proyecto Educación 4 - Araucanía,1392867590,580040301,41.6,2024-06-01,2025-08-30
+2025,Araucanía,Educación,Proyecto Educación 5 - Araucanía,1420465583,1119465968,78.8,2024-06-01,2025-06-30
+2025,Araucanía,Salud,Proyecto Salud 1 - Araucanía,1012963199,186328647,18.4,2024-01-01,2025-09-30
+2025,Araucanía,Salud,Proyecto Salud 2 - Araucanía,1974658927,422569969,21.4,2024-06-01,2025-11-30
+2025,Araucanía,Salud,Proyecto Salud 3 - Araucanía,499664201,188280093,37.7,2024-08-01,2025-07-30
+2025,Araucanía,Salud,Proyecto Salud 4 - Araucanía,720276485,370344067,51.4,2024-01-01,2025-06-30
+2025,Araucanía,Infraestructura,Proyecto Infraestructura 1 - Araucanía,256766215,195042502,76.0,2024-10-01,2025-11-30
+2025,Araucanía,Infraestructura,Proyecto Infraestructura 2 - Araucanía,711979934,627947156,88.2,2024-10-01,2025-11-30
+2025,Araucanía,Infraestructura,Proyecto Infraestructura 3 - Araucanía,1417068487,1072937064,75.7,2024-10-01,2025-12-30
+2025,Araucanía,Infraestructura,Proyecto Infraestructura 4 - Araucanía,1373732370,1183113238,86.1,2024-03-01,2025-08-30
+2025,Araucanía,Infraestructura,Proyecto Infraestructura 5 - Araucanía,160013675,135846777,84.9,2024-07-01,2025-12-30
+2025,Araucanía,Infraestructura,Proyecto Infraestructura 6 - Araucanía,1128463037,752965173,66.7,2024-08-01,2025-07-30
+2025,Araucanía,Agua Potable,Proyecto Agua Potable 1 - Araucanía,1623283357,603147414,37.2,2024-11-01,2025-12-30
+2025,Araucanía,Agua Potable,Proyecto Agua Potable 2 - Araucanía,252218208,205773063,81.6,2024-04-01,2025-11-30
+2025,Araucanía,Agua Potable,Proyecto Agua Potable 3 - Araucanía,1652865762,763383701,46.2,2024-03-01,2025-12-30
+2025,Araucanía,Agua Potable,Proyecto Agua Potable 4 - Araucanía,1100165055,753911887,68.5,2024-11-01,2025-07-30
+2025,Araucanía,Agua Potable,Proyecto Agua Potable 5 - Araucanía,214668959,63903211,29.8,2024-09-01,2025-10-30
+2025,Araucanía,Energía,Proyecto Energía 1 - Araucanía,516506575,454883315,88.1,2024-04-01,2025-10-30
+2025,Araucanía,Energía,Proyecto Energía 2 - Araucanía,446024039,326382018,73.2,2024-07-01,2025-08-30
+2025,Araucanía,Energía,Proyecto Energía 3 - Araucanía,407177833,47513138,11.7,2024-03-01,2025-11-30
+2025,Araucanía,Energía,Proyecto Energía 4 - Araucanía,731397788,390553918,53.4,2024-11-01,2025-08-30
+2025,Araucanía,Transporte,Proyecto Transporte 1 - Araucanía,479130656,308647629,64.4,2024-06-01,2025-12-30
+2025,Araucanía,Transporte,Proyecto Transporte 2 - Araucanía,486798732,375984806,77.2,2024-01-01,2025-11-30
+2025,Araucanía,Transporte,Proyecto Transporte 3 - Araucanía,1925483047,833206371,43.3,2024-08-01,2025-09-30
+2025,Araucanía,Transporte,Proyecto Transporte 4 - Araucanía,1294653154,891084182,68.8,2024-04-01,2025-09-30
+2025,Araucanía,Transporte,Proyecto Transporte 5 - Araucanía,176207463,139842683,79.4,2024-09-01,2025-09-30
+2025,Araucanía,Conectividad,Proyecto Conectividad 1 - Araucanía,1477989554,723232245,48.9,2024-02-01,2025-12-30
+2025,Araucanía,Conectividad,Proyecto Conectividad 2 - Araucanía,1811333541,792235162,43.7,2024-10-01,2025-08-30
+2025,Araucanía,Conectividad,Proyecto Conectividad 3 - Araucanía,1225465624,1017002495,83.0,2024-12-01,2025-08-30
+2025,Araucanía,Desarrollo Social,Proyecto Desarrollo Social 1 - Araucanía,985044333,757300557,76.9,2024-01-01,2025-08-30
+2025,Araucanía,Desarrollo Social,Proyecto Desarrollo Social 2 - Araucanía,1574400393,667936448,42.4,2024-07-01,2025-07-30
+2025,Araucanía,Desarrollo Social,Proyecto Desarrollo Social 3 - Araucanía,551332317,483582438,87.7,2024-07-01,2025-10-30
+2025,Araucanía,Desarrollo Social,Proyecto Desarrollo Social 4 - Araucanía,1723331677,851019587,49.4,2024-06-01,2025-09-30
+2025,Araucanía,Desarrollo Social,Proyecto Desarrollo Social 5 - Araucanía,869539518,499406735,57.4,2024-07-01,2025-06-30
+2025,Araucanía,Desarrollo Social,Proyecto Desarrollo Social 6 - Araucanía,1358980430,239464863,17.6,2024-01-01,2025-08-30
+2025,Los Ríos,Educación,Proyecto Educación 1 - Los Ríos,1941883412,595200366,30.7,2024-05-01,2025-10-30
+2025,Los Ríos,Educación,Proyecto Educación 2 - Los Ríos,717861122,515983140,71.9,2024-08-01,2025-09-30
+2025,Los Ríos,Salud,Proyecto Salud 1 - Los Ríos,550352928,158358128,28.8,2024-10-01,2025-08-30
+2025,Los Ríos,Salud,Proyecto Salud 2 - Los Ríos,939846310,342772748,36.5,2024-10-01,2025-09-30
+2025,Los Ríos,Salud,Proyecto Salud 3 - Los Ríos,1674878395,744835202,44.5,2024-04-01,2025-08-30
+2025,Los Ríos,Salud,Proyecto Salud 4 - Los Ríos,1902308374,574539409,30.2,2024-06-01,2025-09-30
+2025,Los Ríos,Salud,Proyecto Salud 5 - Los Ríos,820781320,479689659,58.4,2024-05-01,2025-09-30
+2025,Los Ríos,Salud,Proyecto Salud 6 - Los Ríos,1001798663,776730928,77.5,2024-12-01,2025-09-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 1 - Los Ríos,491098299,93080657,19.0,2024-02-01,2025-11-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 2 - Los Ríos,208465026,109430718,52.5,2024-04-01,2025-07-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 3 - Los Ríos,174752727,34546505,19.8,2024-06-01,2025-10-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 4 - Los Ríos,1874362533,661509179,35.3,2024-01-01,2025-08-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 5 - Los Ríos,178988432,39140216,21.9,2024-05-01,2025-07-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 6 - Los Ríos,1933725523,201014606,10.4,2024-02-01,2025-06-30
+2025,Los Ríos,Infraestructura,Proyecto Infraestructura 7 - Los Ríos,1314327881,1044016159,79.4,2024-08-01,2025-12-30
+2025,Los Ríos,Agua Potable,Proyecto Agua Potable 1 - Los Ríos,1028808502,651741344,63.3,2024-04-01,2025-12-30
+2025,Los Ríos,Agua Potable,Proyecto Agua Potable 2 - Los Ríos,156949820,54358621,34.6,2024-02-01,2025-07-30
+2025,Los Ríos,Agua Potable,Proyecto Agua Potable 3 - Los Ríos,1492507944,343135808,23.0,2024-05-01,2025-06-30
+2025,Los Ríos,Agua Potable,Proyecto Agua Potable 4 - Los Ríos,1488576002,334827001,22.5,2024-06-01,2025-10-30
+2025,Los Ríos,Energía,Proyecto Energía 1 - Los Ríos,585082396,368195792,62.9,2024-07-01,2025-07-30
+2025,Los Ríos,Energía,Proyecto Energía 2 - Los Ríos,811163857,92483056,11.4,2024-02-01,2025-06-30
+2025,Los Ríos,Energía,Proyecto Energía 3 - Los Ríos,1678666663,1328978690,79.2,2024-01-01,2025-09-30
+2025,Los Ríos,Energía,Proyecto Energía 4 - Los Ríos,314908656,231901347,73.6,2024-04-01,2025-06-30
+2025,Los Ríos,Energía,Proyecto Energía 5 - Los Ríos,1241158130,1058335891,85.3,2024-05-01,2025-10-30
+2025,Los Ríos,Energía,Proyecto Energía 6 - Los Ríos,1196651949,453362281,37.9,2024-02-01,2025-07-30
+2025,Los Ríos,Energía,Proyecto Energía 7 - Los Ríos,1249412453,442903274,35.4,2024-01-01,2025-06-30
+2025,Los Ríos,Transporte,Proyecto Transporte 1 - Los Ríos,1754431555,1273556581,72.6,2024-09-01,2025-08-30
+2025,Los Ríos,Transporte,Proyecto Transporte 2 - Los Ríos,1769179566,748915395,42.3,2024-04-01,2025-11-30
+2025,Los Ríos,Conectividad,Proyecto Conectividad 1 - Los Ríos,1634907289,1160503147,71.0,2024-09-01,2025-12-30
+2025,Los Ríos,Conectividad,Proyecto Conectividad 2 - Los Ríos,927608298,699664674,75.4,2024-08-01,2025-11-30
+2025,Los Ríos,Conectividad,Proyecto Conectividad 3 - Los Ríos,1134529286,118679623,10.5,2024-01-01,2025-09-30
+2025,Los Ríos,Conectividad,Proyecto Conectividad 4 - Los Ríos,1258680430,693219684,55.1,2024-03-01,2025-09-30
+2025,Los Ríos,Desarrollo Social,Proyecto Desarrollo Social 1 - Los Ríos,952517882,276263814,29.0,2024-01-01,2025-08-30
+2025,Los Ríos,Desarrollo Social,Proyecto Desarrollo Social 2 - Los Ríos,531812291,84322422,15.9,2024-03-01,2025-11-30
+2025,Los Ríos,Desarrollo Social,Proyecto Desarrollo Social 3 - Los Ríos,1320894340,934500334,70.7,2024-09-01,2025-08-30
+2025,Los Ríos,Desarrollo Social,Proyecto Desarrollo Social 4 - Los Ríos,1130490963,973559427,86.1,2024-02-01,2025-11-30
+2025,Los Ríos,Desarrollo Social,Proyecto Desarrollo Social 5 - Los Ríos,1837049380,1379648022,75.1,2024-09-01,2025-09-30
+2025,Los Ríos,Desarrollo Social,Proyecto Desarrollo Social 6 - Los Ríos,383084526,199701594,52.1,2024-12-01,2025-09-30
+2025,Los Lagos,Educación,Proyecto Educación 1 - Los Lagos,1553278196,1165562237,75.0,2024-02-01,2025-09-30
+2025,Los Lagos,Educación,Proyecto Educación 2 - Los Lagos,1915495022,219489039,11.5,2024-07-01,2025-08-30
+2025,Los Lagos,Educación,Proyecto Educación 3 - Los Lagos,114369462,70678014,61.8,2024-12-01,2025-12-30
+2025,Los Lagos,Educación,Proyecto Educación 4 - Los Lagos,562616363,473513479,84.2,2024-04-01,2025-10-30
+2025,Los Lagos,Salud,Proyecto Salud 1 - Los Lagos,768083105,139128010,18.1,2024-04-01,2025-10-30
+2025,Los Lagos,Salud,Proyecto Salud 2 - Los Lagos,641258513,221767696,34.6,2024-12-01,2025-08-30
+2025,Los Lagos,Salud,Proyecto Salud 3 - Los Lagos,1203770901,206688753,17.2,2024-02-01,2025-07-30
+2025,Los Lagos,Salud,Proyecto Salud 4 - Los Lagos,617985601,266252472,43.1,2024-09-01,2025-11-30
+2025,Los Lagos,Salud,Proyecto Salud 5 - Los Lagos,444183764,286451570,64.5,2024-10-01,2025-12-30
+2025,Los Lagos,Salud,Proyecto Salud 6 - Los Lagos,1097810428,732499747,66.7,2024-08-01,2025-06-30
+2025,Los Lagos,Infraestructura,Proyecto Infraestructura 1 - Los Lagos,451934048,377004283,83.4,2024-04-01,2025-09-30
+2025,Los Lagos,Infraestructura,Proyecto Infraestructura 2 - Los Lagos,265374028,199720206,75.3,2024-12-01,2025-10-30
+2025,Los Lagos,Infraestructura,Proyecto Infraestructura 3 - Los Lagos,1302987613,1122032177,86.1,2024-07-01,2025-11-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 1 - Los Lagos,1078832823,620146394,57.5,2024-10-01,2025-06-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 2 - Los Lagos,1328551235,318611502,24.0,2024-09-01,2025-10-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 3 - Los Lagos,1821193099,1303893689,71.6,2024-01-01,2025-07-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 4 - Los Lagos,585725495,200112179,34.2,2024-08-01,2025-08-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 5 - Los Lagos,1717231095,1094116166,63.7,2024-09-01,2025-07-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 6 - Los Lagos,1556646656,342093610,22.0,2024-07-01,2025-07-30
+2025,Los Lagos,Agua Potable,Proyecto Agua Potable 7 - Los Lagos,390669221,112586364,28.8,2024-12-01,2025-07-30
+2025,Los Lagos,Energía,Proyecto Energía 1 - Los Lagos,511805620,90370359,17.7,2024-05-01,2025-12-30
+2025,Los Lagos,Energía,Proyecto Energía 2 - Los Lagos,537467720,142401498,26.5,2024-11-01,2025-07-30
+2025,Los Lagos,Transporte,Proyecto Transporte 1 - Los Lagos,842721392,485054479,57.6,2024-09-01,2025-07-30
+2025,Los Lagos,Transporte,Proyecto Transporte 2 - Los Lagos,621626482,359074788,57.8,2024-02-01,2025-08-30
+2025,Los Lagos,Conectividad,Proyecto Conectividad 1 - Los Lagos,913579268,615823880,67.4,2024-01-01,2025-08-30
+2025,Los Lagos,Conectividad,Proyecto Conectividad 2 - Los Lagos,1983386388,402063027,20.3,2024-03-01,2025-09-30
+2025,Los Lagos,Conectividad,Proyecto Conectividad 3 - Los Lagos,1476243752,830696433,56.3,2024-07-01,2025-10-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 1 - Los Lagos,603301349,371773518,61.6,2024-04-01,2025-08-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 2 - Los Lagos,862257036,339354072,39.4,2024-06-01,2025-06-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 3 - Los Lagos,1272595988,577666887,45.4,2024-12-01,2025-07-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 4 - Los Lagos,1372244970,213995132,15.6,2024-05-01,2025-11-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 5 - Los Lagos,1226342784,789894187,64.4,2024-12-01,2025-10-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 6 - Los Lagos,968031425,244195501,25.2,2024-02-01,2025-12-30
+2025,Los Lagos,Desarrollo Social,Proyecto Desarrollo Social 7 - Los Lagos,819105204,319742154,39.0,2024-03-01,2025-07-30
+2025,Aysén,Educación,Proyecto Educación 1 - Aysén,733782143,414131970,56.4,2024-10-01,2025-09-30
+2025,Aysén,Educación,Proyecto Educación 2 - Aysén,1927164898,1171654659,60.8,2024-09-01,2025-12-30
+2025,Aysén,Educación,Proyecto Educación 3 - Aysén,1118072600,198280291,17.7,2024-09-01,2025-12-30
+2025,Aysén,Educación,Proyecto Educación 4 - Aysén,1536710324,580964432,37.8,2024-12-01,2025-09-30
+2025,Aysén,Educación,Proyecto Educación 5 - Aysén,1002284432,406948551,40.6,2024-07-01,2025-09-30
+2025,Aysén,Educación,Proyecto Educación 6 - Aysén,1950912794,226347018,11.6,2024-04-01,2025-09-30
+2025,Aysén,Educación,Proyecto Educación 7 - Aysén,562947760,358736633,63.7,2024-04-01,2025-11-30
+2025,Aysén,Salud,Proyecto Salud 1 - Aysén,269336421,189671107,70.4,2024-01-01,2025-10-30
+2025,Aysén,Salud,Proyecto Salud 2 - Aysén,1669528497,1211447392,72.6,2024-02-01,2025-10-30
+2025,Aysén,Salud,Proyecto Salud 3 - Aysén,168704722,57781820,34.3,2024-02-01,2025-10-30
+2025,Aysén,Salud,Proyecto Salud 4 - Aysén,784259174,133413619,17.0,2024-11-01,2025-06-30
+2025,Aysén,Salud,Proyecto Salud 5 - Aysén,1152224257,396848443,34.4,2024-04-01,2025-11-30
+2025,Aysén,Salud,Proyecto Salud 6 - Aysén,949684826,551268743,58.0,2024-07-01,2025-11-30
+2025,Aysén,Salud,Proyecto Salud 7 - Aysén,1846844749,918935994,49.8,2024-06-01,2025-09-30
+2025,Aysén,Infraestructura,Proyecto Infraestructura 1 - Aysén,842981249,422268190,50.1,2024-01-01,2025-07-30
+2025,Aysén,Infraestructura,Proyecto Infraestructura 2 - Aysén,1125491975,677951393,60.2,2024-08-01,2025-07-30
+2025,Aysén,Infraestructura,Proyecto Infraestructura 3 - Aysén,1749307711,1302779984,74.5,2024-07-01,2025-09-30
+2025,Aysén,Infraestructura,Proyecto Infraestructura 4 - Aysén,1655596507,592740605,35.8,2024-03-01,2025-07-30
+2025,Aysén,Infraestructura,Proyecto Infraestructura 5 - Aysén,392203184,109382153,27.9,2024-04-01,2025-07-30
+2025,Aysén,Infraestructura,Proyecto Infraestructura 6 - Aysén,1317846946,998907494,75.8,2024-09-01,2025-10-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 1 - Aysén,696082613,407275678,58.5,2024-01-01,2025-11-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 2 - Aysén,1806697091,1379351664,76.3,2024-04-01,2025-08-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 3 - Aysén,1910315302,1452146453,76.0,2024-05-01,2025-07-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 4 - Aysén,229527387,27692370,12.1,2024-09-01,2025-12-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 5 - Aysén,1929918712,1041429738,54.0,2024-12-01,2025-10-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 6 - Aysén,1879253430,1505064293,80.1,2024-12-01,2025-12-30
+2025,Aysén,Agua Potable,Proyecto Agua Potable 7 - Aysén,1317569997,359473341,27.3,2024-02-01,2025-09-30
+2025,Aysén,Energía,Proyecto Energía 1 - Aysén,834275598,460147102,55.2,2024-02-01,2025-07-30
+2025,Aysén,Energía,Proyecto Energía 2 - Aysén,502335166,244979451,48.8,2024-02-01,2025-10-30
+2025,Aysén,Energía,Proyecto Energía 3 - Aysén,1277045727,431493367,33.8,2024-07-01,2025-08-30
+2025,Aysén,Energía,Proyecto Energía 4 - Aysén,424263041,67756441,16.0,2024-12-01,2025-11-30
+2025,Aysén,Transporte,Proyecto Transporte 1 - Aysén,291987040,190880417,65.4,2024-12-01,2025-06-30
+2025,Aysén,Transporte,Proyecto Transporte 2 - Aysén,1067902043,958289889,89.7,2024-01-01,2025-10-30
+2025,Aysén,Transporte,Proyecto Transporte 3 - Aysén,1268916932,437780017,34.5,2024-04-01,2025-09-30
+2025,Aysén,Transporte,Proyecto Transporte 4 - Aysén,1101378781,485561236,44.1,2024-05-01,2025-09-30
+2025,Aysén,Transporte,Proyecto Transporte 5 - Aysén,869117015,541686423,62.3,2024-03-01,2025-12-30
+2025,Aysén,Transporte,Proyecto Transporte 6 - Aysén,1098458781,533090699,48.5,2024-07-01,2025-10-30
+2025,Aysén,Transporte,Proyecto Transporte 7 - Aysén,835449644,727724946,87.1,2024-07-01,2025-07-30
+2025,Aysén,Conectividad,Proyecto Conectividad 1 - Aysén,1014553888,117032668,11.5,2024-05-01,2025-07-30
+2025,Aysén,Conectividad,Proyecto Conectividad 2 - Aysén,1393852171,350910478,25.2,2024-05-01,2025-06-30
+2025,Aysén,Conectividad,Proyecto Conectividad 3 - Aysén,714650750,548453496,76.7,2024-05-01,2025-10-30
+2025,Aysén,Conectividad,Proyecto Conectividad 4 - Aysén,1622920512,1408145346,86.8,2024-04-01,2025-06-30
+2025,Aysén,Conectividad,Proyecto Conectividad 5 - Aysén,308498777,166085743,53.8,2024-05-01,2025-09-30
+2025,Aysén,Conectividad,Proyecto Conectividad 6 - Aysén,605436628,132826876,21.9,2024-04-01,2025-07-30
+2025,Aysén,Conectividad,Proyecto Conectividad 7 - Aysén,716884261,494568172,69.0,2024-08-01,2025-08-30
+2025,Aysén,Desarrollo Social,Proyecto Desarrollo Social 1 - Aysén,1266754491,997761943,78.8,2024-10-01,2025-10-30
+2025,Aysén,Desarrollo Social,Proyecto Desarrollo Social 2 - Aysén,1916822162,395854452,20.7,2024-01-01,2025-06-30
+2025,Magallanes,Educación,Proyecto Educación 1 - Magallanes,1407455941,633471287,45.0,2024-01-01,2025-07-30
+2025,Magallanes,Educación,Proyecto Educación 2 - Magallanes,1867605881,564851322,30.2,2024-08-01,2025-10-30
+2025,Magallanes,Salud,Proyecto Salud 1 - Magallanes,1310682805,822431359,62.7,2024-11-01,2025-11-30
+2025,Magallanes,Salud,Proyecto Salud 2 - Magallanes,1309672396,774208734,59.1,2024-12-01,2025-12-30
+2025,Magallanes,Salud,Proyecto Salud 3 - Magallanes,1084975241,238841242,22.0,2024-12-01,2025-06-30
+2025,Magallanes,Salud,Proyecto Salud 4 - Magallanes,942218866,130275567,13.8,2024-08-01,2025-06-30
+2025,Magallanes,Salud,Proyecto Salud 5 - Magallanes,1517793789,952003411,62.7,2024-03-01,2025-08-30
+2025,Magallanes,Infraestructura,Proyecto Infraestructura 1 - Magallanes,1917352656,1322986155,69.0,2024-10-01,2025-12-30
+2025,Magallanes,Infraestructura,Proyecto Infraestructura 2 - Magallanes,663417604,251941183,38.0,2024-03-01,2025-12-30
+2025,Magallanes,Agua Potable,Proyecto Agua Potable 1 - Magallanes,451871578,108127206,23.9,2024-05-01,2025-10-30
+2025,Magallanes,Agua Potable,Proyecto Agua Potable 2 - Magallanes,1354575167,963777698,71.1,2024-10-01,2025-11-30
+2025,Magallanes,Agua Potable,Proyecto Agua Potable 3 - Magallanes,256973560,131500070,51.2,2024-01-01,2025-12-30
+2025,Magallanes,Agua Potable,Proyecto Agua Potable 4 - Magallanes,1586721356,447890079,28.2,2024-09-01,2025-07-30
+2025,Magallanes,Energía,Proyecto Energía 1 - Magallanes,119812628,36462671,30.4,2024-04-01,2025-11-30
+2025,Magallanes,Energía,Proyecto Energía 2 - Magallanes,231583181,200982061,86.8,2024-07-01,2025-11-30
+2025,Magallanes,Energía,Proyecto Energía 3 - Magallanes,1802047735,644722948,35.8,2024-04-01,2025-09-30
+2025,Magallanes,Transporte,Proyecto Transporte 1 - Magallanes,1961943625,1140880561,58.2,2024-05-01,2025-12-30
+2025,Magallanes,Transporte,Proyecto Transporte 2 - Magallanes,1089459469,646267119,59.3,2024-02-01,2025-08-30
+2025,Magallanes,Transporte,Proyecto Transporte 3 - Magallanes,183097689,34540714,18.9,2024-02-01,2025-12-30
+2025,Magallanes,Transporte,Proyecto Transporte 4 - Magallanes,280522228,112431713,40.1,2024-12-01,2025-07-30
+2025,Magallanes,Conectividad,Proyecto Conectividad 1 - Magallanes,410999222,131122333,31.9,2024-04-01,2025-10-30
+2025,Magallanes,Conectividad,Proyecto Conectividad 2 - Magallanes,1384366323,687806170,49.7,2024-01-01,2025-10-30
+2025,Magallanes,Desarrollo Social,Proyecto Desarrollo Social 1 - Magallanes,1375764376,486384961,35.4,2024-07-01,2025-06-30
+2025,Magallanes,Desarrollo Social,Proyecto Desarrollo Social 2 - Magallanes,591020078,316321784,53.5,2024-05-01,2025-10-30
+2025,Magallanes,Desarrollo Social,Proyecto Desarrollo Social 3 - Magallanes,520020405,459031280,88.3,2024-08-01,2025-11-30
+2025,Magallanes,Desarrollo Social,Proyecto Desarrollo Social 4 - Magallanes,1575250148,984420240,62.5,2024-11-01,2025-11-30

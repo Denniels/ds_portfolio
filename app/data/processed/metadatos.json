@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "fecha_generacion": "2025-06-17T19:36:02.196097",
+  "fuentes_datos": [
+    "DIPRES - Direcci\u00f3n de Presupuestos",
+    "datos.gob.cl - Portal de Datos Abiertos",
+    "Presupuesto Abierto Chile"
+  ],
+  "datasets_generados": [
+    "presupuesto_chile_2024.csv",
+    "ejecucion_presupuestaria_2024.csv",
+    "transferencias_regionales_2024.csv",
+    "inversion_publica_2024.csv",
+    "poblacion_regiones_2024.csv",
+    "indicadores_socioeconomicos_2024.csv"
+  ],
+  "total_registros": 946,
+  "periodo_analisis": "2024",
+  "metodologia": "An\u00e1lisis multifuente con simulaci\u00f3n de datos DIPRES",
+  "notebook_origen": "04_Analisis_Presupuesto_Publico.ipynb"
+}

@@ -1,0 +1,13 @@
+{
+  "presupuesto_total": "94133485395",
+  "transferencias_totales": "116728399671",
+  "inversion_total": "593267329484",
+  "inversion_ejecutada": "301723562359",
+  "eficiencia_ejecucion": 84.35020833333333,
+  "avance_promedio": 51.14498207885305,
+  "eficiencia_inversion": 50.857943352691784,
+  "fecha_analisis": "2025-06-17 19:36:02",
+  "total_ministerios": 5,
+  "total_regiones": 5,
+  "total_sectores": 8
+}

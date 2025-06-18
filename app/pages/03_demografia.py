@@ -36,162 +36,15 @@ from utils.optimization import DataManager, ResourceOptimizer
 def load_demografia_data():
     """Cargar datos del análisis demográfico desde el archivo JSON generado por el notebook"""
     try:
-        # Buscar el archivo en múltiples ubicaciones posibles
-        possible_paths = [
-            Path(__file__).parent.parent / 'data' / 'cache' / 'demografia_data.json',
-            Path('/tmp/streamlit_cache/demografia_data.json'),  # Para Streamlit Cloud
-            Path('./data/cache/demografia_data.json'),  # Ruta relativa
-            Path('app/data/cache/demografia_data.json')  # Desde raíz del proyecto
-        ]
-        
-        for data_file in possible_paths:
-            if data_file.exists():
-                with open(data_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                st.success(f"✅ Datos cargados desde: {data_file.name}")
-                return data
-        
-        # Si no se encuentra el archivo, mostrar instrucciones
-        st.warning("⚠️ Archivo de datos no encontrado en las ubicaciones esperadas.")
-        st.info("""
-        💡 **Para generar los datos demográficos:**
-        1. Ejecute el notebook `03_Analisis_Demografia.ipynb` en el directorio `notebooks/`
-        2. El notebook generará automáticamente el archivo `demografia_data.json`
-        3. Recargue esta página para ver los datos actualizados
-        
-        📂 **Ubicaciones buscadas:**
-        - `app/data/cache/demografia_data.json`
-        - `/tmp/streamlit_cache/demografia_data.json` (Streamlit Cloud)
-        - Rutas relativas del proyecto
-        """)
-        return None
-        
-    except Exception as e:
-        st.error(f"❌ Error al cargar datos: {str(e)}")
-        st.info("🔧 Verifique que el archivo JSON esté correctamente formateado y sea accesible.")
-        return None
-
-def generate_demografia_data_fallback():
-    """Generar datos demográficos de respaldo usando la misma estrategia del notebook"""
-    try:
-        import requests
-        from datetime import datetime
-        
-        def obtener_datos_banco_mundial():
-            """Obtener datos del Banco Mundial directamente desde Streamlit"""
-            try:
-                url = "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?format=json&date=2010:2023"
-                response = requests.get(url, timeout=15)
-                
-                if response.status_code == 200:
-                    data = response.json()
-                    if len(data) > 1 and data[1]:
-                        registros = []
-                        for item in data[1]:
-                            if item['value']:
-                                registros.append({
-                                    'año': int(item['date']),
-                                    'poblacion_total': int(item['value'])
-                                })
-                        
-                        if registros:
-                            df = pd.DataFrame(registros).sort_values('año').reset_index(drop=True)
-                            return df, "API Banco Mundial"
-                return None, None
-            except:
-                return None, None
-        
-        def obtener_datos_ine_respaldo():
-            """Datos de respaldo basados en estadísticas INE Chile"""
-            años = list(range(2010, 2024))
-            datos = []
-            
-            for año in años:
-                if año <= 2017:
-                    factor = 1.0 + (año - 2017) * 0.008
-                else:
-                    factor = 1.0 + (año - 2017) * 0.006
-                
-                poblacion = int(17574003 * factor)
-                datos.append({
-                    'año': año,
-                    'poblacion_total': poblacion
-                })
-            
-            df = pd.DataFrame(datos)
-            return df, "INE Chile (basado en Censo 2017)"
-        
-        # Intentar obtener datos
-        st.info("🔄 Generando datos demográficos dinámicamente...")
-        
-        df, fuente = obtener_datos_banco_mundial()
-        if df is None:
-            df, fuente = obtener_datos_ine_respaldo()
-        
-        if df is not None:
-            # Calcular estadísticas
-            pob_actual = df['poblacion_total'].iloc[-1]
-            pob_inicial = df['poblacion_total'].iloc[0]
-            crecimiento_total = pob_actual - pob_inicial
-            crecimiento_porcentual = ((pob_actual / pob_inicial) - 1) * 100
-            densidad = round(pob_actual / 756102, 1)
-            
-            # Crear estructura de datos compatible
-            data = {
-                'metadata': {
-                    'fecha_actualizacion': datetime.now().isoformat(),
-                    'fuente_datos': fuente,
-                    'periodo_analisis': f"{df['año'].min()}-{df['año'].max()}",
-                    'total_registros': len(df),
-                    'version_analisis': '1.0 (Streamlit Cloud)',
-                    'notebook_origen': '03_Analisis_Demografia.ipynb (generado dinámicamente)'
-                },
-                'datos': {
-                    'poblacion_historica': df.to_dict('records'),
-                    'estadisticas_resumen': {
-                        'poblacion_actual': pob_actual,
-                        'año_actual': int(df['año'].iloc[-1]),
-                        'crecimiento_total_periodo': crecimiento_total,
-                        'crecimiento_porcentual': round(crecimiento_porcentual, 2),
-                        'densidad_poblacional': densidad
-                    },
-                    'proyecciones': [],  # Se pueden generar si es necesario
-                    'modelo_estadisticas': {
-                        'r2_score': 0.98,  # Aproximado
-                        'pendiente': crecimiento_total / len(df),
-                        'intercepto': 0
-                    }
-                },
-                'conclusiones': {
-                    'resumen_ejecutivo': f'Análisis demográfico de Chile basado en {fuente} para el período {df["año"].min()}-{df["año"].max()}. Se observa una tendencia de crecimiento poblacional sostenido.',
-                    'hallazgos_principales': [
-                        {
-                            'categoria': 'Crecimiento Poblacional',
-                            'descripcion': f'Chile presenta un crecimiento poblacional de {crecimiento_porcentual:.1f}% en el período analizado',
-                            'impacto': 'positivo'
-                        },
-                        {
-                            'categoria': 'Densidad Poblacional',
-                            'descripcion': f'Densidad poblacional de {densidad} hab/km², considerada baja a nivel internacional',
-                            'impacto': 'neutral'
-                        }
-                    ],
-                    'recomendaciones': [
-                        'Continuar monitoreando las tendencias demográficas',
-                        'Considerar políticas públicas para gestionar el crecimiento',
-                        'Desarrollar infraestructura acorde al crecimiento proyectado'
-                    ]
-                }
-            }
-            
-            st.success(f"✅ Datos generados dinámicamente desde: {fuente}")
-            return data
+        data_file = Path(__file__).parent.parent / 'data' / 'cache' / 'demografia_data.json'
+        if data_file.exists():
+            with open(data_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
         else:
-            st.error("❌ No se pudieron generar datos de ninguna fuente")
+            st.error("❌ Archivo de datos no encontrado. Ejecute primero el notebook 03_Analisis_Demografia.ipynb")
             return None
-            
     except Exception as e:
-        st.error(f"❌ Error al generar datos dinámicamente: {str(e)}")
+        st.error(f"❌ Error al cargar datos: {e}")
         return None
 
 # Iniciar monitoreo
@@ -203,11 +56,6 @@ data_manager = DataManager()
 
 # Cargar datos del notebook
 demo_data = load_demografia_data()
-
-# Si no hay datos, intentar generar dinámicamente
-if demo_data is None:
-    st.info("🔄 No se encontraron datos pre-generados. Intentando generar dinámicamente...")
-    demo_data = generate_demografia_data_fallback()
 
 # Título y descripción
 col1, col2 = st.columns([0.85, 0.15])
@@ -225,12 +73,7 @@ with col2:
 
 if demo_data is None:
     st.error("❌ No se pudieron cargar los datos del análisis demográfico.")
-    st.info("""
-    💡 **Opciones para obtener datos:**
-    1. **Método preferido**: Ejecute el notebook `03_Analisis_Demografia.ipynb`
-    2. **Alternativa**: La aplicación intentará generar datos dinámicamente
-    3. **Respaldo**: Verifique la conectividad a internet para acceder a APIs públicas
-    """)
+    st.info("💡 Para generar los datos, ejecute el notebook `03_Analisis_Demografia.ipynb` en el directorio `notebooks/`")
     st.stop()
 
 # Extraer datos para facilitar el acceso

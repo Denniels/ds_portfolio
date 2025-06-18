@@ -1,0 +1,56 @@
+{
+  "presupuesto_ministerios": {
+    "labels": [
+      "Ministerio de Defensa",
+      "Ministerio de Justicia",
+      "Ministerio de Obras P\u00fablicas",
+      "Ministerio de Educaci\u00f3n",
+      "Ministerio de Salud"
+    ],
+    "values": [
+      10771928421,
+      10745106944,
+      8659871946,
+      8583077348,
+      8361579009
+    ]
+  },
+  "transferencias_regiones": {
+    "labels": [
+      "Valpara\u00edso",
+      "Metropolitana",
+      "\u00d1uble",
+      "Maule",
+      "Tarapac\u00e1"
+    ],
+    "values": [
+      10949565328,
+      10647953229,
+      10501958797,
+      10193311120,
+      10035205884
+    ]
+  },
+  "distribucion_sectores": {
+    "labels": [
+      "Asuntos Econ\u00f3micos",
+      "Orden P\u00fablico",
+      "Vivienda",
+      "Protecci\u00f3n Social",
+      "Educaci\u00f3n",
+      "Servicios P\u00fablicos Generales",
+      "Salud",
+      "Defensa"
+    ],
+    "values": [
+      3836257233,
+      3618365226,
+      3484629756,
+      3047143468,
+      3019676187,
+      2708878286,
+      2684305147,
+      2262407162
+    ]
+  }
+}
