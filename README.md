@@ -122,18 +122,16 @@ ds_portfolio/
 - ✅ Sistema de alertas por contaminación
 - ✅ Visualizaciones comparativas
 
-### 3. 👥 Demografía BigQuery (`03_demografia.py`)
+### 3. 👥 Analicis Demografico (`03_demografia.py`)
 
 **Fuentes de Datos:**
-- Google Cloud BigQuery
+- Fuente Primaria: API del Banco Mundial
 - INE (Instituto Nacional de Estadísticas)
-- Censos y proyecciones poblacionales
 
 **Características:**
 - ✅ Análisis poblacional por región y edad
 - ✅ Proyecciones demográficas
 - ✅ Indicadores socioeconómicos
-- ✅ Integración con BigQuery para big data
 - ✅ Visualizaciones interactivas avanzadas
 
 ### 4. 💰 Presupuesto Público (`04_presupuesto_publico.py`)
@@ -297,7 +295,6 @@ streamlit run app/main.py
 ### Para Rendimiento Local
 - **Procesamiento en batch** de notebooks
 - **Cache persistente** de resultados
-- **Optimización de queries** BigQuery
 - **Compresión** de archivos estáticos
 
 ## 🔧 Pipeline de Datos
