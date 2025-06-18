@@ -53,16 +53,16 @@ def add_page_footer():
         st.markdown("""
         <div style="display: flex; justify-content: center;">
             <div class="social-buttons">
-                <a href="https://www.linkedin.com/in/data-scientist-chile/" target="_blank" class="social-button linkedin">
+                <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
                     <span class="social-icon">🔗</span> LinkedIn
                 </a>
-                <a href="https://github.com/ds-portfolio-chile" target="_blank" class="social-button github">
+                <a href="https://github.com/Denniels" target="_blank" class="social-button github">
                     <span class="social-icon">💻</span> GitHub
                 </a>
             </div>
         </div>
         <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #666;">
-            © 2025 Data Science Portfolio Chile | Actualizado: Junio 2025
+            © 2025 Daniel Andrés Mardones Sanhueza | Actualizado: Junio 2025
         </p>
         """, unsafe_allow_html=True)
 
@@ -106,14 +106,13 @@ def add_sidebar_contact():
     }
     </style>
     """, unsafe_allow_html=True)
-    
-    # Mostrar botones
+      # Mostrar botones
     st.sidebar.markdown("""
     <div class="social-buttons">
-        <a href="https://www.linkedin.com/in/data-scientist-chile/" target="_blank" class="social-button linkedin">
+        <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
             <span class="social-icon">🔗</span> LinkedIn
         </a>
-        <a href="https://github.com/ds-portfolio-chile" target="_blank" class="social-button github">
+        <a href="https://github.com/Denniels" target="_blank" class="social-button github">
             <span class="social-icon">💻</span> GitHub
         </a>
     </div>

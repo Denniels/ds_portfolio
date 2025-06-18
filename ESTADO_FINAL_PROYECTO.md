@@ -87,7 +87,7 @@ El **Portfolio de Ciencia de Datos enfocado en Chile** está **100% completo y l
 
 1. **Configuración en Streamlit Cloud**:
    ```
-   Repository: tu-usuario/ds_portfolio
+   Repository: Denniels/ds_portfolio
    Branch: main
    Main file path: app/main.py
    ```

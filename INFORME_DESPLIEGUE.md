@@ -142,7 +142,7 @@ git push origin main
 1. **Ir a [share.streamlit.io](https://share.streamlit.io)**
 2. **Conectar con GitHub** (si no está conectado)
 3. **Crear Nueva App**:
-   - Repository: `tu-usuario/ds_portfolio`
+   - Repository: `Denniels/ds_portfolio`
    - Branch: `main`
    - Main file path: `app/main.py`
 

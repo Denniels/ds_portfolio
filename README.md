@@ -194,7 +194,7 @@ ds_portfolio/
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/ds_portfolio.git
+git clone https://github.com/Denniels/ds_portfolio.git
 cd ds_portfolio
 ```
 
@@ -386,9 +386,9 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 
 **Tu Nombre**
 - 📧 Email: tu.email@ejemplo.com
-- 💼 LinkedIn: [tu-perfil](https://linkedin.com/in/tu-perfil)
-- 🐱 GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- 🌐 Portfolio: [tu-portfolio.com](https://tu-portfolio.com)
+- 💼 LinkedIn: [Daniel Andrés Mardones Sanhueza](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+- 🐱 GitHub: [@Denniels](https://github.com/Denniels)
+- 🌐 Portfolio: [integralservicespa.cl](https://integralservicespa.cl)
 
 ## 🙏 Agradecimientos
 
@@ -409,6 +409,6 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 
 **⭐ Si este proyecto te resulta útil, ¡no olvides darle una estrella!**
 
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=tu-usuario.ds_portfolio)
-![GitHub stars](https://img.shields.io/github/stars/tu-usuario/ds_portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/tu-usuario/ds_portfolio?style=social)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Denniels.ds_portfolio)
+![GitHub stars](https://img.shields.io/github/stars/Denniels/ds_portfolio?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Denniels/ds_portfolio?style=social)

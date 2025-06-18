@@ -272,7 +272,7 @@ def generate_deployment_summary():
     print_header("RESUMEN PARA DEPLOYMENT")
     
     print("📋 CONFIGURACIÓN PARA STREAMLIT CLOUD:")
-    print("   Repository: tu-usuario/ds_portfolio")
+    print("   Repository: Denniels/ds_portfolio")
     print("   Branch: main") 
     print("   Main file path: app/main.py")
     print("   Python version: 3.11+")

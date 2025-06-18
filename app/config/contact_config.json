@@ -1,0 +1,19 @@
+{
+    "contact_info": {
+        "name": "Daniel Andrés Mardones Sanhueza",
+        "title": "Data Scientist & Machine Learning Engineer",
+        "linkedin": "https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777",
+        "github": "https://github.com/Denniels",
+        "website": "https://integralservicespa.cl",
+        "repository": "Denniels/ds_portfolio"
+    },
+    "social_media": {
+        "linkedin_handle": "daniel-andres-mardones-sanhueza-27b73777",
+        "github_handle": "Denniels"
+    },
+    "project_info": {
+        "name": "Data Science Portfolio Chile",
+        "copyright": "© 2025 Daniel Andrés Mardones Sanhueza",
+        "last_updated": "Junio 2025"
+    }
+}

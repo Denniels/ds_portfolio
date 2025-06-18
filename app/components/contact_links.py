@@ -44,14 +44,13 @@ def add_contact_links():
     }
     </style>
     """, unsafe_allow_html=True)
-    
-    # Mostrar botones
+      # Mostrar botones
     st.sidebar.markdown("""
     <div class="social-buttons">
-        <a href="https://www.linkedin.com/in/tu-perfil-linkedin/" target="_blank" class="social-button linkedin">
+        <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
             <span class="social-icon">🔗</span> LinkedIn
         </a>
-        <a href="https://github.com/tu-usuario-github" target="_blank" class="social-button github">
+        <a href="https://github.com/Denniels" target="_blank" class="social-button github">
             <span class="social-icon">💻</span> GitHub
         </a>
     </div>
@@ -69,12 +68,11 @@ def add_footer():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; margin-top: 20px; padding: 10px;">
-        <p>Desarrollado con ❤️ - Portafolio Data Science 2025</p>
-        <div class="social-buttons" style="justify-content: center;">
-            <a href="https://www.linkedin.com/in/tu-perfil-linkedin/" target="_blank" class="social-button linkedin">
+        <p>Desarrollado con ❤️ - Portafolio Data Science 2025</p>        <div class="social-buttons" style="justify-content: center;">
+            <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
                 <span class="social-icon">🔗</span> LinkedIn
             </a>
-            <a href="https://github.com/tu-usuario-github" target="_blank" class="social-button github">
+            <a href="https://github.com/Denniels" target="_blank" class="social-button github">
                 <span class="social-icon">💻</span> GitHub
             </a>
         </div>

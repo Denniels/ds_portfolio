@@ -88,7 +88,7 @@ data_path = Path(__file__).parent.parent / "data" / "processed"
 ### ✅ Listo para Streamlit Cloud
 
 **Configuración Verificada:**
-- Repository: `tu-usuario/ds_portfolio`
+- Repository: `Denniels/ds_portfolio`
 - Branch: `main`
 - Main file path: `app/main.py`
 - Requirements: `requirements_streamlit_cloud.txt`

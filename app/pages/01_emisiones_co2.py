@@ -73,11 +73,10 @@ except ImportError:
         st.sidebar.markdown("---")
         st.sidebar.markdown("### 📱 Contacto")
         st.sidebar.markdown("""
-        <div style="display:flex;gap:10px">
-            <a href="https://www.linkedin.com/in/tu-perfil-linkedin/" target="_blank" style="text-decoration:none">
+        <div style="display:flex;gap:10px">            <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" style="text-decoration:none">
                 🔗 LinkedIn
             </a>
-            <a href="https://github.com/tu-usuario-github" target="_blank" style="text-decoration:none">
+            <a href="https://github.com/Denniels" target="_blank" style="text-decoration:none">
                 💻 GitHub
             </a>
         </div>
