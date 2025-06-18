@@ -1,0 +1,365 @@
+/* Estilos consolidados para Streamlit Cloud - Portfolio Data Science */
+
+/* Variables CSS para consistencia */
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #F0F2F6;
+    --text-color: #1F2937;
+    --background-color: #FFFFFF;
+    --border-radius: 8px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Estilos base de la aplicación */
+.stApp {
+    background-color: #F8FAFC;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Estilos para títulos */
+.page-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Estilos para las tarjetas de análisis */
+.analysis-card {
+    background: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.analysis-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para métricas */
+.metric-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, var(--primary-color), #1E40AF);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: var(--shadow);
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Optimizaciones para componentes de Streamlit */
+.stSelectbox > div > div {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.stMetric {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stPlotlyChart {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stDataFrame {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stAlert {
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.stSidebar {
+    background-color: #F1F5F9;
+}
+
+/* Estilos para navegación */
+.nav-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.25rem;
+}
+
+.nav-button:hover {
+    background: #1E40AF;
+    transform: translateY(-2px);
+}
+
+/* Componente de contacto */
+.contact-section {
+    background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #3B82F6;
+}
+
+.contact-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1F2937;
+}
+
+.contact-link {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    color: #1E40AF;
+    text-decoration: underline;
+}
+
+/* Estilos para botones sociales */
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+.social-button:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+}
+
+.linkedin {
+    background-color: #0077B5;
+}
+
+.github {
+    background-color: #333;
+}
+
+.social-icon {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Estilos para CO2 Analysis */
+.co2-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    margin: 1rem 0;
+}
+
+.co2-metric {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.co2-chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Adaptaciones responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-button {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .metric-container {
+        flex-direction: column;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos específicos para cards de proyectos */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.project-description {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* Footer styles */
+.footer-container {
+    background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}

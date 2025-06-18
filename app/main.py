@@ -58,7 +58,11 @@ else:
 cache_manager = CacheManager(cache_dir=cache_dir)
 
 # Cargar estilos optimizados según plataforma
-css_path = 'static/css/style.min.css' if IS_STREAMLIT_CLOUD else 'static/css/style.css'
+if IS_STREAMLIT_CLOUD:
+    css_path = 'static/css/streamlit_cloud.css'
+else:
+    css_path = 'static/css/style.css'
+
 try:
     with open(css_path) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -67,7 +71,24 @@ except FileNotFoundError:
     st.markdown("""
         <style>
         .main-container { padding: 2rem; }
-        .hero-section { background: #f0f7ff; padding: 2rem; border-radius: 10px; }
+        .hero-section { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            padding: 3rem 2rem; 
+            border-radius: 15px; 
+            color: white; 
+            text-align: center; 
+            margin: 2rem 0; 
+        }
+        .social-buttons { display: flex; gap: 10px; justify-content: center; }
+        .social-button { 
+            padding: 8px 12px; 
+            border-radius: 5px; 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        .linkedin { background-color: #0077B5; }
+        .github { background-color: #333; }
         </style>
     """, unsafe_allow_html=True)
 
@@ -242,49 +263,81 @@ def add_footer():
     add_page_footer()
 
 def render_main_page():
-    """Renderiza la página principal"""
-    st.title("📊 Portafolio de Data Science")
+    """Renderiza la página principal con estilos CSS optimizados"""
     
+    # Título principal con clase CSS
+    st.markdown('<h1 class="page-title">📊 Portafolio de Data Science</h1>', unsafe_allow_html=True)
+    
+    # Sección hero
     st.markdown("""
-    La transición de la electricidad y la automatización industrial al mundo de los datos ha sido un desafío apasionante. 
-        Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.        
-        Aqui encontraras estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
-        Los estudios aun no contienen la carga de datos reales, estos se encuentran en preparación.
-    ## Proyectos Destacados
-    - 🏭 Análisis de emisiones de CO2
-    - 💧 Estudios de calidad del agua
-    - 👥 Análisis demográficos
-    - 💰 Análisis de presupuesto público
-    - 📄 Mi currículum vitae y experiencia profesional
-    """)
+    <div class="hero-section">
+        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 0;">
+            La transición de la electricidad y la automatización industrial al mundo de los datos ha sido un desafío apasionante. 
+            Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.
+            <br><br>
+            Aquí encontrarás estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
+            Los estudios aún no contienen la carga de datos reales, estos se encuentran en preparación.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # Descripción del proyecto
+    # Proyectos destacados con cards
+    st.markdown('<h2 class="section-title">Proyectos Destacados</h2>', unsafe_allow_html=True)
+    
+    # Grid de proyectos usando HTML/CSS
+    st.markdown("""
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+        <div class="project-card">
+            <div class="project-icon">🏭</div>
+            <div class="project-title">Análisis de emisiones de CO2</div>
+            <div class="project-description">Estudio comprehensivo de emisiones industriales en Chile</div>
+        </div>
+        <div class="project-card">
+            <div class="project-icon">💧</div>
+            <div class="project-title">Estudios de calidad del agua</div>
+            <div class="project-description">Análisis de parámetros de calidad en fuentes hídricas</div>
+        </div>
+        <div class="project-card">
+            <div class="project-icon">👥</div>
+            <div class="project-title">Análisis demográficos</div>
+            <div class="project-description">Exploración de datos poblacionales usando BigQuery</div>
+        </div>
+        <div class="project-card">
+            <div class="project-icon">💰</div>
+            <div class="project-title">Análisis de presupuesto público</div>
+            <div class="project-description">Visualización de gastos gubernamentales y tendencias</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Descripción del objetivo
     render_objective()
 
-    # Secciones principales con botones de navegación
-    st.subheader("Explora los análisis:")
+    # Secciones principales con botones de navegación estilizados
+    st.markdown('<h3 class="section-title">Explora los análisis:</h3>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("🏭 Emisiones de CO2", use_container_width=True):
+        if st.button("🏭 Emisiones de CO2", use_container_width=True, type="primary"):
             st.switch_page("pages/01_emisiones_co2.py")
         
-        if st.button("👥 Demografía", use_container_width=True):
-            st.switch_page("pages/03_demografia.py")
+        if st.button("👥 Demografía", use_container_width=True, type="primary"):
+            st.switch_page("pages/03_demografia_bigquery.py")
     
     with col2:
-        if st.button("💧 Calidad del Agua", use_container_width=True):
+        if st.button("💧 Calidad del Agua", use_container_width=True, type="primary"):
             st.switch_page("pages/02_calidad_agua.py")
         
-        if st.button("💰 Presupuesto Público", use_container_width=True):
+        if st.button("💰 Presupuesto Público", use_container_width=True, type="primary"):
             st.switch_page("pages/04_presupuesto_publico.py")
-      # Sección de servicios
+      
+    # Sección de servicios
     st.markdown("---")
     st.subheader("💼 Servicios Profesionales")
     st.write("Ofrezco servicios de análisis de datos y desarrollo de dashboards personalizados.")
     
-    if st.button("Ver Servicios Disponibles", use_container_width=True):
+    if st.button("Ver Servicios Disponibles", use_container_width=True, type="secondary"):
         st.switch_page("pages/06_servicios.py")
     
     # Sección de currículum
@@ -292,7 +345,7 @@ def render_main_page():
     st.subheader("📄 Sobre Mí")
     st.write("Conoce más sobre mi formación, experiencia y habilidades profesionales.")
     
-    if st.button("Ver Currículum Vitae", use_container_width=True):
+    if st.button("Ver Currículum Vitae", use_container_width=True, type="secondary"):
         st.switch_page("pages/05_curriculum.py")
     
     # Sección de feedback
