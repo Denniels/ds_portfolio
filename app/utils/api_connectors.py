@@ -127,16 +127,47 @@ class DataValidator:
             issues.append(f"⚠️ Alto porcentaje de valores faltantes ({missing_pct:.1f}%)")
         elif missing_pct > 20:
             issues.append(f"ℹ️ Porcentaje moderado de valores faltantes ({missing_pct:.1f}%)")
-        
-        # Verificar duplicados
-        duplicates = df.duplicated().sum()
-        if duplicates > 0:
-            issues.append(f"ℹ️ {duplicates} registros duplicados encontrados")
-        
-        # Verificar columnas con una sola valor único
-        single_value_cols = [col for col in df.columns if df[col].nunique() == 1]
-        if single_value_cols:
-            issues.append(f"ℹ️ Columnas con valor único: {', '.join(single_value_cols)}")
+          # Verificar duplicados (solo en columnas hashables)
+        try:
+            duplicates = df.duplicated().sum()
+            if duplicates > 0:
+                issues.append(f"ℹ️ {duplicates} registros duplicados encontrados")
+        except TypeError:
+            # Si hay columnas no hashables, verificar solo columnas básicas
+            try:
+                hashable_cols = []
+                for col in df.columns:
+                    try:
+                        # Intentar verificar si la columna es hashable
+                        df[col].duplicated()
+                        hashable_cols.append(col)
+                    except TypeError:
+                        continue
+                
+                if hashable_cols:
+                    duplicates = df[hashable_cols].duplicated().sum()
+                    if duplicates > 0:
+                        issues.append(f"ℹ️ {duplicates} registros duplicados encontrados (columnas analizables)")
+                else:
+                    issues.append("ℹ️ No se pudo verificar duplicados (tipos de datos complejos)")
+            except Exception:
+                issues.append("ℹ️ No se pudo verificar duplicados (tipos de datos complejos)")
+          # Verificar columnas con una sola valor único (solo en columnas hashables)
+        try:
+            single_value_cols = [col for col in df.columns if df[col].nunique() == 1]
+            if single_value_cols:
+                issues.append(f"ℹ️ Columnas con valor único: {', '.join(single_value_cols)}")
+        except TypeError:
+            # Si hay problemas con tipos no hashables, verificar columna por columna
+            single_value_cols = []
+            for col in df.columns:
+                try:
+                    if df[col].nunique() == 1:
+                        single_value_cols.append(col)
+                except (TypeError, ValueError):
+                    continue
+            if single_value_cols:
+                issues.append(f"ℹ️ Columnas con valor único: {', '.join(single_value_cols)}")
         
         return True, issues
     
