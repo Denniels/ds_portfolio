@@ -287,7 +287,6 @@ def show_data_ingestion():
         st.markdown("### Cargar desde Archivo")
         uploaded_file = st.file_uploader(
             "Selecciona tu archivo de datos",
-            "Archivo de demo no debe superar los 50MB",
             type=['csv', 'xlsx', 'xls', 'json'],
             help="Formatos soportados: CSV, Excel (.xlsx, .xls), JSON"
         )
