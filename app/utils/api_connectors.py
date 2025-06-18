@@ -187,20 +187,31 @@ class DataValidator:
                     suggestions.append(f"📅 '{col}' parece ser una fecha")
                 except:
                     pass
+                  # Detectar booleanos (con manejo de tipos no hashables)
+                try:
+                    unique_vals = df[col].dropna().unique()
+                    if len(unique_vals) == 2 and all(str(v).lower() in ['true', 'false', '1', '0', 'yes', 'no', 'si', 'no'] for v in unique_vals):
+                        suggestions.append(f"✅ '{col}' parece ser booleano")
+                except (TypeError, ValueError):
+                    # No se puede obtener valores únicos para tipos no hashables
+                    pass
                 
-                # Detectar booleanos
-                unique_vals = df[col].dropna().unique()
-                if len(unique_vals) == 2 and all(str(v).lower() in ['true', 'false', '1', '0', 'yes', 'no', 'si', 'no'] for v in unique_vals):
-                    suggestions.append(f"✅ '{col}' parece ser booleano")
-                
-                # Detectar categorías
-                if df[col].nunique() < 20 and df[col].nunique() > 2:
-                    suggestions.append(f"🏷️ '{col}' podría ser categórica ({df[col].nunique()} valores únicos)")
-            
-            # Detectar IDs
+                # Detectar categorías (con manejo de tipos no hashables)
+                try:
+                    unique_count = df[col].nunique()
+                    if unique_count < 20 and unique_count > 2:
+                        suggestions.append(f"🏷️ '{col}' podría ser categórica ({unique_count} valores únicos)")
+                except (TypeError, ValueError):
+                    # No se puede contar valores únicos para tipos no hashables
+                    pass
+              # Detectar IDs (con manejo de tipos no hashables)
             if col.lower() in ['id', 'index', 'key'] or 'id' in col.lower():
-                if df[col].nunique() == len(df):
-                    suggestions.append(f"🆔 '{col}' parece ser un identificador único")
+                try:
+                    if df[col].nunique() == len(df):
+                        suggestions.append(f"🆔 '{col}' parece ser un identificador único")
+                except (TypeError, ValueError):
+                    # No se puede verificar unicidad para tipos no hashables
+                    pass
         
         return suggestions
 
