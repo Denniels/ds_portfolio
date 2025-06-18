@@ -86,7 +86,7 @@
 ### 🌐 Idiomas
 
 - **Español**: Nativo
-- **Inglés**: Intermedio (B2)
+- **Inglés**: Basico (A1)
 
 ### 📫 Información de Contacto
 
