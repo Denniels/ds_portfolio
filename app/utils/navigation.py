@@ -61,7 +61,6 @@ def get_page_path(page_name):
     return None
 
 def create_sidebar_nav_menu():
-    st.sidebar.markdown("---")
     """
     Crea un menú de navegación en la barra lateral con todas las páginas disponibles
     """
@@ -84,7 +83,6 @@ def create_sidebar_nav_menu():
                 "path": str(file_path.relative_to(Path(__file__).parent.parent)),
                 "order": int(file_path.stem.split("_")[0]) if file_path.stem[0].isdigit() else 99
             })
-    st.sidebar.markdown("---")
     # Ordenar páginas por el número de orden
     pages.sort(key=lambda x: x["order"])
     
