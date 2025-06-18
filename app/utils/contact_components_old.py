@@ -6,9 +6,10 @@ import streamlit as st
 def add_page_footer():
     """
     Agrega un footer con enlaces de contacto y redes sociales
-    al final de cada página
-    """
+    al final de cada página    """
     st.markdown("---")
+    
+    # Los estilos ahora se cargan desde el archivo CSS principal
     
     # Crear layout de columnas
     cols = st.columns([1, 2, 1])
@@ -20,7 +21,7 @@ def add_page_footer():
         <div style="display: flex; justify-content: center;">
             <div class="social-buttons">
                 <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
-                    <span class="social-icon">💼</span> LINKEDIN
+                    <span class="social-icon">�</span> LINKEDIN
                 </a>
                 <a href="https://github.com/Denniels" target="_blank" class="social-button github">
                     <span class="social-icon">⚡</span> GITHUB
@@ -39,11 +40,43 @@ def add_sidebar_contact():
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 📱 Contacto")
     
-    # Mostrar botones con el nuevo diseño
+    # Aplicar estilos CSS necesarios para los botones
+    st.sidebar.markdown("""
+    <style>
+    .social-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .social-button {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: opacity 0.3s;
+    }
+    .social-button:hover {
+        opacity: 0.8;
+    }
+    .linkedin {
+        background-color: #0077B5;
+    }
+    .github {
+        background-color: #333;
+    }
+    .social-icon {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+    </style>
+    """, unsafe_allow_html=True)    # Mostrar botones con el nuevo diseño
     st.sidebar.markdown("""
     <div class="social-buttons">
         <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
-            <span class="social-icon">💼</span> LINKEDIN
+            <span class="social-icon">�</span> LINKEDIN
         </a>
         <a href="https://github.com/Denniels" target="_blank" class="social-button github">
             <span class="social-icon">⚡</span> GITHUB

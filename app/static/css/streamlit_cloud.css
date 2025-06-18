@@ -194,7 +194,7 @@
     text-decoration: underline;
 }
 
-/* Estilos para botones sociales */
+/* Estilos para botones sociales - Diseño rectangular mejorado */
 .social-buttons {
     display: flex;
     gap: 10px;
@@ -204,34 +204,58 @@
 }
 
 .social-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: opacity 0.3s;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: 600;
     font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    min-width: 120px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .social-button:hover {
-    opacity: 0.8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     color: white;
+}
+
+.social-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .linkedin {
     background-color: #0077B5;
+    border: 2px solid #0077B5;
+}
+
+.linkedin:hover {
+    background-color: #005885;
+    border-color: #005885;
 }
 
 .github {
     background-color: #333;
+    border: 2px solid #333;
+}
+
+.github:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
 }
 
 .social-icon {
     margin-right: 8px;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* Estilos para CO2 Analysis */

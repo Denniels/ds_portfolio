@@ -78,17 +78,31 @@ except FileNotFoundError:
             color: white; 
             text-align: center; 
             margin: 2rem 0; 
-        }
-        .social-buttons { display: flex; gap: 10px; justify-content: center; }
+        }        .social-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
         .social-button { 
-            padding: 8px 12px; 
-            border-radius: 5px; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px; 
+            border-radius: 4px; 
             color: white; 
             text-decoration: none; 
-            font-weight: bold; 
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            min-width: 120px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
-        .linkedin { background-color: #0077B5; }
-        .github { background-color: #333; }
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .linkedin { background-color: #0077B5; border: 2px solid #0077B5; }
+        .linkedin:hover { background-color: #005885; border-color: #005885; }
+        .github { background-color: #333; border: 2px solid #333; }
+        .github:hover { background-color: #1a1a1a; border-color: #1a1a1a; }
         </style>
     """, unsafe_allow_html=True)
 

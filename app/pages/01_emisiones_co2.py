@@ -73,11 +73,12 @@ except ImportError:
         st.sidebar.markdown("---")
         st.sidebar.markdown("### 📱 Contacto")
         st.sidebar.markdown("""
-        <div style="display:flex;gap:10px">            <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" style="text-decoration:none">
-                🔗 LinkedIn
+        <div class="social-buttons">
+            <a href="https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777" target="_blank" class="social-button linkedin">
+                <span class="social-icon">�</span> LINKEDIN
             </a>
-            <a href="https://github.com/Denniels" target="_blank" style="text-decoration:none">
-                💻 GitHub
+            <a href="https://github.com/Denniels" target="_blank" class="social-button github">
+                <span class="social-icon">⚡</span> GITHUB
             </a>
         </div>
         """, unsafe_allow_html=True)
@@ -749,7 +750,7 @@ with tab4:
     - **Empresas privadas** buscando soluciones de monitoreo ambiental
     - **Investigadores independientes** con expertise complementario
     
-    📧 **Contacto para colaboraciones:** [LinkedIn Profile](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+    📧 **Contacto para colaboraciones:** [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
     """)
 
 # Footer con información adicional
@@ -781,6 +782,6 @@ try:
 except ImportError:
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 📱 Contacto")
-    st.sidebar.markdown("🔗 LinkedIn | 💻 GitHub")
+    st.sidebar.markdown("� LinkedIn | ⚡ GitHub")
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"Actualizado: {datetime.now().strftime('%d/%m/%Y')}")
