@@ -73,9 +73,8 @@
 ### 🏆 Logros y Reconocimientos
 
 - **Reducción de Costos**: 15% en costos de mantenimiento mediante implementación de análisis predictivo
-- **Certificación ISO 55000**: Lideré implementación en planta industrial
-- **Proyecto de Automatización**: Automatización completa de línea de producción
-- **Mentoring**: Formación de 5+ ingenieros junior en mantenimiento industrial
+- **Proyecto de Automatización**: Automatización completa de líneas de producción
+- **Mentoring**: Formación de 5+ Tecnicos de campo, profesionales de la industria
 
 ### 📚 Formación Continua
 
