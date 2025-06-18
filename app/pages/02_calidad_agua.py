@@ -3,27 +3,26 @@ Página para el análisis de calidad del agua
 """
 
 import streamlit as st
-import sys
-from pathlib import Path
 
-# Verificar si se ejecuta directamente con Python o a través de streamlit
-if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
-    print("\n¡ATENCIÓN! Este es un archivo de Streamlit y debe ejecutarse con el comando:")
-    print(f"\nstreamlit run {__file__}\n")
-    print("Ejecutando este archivo directamente con Python puede causar advertencias.")
-    print("Las advertencias 'missing ScriptRunContext' pueden ser ignoradas en modo bare.")
-
-# Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
+# Configuración de la página
 st.set_page_config(
-    page_title="Análisis de Calidad del Agua - DS Portfolio",
+    page_title="Calidad del Agua Chile - DS Portfolio",
     page_icon="💧",
     layout="wide"
 )
 
-# Agregar el directorio raíz al path
-parent_dir = Path(__file__).parent.parent
+# Cargar estilos CSS
+import sys
+from pathlib import Path
+
+# Agregar el directorio padre al path para importar utils
+current_dir = Path(__file__).parent
+parent_dir = current_dir.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
+
+from utils.css_loader import load_css_styles
+load_css_styles()
 
 from utils.optimization import DataManager, ResourceOptimizer
 

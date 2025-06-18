@@ -11,8 +11,19 @@ st.set_page_config(
     layout="wide"
 )
 
+# Cargar estilos CSS
 import sys
 from pathlib import Path
+
+# Agregar el directorio padre al path para importar utils
+current_dir = Path(__file__).parent
+parent_dir = current_dir.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+from utils.css_loader import load_css_styles
+load_css_styles()
+
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -23,7 +34,6 @@ from datetime import datetime
 import json
 
 # Agregar el directorio raíz al path
-parent_dir = Path(__file__).parent.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
 

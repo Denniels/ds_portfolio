@@ -7,6 +7,26 @@ from datetime import datetime
 import plotly.graph_objects as go
 from pathlib import Path
 
+# Configuración de la página
+st.set_page_config(
+    page_title="Servicios Profesionales - DS Portfolio",
+    page_icon="💼",
+    layout="wide"
+)
+
+# Cargar estilos CSS
+import sys
+from pathlib import Path
+
+# Agregar el directorio padre al path para importar utils
+current_dir = Path(__file__).parent
+parent_dir = current_dir.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+from utils.css_loader import load_css_styles
+load_css_styles()
+
 # Importar componente de contacto
 try:
     from utils.contact_components import add_page_footer, add_sidebar_contact
@@ -17,12 +37,6 @@ except ImportError:
         st.markdown("© 2025 DS Portfolio")
     def add_sidebar_contact():
         st.sidebar.markdown("---")
-
-st.set_page_config(
-    page_title="Servicios Profesionales - Data Science",
-    page_icon="💼",
-    layout="wide"
-)
 
 def load_services_data():
     """Carga y procesa los datos de servicios desde el archivo markdown"""
