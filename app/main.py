@@ -313,11 +313,11 @@ def render_main_page():
         <div class="project-card">
             <div class="project-icon">👥</div>
             <div class="project-title">Análisis demográficos</div>
-            <div class="project-description">Exploración de datos poblacionales usando BigQuery</div>
+            <div class="project-description">Exploración de datos poblacionales de chile</div>
         </div>
         <div class="project-card">
             <div class="project-icon">💰</div>
-            <div class="project-title">Análisis de presupuesto público</div>
+            <div class="project-title">Análisis de presupuesto público de chile</div>
             <div class="project-description">Visualización de gastos gubernamentales y tendencias</div>
         </div>
     </div>
