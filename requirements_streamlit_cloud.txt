@@ -1,23 +1,23 @@
 # Dependencias básicas de sistema (pre-instalación)
-setuptools>=69.0.0
-wheel>=0.42.0
-pip>=24.0
+setuptools==66.1.1
+wheel==0.38.4
+pip==23.0.1
 
-# Core dependencies for Streamlit Cloud (versiones estables)
-streamlit>=1.28.0,<2.0.0
-numpy>=1.24.0,<2.0.0
-pandas>=2.0.0,<3.0.0
-plotly>=5.13.1,<6.0.0
+# Core dependencies for Streamlit Cloud (versiones fijas compatibles)
+streamlit==1.24.0
+numpy==1.24.3
+pandas==1.5.3
+plotly==5.13.1
 
-# Machine Learning (versiones LTS)
-scikit-learn>=1.3.0,<2.0.0
-joblib>=1.2.0,<2.0.0
+# Machine Learning
+scikit-learn==1.2.2
+joblib==1.2.0
 
 # Visualization
-matplotlib>=3.7.1,<4.0.0
-seaborn>=0.12.2,<1.0.0
-folium>=0.14.0,<1.0.0
-streamlit-folium>=0.11.1,<1.0.0
+matplotlib==3.7.1
+seaborn==0.12.2
+folium==0.14.0
+streamlit-folium==0.11.1
 
 # Data handling
 openpyxl>=3.1.2,<4.0.0

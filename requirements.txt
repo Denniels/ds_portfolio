@@ -1,8 +1,15 @@
-# Core dependencies with fixed versions for Streamlit Community Cloud
+# Dependencias básicas de sistema (pre-instalación)
+setuptools==66.1.1
+wheel==0.38.4
+pip==23.0.1
+
+# Core dependencies for Streamlit Cloud (versiones fijas compatibles)
 streamlit==1.24.0
-numpy==1.23.5
+numpy==1.24.3
 pandas==1.5.3
 plotly==5.13.1
+
+# Machine Learning
 scikit-learn==1.2.2
 joblib==1.2.0
 
@@ -13,22 +20,18 @@ folium==0.14.0
 streamlit-folium==0.11.1
 
 # Data handling
-openpyxl==3.1.2
-xlrd==2.0.1
-python-dateutil==2.8.2
+openpyxl>=3.1.2,<4.0.0
+xlrd>=2.0.1,<3.0.0
+python-dateutil>=2.8.2,<3.0.0
 
 # System utilities
-psutil==5.9.5
-watchdog==3.0.0
-pathtools==0.1.2
-setuptools==65.5.1
-wheel==0.40.0
+psutil>=5.9.5,<6.0.0
 
 # Cloud services
-python-dotenv==1.0.0
-google-cloud-bigquery==3.11.4
-google-cloud-storage==2.10.0
+python-dotenv>=1.0.0,<2.0.0
+google-cloud-bigquery>=3.11.4,<4.0.0
+google-cloud-storage>=2.10.0,<3.0.0
 
 # Cache and optimization
-cachetools==5.3.1
-branca==0.6.0
+cachetools>=5.3.1,<6.0.0
+branca>=0.6.0,<1.0.0
