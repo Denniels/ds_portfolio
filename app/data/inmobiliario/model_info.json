@@ -1,0 +1,15 @@
+{
+  "feature_names": [
+    "metros_totales",
+    "metros_construidos",
+    "dormitorios",
+    "banos",
+    "estacionamientos",
+    "antiguedad_anos",
+    "indice_ubicacion"
+  ],
+  "n_features": 7,
+  "n_estimators": 50,
+  "max_depth": 8,
+  "version": "v2"
+}
