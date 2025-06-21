@@ -1,0 +1,361 @@
+fecha,comuna,tipo_propiedad,precio_promedio,variacion_mensual,num_propiedades
+2023-01-01,Las Condes,Casa,247636000.0,3.1,25
+2023-01-01,Las Condes,Departamento,200350000.0,0.9,33
+2023-02-01,Las Condes,Casa,246913000.0,-0.7,71
+2023-02-01,Las Condes,Departamento,204566000.0,0.7,98
+2023-03-01,Las Condes,Casa,245727000.0,-0.1,38
+2023-03-01,Las Condes,Departamento,215170000.0,1.0,64
+2023-04-01,Las Condes,Casa,240712000.0,1.3,34
+2023-04-01,Las Condes,Departamento,211986000.0,3.7,74
+2023-05-01,Las Condes,Casa,252885000.0,1.1,74
+2023-05-01,Las Condes,Departamento,204402000.0,2.2,33
+2023-06-01,Las Condes,Casa,234199000.0,0.3,51
+2023-06-01,Las Condes,Departamento,198972000.0,2.8,16
+2023-07-01,Las Condes,Casa,235511000.0,3.0,49
+2023-07-01,Las Condes,Departamento,206000000.0,1.5,95
+2023-08-01,Las Condes,Casa,243038000.0,-2.9,41
+2023-08-01,Las Condes,Departamento,193411000.0,4.4,19
+2023-09-01,Las Condes,Casa,238139000.0,-1.2,86
+2023-09-01,Las Condes,Departamento,196861000.0,4.9,13
+2023-10-01,Las Condes,Casa,233966000.0,-1.2,82
+2023-10-01,Las Condes,Departamento,210164000.0,-2.4,12
+2023-11-01,Las Condes,Casa,252946000.0,-1.9,21
+2023-11-01,Las Condes,Departamento,195929000.0,-2.6,33
+2023-12-01,Las Condes,Casa,240900000.0,-0.0,84
+2023-12-01,Las Condes,Departamento,206235000.0,2.8,18
+2023-01-01,Providencia,Casa,223848000.0,-0.5,77
+2023-01-01,Providencia,Departamento,176935000.0,4.2,31
+2023-02-01,Providencia,Casa,220541000.0,4.6,62
+2023-02-01,Providencia,Departamento,184020000.0,4.6,39
+2023-03-01,Providencia,Casa,216669000.0,5.0,34
+2023-03-01,Providencia,Departamento,194791000.0,-1.7,75
+2023-04-01,Providencia,Casa,226597000.0,4.8,59
+2023-04-01,Providencia,Departamento,179423000.0,1.8,23
+2023-05-01,Providencia,Casa,231430000.0,3.9,53
+2023-05-01,Providencia,Departamento,192571000.0,-1.8,54
+2023-06-01,Providencia,Casa,220120000.0,1.9,14
+2023-06-01,Providencia,Departamento,190074000.0,-2.4,69
+2023-07-01,Providencia,Casa,209603000.0,3.7,25
+2023-07-01,Providencia,Departamento,183790000.0,-0.9,75
+2023-08-01,Providencia,Casa,214895000.0,2.8,35
+2023-08-01,Providencia,Departamento,186940000.0,-2.8,35
+2023-09-01,Providencia,Casa,218918000.0,-2.6,26
+2023-09-01,Providencia,Departamento,190385000.0,4.8,76
+2023-10-01,Providencia,Casa,215433000.0,-0.9,68
+2023-10-01,Providencia,Departamento,177050000.0,4.6,30
+2023-11-01,Providencia,Casa,235677000.0,1.0,79
+2023-11-01,Providencia,Departamento,177740000.0,4.1,34
+2023-12-01,Providencia,Casa,232805000.0,3.5,24
+2023-12-01,Providencia,Departamento,189703000.0,1.0,38
+2023-01-01,Ñuñoa,Casa,153954000.0,-0.5,42
+2023-01-01,Ñuñoa,Departamento,130706000.0,2.1,30
+2023-02-01,Ñuñoa,Casa,162907000.0,3.9,55
+2023-02-01,Ñuñoa,Departamento,129695000.0,0.0,73
+2023-03-01,Ñuñoa,Casa,160786000.0,-1.4,70
+2023-03-01,Ñuñoa,Departamento,128466000.0,-2.9,72
+2023-04-01,Ñuñoa,Casa,160522000.0,0.3,57
+2023-04-01,Ñuñoa,Departamento,137755000.0,1.8,69
+2023-05-01,Ñuñoa,Casa,150445000.0,-1.7,37
+2023-05-01,Ñuñoa,Departamento,131603000.0,3.2,38
+2023-06-01,Ñuñoa,Casa,153499000.0,-1.0,32
+2023-06-01,Ñuñoa,Departamento,135605000.0,2.1,24
+2023-07-01,Ñuñoa,Casa,157570000.0,2.8,69
+2023-07-01,Ñuñoa,Departamento,123762000.0,0.3,19
+2023-08-01,Ñuñoa,Casa,158012000.0,2.2,55
+2023-08-01,Ñuñoa,Departamento,125632000.0,-1.5,19
+2023-09-01,Ñuñoa,Casa,160456000.0,-1.4,15
+2023-09-01,Ñuñoa,Departamento,133616000.0,1.4,81
+2023-10-01,Ñuñoa,Casa,147580000.0,1.5,45
+2023-10-01,Ñuñoa,Departamento,132367000.0,-2.7,46
+2023-11-01,Ñuñoa,Casa,161822000.0,1.2,59
+2023-11-01,Ñuñoa,Departamento,125661000.0,-1.9,70
+2023-12-01,Ñuñoa,Casa,163078000.0,4.8,74
+2023-12-01,Ñuñoa,Departamento,133470000.0,3.9,19
+2023-01-01,Santiago Centro,Casa,131531000.0,-0.7,19
+2023-01-01,Santiago Centro,Departamento,113071000.0,1.1,60
+2023-02-01,Santiago Centro,Casa,133105000.0,0.7,20
+2023-02-01,Santiago Centro,Departamento,113849000.0,0.5,83
+2023-03-01,Santiago Centro,Casa,131375000.0,-1.4,68
+2023-03-01,Santiago Centro,Departamento,116815000.0,0.8,75
+2023-04-01,Santiago Centro,Casa,142399000.0,4.9,76
+2023-04-01,Santiago Centro,Departamento,115730000.0,-1.0,85
+2023-05-01,Santiago Centro,Casa,133553000.0,4.7,17
+2023-05-01,Santiago Centro,Departamento,111640000.0,1.4,46
+2023-06-01,Santiago Centro,Casa,129625000.0,1.7,78
+2023-06-01,Santiago Centro,Departamento,112851000.0,-1.1,75
+2023-07-01,Santiago Centro,Casa,128912000.0,-1.6,72
+2023-07-01,Santiago Centro,Departamento,113878000.0,0.9,57
+2023-08-01,Santiago Centro,Casa,128693000.0,1.0,21
+2023-08-01,Santiago Centro,Departamento,114389000.0,3.4,70
+2023-09-01,Santiago Centro,Casa,131871000.0,3.3,54
+2023-09-01,Santiago Centro,Departamento,107284000.0,-1.7,68
+2023-10-01,Santiago Centro,Casa,138236000.0,-1.8,26
+2023-10-01,Santiago Centro,Departamento,109720000.0,3.5,36
+2023-11-01,Santiago Centro,Casa,131363000.0,2.0,58
+2023-11-01,Santiago Centro,Departamento,107295000.0,-2.3,67
+2023-12-01,Santiago Centro,Casa,136897000.0,4.8,71
+2023-12-01,Santiago Centro,Departamento,108871000.0,0.8,47
+2023-01-01,Vitacura,Casa,254005000.0,4.4,82
+2023-01-01,Vitacura,Departamento,214389000.0,-1.0,12
+2023-02-01,Vitacura,Casa,263134000.0,1.7,47
+2023-02-01,Vitacura,Departamento,234331000.0,-2.6,63
+2023-03-01,Vitacura,Casa,280690000.0,0.8,10
+2023-03-01,Vitacura,Departamento,220009000.0,-0.4,96
+2023-04-01,Vitacura,Casa,282422000.0,4.6,84
+2023-04-01,Vitacura,Departamento,222691000.0,4.2,98
+2023-05-01,Vitacura,Casa,265622000.0,-0.9,59
+2023-05-01,Vitacura,Departamento,217691000.0,-2.7,95
+2023-06-01,Vitacura,Casa,278342000.0,-1.7,46
+2023-06-01,Vitacura,Departamento,229845000.0,2.3,45
+2023-07-01,Vitacura,Casa,270700000.0,4.2,93
+2023-07-01,Vitacura,Departamento,217539000.0,-1.6,92
+2023-08-01,Vitacura,Casa,251866000.0,2.8,22
+2023-08-01,Vitacura,Departamento,216383000.0,0.3,24
+2023-09-01,Vitacura,Casa,273844000.0,-3.0,90
+2023-09-01,Vitacura,Departamento,227352000.0,-0.5,73
+2023-10-01,Vitacura,Casa,258536000.0,3.1,60
+2023-10-01,Vitacura,Departamento,216494000.0,0.2,72
+2023-11-01,Vitacura,Casa,280293000.0,-2.0,61
+2023-11-01,Vitacura,Departamento,218934000.0,3.4,16
+2023-12-01,Vitacura,Casa,279944000.0,-1.6,63
+2023-12-01,Vitacura,Departamento,236646000.0,3.0,77
+2023-01-01,La Reina,Casa,198656000.0,4.1,62
+2023-01-01,La Reina,Departamento,172152000.0,1.4,55
+2023-02-01,La Reina,Casa,195852000.0,1.4,22
+2023-02-01,La Reina,Departamento,174077000.0,2.4,99
+2023-03-01,La Reina,Casa,194945000.0,-1.1,88
+2023-03-01,La Reina,Departamento,167589000.0,0.7,87
+2023-04-01,La Reina,Casa,203884000.0,-1.5,90
+2023-04-01,La Reina,Departamento,161583000.0,4.2,14
+2023-05-01,La Reina,Casa,205603000.0,-2.4,73
+2023-05-01,La Reina,Departamento,160686000.0,3.7,51
+2023-06-01,La Reina,Casa,192092000.0,2.7,54
+2023-06-01,La Reina,Departamento,161703000.0,-2.9,47
+2023-07-01,La Reina,Casa,189974000.0,-2.2,34
+2023-07-01,La Reina,Departamento,167310000.0,1.2,16
+2023-08-01,La Reina,Casa,206148000.0,4.1,33
+2023-08-01,La Reina,Departamento,157905000.0,4.5,51
+2023-09-01,La Reina,Casa,193333000.0,0.9,79
+2023-09-01,La Reina,Departamento,158766000.0,3.1,77
+2023-10-01,La Reina,Casa,199599000.0,3.9,21
+2023-10-01,La Reina,Departamento,167263000.0,0.6,48
+2023-11-01,La Reina,Casa,197017000.0,-0.0,19
+2023-11-01,La Reina,Departamento,164165000.0,-0.8,74
+2023-12-01,La Reina,Casa,196761000.0,2.2,29
+2023-12-01,La Reina,Departamento,164540000.0,-0.6,30
+2023-01-01,Maipú,Casa,88593000.0,-0.1,96
+2023-01-01,Maipú,Departamento,76850000.0,0.5,81
+2023-02-01,Maipú,Casa,85173000.0,1.4,76
+2023-02-01,Maipú,Departamento,72497000.0,-2.5,24
+2023-03-01,Maipú,Casa,89802000.0,1.1,44
+2023-03-01,Maipú,Departamento,74821000.0,0.8,79
+2023-04-01,Maipú,Casa,86848000.0,3.2,71
+2023-04-01,Maipú,Departamento,77169000.0,2.9,52
+2023-05-01,Maipú,Casa,87294000.0,1.3,96
+2023-05-01,Maipú,Departamento,75570000.0,-2.9,15
+2023-06-01,Maipú,Casa,93378000.0,-2.4,14
+2023-06-01,Maipú,Departamento,73070000.0,4.8,38
+2023-07-01,Maipú,Casa,87289000.0,2.1,12
+2023-07-01,Maipú,Departamento,76322000.0,1.2,52
+2023-08-01,Maipú,Casa,90679000.0,4.6,48
+2023-08-01,Maipú,Departamento,70546000.0,3.5,46
+2023-09-01,Maipú,Casa,91394000.0,4.6,20
+2023-09-01,Maipú,Departamento,76315000.0,-0.1,68
+2023-10-01,Maipú,Casa,84252000.0,4.1,67
+2023-10-01,Maipú,Departamento,74693000.0,4.2,55
+2023-11-01,Maipú,Casa,88981000.0,3.9,76
+2023-11-01,Maipú,Departamento,78180000.0,4.5,44
+2023-12-01,Maipú,Casa,91098000.0,-1.0,69
+2023-12-01,Maipú,Departamento,75286000.0,3.3,20
+2023-01-01,La Florida,Casa,93229000.0,-1.4,17
+2023-01-01,La Florida,Departamento,81760000.0,-1.8,24
+2023-02-01,La Florida,Casa,93700000.0,3.3,83
+2023-02-01,La Florida,Departamento,79296000.0,2.9,49
+2023-03-01,La Florida,Casa,96772000.0,2.0,26
+2023-03-01,La Florida,Departamento,84927000.0,-2.6,96
+2023-04-01,La Florida,Casa,95201000.0,1.6,91
+2023-04-01,La Florida,Departamento,78837000.0,1.0,41
+2023-05-01,La Florida,Casa,99672000.0,-1.2,15
+2023-05-01,La Florida,Departamento,83435000.0,0.3,66
+2023-06-01,La Florida,Casa,95058000.0,-0.3,60
+2023-06-01,La Florida,Departamento,82336000.0,-0.0,35
+2023-07-01,La Florida,Casa,94698000.0,-1.6,39
+2023-07-01,La Florida,Departamento,78316000.0,2.1,61
+2023-08-01,La Florida,Casa,95143000.0,-0.4,31
+2023-08-01,La Florida,Departamento,80512000.0,4.4,71
+2023-09-01,La Florida,Casa,98692000.0,3.7,41
+2023-09-01,La Florida,Departamento,76772000.0,2.0,26
+2023-10-01,La Florida,Casa,97870000.0,2.9,80
+2023-10-01,La Florida,Departamento,79394000.0,1.1,65
+2023-11-01,La Florida,Casa,101918000.0,3.1,98
+2023-11-01,La Florida,Departamento,78254000.0,0.5,33
+2023-12-01,La Florida,Casa,96913000.0,4.3,99
+2023-12-01,La Florida,Departamento,81271000.0,-2.7,34
+2023-01-01,Puente Alto,Casa,81977000.0,-0.6,15
+2023-01-01,Puente Alto,Departamento,63143000.0,0.4,93
+2023-02-01,Puente Alto,Casa,78853000.0,0.4,19
+2023-02-01,Puente Alto,Departamento,67105000.0,2.6,34
+2023-03-01,Puente Alto,Casa,79642000.0,3.7,10
+2023-03-01,Puente Alto,Departamento,68670000.0,0.2,36
+2023-04-01,Puente Alto,Casa,82658000.0,3.7,60
+2023-04-01,Puente Alto,Departamento,64633000.0,0.7,51
+2023-05-01,Puente Alto,Casa,81254000.0,2.4,11
+2023-05-01,Puente Alto,Departamento,67430000.0,1.7,40
+2023-06-01,Puente Alto,Casa,81441000.0,-1.2,38
+2023-06-01,Puente Alto,Departamento,69833000.0,-0.2,41
+2023-07-01,Puente Alto,Casa,80033000.0,4.8,98
+2023-07-01,Puente Alto,Departamento,66588000.0,-3.0,91
+2023-08-01,Puente Alto,Casa,79323000.0,-0.1,84
+2023-08-01,Puente Alto,Departamento,64984000.0,-2.7,83
+2023-09-01,Puente Alto,Casa,79183000.0,-0.3,32
+2023-09-01,Puente Alto,Departamento,66301000.0,-1.3,39
+2023-10-01,Puente Alto,Casa,80613000.0,4.1,57
+2023-10-01,Puente Alto,Departamento,67989000.0,3.1,69
+2023-11-01,Puente Alto,Casa,78752000.0,3.9,49
+2023-11-01,Puente Alto,Departamento,64269000.0,-1.0,78
+2023-12-01,Puente Alto,Casa,78874000.0,-1.8,72
+2023-12-01,Puente Alto,Departamento,71385000.0,2.1,30
+2023-01-01,Conchalí,Casa,63149000.0,1.9,14
+2023-01-01,Conchalí,Departamento,55705000.0,-1.2,91
+2023-02-01,Conchalí,Casa,66981000.0,-1.2,86
+2023-02-01,Conchalí,Departamento,54581000.0,-0.5,85
+2023-03-01,Conchalí,Casa,66450000.0,0.3,41
+2023-03-01,Conchalí,Departamento,54289000.0,-2.7,75
+2023-04-01,Conchalí,Casa,68797000.0,-0.7,36
+2023-04-01,Conchalí,Departamento,59026000.0,4.9,52
+2023-05-01,Conchalí,Casa,69455000.0,2.9,36
+2023-05-01,Conchalí,Departamento,53700000.0,-1.9,85
+2023-06-01,Conchalí,Casa,68287000.0,2.3,21
+2023-06-01,Conchalí,Departamento,56398000.0,3.2,87
+2023-07-01,Conchalí,Casa,62846000.0,2.5,11
+2023-07-01,Conchalí,Departamento,56191000.0,2.1,23
+2023-08-01,Conchalí,Casa,67388000.0,-2.5,84
+2023-08-01,Conchalí,Departamento,53399000.0,2.5,93
+2023-09-01,Conchalí,Casa,64632000.0,1.0,51
+2023-09-01,Conchalí,Departamento,52863000.0,1.7,76
+2023-10-01,Conchalí,Casa,69035000.0,3.8,55
+2023-10-01,Conchalí,Departamento,56436000.0,3.4,54
+2023-11-01,Conchalí,Casa,64749000.0,0.5,85
+2023-11-01,Conchalí,Departamento,56658000.0,2.8,26
+2023-12-01,Conchalí,Casa,71877000.0,0.2,68
+2023-12-01,Conchalí,Departamento,54486000.0,-2.0,80
+2023-01-01,Huechuraba,Casa,129162000.0,-0.4,13
+2023-01-01,Huechuraba,Departamento,101393000.0,-2.9,27
+2023-02-01,Huechuraba,Casa,128508000.0,4.5,17
+2023-02-01,Huechuraba,Departamento,105058000.0,-1.0,22
+2023-03-01,Huechuraba,Casa,122904000.0,1.6,15
+2023-03-01,Huechuraba,Departamento,104688000.0,-1.9,34
+2023-04-01,Huechuraba,Casa,122670000.0,4.1,73
+2023-04-01,Huechuraba,Departamento,109374000.0,0.1,38
+2023-05-01,Huechuraba,Casa,124341000.0,-2.9,75
+2023-05-01,Huechuraba,Departamento,103294000.0,-0.5,63
+2023-06-01,Huechuraba,Casa,123795000.0,4.8,42
+2023-06-01,Huechuraba,Departamento,105007000.0,-0.5,99
+2023-07-01,Huechuraba,Casa,122639000.0,2.1,21
+2023-07-01,Huechuraba,Departamento,105158000.0,-0.8,50
+2023-08-01,Huechuraba,Casa,127225000.0,4.8,48
+2023-08-01,Huechuraba,Departamento,105527000.0,-2.6,86
+2023-09-01,Huechuraba,Casa,124199000.0,0.9,90
+2023-09-01,Huechuraba,Departamento,105704000.0,-0.6,81
+2023-10-01,Huechuraba,Casa,118754000.0,3.6,70
+2023-10-01,Huechuraba,Departamento,98842000.0,2.5,62
+2023-11-01,Huechuraba,Casa,126887000.0,-0.7,33
+2023-11-01,Huechuraba,Departamento,107499000.0,-0.9,50
+2023-12-01,Huechuraba,Casa,130715000.0,-2.4,63
+2023-12-01,Huechuraba,Departamento,107803000.0,2.5,43
+2023-01-01,Independencia,Casa,87685000.0,-0.4,82
+2023-01-01,Independencia,Departamento,70732000.0,4.7,67
+2023-02-01,Independencia,Casa,92995000.0,0.4,39
+2023-02-01,Independencia,Departamento,77599000.0,-2.2,20
+2023-03-01,Independencia,Casa,88514000.0,4.7,66
+2023-03-01,Independencia,Departamento,75680000.0,2.6,47
+2023-04-01,Independencia,Casa,92751000.0,0.1,84
+2023-04-01,Independencia,Departamento,73595000.0,-0.8,57
+2023-05-01,Independencia,Casa,89266000.0,2.2,42
+2023-05-01,Independencia,Departamento,72889000.0,0.8,60
+2023-06-01,Independencia,Casa,85811000.0,1.5,38
+2023-06-01,Independencia,Departamento,73362000.0,-0.8,93
+2023-07-01,Independencia,Casa,89698000.0,-0.9,68
+2023-07-01,Independencia,Departamento,75961000.0,0.2,84
+2023-08-01,Independencia,Casa,84497000.0,3.6,58
+2023-08-01,Independencia,Departamento,70914000.0,0.3,98
+2023-09-01,Independencia,Casa,90063000.0,1.6,20
+2023-09-01,Independencia,Departamento,72383000.0,-0.9,16
+2023-10-01,Independencia,Casa,88736000.0,4.1,70
+2023-10-01,Independencia,Departamento,71793000.0,1.6,94
+2023-11-01,Independencia,Casa,91786000.0,2.5,97
+2023-11-01,Independencia,Departamento,77057000.0,-1.9,41
+2023-12-01,Independencia,Casa,95844000.0,0.9,20
+2023-12-01,Independencia,Departamento,76004000.0,2.6,99
+2023-01-01,Recoleta,Casa,95241000.0,1.1,89
+2023-01-01,Recoleta,Departamento,79621000.0,-2.1,95
+2023-02-01,Recoleta,Casa,98370000.0,1.0,65
+2023-02-01,Recoleta,Departamento,77996000.0,4.4,42
+2023-03-01,Recoleta,Casa,98335000.0,-1.6,44
+2023-03-01,Recoleta,Departamento,85316000.0,3.4,94
+2023-04-01,Recoleta,Casa,98497000.0,2.7,55
+2023-04-01,Recoleta,Departamento,85403000.0,2.7,43
+2023-05-01,Recoleta,Casa,97262000.0,-1.0,61
+2023-05-01,Recoleta,Departamento,86220000.0,-1.4,18
+2023-06-01,Recoleta,Casa,94165000.0,3.3,41
+2023-06-01,Recoleta,Departamento,79327000.0,-0.2,68
+2023-07-01,Recoleta,Casa,97344000.0,2.9,40
+2023-07-01,Recoleta,Departamento,80355000.0,-2.2,16
+2023-08-01,Recoleta,Casa,95910000.0,-0.6,65
+2023-08-01,Recoleta,Departamento,76562000.0,-2.0,87
+2023-09-01,Recoleta,Casa,96976000.0,2.7,85
+2023-09-01,Recoleta,Departamento,79991000.0,3.1,57
+2023-10-01,Recoleta,Casa,94504000.0,-0.3,54
+2023-10-01,Recoleta,Departamento,79516000.0,-0.3,40
+2023-11-01,Recoleta,Casa,95038000.0,-2.3,14
+2023-11-01,Recoleta,Departamento,79101000.0,-0.3,63
+2023-12-01,Recoleta,Casa,97601000.0,4.1,82
+2023-12-01,Recoleta,Departamento,84124000.0,2.8,42
+2023-01-01,Macul,Casa,117673000.0,4.2,21
+2023-01-01,Macul,Departamento,107429000.0,1.6,37
+2023-02-01,Macul,Casa,125288000.0,1.0,12
+2023-02-01,Macul,Departamento,102943000.0,2.9,55
+2023-03-01,Macul,Casa,123223000.0,-0.3,87
+2023-03-01,Macul,Departamento,105651000.0,1.2,96
+2023-04-01,Macul,Casa,124317000.0,0.8,83
+2023-04-01,Macul,Departamento,108218000.0,-0.9,23
+2023-05-01,Macul,Casa,128370000.0,-0.9,93
+2023-05-01,Macul,Departamento,100982000.0,-0.5,14
+2023-06-01,Macul,Casa,127122000.0,4.1,67
+2023-06-01,Macul,Departamento,108369000.0,-2.0,17
+2023-07-01,Macul,Casa,127489000.0,3.8,84
+2023-07-01,Macul,Departamento,105835000.0,-0.1,29
+2023-08-01,Macul,Casa,127784000.0,-0.5,45
+2023-08-01,Macul,Departamento,104146000.0,-0.7,83
+2023-09-01,Macul,Casa,117339000.0,3.3,64
+2023-09-01,Macul,Departamento,102922000.0,0.7,34
+2023-10-01,Macul,Casa,123264000.0,0.6,62
+2023-10-01,Macul,Departamento,100838000.0,-2.4,23
+2023-11-01,Macul,Casa,128202000.0,-2.8,87
+2023-11-01,Macul,Departamento,106785000.0,3.1,85
+2023-12-01,Macul,Casa,123380000.0,3.6,55
+2023-12-01,Macul,Departamento,110967000.0,4.1,12
+2023-01-01,San Miguel,Casa,130653000.0,1.2,71
+2023-01-01,San Miguel,Departamento,107813000.0,-1.0,44
+2023-02-01,San Miguel,Casa,134309000.0,4.6,78
+2023-02-01,San Miguel,Departamento,111123000.0,-2.6,25
+2023-03-01,San Miguel,Casa,134893000.0,3.5,44
+2023-03-01,San Miguel,Departamento,113343000.0,4.1,92
+2023-04-01,San Miguel,Casa,131772000.0,-2.7,37
+2023-04-01,San Miguel,Departamento,115235000.0,4.6,16
+2023-05-01,San Miguel,Casa,128475000.0,4.1,77
+2023-05-01,San Miguel,Departamento,117891000.0,0.2,47
+2023-06-01,San Miguel,Casa,129114000.0,-2.1,62
+2023-06-01,San Miguel,Departamento,109730000.0,-2.4,89
+2023-07-01,San Miguel,Casa,128139000.0,3.0,35
+2023-07-01,San Miguel,Departamento,113548000.0,-2.1,78
+2023-08-01,San Miguel,Casa,126006000.0,0.6,76
+2023-08-01,San Miguel,Departamento,105827000.0,-0.7,87
+2023-09-01,San Miguel,Casa,136428000.0,-2.6,25
+2023-09-01,San Miguel,Departamento,105287000.0,-1.6,97
+2023-10-01,San Miguel,Casa,133229000.0,0.7,98
+2023-10-01,San Miguel,Departamento,111083000.0,2.3,39
+2023-11-01,San Miguel,Casa,133089000.0,1.8,16
+2023-11-01,San Miguel,Departamento,109491000.0,-1.4,11
+2023-12-01,San Miguel,Casa,137883000.0,1.5,44
+2023-12-01,San Miguel,Departamento,111832000.0,2.2,22

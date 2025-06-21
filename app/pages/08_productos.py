@@ -42,29 +42,51 @@ except ImportError:
 
 def load_productos_data():
     """Carga los datos de productos comerciales"""
-    productos = {
-        "mvp": {
-            "nombre": "🤖 Generador de Reportes Automáticos",
-            "estado": "En Desarrollo",
-            "descripcion": "IA que transforma datos brutos en reportes ejecutivos profesionales con insights automáticos",
-            "precio_basico": 99,
-            "precio_pro": 299,
-            "precio_enterprise": 799,
-            "lanzamiento": "Julio 2025",
-            "demo_disponible": True,
-            "caracteristicas": [
-                "Automatización total con IA",
-                "Compatible con Excel, CSV, APIs",
-                "Insights narrativos con GPT-4",
-                "Gráficos automáticos profesionales",
-                "Templates por industria",
-                "Exportación PDF/PowerPoint"
-            ],
-            "mercado_objetivo": "Gerencias, consultoras, startups, agencias",
-            "roi_cliente": "90% ahorro de tiempo vs reportes manuales"
-        },
-        "pipeline": [
+    productos = {        "mvp": [
             {
+                "nombre": "🤖 Generador de Reportes Automáticos",
+                "estado": "En Desarrollo",
+                "descripcion": "IA que transforma datos brutos en reportes ejecutivos profesionales con insights automáticos",
+                "precio_basico": 99,
+                "precio_pro": 299,
+                "precio_enterprise": 799,
+                "lanzamiento": "Julio 2025",
+                "demo_disponible": True,
+                "caracteristicas": [
+                    "Automatización total con IA",
+                    "Compatible con Excel, CSV, APIs",
+                    "Insights narrativos con GPT-4",
+                    "Gráficos automáticos profesionales",
+                    "Templates por industria",
+                    "Exportación PDF/PowerPoint"
+                ],
+                "mercado_objetivo": "Gerencias, consultoras, startups, agencias",
+                "roi_cliente": "90% ahorro de tiempo vs reportes manuales",
+                "url": "pages/09_generador_reportes.py"
+            },
+            {
+                "nombre": "🏠 Predictor Inmobiliario Chile",
+                "estado": "MVP Disponible",
+                "descripcion": "ML para tasaciones precisas usando datos de propiedades en tiempo real",
+                "precio_basico": 50,
+                "precio_pro": 120,
+                "precio_enterprise": 500,
+                "lanzamiento": "Junio 2025",
+                "demo_disponible": True,
+                "caracteristicas": [
+                    "Ensemble ML de alta precisión",
+                    "Análisis de tendencias por comuna",
+                    "Propiedades comparables",
+                    "Alertas y recomendaciones",
+                    "Exportación de informes PDF",
+                    "API REST para integraciones"
+                ],
+                "mercado_objetivo": "Inmobiliarias, tasadores, inversionistas, bancos",
+                "roi_cliente": "70% reducción tiempo de tasación",
+                "url": "pages/10_predictor_inmobiliario.py"
+            }
+        ],
+        "pipeline": [            {
                 "nombre": "📊 Predictor de Churn de Clientes",
                 "estado": "Planificado Q4 2025",
                 "descripcion": "ML que identifica clientes en riesgo y recomienda acciones de retención",
@@ -77,13 +99,6 @@ def load_productos_data():
                 "descripcion": "NLP que monitorea menciones y analiza sentimiento en tiempo real",
                 "precio_range": "$149-899/mes",
                 "mercado": "Marcas, políticos, crisis management"
-            },
-            {
-                "nombre": "🏠 Predictor Inmobiliario Chile",
-                "estado": "Planificado Q1 2026",
-                "descripcion": "ML para tasaciones precisas usando datos SII e INE",
-                "precio_range": "$50-500/mes",
-                "mercado": "Inmobiliarias, tasadores, inversionistas"
             },
             {
                 "nombre": "📋 Analizador Licitaciones ChileCompra",
@@ -386,19 +401,25 @@ def main():
         
         st.markdown("### 📈 Métricas Clave")
         st.metric("Productos Roadmap", "10")
-        st.metric("ARR Potencial", "$486K-2.1M")
+        st.metric("ARR Potencial", "$486K-2.1M")        
         st.metric("Tiempo MVP", "30-45 días")
     
     # Métricas overview
     mostrar_metricas_overview()
-    
     st.markdown("---")
     
     # Cargar datos de productos
     productos_data = load_productos_data()
     
     # Mostrar producto MVP
-    mostrar_producto_mvp(productos_data["mvp"])
+    # Si hay más de un producto en la lista, mostrar el predictor inmobiliario
+    if len(productos_data["mvp"]) > 1:
+        # Buscar el producto inmobiliario
+        predictor_inmobiliario = next((p for p in productos_data["mvp"] if "Predictor Inmobiliario" in p["nombre"]), productos_data["mvp"][0])
+        mostrar_producto_mvp(predictor_inmobiliario)
+    else:
+        # Si solo hay un producto, mostrar ese
+        mostrar_producto_mvp(productos_data["mvp"][0])
     
     st.markdown("---")
     

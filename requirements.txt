@@ -1,12 +1,36 @@
-# Dependencias principales para el portafolio de Data Science
+# Archivo de requirements optimizado para Streamlit Cloud
+# Solo las dependencias esenciales que se usan realmente en la aplicación
+
+# Framework principal
 streamlit>=1.24.0
-pandas>=2.0.0
-numpy>=1.24.0
+
+# Análisis de datos y ML - Versiones específicas para compatibilidad
+setuptools>=65.5.1
+wheel>=0.38.4
+numpy==1.24.3      # Versión estable más reciente
+pandas>=2.0.3      # Compatible con numpy 1.24.3
+scikit-learn==1.2.0  # Compatible con numpy 1.24.3
+joblib==1.2.0      # Versión compatible con scikit-learn 1.2.2
+
+# Visualizaciones
 plotly>=5.14.0
-folium>=0.15.0
-streamlit-folium>=0.15.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
+
+# Mapas interactivos
+folium>=0.15.0
+streamlit-folium>=0.15.0
+
+# Cache y optimización
 psutil>=5.9.0
 cachetools>=5.3.0
 python-dateutil>=2.8.0
+branca>=0.6.0
+
+# Monitoreo de archivos
+watchdog==3.0.0
+pathtools==0.1.2
+
+# Utilidades
+openpyxl>=3.1.2  # Para leer archivos Excel
+xlrd>=2.0.1      # Para archivos Excel más antiguos
