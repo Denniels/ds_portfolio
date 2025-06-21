@@ -133,10 +133,12 @@ docker/
 
 # Archivos de configuración cloud
 cloudbuild.yaml
-setup.py
 
 # NO ignorar archivos críticos para Streamlit Cloud
 !packages.txt
+!preinstall.py
+!runtime.txt
+!setup.py
 
 # ==============================================================================
 # DOCUMENTACIÓN TEMPORAL
