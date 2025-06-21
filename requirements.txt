@@ -1,23 +1,27 @@
-# Dependencias básicas de sistema (pre-instalación)
-setuptools==65.5.1
+# Core dependencies
+setuptools==66.1.1
 wheel==0.38.4
-pip>=23.0.1
+pip==23.0.1
 
-# Core dependencies for Streamlit Cloud (versiones binarias)
---only-binary=:all: numpy
-numpy==1.23.5
+# Scientific Computing Stack
+numpy>=1.21.0,<2.0.0
+pandas>=1.5.3,<2.0.0
+scipy>=1.10.1,<2.0.0
+scikit-learn>=1.2.2,<2.0.0
 
---only-binary=:all: pandas
-pandas==1.5.3
-
---only-binary=:all: scipy
-scipy==1.10.1
-
+# Visualization and Web
 streamlit==1.24.0
 plotly==5.13.1
+matplotlib>=3.7.1,<4.0.0
+seaborn>=0.12.2,<1.0.0
+folium>=0.14.0,<1.0.0
+streamlit-folium>=0.11.1,<1.0.0
 
-# Machine Learning (versiones binarias)
---only-binary=:all: scikit-learn
+# Machine Learning
+joblib>=1.2.0,<2.0.0
+
+# Optimizations
+numba>=0.56.4,<1.0.0
 scikit-learn==1.2.2
 
 --only-binary=:all: joblib

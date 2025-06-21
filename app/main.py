@@ -68,15 +68,41 @@ IS_CLOUD_RUN = os.getenv('CLOUD_RUN_SERVICE', 'false').lower() == 'true'
 # Configuración específica para Streamlit Cloud
 if IS_STREAMLIT_CLOUD:
     try:
-        # Intentar importar dependencias críticas
+        # Verificar dependencias críticas de forma silenciosa
         import numpy as np
+        np.set_printoptions(precision=3, suppress=True)
+        os.environ['OPENBLAS_NUM_THREADS'] = '1'
+        os.environ['MKL_NUM_THREADS'] = '1'
+        
         import pandas as pd
+        pd.options.mode.chained_assignment = None
+        
+        import scipy
         import sklearn
         logger.info("Dependencias críticas cargadas correctamente")
+        
     except ImportError as e:
         logger.error(f"Error al cargar dependencias críticas: {str(e)}")
-        st.error("Error al cargar dependencias críticas")
+        st.error("""
+        ⚠️ Error al cargar dependencias críticas
+        
+        Por favor, verifica:
+        1. La instalación de numpy y otras dependencias científicas
+        2. La compatibilidad de versiones entre paquetes
+        3. La disponibilidad de recursos del sistema
+        """)
         st.stop()
+        
+    # Configurar opciones de rendimiento
+    try:
+        import streamlit.config as st_config
+        st_config.set_option('server.maxUploadSize', 200)
+        st_config.set_option('server.maxMessageSize', 200)
+        st_config.set_option('server.enableXsrfProtection', True)
+        st_config.set_option('server.enableCORS', False)
+        logger.info("Configuración de Streamlit Cloud optimizada")
+    except Exception as e:
+        logger.warning(f"No se pudo optimizar configuración: {str(e)}")
 
 # Importar módulo de monitoreo de salud
 try:
