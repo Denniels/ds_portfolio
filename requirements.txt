@@ -1,36 +1,34 @@
-# Archivo de requirements optimizado para Streamlit Cloud
-# Solo las dependencias esenciales que se usan realmente en la aplicación
+# Core dependencies with fixed versions for Streamlit Community Cloud
+streamlit==1.24.0
+numpy==1.23.5
+pandas==1.5.3
+plotly==5.13.1
+scikit-learn==1.2.2
+joblib==1.2.0
 
-# Framework principal
-streamlit>=1.24.0
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+folium==0.14.0
+streamlit-folium==0.11.1
 
-# Análisis de datos y ML - Versiones específicas para compatibilidad
-setuptools>=65.5.1
-wheel>=0.38.4
-numpy==1.24.3      # Versión estable más reciente
-pandas>=2.0.3      # Compatible con numpy 1.24.3
-scikit-learn==1.2.0  # Compatible con numpy 1.24.3
-joblib==1.2.0      # Versión compatible con scikit-learn 1.2.2
+# Data handling
+openpyxl==3.1.2
+xlrd==2.0.1
+python-dateutil==2.8.2
 
-# Visualizaciones
-plotly>=5.14.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-
-# Mapas interactivos
-folium>=0.15.0
-streamlit-folium>=0.15.0
-
-# Cache y optimización
-psutil>=5.9.0
-cachetools>=5.3.0
-python-dateutil>=2.8.0
-branca>=0.6.0
-
-# Monitoreo de archivos
+# System utilities
+psutil==5.9.5
 watchdog==3.0.0
 pathtools==0.1.2
+setuptools==65.5.1
+wheel==0.40.0
 
-# Utilidades
-openpyxl>=3.1.2  # Para leer archivos Excel
-xlrd>=2.0.1      # Para archivos Excel más antiguos
+# Cloud services
+python-dotenv==1.0.0
+google-cloud-bigquery==3.11.4
+google-cloud-storage==2.10.0
+
+# Cache and optimization
+cachetools==5.3.1
+branca==0.6.0
