@@ -197,7 +197,10 @@ extraccion_datos_temp.md
 !app/data/inmobiliario/indices_inmobiliarios.json
 !app/data/inmobiliario/datos_propiedades.csv
 !app/data/inmobiliario/tendencias.csv
-!app/data/modelos/modelo_ensemble.pkl
+!app/data/inmobiliario/modelo_inmobiliario.pkl
+!app/data/inmobiliario/scaler_inmobiliario.pkl
+!app/models/modelo_inmobiliario.pkl
+!app/models/scaler_inmobiliario.pkl
 
 # ==============================================================================
 # ARCHIVOS CRÍTICOS PARA STREAMLIT CLOUD (NO IGNORAR)
