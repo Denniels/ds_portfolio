@@ -4,25 +4,25 @@
 # ARCHIVOS DE SISTEMA Y TEMPORALES
 # ==============================================================================
 
-# Credenciales y secretos
-credentials/
-*.json
-*/**/credentials/
-*/**/*.json
-!app/data/feedback/comments.json
-!app/data/cache/emisiones_anuales.json
-!app/data/cache/emisiones_regionales.json
-!app/data/cache/cache_metadata.json
-!app/data/cache/calidad_agua_metadata.json
-!app/data/cache/calidad_agua_estaciones.json
-!app/data/cache/calidad_agua_conclusiones.json
-!app/data/cache/demografia_data.json
+# Credenciales y secretos privados
+credentials/private_*.json
+*/**/credentials/private_*.json
+
+# Permitir todos los archivos de datos y modelos necesarios
+!app/data/**/*.json
+!app/data/**/*.pkl
+!app/data/**/*.csv
+!app/data/**/*.xlsx
+!app/models/**/*.pkl
 !app/config/*.json
 
-# ARCHIVOS JSON CRÍTICOS PARA STREAMLIT CLOUD - PRESUPUESTO PÚBLICO
-!app/data/processed/resumen_ejecutivo.json
-!app/data/processed/datos_visualizacion.json
-!app/data/processed/metadatos.json
+# Archivos específicos críticos
+!app/data/cache/*.json
+!app/data/feedback/comments.json
+!app/data/processed/*.json
+!app/data/processed/*.pkl
+!app/data/raw/*.csv
+!app/data/results/*.json
 
 # Archivos de datos demográficos incluidos para despliegue
 # demografia_data.json se incluye para que esté disponible en Streamlit Community Cloud
