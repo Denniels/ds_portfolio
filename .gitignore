@@ -194,3 +194,24 @@ extraccion_datos_temp.md
 !app/data/inmobiliario/datos_propiedades.csv
 !app/data/inmobiliario/tendencias.csv
 !app/data/modelos/modelo_ensemble.pkl
+
+# ==============================================================================
+# ARCHIVOS CRÍTICOS PARA STREAMLIT CLOUD (NO IGNORAR)
+# ==============================================================================
+
+# Configuración de Streamlit
+!.streamlit/
+!.streamlit/config.toml
+!.streamlit/secrets.toml
+!.streamlit/healthcheck.py
+
+# Archivos de configuración esenciales
+!requirements.txt
+!runtime.txt
+!app/main.py
+!app/pages/
+
+# Cache esencial de datos
+!app/data/cache/
+!app/data/cache/.gitkeep
+!app/data/cache/*.json

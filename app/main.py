@@ -16,6 +16,27 @@ current_dir = Path(__file__).parent
 if str(current_dir) not in sys.path:
     sys.path.append(str(current_dir))
 
+# Importar módulo de monitoreo de salud
+try:
+    from .streamlit.healthcheck import check_app_health, init_session, cleanup_session
+except ImportError:
+    def check_app_health(): return True
+    def init_session(): pass
+    def cleanup_session(): pass
+
+# Configuración de manejo de errores
+st.set_option('client.showErrorDetails', False)
+st.set_option('server.enableCORS', True)
+st.set_option('server.enableXsrfProtection', True)
+st.set_option('server.maxUploadSize', 200)
+st.set_option('deprecation.showfileUploaderEncoding', False)
+
+# Inicializar sesión y verificar salud
+init_session()
+if not check_app_health():
+    st.error("La aplicación está experimentando problemas técnicos. Por favor, intenta recargar la página.")
+    st.stop()
+
 # Configuración de la página
 st.set_page_config(
     page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
