@@ -59,3 +59,19 @@ class StreamlitCloudOptimizer:
             'cpu_available': random.uniform(70, 85),
             'disk_free_gb': random.uniform(0.8, 1.2)
         }
+    
+    def start_monitoring(self):
+        """Alias para start_measurement - compatibilidad"""
+        return self.start_measurement()
+    
+    def stop_monitoring(self):
+        """Alias para stop_measurement - compatibilidad"""
+        return self.stop_measurement()
+
+    def get_current_usage(self):
+        """Retorna uso actual simulado para Streamlit Cloud"""
+        return {
+            'cpu_percent': 8.0,
+            'memory_mb': 120.0,
+            'status': 'Streamlit Cloud'
+        }

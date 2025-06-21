@@ -117,7 +117,7 @@ def main():
         """, unsafe_allow_html=True)
         
         if st.button("Ver Demografía", key="btn3"):
-            st.switch_page("pages/03_demografia.py")
+            st.switch_page("pages/03_demografia_bigquery.py")
     
     with col4:
         st.markdown("""

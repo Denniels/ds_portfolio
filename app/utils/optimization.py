@@ -35,6 +35,22 @@ class ResourceOptimizer:
             'elapsed_time': elapsed
         }
 
+    def start_monitoring(self):
+        """Alias para start_measurement - compatibilidad con páginas existentes"""
+        return self.start_measurement()
+    
+    def stop_monitoring(self):
+        """Alias para stop_measurement - compatibilidad con páginas existentes"""
+        return self.stop_measurement()
+
+    def get_current_usage(self):
+        """Retorna uso actual simulado"""
+        return {
+            'cpu_percent': 10.0,
+            'memory_mb': 150.0,
+            'status': 'Optimizado'
+        }
+
 class DataManager:
     """
     Gestor de datos simplificado
@@ -83,6 +99,13 @@ class DataManager:
             return True
         except Exception:
             return False
+
+    def get_last_update(self, filename):
+        """Devuelve la fecha de última modificación del archivo en caché"""
+        filepath = self.cache_dir / filename
+        if filepath.exists():
+            return filepath.stat().st_mtime
+        return None
 
 # Funciones de utilidad simplificadas
 def get_memory_usage():

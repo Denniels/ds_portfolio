@@ -4,3 +4,4 @@ timestamp,precio_uf,is_demo,comuna,tipo_propiedad,metros_totales,metros_construi
 2025-06-20 21:14:16.050284,2450.0,False,Maipú,Departamento,140.0,90.0,4,2,1,25,1,Suroriente,50000,False,False
 2025-06-20 21:15:28.336699,5150.0,False,Providencia,Departamento,120.0,90.0,4,2,1,25,9,Suroriente,70000,False,True
 2025-06-20 21:45:13.682367,3800.0,False,Conchalí,Departamento,100.0,90.0,2,2,1,10,5,Norte,120000,False,True
+2025-06-20 23:14:02.732267,3800.0,False,Huechuraba,Departamento,100.0,90.0,4,2,1,25,8,Norte,100000,False,False

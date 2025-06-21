@@ -48,3 +48,19 @@ class LocalOptimizer:
             'memory_gb': 0.4,
             'status': 'Local Development'
         }
+    
+    def start_monitoring(self):
+        """Alias para start_measurement - compatibilidad"""
+        return self.start_measurement()
+    
+    def stop_monitoring(self):
+        """Alias para stop_measurement - compatibilidad"""
+        return self.stop_measurement()
+
+    def get_current_usage(self):
+        """Retorna uso actual simulado"""
+        return {
+            'cpu_percent': 12.5,
+            'memory_gb': 0.4,
+            'status': 'Local Development'
+        }
