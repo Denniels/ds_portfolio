@@ -10,26 +10,46 @@ import sys
 import os
 from datetime import datetime
 import streamlit.components.v1 as components
+import logging
+
+# Configurar logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Asegurarse de que app/ esté en el path de Python
 current_dir = Path(__file__).parent
 if str(current_dir) not in sys.path:
     sys.path.append(str(current_dir))
 
+# Determinar el entorno
+IS_STREAMLIT_CLOUD = os.getenv('IS_STREAMLIT_CLOUD', 'false').lower() == 'true'
+IS_CLOUD_RUN = os.getenv('CLOUD_RUN_SERVICE', 'false').lower() == 'true'
+
+# Configuración específica para Streamlit Cloud
+if IS_STREAMLIT_CLOUD:
+    try:
+        # Intentar importar dependencias críticas
+        import numpy as np
+        import pandas as pd
+        import sklearn
+        logger.info("Dependencias críticas cargadas correctamente")
+    except ImportError as e:
+        logger.error(f"Error al cargar dependencias críticas: {str(e)}")
+        st.error("Error al cargar dependencias críticas")
+        st.stop()
+
 # Importar módulo de monitoreo de salud
 try:
-    from .streamlit.healthcheck import check_app_health, init_session, cleanup_session
-except ImportError:
+    from app.streamlit.healthcheck import check_app_health, init_session, cleanup_session
+    logger.info("Módulo de healthcheck cargado correctamente")
+except ImportError as e:
+    logger.warning(f"No se pudo cargar el módulo de healthcheck: {str(e)}")
     def check_app_health(): return True
     def init_session(): pass
     def cleanup_session(): pass
-
-# Configuración de manejo de errores
-st.set_option('client.showErrorDetails', False)
-st.set_option('server.enableCORS', True)
-st.set_option('server.enableXsrfProtection', True)
-st.set_option('server.maxUploadSize', 200)
-st.set_option('deprecation.showfileUploaderEncoding', False)
 
 # Inicializar sesión y verificar salud
 init_session()
@@ -38,20 +58,21 @@ if not check_app_health():
     st.stop()
 
 # Configuración de la página
-st.set_page_config(
-    page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+try:
+    st.set_page_config(
+        page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
+        page_icon="📊",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
+except Exception as e:
+    logger.error(f"Error al configurar la página: {str(e)}")
+    # Continuar con la configuración por defecto
 
 # Importaciones
 from utils.cache_manager import CacheManager
 from utils.contact_components import add_page_footer, add_sidebar_contact
-
-# Determinar el entorno
-IS_STREAMLIT_CLOUD = os.getenv('IS_STREAMLIT_CLOUD', 'false').lower() == 'true'
-IS_CLOUD_RUN = os.getenv('CLOUD_RUN_SERVICE', 'false').lower() == 'true'
+# from utils.sidebar_components import create_simple_sidebar
 
 # Configuración según plataforma
 if IS_STREAMLIT_CLOUD:
