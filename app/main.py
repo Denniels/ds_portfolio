@@ -1,23 +1,60 @@
 """
 Aplicación principal del portafolio - Versión simplificada y optimizada
 """
+# Importar environment.py primero para configurar el ambiente
+import importlib.util
+import sys
+from pathlib import Path
+
+# Cargar environment.py
+env_path = Path(__file__).parent.parent / '.streamlit' / 'environment.py'
+if env_path.exists():
+    spec = importlib.util.spec_from_file_location("environment", env_path)
+    environment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(environment)
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from pathlib import Path
 import json
-import sys
 import os
 from datetime import datetime
 import streamlit.components.v1 as components
 import logging
+from functools import lru_cache
 
 # Configurar logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler(Path(__file__).parent / 'app.log')
+    ]
 )
 logger = logging.getLogger(__name__)
+
+# Configuración de la página - debe estar al inicio
+try:
+    st.set_page_config(
+        page_title="Portfolio de Ciencia de Datos",
+        page_icon="📊",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
+except Exception as e:
+    logger.error(f"Error al configurar la página: {str(e)}")
+
+# Caché para componentes pesados
+@lru_cache(maxsize=32)
+def get_cached_component(name: str):
+    try:
+        cache_file = Path(__file__).parent / 'data' / 'cache' / f'{name}.html'
+        if cache_file.exists():
+            return cache_file.read_text(encoding='utf-8')
+    except Exception as e:
+        logger.error(f"Error al cargar componente cacheado {name}: {str(e)}")
+    return None
 
 # Asegurarse de que app/ esté en el path de Python
 current_dir = Path(__file__).parent
@@ -56,19 +93,6 @@ init_session()
 if not check_app_health():
     st.error("La aplicación está experimentando problemas técnicos. Por favor, intenta recargar la página.")
     st.stop()
-
-# Configuración de la página - DEBE SER LA PRIMERA LLAMADA A STREAMLIT
-st.set_page_config(
-    page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'Get Help': None,
-        'Report a bug': None,
-        'About': None
-    }
-)
 
 # Importaciones
 from utils.cache_manager import CacheManager

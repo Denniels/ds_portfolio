@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=69.0.0", "wheel>=0.42.0"]
+requires = ["setuptools==66.1.1", "wheel==0.38.4"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,9 +8,16 @@ version = "1.0.0"
 description = "Portfolio de Ciencia de Datos"
 requires-python = ">=3.9,<3.10"
 dependencies = [
-    "streamlit>=1.28.0,<2.0.0",
-    "numpy>=1.24.0,<2.0.0",
-    "pandas>=2.0.0,<3.0.0",
+    "streamlit==1.24.0",
+    "numpy==1.24.3",
+    "pandas==1.5.3",
+    "plotly==5.13.1",
+    "scikit-learn==1.2.2",
+    "joblib==1.2.0",
+    "matplotlib==3.7.1",
+    "seaborn==0.12.2",
+    "folium==0.14.0",
+    "streamlit-folium==0.11.1"
 ]
 
 [tool.setuptools]
