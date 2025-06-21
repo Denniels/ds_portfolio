@@ -57,17 +57,18 @@ if not check_app_health():
     st.error("La aplicación está experimentando problemas técnicos. Por favor, intenta recargar la página.")
     st.stop()
 
-# Configuración de la página
-try:
-    st.set_page_config(
-        page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
-        page_icon="📊",
-        layout="wide",
-        initial_sidebar_state="expanded"
-    )
-except Exception as e:
-    logger.error(f"Error al configurar la página: {str(e)}")
-    # Continuar con la configuración por defecto
+# Configuración de la página - DEBE SER LA PRIMERA LLAMADA A STREAMLIT
+st.set_page_config(
+    page_title="Aprendizajes en Ciencia de Datos: Proyectos y Análisis",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
+    }
+)
 
 # Importaciones
 from utils.cache_manager import CacheManager
@@ -150,45 +151,57 @@ except FileNotFoundError:
 
 # Estructura principal de la página
 def main():
-    # Iniciar medición de recursos
-    optimizer.start_measurement()
-    
-    # Crear sidebar simplificado solo con enlaces de contacto
-    create_simple_sidebar()
+    """Función principal de la aplicación"""
+    try:
+        # Asegurarse de que el estado de la sesión está inicializado
+        if 'initialized' not in st.session_state:
+            st.session_state.initialized = True
+            st.session_state.metrics = {}
+            st.session_state.sidebar_state = 'expanded'
 
-    # Renderizar página principal
-    render_main_page()
-    
-    # Agregar footer con enlaces en la parte inferior de la página principal
-    add_footer()
-    
-    # Finalizar medición y obtener métricas
-    metrics = optimizer.stop_measurement()
-    
-    # Panel de monitoreo de recursos en el sidebar
-    with st.sidebar:
-        st.markdown("### 📊 Monitor Local de Recursos")
+        # Iniciar medición de recursos
+        try:
+            optimizer.start_measurement()
+        except Exception as e:
+            logger.error(f"Error al iniciar medición: {str(e)}")
         
-        # Advertencia clara de simulación
-        st.warning("⚠️ SIMULACIÓN LOCAL\nNo hay conexión con GCP")
-        
-        # Obtener métricas simuladas
-        metrics = optimizer.stop_measurement()
-        optimizer.start_measurement()  # Reiniciar medición
-        
-        st.markdown("#### Uso de Recursos Locales")
-        # Mostrar métricas locales
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric(
-                label="CPU Local",
-                value=f"{metrics['cpu_percent']:.1f}%"
-            )
-        with col2:
-            st.metric(
-                label="Memoria Local",
-                value=f"{metrics['memory_gb']:.2f}GB"
-            )
+        # Estructura principal con manejo de errores
+        try:
+            # Sidebar con enlaces de contacto
+            with st.sidebar:
+                create_simple_sidebar()
+                
+                # Monitor de recursos (solo si no estamos en Streamlit Cloud)
+                if not IS_STREAMLIT_CLOUD:
+                    try:
+                        st.markdown("### 📊 Monitor Local de Recursos")
+                        st.warning("⚠️ SIMULACIÓN LOCAL\nNo hay conexión con GCP")
+                        
+                        # Obtener y mostrar métricas
+                        metrics = optimizer.stop_measurement()
+                        optimizer.start_measurement()
+                        
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            st.metric("CPU Local", f"{metrics.get('cpu_percent', 0):.1f}%")
+                        with col2:
+                            st.metric("Memoria Local", f"{metrics.get('memory_gb', 0):.2f}GB")
+                    except Exception as e:
+                        logger.error(f"Error al mostrar métricas: {str(e)}")
+                        
+            # Contenido principal
+            render_main_page()
+            
+            # Footer
+            add_footer()
+            
+        except Exception as e:
+            logger.error(f"Error en la estructura principal: {str(e)}")
+            st.error("Ha ocurrido un error al cargar la página. Por favor, recarga la página.")
+            
+    except Exception as e:
+        logger.error(f"Error crítico en main(): {str(e)}")
+        st.error("Error crítico en la aplicación. Por favor, contacta al administrador.")
         
         st.markdown("#### Simulación de Costos")
         st.info("💡 Estos valores son simulados\nNo representan costos reales de GCP")
@@ -318,26 +331,42 @@ def add_footer():
     """
     add_page_footer()
 
+@st.cache_data(ttl=3600)
+def get_cached_html_content():
+    """Retorna el contenido HTML cacheado para mejorar el rendimiento"""
+    return {
+        'title': '<h1 class="page-title">📊 Portafolio de Data Science</h1>',
+        'hero': """
+        <div class="hero-section">
+            <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 0;">
+                La transición de la electricidad y la automatización industrial al mundo de los datos ha sido un desafío apasionante. 
+                Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.
+                <br><br>
+                Aquí encontrarás estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
+            </p>
+        </div>
+        """,
+        'projects_title': '<h2 class="section-title">Proyectos Destacados</h2>'
+    }
+
 def render_main_page():
-    """Renderiza la página principal con estilos CSS optimizados"""
-    
-    # Título principal con clase CSS
-    st.markdown('<h1 class="page-title">📊 Portafolio de Data Science</h1>', unsafe_allow_html=True)
-    
-    # Sección hero
-    st.markdown("""
-    <div class="hero-section">
-        <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 0;">
-            La transición de la electricidad y la automatización industrial al mundo de los datos ha sido un desafío apasionante. 
-            Este portafolio es una presentación de mis habilidades en análisis de datos y programación en Python.
-            <br><br>
-            Aquí encontrarás estudios realizados con metodologías rigurosas, mostrando la capacidad de transformar datos en conocimiento estructurado.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Proyectos destacados con cards
-    st.markdown('<h2 class="section-title">Proyectos Destacados</h2>', unsafe_allow_html=True)
+    """Renderiza la página principal con estilos CSS optimizados y manejo de errores"""
+    try:
+        # Obtener contenido HTML cacheado
+        content = get_cached_html_content()
+        
+        # Título principal
+        st.markdown(content['title'], unsafe_allow_html=True)
+        
+        # Sección hero
+        st.markdown(content['hero'], unsafe_allow_html=True)
+        
+        # Proyectos destacados
+        st.markdown(content['projects_title'], unsafe_allow_html=True)
+        
+    except Exception as e:
+        logger.error(f"Error al renderizar la página principal: {str(e)}")
+        st.error("Error al cargar el contenido. Por favor, recarga la página.")
     
     # Grid de proyectos usando HTML/CSS
     st.markdown("""
