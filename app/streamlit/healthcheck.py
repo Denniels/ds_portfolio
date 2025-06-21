@@ -15,20 +15,20 @@ def check_dependencies():
     """
     try:
         required_packages = {
-            'numpy': '1.24.3',
-            'pandas': '2.0.3',
-            'scikit-learn': '1.2.2',
+            'numpy': '1.26.0',
+            'pandas': '2.1.0',
+            'scikit-learn': '1.3.0',
             'streamlit': '1.28.0',
-            'joblib': '1.2.0',
-            'setuptools': '65.5.1'
+            'joblib': '1.3.0',
+            'setuptools': '69.0.2'
         }
         
         issues = []
-        for package, exact_version in required_packages.items():
+        for package, min_version in required_packages.items():
             try:
                 installed = pkg_resources.get_distribution(package)
-                if installed.version != exact_version:
-                    issues.append(f"{package} {installed.version} (requiere == {exact_version})")
+                if pkg_resources.parse_version(installed.version) < pkg_resources.parse_version(min_version):
+                    issues.append(f"{package} {installed.version} (requiere >= {min_version})")
             except pkg_resources.DistributionNotFound:
                 issues.append(f"{package} no instalado")
         
