@@ -1,113 +1,159 @@
-# Guía de Despliegue en Streamlit Community Cloud
+# Guía de Despliegue en Streamlit Community Cloud (Corregida Junio 2025)
 
-Esta guía proporciona los pasos necesarios para desplegar correctamente la aplicación de portafolio en Streamlit Community Cloud.
+Esta guía proporciona los pasos necesarios para desplegar correctamente la aplicación de portafolio en Streamlit Community Cloud, con especial atención a los problemas de dependencias.
 
 ## Prerrequisitos
 
 - Cuenta en [Streamlit Community Cloud](https://streamlit.io/cloud)
 - Repositorio de GitHub con la aplicación
 - Acceso de Streamlit Community Cloud a tu repositorio de GitHub
+- Archivos de configuración correctamente configurados
 
-## Preparación del repositorio
+## Archivos críticos para el despliegue
 
-1. **Verificar estructura del proyecto**:
-   ```
-   app/
-   ├── main.py               # Punto de entrada principal
-   ├── components/           # Componentes reutilizables
-   ├── config/               # Configuración
-   ├── data/                 # Datos y caché
-   ├── pages/                # Páginas de la aplicación
-   ├── static/               # Archivos estáticos
-   ├── tests/                # Herramientas de diagnóstico (no en navegación)
-   └── utils/                # Utilidades
-   ```
+### 1. `runtime.txt`
 
-2. **Asegurar que el archivo de requisitos sea correcto**:
-   - Utilizar `requirements_streamlit_cloud.txt` para el despliegue en Streamlit Cloud
-   - Verificar que todas las dependencias necesarias estén listadas con sus versiones
+Especifica la versión de Python:
 
-3. **Comprobar configuración de entorno**:
-   - Verificar que la aplicación detecte correctamente cuando está en entorno cloud
-   - Asegurar que las rutas a archivos funcionen correctamente en la nube
+```
+python-3.9.13
+```
 
-## Proceso de despliegue
+### 2. `packages.txt`
 
-1. **Iniciar sesión en Streamlit Community Cloud**:
-   - Ir a [https://streamlit.io/cloud](https://streamlit.io/cloud)
-   - Iniciar sesión con tu cuenta (GitHub, Google, etc.)
+Lista optimizada de dependencias del sistema:
 
-2. **Nuevo despliegue**:
-   - Hacer clic en "New app"
-   - Seleccionar el repositorio que contiene la aplicación
-   - Seleccionar la rama (normalmente `main` o `master`)
+```
+build-essential
+python3-dev
+python3-pip
+python3-setuptools
+python3-wheel
+libpango1.0-dev
+python3-tk
+libfreetype6-dev
+pkg-config
+libxft-dev
+libopenblas-dev
+liblapack-dev
+gfortran
+libblas-dev
+libatlas-base-dev
+libaec-dev
+libsuitesparse-dev
+cmake
+python3-venv
+python3-numpy
+python3-scipy
+```
 
-3. **Configuración del despliegue**:
-   - **Ruta principal**: `app/main.py`
-   - **Requisitos**: `requirements_streamlit_cloud.txt`
-   - **Python versión**: 3.9 (recomendado para compatibilidad)
-   - **Ajustes adicionales**: No son necesarios para esta aplicación
+### 3. `requirements_streamlit_cloud.txt`
 
-4. **Desplegar**:
-   - Hacer clic en "Deploy!"
-   - Esperar a que el despliegue se complete (puede tomar unos minutos)
+Dependencias de Python con versiones compatibles:
 
-## Verificación post-despliegue
+```
+# Core dependencies for Streamlit Cloud
+streamlit>=1.28.0,<1.32.0
+numpy>=1.22.0,<1.26.0
+pandas>=2.0.0,<2.1.0
+# Versiones específicas para evitar problemas con OpenBLAS
+scipy>=1.10.0,<1.11.0
+scikit-learn>=1.3.0,<1.4.0
+...
+```
 
-1. **Prueba inicial**:
-   - Navegar a la URL proporcionada por Streamlit Cloud
-   - Verificar que la página principal cargue correctamente
+### 4. `preinstall.py`
 
-2. **Pruebas de funcionalidad**:
-   - Navegar a la página del predictor inmobiliario
-   - Realizar varias predicciones y verificar que los resultados sean diferentes
-   - Probar otras páginas para asegurar que funcionan según lo esperado
+Script optimizado que se ejecuta antes de la instalación principal para configurar el entorno.
 
-3. **Diagnóstico en caso de problemas**:
-   - Si encuentras problemas, puedes ejecutar las herramientas de diagnóstico:
-     - Navegar manualmente a: `[URL_de_tu_app]/tests/diagnostico_cloud`
-     - Seguir las instrucciones en la herramienta para identificar problemas
+Características clave:
+- Sistema de reintentos para instalaciones críticas
+- Verificación de instalación de dependencias críticas
+- Instalaciones alternativas cuando fallan las principales
+- Mejor manejo de errores y logging
+
+### 5. `.streamlit/config.toml`
+
+Configuración optimizada de Streamlit para la nube:
+
+```toml
+[server]
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 200
+maxMessageSize = 200
+headless = true
+
+[browser]
+gatherUsageStats = false
+serverAddress = "0.0.0.0"
+
+[theme]
+primaryColor = "#667eea"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#333333"
+
+[runner]
+fastReruns = true
+
+[client]
+showErrorDetails = true
+toolbarMode = "minimal"
+
+[logger]
+level = "info"
+
+[global]
+developmentMode = false
+disableWatchdogWarning = true
+suppressDeprecationWarnings = true
+```
 
 ## Solución de problemas comunes
 
-### Problema: La aplicación no se inicia
-**Solución**: Verificar los logs de Streamlit para identificar errores de instalación o inicialización.
+### Error en la instalación de dependencias del sistema
 
-### Problema: Error al cargar modelos
-**Solución**: 
-- Verificar que los archivos del modelo estén correctamente incluidos en el repositorio
-- Asegurar que las rutas a los modelos sean correctas para el entorno cloud
+Si ves errores como `installer returned a non-zero exit code`:
 
-### Problema: Predicciones idénticas
-**Solución**: 
-- Ya está solucionado con la implementación de IDs únicos
-- Si persiste, usar la herramienta de diagnóstico para verificar el estado de la sesión y el caché
+- Verifica que no hay dependencias duplicadas en `packages.txt`
+- Asegúrate de que `packages.txt` tiene las dependencias correctas para OpenBLAS y otras bibliotecas científicas
+- Considera añadir más dependencias específicas del sistema para SciPy y NumPy
 
-### Problema: Error en módulos o importaciones
-**Solución**:
-- Verificar que todos los requisitos estén correctamente especificados en `requirements_streamlit_cloud.txt`
-- Comprobar que las importaciones relativas sean correctas
+### Error en la instalación de SciPy/NumPy
 
-## Mantenimiento
+Para solucionar problemas con SciPy o NumPy:
 
-### Actualizaciones
-Para actualizar la aplicación desplegada:
-1. Hacer cambios en el repositorio
-2. Hacer commit y push a la rama conectada
-3. Streamlit Cloud actualizará automáticamente la aplicación
+- Asegúrate de que las dependencias del sistema estén correctamente configuradas en `packages.txt`
+- Verifica que `preinstall.py` instala correctamente NumPy antes de SciPy
+- Utiliza versiones específicas y compatibles de estos paquetes
+- Asegúrate de que OpenBLAS está correctamente instalado
 
-### Reinicio manual
-Si necesitas reiniciar la aplicación:
-1. Ir al dashboard de Streamlit Cloud
-2. Encontrar tu aplicación
-3. Hacer clic en los tres puntos (⋮) y seleccionar "Reboot app"
+### Optimización de memoria y rendimiento
+
+Para mejorar el rendimiento en Streamlit Cloud:
+
+1. **Utiliza caché eficientemente:**
+   - Implementa `st.cache_data` y `st.cache_resource` para operaciones costosas
+   - Utiliza TTL (Time To Live) apropiados para datos que cambian
+
+2. **Manejo eficiente de datos:**
+   - Carga datos solo cuando sea necesario
+   - Libera memoria después de operaciones intensivas
+   - Utiliza procesamiento por lotes para datos grandes
+
+## Verificación final
+
+Después de desplegar, verifica:
+
+1. Los logs de instalación en Streamlit Cloud
+2. Que todas las páginas se carguen correctamente
+3. Que las visualizaciones interactivas funcionen
+4. Que el predictor inmobiliario funcione como se espera
 
 ## Recursos adicionales
 
+- Ver `SOLUCION_DESPLIEGUE_CLOUD.md` para detalles de la solución implementada
+- Ver `ESTADO_FINAL_JUNIO_2025.md` para el estado final de la aplicación
 - [Documentación oficial de Streamlit](https://docs.streamlit.io/)
-- [Guía de despliegue de Streamlit](https://docs.streamlit.io/streamlit-cloud/get-started)
-- Para problemas específicos: Utilizar las herramientas de diagnóstico en `app/tests/`
-
----
-
-Actualizado: 22 de junio de 2024
+- [Foro de Streamlit](https://discuss.streamlit.io/)

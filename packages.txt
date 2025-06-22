@@ -12,7 +12,10 @@ libopenblas-dev
 liblapack-dev
 gfortran
 libblas-dev
-libblas-dev
-liblapack-dev
 libatlas-base-dev
-gfortran
+libaec-dev
+libsuitesparse-dev
+cmake
+python3-venv
+python3-numpy
+python3-scipy

@@ -1,59 +1,64 @@
-# Solución para Despliegue en Streamlit Cloud
+# Solución para Despliegue en Streamlit Cloud - Actualización Junio 2025
 
 ## Problema identificado
 
-La aplicación no se desplegaba correctamente en Streamlit Community Cloud debido a problemas con la instalación de dependencias, especialmente SciPy que requiere OpenBLAS. El error principal era:
+La aplicación no se desplegaba correctamente en Streamlit Community Cloud debido a problemas con la instalación de dependencias, especialmente SciPy que requiere OpenBLAS. Los errores principales eran:
 
 ```
-ERROR: Dependency "OpenBLAS" not found, tried pkgconfig
+[18:01:10] ❗️ installer returned a non-zero exit code
 ```
 
-## Cambios realizados
+Posteriormente se identificó un problema con versiones incompatibles:
 
-### 1. Actualización de `packages.txt`
-Se agregaron dependencias a nivel de sistema necesarias para OpenBLAS y otras bibliotecas científicas:
-- `libopenblas-dev`
-- `liblapack-dev`
-- `gfortran`
-- `libblas-dev`
+```
+ERROR: Could not find a version that satisfies the requirement scikit-learn==1.7.0
+```
 
-### 2. Mejora del script `preinstall.py`
-- Se actualizó para instalar primero dependencias críticas como NumPy y Cython
-- Se mejoró el manejo de errores y reportes
-- Se agregó verificación de la instalación de NumPy
+## Solución implementada (Junio 2025)
 
-### 3. Optimización de requisitos en `requirements_streamlit_cloud.txt`
-- Se cambiaron versiones fijas a rangos compatibles
-- Se especificaron versiones anteriores de SciPy y NumPy que son más estables en entornos cloud
-- Se evitaron versiones específicas que requieren compilación compleja
+Se realizaron los siguientes cambios para solucionar el problema:
 
-### 4. Actualización de la versión de Python
-- Se cambió a Python 3.9.13 que tiene mejor compatibilidad con las bibliotecas científicas
-- Python 3.9 tiene soporte para binarios pre-compilados de muchas dependencias
+### 1. Optimización de `preinstall.py`
 
-### 5. Mejora de configuración de Streamlit
-- Se actualizó `.streamlit/config.toml` con optimizaciones específicas para cloud
-- Se añadieron configuraciones para mejorar rendimiento y manejo de errores
+- Se añadió un sistema de reintentos para las instalaciones de paquetes críticos
+- Se implementó una función `run_command()` con mejor manejo de errores y reintentos
+- Se añadió verificación de instalación de módulos después de cada instalación
+- Se implementaron alternativas de instalación para numpy cuando falla la instalación principal
+- Se mejoró el sistema de logging para identificar mejor dónde ocurren los fallos
 
-### 6. Actualización del archivo `setup.py`
-- Se especificaron rangos de versiones compatibles en lugar de versiones fijas
-- Se agregaron dependencias críticas adicionales para garantizar su disponibilidad
-- Se limitó la versión de Python soportada
+### 2. Optimización de `packages.txt`
 
-## Beneficios de los cambios
+- Se eliminaron entradas duplicadas (libblas-dev, liblapack-dev)
+- Se añadieron dependencias adicionales para SciPy y paquetes científicos:
+  - libaec-dev
+  - libsuitesparse-dev
+  - cmake
+  - python3-venv
+  - python3-numpy
+  - python3-scipy
 
-1. **Mejor estabilidad**: Al usar versiones probadas y compatibles de las bibliotecas
-2. **Mayor rendimiento**: Las configuraciones optimizadas mejoran la velocidad de carga
-3. **Instalación más robusta**: Se manejan mejor las dependencias del sistema
-4. **Depuración más sencilla**: Se mejoró el logging y la visibilidad de errores
+### 3. Corrección de versiones de dependencias
 
-## Recomendaciones adicionales
+- Se ajustaron las versiones en `requirements.txt` para ser compatibles con Python 3.9.13:
+  - scikit-learn==1.3.2 (en lugar de 1.7.0 que no existe para Python 3.9)
+  - numpy==1.24.3 (en lugar de 1.26.4 que puede tener problemas de compatibilidad)
+  - scipy==1.10.1
+  - matplotlib==3.7.3 (en lugar de 3.8.2 que requiere Python 3.10+)
 
-1. **Cache de datos**: Considera implementar caché persistente para datos que no cambian frecuentemente
-2. **Carga progresiva**: Implementa carga progresiva para páginas grandes
-3. **Monitorización**: Agrega logging para seguir el rendimiento en producción
-4. **Fallback**: Implementa modos de fallback para funcionalidades que puedan fallar en la nube
+- Se ajustaron los rangos de versiones en `requirements_streamlit_cloud.txt`:
+  - numpy>=1.22.0,<1.25.0
+  - scikit-learn>=1.2.0,<1.4.0
+  - matplotlib>=3.7.0,<3.8.0
 
----
+- Se mantuvo Python 3.9.13 como versión específica para compatibilidad con binarios precompilados
 
-**Fecha**: 22 de junio de 2025
+## Próximos pasos
+
+1. Verificar que la aplicación se despliegue correctamente en Streamlit Community Cloud
+2. Monitorear los logs para detectar cualquier otro error que pueda surgir
+3. Considerar la posibilidad de añadir más optimizaciones si es necesario
+
+## Documentación adicional
+
+- Ver `ESTADO_FINAL_JUNIO_2025.md` para el estado final de la aplicación
+- Ver `GUIA_DESPLIEGUE_CORREGIDA.md` para instrucciones detalladas de despliegue
