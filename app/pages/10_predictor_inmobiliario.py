@@ -75,23 +75,44 @@ def cargar_modelo():
     try:
         import joblib
         import json
+        import logging
+        import os
         
         # Intentar cargar el modelo y archivos relacionados
         model_path = DATA_DIR / "modelo_inmobiliario.pkl"
         scaler_path = DATA_DIR / "scaler_inmobiliario.pkl"
         info_path = DATA_DIR / "model_info.json"
         
-        if not all(p.exists() for p in [model_path, scaler_path, info_path]):
-            st.error("No se encontraron todos los archivos necesarios del modelo")
-            return _crear_modelo_demo()
+        # Verificar que los archivos existen
+        for path, name in [(model_path, "modelo"), (scaler_path, "scaler"), (info_path, "info")]:
+            if not path.exists():
+                st.error(f"No se encontró el archivo {name} en {path}")
+                return _crear_modelo_demo(f"Archivo no encontrado: {path}")
+                
+        # Log de rutas para debugging
+        st.session_state['model_paths'] = {
+            'model': str(model_path),
+            'scaler': str(scaler_path),
+            'info': str(info_path)
+        }
         
         # Cargar información del modelo
         with open(info_path, 'r', encoding='utf-8') as f:
             model_info = json.load(f)
+            
+        # Verificar que la información del modelo contiene los campos necesarios
+        required_fields = ['feature_names', 'version']
+        for field in required_fields:
+            if field not in model_info:
+                st.error(f"El archivo de información del modelo no contiene el campo requerido: {field}")
+                return _crear_modelo_demo(f"Campo faltante en model_info.json: {field}")
         
         # Cargar modelo y scaler
         modelo = joblib.load(model_path)
         scaler = joblib.load(scaler_path)
+        
+        # Guardar las versiones del modelo para debugging
+        st.session_state['model_version'] = model_info.get('version', {})
         
         return {
             'model': modelo,
@@ -101,7 +122,13 @@ def cargar_modelo():
         }
             
     except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
         st.error(f"Error al cargar el modelo: {str(e)}")
+        st.session_state['model_load_error'] = {
+            'error': str(e),
+            'traceback': error_details
+        }
         return _crear_modelo_demo(str(e))
 
 def _crear_modelo_demo(error_msg=None):
@@ -200,19 +227,58 @@ def predecir_precio(modelo, input_data):
     
     try:
         # Intentar usar el modelo real
-        if hasattr(modelo, 'predict'):
-            # Preparar features en el orden correcto
-            X = np.array([
-                input_data['metros_totales'],
-                input_data['metros_construidos'],
-                input_data['dormitorios'],
-                input_data['banos'],
-                input_data['estacionamientos'],
-                input_data['antiguedad_anos']
-            ]).reshape(1, -1)
+        if hasattr(modelo, 'predict') and 'model' in modelo and 'feature_names' in modelo:
+            # Crear un diccionario con todas las características inicializadas a 0
+            features_dict = {feature: 0 for feature in modelo['feature_names']}
+            
+            # Asignar valores para características numéricas directas
+            numeric_features = ['metros_totales', 'metros_construidos', 'dormitorios', 
+                               'banos', 'estacionamientos', 'antiguedad_anos']
+            
+            for feature in numeric_features:
+                if feature in features_dict and feature in input_data:
+                    features_dict[feature] = input_data[feature]
+            
+            # Asignar valor para piso si existe
+            if 'piso' in features_dict:
+                features_dict['piso'] = input_data.get('piso', 1)
+                
+            # Asignar valor para cercanía al metro
+            if 'cercania_metro' in features_dict:
+                features_dict['cercania_metro'] = 1 if input_data.get('cercania_metro', False) else 0
+            
+            # Asignar variables dummy para comuna
+            comuna_key = f"comuna_{input_data['comuna']}"
+            for feature in features_dict.keys():
+                if feature.startswith('comuna_') and feature == comuna_key:
+                    features_dict[feature] = 1
+            
+            # Asignar variables dummy para tipo de propiedad
+            tipo_key = f"tipo_propiedad_{input_data['tipo_propiedad']}"
+            for feature in features_dict.keys():
+                if feature.startswith('tipo_propiedad_') and feature == tipo_key:
+                    features_dict[feature] = 1
+            
+            # Asignar variables dummy para orientación
+            if 'orientacion' in input_data:
+                orientacion_key = f"orientacion_{input_data['orientacion']}"
+                for feature in features_dict.keys():
+                    if feature.startswith('orientacion_') and feature == orientacion_key:
+                        features_dict[feature] = 1
+            
+            # Crear array con las características en el orden correcto
+            X = np.array([[features_dict[feature] for feature in modelo['feature_names']]])
+            
+            # Aplicar el scaler si está disponible
+            if 'scaler' in modelo:
+                X = modelo['scaler'].transform(X)
             
             # Predecir precio en UF
-            precio_uf = float(modelo.predict(X)[0])
+            precio_uf = float(modelo['model'].predict(X)[0])
+            
+            # Imprimir para debugging (solo en desarrollo)
+            st.session_state['debug_features'] = features_dict
+            st.session_state['debug_prediction'] = precio_uf
             
         else:
             # Modo demo con cálculos más realistas
@@ -263,7 +329,7 @@ def predecir_precio(modelo, input_data):
             st.info(f"Se ha ajustado el precio a un valor más realista basado en el precio promedio de {precio_base:.0f} UF/m² para {input_data['comuna']}")
         
         # Registrar la predicción
-        log_prediction(input_data, precio_uf, not hasattr(modelo, 'predict'))
+        log_prediction(input_data, precio_uf, not (hasattr(modelo, 'predict') and 'model' in modelo))
         
         # Convertir y retornar los diferentes formatos de precio
         valor_uf = 36000  # Valor UF aproximado
@@ -923,13 +989,33 @@ def mostrar_faq():
 # Función principal
 def main():
     """Función principal que ejecuta la aplicación"""
+    # Inicializar variables de sesión para debugging si no existen
+    if 'debug_features' not in st.session_state:
+        st.session_state['debug_features'] = {}
+    if 'debug_prediction' not in st.session_state:
+        st.session_state['debug_prediction'] = None
+    if 'model_paths' not in st.session_state:
+        st.session_state['model_paths'] = {}
+    if 'model_version' not in st.session_state:
+        st.session_state['model_version'] = {}
+    if 'model_load_error' not in st.session_state:
+        st.session_state['model_load_error'] = None
+    
+    # Permitir modo debug con parámetro de URL ?debug=true
+    params = st.experimental_get_query_params()
+    debug_mode = 'debug' in params and params['debug'][0].lower() == 'true'
+    
     mostrar_header()
     add_sidebar_contact()
     
     # Menú de navegación en pestañas
-    tab1, tab2 = st.tabs(["🔍 Predictor de Precios", "📊 Índices Inmobiliarios"])
+    tab_names = ["🔍 Predictor de Precios", "📊 Índices Inmobiliarios"]
+    if debug_mode:
+        tab_names.append("🔧 Depuración")
     
-    with tab1:
+    tabs = st.tabs(tab_names)
+    
+    with tabs[0]:
         # Cargar datos y modelo
         datos_propiedades, tendencias = cargar_datos()
         modelo = cargar_modelo()
@@ -953,15 +1039,50 @@ def main():
                     # mostrar_resultados espera (precio_clp, precio_millones, precio_uf) o un solo valor en CLP
                     mostrar_resultados(resultados, input_data, datos_propiedades, tendencias)
     
-    with tab2:
+    with tabs[1]:
         # Mostrar dashboard de índices inmobiliarios
         mostrar_dashboard_indices()
     
+    # Panel de depuración si está habilitado
+    if debug_mode and len(tabs) > 2:
+        with tabs[2]:
+            st.header("Panel de Depuración")
+            
+            st.subheader("Información del Modelo")
+            st.json(st.session_state['model_version'])
+            
+            st.subheader("Rutas de Archivos")
+            st.json(st.session_state['model_paths'])
+            
+            if st.session_state['model_load_error']:
+                st.subheader("Error de Carga del Modelo")
+                st.error(st.session_state['model_load_error']['error'])
+                with st.expander("Detalles del error"):
+                    st.code(st.session_state['model_load_error']['traceback'])
+            
+            st.subheader("Características Usadas (última predicción)")
+            st.json(st.session_state['debug_features'])
+            
+            st.subheader("Resultado de Predicción Crudo")
+            st.write(f"Valor en UF (sin procesar): {st.session_state['debug_prediction']}")
+            
+            # Botón para probar carga de modelo
+            if st.button("Probar carga de modelo"):
+                try:
+                    import joblib
+                    model_path = Path(st.session_state['model_paths']['model'])
+                    scaler_path = Path(st.session_state['model_paths']['scaler'])
+                    
+                    modelo_test = joblib.load(model_path)
+                    scaler_test = joblib.load(scaler_path)
+                    
+                    st.success(f"Modelo cargado correctamente. Tipo: {type(modelo_test).__name__}")
+                    st.success(f"Scaler cargado correctamente. Tipo: {type(scaler_test).__name__}")
+                except Exception as e:
+                    st.error(f"Error al cargar modelo para prueba: {str(e)}")
+    
     # Mostrar planes y precios
     mostrar_planes_precios()
-    
-    # Mostrar casos de éxito
-    #mostrar_casos_exito()
     
     # Mostrar FAQ
     mostrar_faq()
