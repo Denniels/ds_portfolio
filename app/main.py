@@ -8,6 +8,7 @@ from pathlib import Path
 import os
 import json
 from datetime import datetime
+from utils.navigation import navigate_to, nav_button, large_nav_button
 
 # Configuración de página PRIMERO
 st.set_page_config(
@@ -87,37 +88,19 @@ def main():
         st.markdown("""
         <div class="project-card">
             <h3>🏭 Análisis de Emisiones CO2</h3>
-            <p>Estudio comprehensivo de emisiones industriales en Chile</p>
-        </div>        """, unsafe_allow_html=True)
+            <p>Estudio comprehensivo de emisiones industriales en Chile</p>        </div>        """, unsafe_allow_html=True)
         
-        if st.button("Ver Análisis CO2", key="btn1"):
-            try:
-                st.switch_page("pages/01_emisiones_co2.py")
-            except AttributeError:
-                # Fallback para versiones de Streamlit que no tienen switch_page
-                st.markdown("""
-                <meta http-equiv="refresh" content="0;URL='01_emisiones_co2'" />
-                """, unsafe_allow_html=True)
-                st.info("Redirigiendo a análisis de emisiones CO2...")
-                st.stop()
+        # Botón grande para navegación
+        large_nav_button("Ver Análisis CO2", "01_emisiones_co2", key="btn_large_1")
     
     with col2:
         st.markdown("""
         <div class="project-card">
             <h3>💧 Calidad del Agua</h3>
-            <p>Análisis de parámetros de calidad en fuentes hídricas</p>
-        </div>        """, unsafe_allow_html=True)
+            <p>Análisis de parámetros de calidad en fuentes hídricas</p>        </div>        """, unsafe_allow_html=True)
         
-        if st.button("Ver Análisis Agua", key="btn2"):
-            try:
-                st.switch_page("pages/02_calidad_agua.py")
-            except AttributeError:
-                # Fallback para versiones de Streamlit que no tienen switch_page
-                st.markdown("""
-                <meta http-equiv="refresh" content="0;URL='02_calidad_agua'" />
-                """, unsafe_allow_html=True)
-                st.info("Redirigiendo a análisis de calidad del agua...")
-                st.stop()
+        # Botón grande para navegación
+        large_nav_button("Ver Análisis Agua", "02_calidad_agua", key="btn_large_2")
     
     # Segunda fila
     col3, col4 = st.columns(2)
@@ -126,37 +109,19 @@ def main():
         st.markdown("""
         <div class="project-card">
             <h3>👥 Análisis Demográfico</h3>
-            <p>Exploración de datos poblacionales de Chile</p>
-        </div>        """, unsafe_allow_html=True)
+            <p>Exploración de datos poblacionales de Chile</p>        </div>        """, unsafe_allow_html=True)
         
-        if st.button("Ver Demografía", key="btn3"):
-            try:
-                st.switch_page("pages/03_demografia_bigquery.py")
-            except AttributeError:
-                # Fallback para versiones de Streamlit que no tienen switch_page
-                st.markdown("""
-                <meta http-equiv="refresh" content="0;URL='03_demografia_bigquery'" />
-                """, unsafe_allow_html=True)
-                st.info("Redirigiendo a análisis demográfico...")
-                st.stop()
+        # Botón grande para navegación 
+        large_nav_button("Ver Demografía", "03_demografia", key="btn_large_3")
     
     with col4:
         st.markdown("""
         <div class="project-card">
             <h3>💰 Presupuesto Público</h3>
-            <p>Análisis de gastos gubernamentales y tendencias</p>
-        </div>        """, unsafe_allow_html=True)
+            <p>Análisis de gastos gubernamentales y tendencias</p>        </div>        """, unsafe_allow_html=True)
         
-        if st.button("Ver Presupuesto", key="btn4"):
-            try:
-                st.switch_page("pages/04_presupuesto_publico.py")
-            except AttributeError:
-                # Fallback para versiones de Streamlit que no tienen switch_page
-                st.markdown("""
-                <meta http-equiv="refresh" content="0;URL='04_presupuesto_publico'" />
-                """, unsafe_allow_html=True)
-                st.info("Redirigiendo a análisis de presupuesto público...")
-                st.stop()
+        # Botón grande para navegación
+        large_nav_button("Ver Presupuesto", "04_presupuesto_publico", key="btn_large_4")
     
     # Objetivo del portfolio
     st.markdown("---")

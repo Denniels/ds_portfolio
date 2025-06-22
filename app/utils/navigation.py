@@ -5,6 +5,100 @@ import streamlit as st
 from pathlib import Path
 import os
 
+def navigate_to(page_name):
+    """
+    Función robusta para navegar a una página específica
+    
+    Args:
+        page_name (str): Nombre de la página (sin extensión ni prefijo numérico)
+        
+    Returns:
+        bool: True si la navegación fue exitosa, False en caso contrario
+    """
+    # Directorio de páginas
+    pages_dir = Path(__file__).parent.parent / "pages"
+    
+    # Verificar si el nombre ya incluye la extensión .py
+    if page_name.endswith('.py'):
+        page_name = page_name[:-3]
+    
+    # Verificar si el nombre ya incluye el prefijo del directorio pages/
+    if page_name.startswith('pages/'):
+        page_name = page_name[6:]
+        
+    # Primero, buscar coincidencia exacta
+    for file_path in pages_dir.glob("*.py"):
+        if file_path.stem == page_name:
+            try:
+                st.switch_page(f"pages/{file_path.name}")
+                return True
+            except Exception:
+                # Fallback para versiones antiguas de Streamlit
+                st.markdown(f"""
+                <meta http-equiv="refresh" content="0;URL={file_path.stem}" />
+                """, unsafe_allow_html=True)
+                st.info(f"Redirigiendo a {file_path.stem}...")
+                st.stop()
+                return True
+    
+    # Segundo, buscar por número de prefijo + nombre
+    for file_path in pages_dir.glob("[0-9]*_*.py"):
+        # Extrae el nombre sin el prefijo numérico
+        name_without_prefix = '_'.join(file_path.stem.split('_')[1:])
+        if name_without_prefix.lower() == page_name.lower() or file_path.stem.lower() == page_name.lower():
+            try:
+                st.switch_page(f"pages/{file_path.name}")
+                return True
+            except Exception:
+                # Fallback para versiones antiguas de Streamlit
+                st.markdown(f"""
+                <meta http-equiv="refresh" content="0;URL={file_path.stem}" />
+                """, unsafe_allow_html=True)
+                st.info(f"Redirigiendo a {file_path.stem}...")
+                st.stop()
+                return True
+    
+    # Si no se encuentra, intentar con una búsqueda más flexible
+    for file_path in pages_dir.glob("*.py"):
+        if page_name.lower() in file_path.stem.lower():
+            try:
+                st.switch_page(f"pages/{file_path.name}")
+                return True
+            except Exception:
+                # Fallback para versiones antiguas de Streamlit
+                st.markdown(f"""
+                <meta http-equiv="refresh" content="0;URL={file_path.stem}" />
+                """, unsafe_allow_html=True)
+                st.info(f"Redirigiendo a {file_path.stem}...")
+                st.stop()
+                return True
+    
+    return False
+
+def nav_button(label, page_name, key=None):
+    """
+    Crea un botón que navega a una página específica
+    
+    Args:
+        label (str): Texto para el botón
+        page_name (str): Nombre de la página de destino
+        key (str, optional): Clave única para el botón
+    """
+    if st.button(label, key=key):
+        navigate_to(page_name)
+
+def large_nav_button(label, page_name, key=None):
+    """
+    Crea un botón grande de navegación que abarca todo el ancho
+    
+    Args:
+        label (str): Texto para el botón
+        page_name (str): Nombre de la página de destino
+        key (str, optional): Clave única para el botón
+    """
+    if st.button(label, key=key, use_container_width=True):
+        navigate_to(page_name)
+
 def create_back_button(label="← Volver al Inicio", path=None):
     """
     Crea un botón para regresar a la página principal

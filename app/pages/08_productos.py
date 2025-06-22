@@ -9,6 +9,15 @@ import plotly.graph_objects as go
 import plotly.express as px
 from pathlib import Path
 
+# Importar navegación robusta
+import sys
+from pathlib import Path
+current_dir = Path(__file__).parent
+parent_dir = current_dir.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+from utils.navigation import navigate_to
+
 # Configuración de la página
 st.set_page_config(
     page_title="Productos Comerciales - DS Portfolio",
@@ -176,7 +185,7 @@ def mostrar_producto_mvp(producto_mvp):
             if st.button("🎮 Probar Generador de Reportes", type="primary", use_container_width=True):
                 st.balloons()
                 st.success("🚀 ¡Demo integrada! Ve a la página 'Generador Reportes' para probar con datos ficticios")
-                st.markdown("👉 **[Ir al Generador de Reportes →](pages/09_generador_reportes.py)**", unsafe_allow_html=True)
+                navigate_to("09_generador_reportes")
     
     # Características técnicas
     st.markdown("#### ⚙️ Características Técnicas")
