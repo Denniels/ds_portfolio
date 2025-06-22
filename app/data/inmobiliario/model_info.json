@@ -22,10 +22,11 @@
     "orientacion_Norte",
     "orientacion_Oeste",
     "orientacion_Sur"
-  ],  "n_features": 22,
+  ],
+  "n_features": 22,
   "version": {
     "scikit-learn": "1.3.2",
-    "numpy": "1.24.4",
+    "numpy": "1.24.3",
     "pandas": "2.0.3",
     "joblib": "1.2.0"
   },

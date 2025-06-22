@@ -39,6 +39,9 @@ El portafolio de ciencia de datos ha sido completamente optimizado y corregido p
   - IDs únicos para cada solicitud de predicción
   - Manejo adecuado del estado aleatorio
   - Manejo adecuado cuando scikit-learn no está disponible
+  - **Nuevo**: Detección inteligente de diferencias menores de versión
+  - **Nuevo**: Controles en la interfaz para forzar modo real o demo
+  - **Nuevo**: Mayor transparencia sobre el modo utilizado y sus razones
 
 ## Configuración del entorno
 

@@ -60,17 +60,12 @@ Se actualizó el archivo `model_info.json` para reflejar las versiones correctas
 {
   "version": {
     "scikit-learn": "1.3.2",
-    "numpy": "1.24.4",
+    "numpy": "1.24.3",
     "pandas": "2.0.3",
     "joblib": "1.2.0"
   }
 }
 ```
-
-Esta actualización se realizó en todos los archivos `model_info.json` para garantizar consistencia:
-- `app/data/inmobiliario/model_info.json`
-- `app/models/model_info.json`
-- `app/data/processed/model_info.json`
 
 ### 4. Implementación de Modo de Depuración
 

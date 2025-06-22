@@ -124,18 +124,37 @@ def cargar_modelo():
     st.session_state['version_info'] = {
         'model': model_versions,
         'current': current_versions
-    }
-
-    # Detectar incompatibilidades críticas
+    }    # Detectar incompatibilidades críticas
     if sklearn is None:
         st.warning("⚠️ scikit-learn no está disponible. La aplicación continuará en modo demo.")
         return _crear_modelo_demo("scikit-learn no está instalado")
     
+    # Obtener parámetros de URL para forzar modelo
+    force_model = st.query_params.get('force_model', 'auto').lower()
+    
+    # Verificar scikit-learn
+    sklearn_incompatible = False
     if 'scikit-learn' in model_versions and model_versions['scikit-learn'] != current_versions['scikit-learn']:
-        st.warning(f"⚠️ Versión de scikit-learn diferente: modelo ({model_versions['scikit-learn']}) vs actual ({current_versions['scikit-learn']})")
+        if _es_diferencia_menor_version(model_versions['scikit-learn'], current_versions['scikit-learn']):
+            st.info(f"ℹ️ Diferencia menor en versión de scikit-learn: modelo ({model_versions['scikit-learn']}) vs actual ({current_versions['scikit-learn']}). Esto generalmente es seguro.")
+        else:
+            sklearn_incompatible = True
+            st.warning(f"⚠️ Versión de scikit-learn diferente: modelo ({model_versions['scikit-learn']}) vs actual ({current_versions['scikit-learn']})")
 
+    # Verificar numpy
+    numpy_incompatible = False
     if 'numpy' in model_versions and model_versions['numpy'] != current_versions['numpy']:
-        st.warning(f"⚠️ Versión de numpy diferente: modelo ({model_versions['numpy']}) vs actual ({current_versions['numpy']})")
+        if _es_diferencia_menor_version(model_versions['numpy'], current_versions['numpy']):
+            st.info(f"ℹ️ Diferencia menor en versión de numpy: modelo ({model_versions['numpy']}) vs actual ({current_versions['numpy']}). Esto generalmente es seguro.")
+        else:
+            numpy_incompatible = True
+            st.warning(f"⚠️ Versión de numpy diferente: modelo ({model_versions['numpy']}) vs actual ({current_versions['numpy']})")
+      # Si hay incompatibilidades graves y no estamos forzando el modelo real, usar demo
+    if (sklearn_incompatible or numpy_incompatible) and force_model != 'real':
+        st.warning("⚠️ Se detectaron incompatibilidades de versiones que podrían afectar el funcionamiento del modelo.")
+        st.info("💡 Puedes intentar forzar el uso del modelo real añadiendo '?force_model=real' a la URL.")
+        if force_model != 'real':
+            return _crear_modelo_demo("Incompatibilidad de versiones")
 
     # Cargar modelo y scaler
     try:
@@ -158,9 +177,7 @@ def cargar_modelo():
         st.session_state['model_load_error'] = {
             'error': str(e),
             'traceback': error_details
-        }
-
-        # Verificar si es un error de compatibilidad
+        }        # Verificar si es un error de compatibilidad
         if "BitGenerator" in str(e) or "MT19937" in str(e) or "numpy.random" in str(e):
             mensaje = """
             ⚠️ Error de compatibilidad detectado con numpy.random. 
@@ -382,8 +399,7 @@ def predecir_precio(modelo, input_data):
                 precio_uf *= (1 + variacion)
                 st.session_state[f'variacion_aplicada_{request_id}'] = variacion
             
-            # Imprimir para debugging (solo en desarrollo)
-            st.session_state[f'debug_features_{request_id}'] = features_dict
+            # Imprimir para debugging (solo en desarrollo)            st.session_state[f'debug_features_{request_id}'] = features_dict
             st.session_state[f'debug_prediction_{request_id}'] = precio_uf
             st.session_state[f'precio_uf_{request_id}'] = precio_uf
             
@@ -401,7 +417,7 @@ def predecir_precio(modelo, input_data):
             random.setstate(random_state)
             
             st.session_state[f'modo_prediccion_{request_id}'] = 'modo_demo'
-            return _predecir_precio_demo(input_data, request_id)
+            return _predecir_precio_demo(input_data, request_id, razon="Modelo no disponible")
         
         # Validar el resultado
         is_valid, error_msg = validate_prediction(precio_uf, input_data)
@@ -453,14 +469,13 @@ def predecir_precio(modelo, input_data):
             'error': str(e),
             'traceback': error_details
         }
-        
-        # Restaurar estados aleatorios
+          # Restaurar estados aleatorios
         np.random.set_state(np_random_state)
         random.setstate(random_state)
         
-        return _predecir_precio_demo(input_data, request_id)
+        return _predecir_precio_demo(input_data, request_id, razon="Error en predicción")
 
-def _predecir_precio_demo(input_data, request_id=None):
+def _predecir_precio_demo(input_data, request_id=None, razon=None):
     """Implementa el modo demo con cálculos realistas basados en promedios del mercado"""
     import numpy as np
     import uuid
@@ -474,6 +489,10 @@ def _predecir_precio_demo(input_data, request_id=None):
     
     # Guardar el modo de operación
     st.session_state[f'modo_prediccion_{request_id}'] = 'demo_explicito'
+    
+    # Registrar la razón del modo demo si se proporciona
+    if razon:
+        st.session_state[f'demo_razon_{request_id}'] = razon
     
     # Precios base por comuna (UF/m²) para modo demo
     precio_base = {
@@ -837,8 +856,7 @@ def mostrar_formulario_prediccion(comuna_options, modelo):
 def mostrar_resultados(precio_predicho, input_data, datos_propiedades, tendencias):
     """Muestra los resultados de la predicción y análisis adicionales"""
     st.markdown("---")
-    
-    # Usar los valores ya calculados si vienen en forma de tupla
+      # Usar los valores ya calculados si vienen en forma de tupla
     if isinstance(precio_predicho, tuple):
         precio_clp, precio_millones, precio_uf = precio_predicho
     else:
@@ -847,9 +865,24 @@ def mostrar_resultados(precio_predicho, input_data, datos_propiedades, tendencia
         valor_uf = 36000  # Valor UF aproximado
         precio_millones = precio_clp / 1_000_000
         precio_uf = precio_clp / valor_uf
+      # Determinar el modo de predicción utilizado
+    ultimo_request_id = st.session_state.get('ultimo_request_id', '')
+    modo_prediccion = st.session_state.get(f'modo_prediccion_{ultimo_request_id}', 'desconocido')
+    razon_demo = st.session_state.get(f'demo_razon_{ultimo_request_id}', '')
     
-    # Mostrar el precio predicho en diferentes formatos
+    # Mostrar el precio predicho en diferentes formatos con indicador del modo utilizado
     col1, col2, col3 = st.columns([1, 1, 1])
+    
+    # Añadir un indicador del modo de predicción
+    if 'modelo_real' in modo_prediccion:
+        st.success("✅ Predicción generada usando el **MODELO REAL** de Machine Learning entrenado con datos del mercado")
+    elif 'demo' in modo_prediccion:
+        if razon_demo:
+            st.warning(f"⚠️ Predicción generada usando el **MODO DEMO** basado en promedios del mercado (Razón: {razon_demo})")
+        else:
+            st.warning("⚠️ Predicción generada usando el **MODO DEMO** basado en promedios del mercado")
+    else:
+        st.info("ℹ️ Predicción generada (modo no especificado)")
     
     with col1:
         st.metric(
@@ -1218,6 +1251,31 @@ def mostrar_faq():
         with st.expander(f"{i+1}. {faq['pregunta']}"):
             st.markdown(faq['respuesta'])
 
+# Función para determinar si la diferencia entre versiones es solo a nivel de parche
+def _es_diferencia_menor_version(v1, v2):
+    """Determina si la diferencia entre dos versiones es solo en el nivel de parche"""
+    if v1 == v2:
+        return True
+    
+    try:
+        # Extraer componentes de versión
+        v1_parts = v1.split('.')
+        v2_parts = v2.split('.')
+        
+        # Asegurar que ambos tienen al menos 3 componentes (major.minor.patch)
+        while len(v1_parts) < 3:
+            v1_parts.append('0')
+        while len(v2_parts) < 3:
+            v2_parts.append('0')
+        
+        # Verificar si solo difieren en la versión de parche
+        return (v1_parts[0] == v2_parts[0] and 
+                v1_parts[1] == v2_parts[1] and 
+                v1_parts[2] != v2_parts[2])
+    except:
+        # Si hay algún error al analizar las versiones, asumimos que no son compatibles
+        return False
+
 # Función principal
 def main():
     """Función principal que ejecuta la aplicación"""
@@ -1247,16 +1305,22 @@ def main():
     if 'debug_demo_variacion' not in st.session_state:
         st.session_state['debug_demo_variacion'] = None
     if 'debug_demo_comuna' not in st.session_state:
-        st.session_state['debug_demo_comuna'] = None
-      # Obtener parámetros de URL
+        st.session_state['debug_demo_comuna'] = None      # Obtener parámetros de URL
     debug_mode = st.query_params.get('debug', '').lower() == 'true'
     force_mode = st.query_params.get('mode', 'auto').lower()
+    force_model = st.query_params.get('force_model', 'auto').lower()
     
     # Si se fuerza un modo específico, mostrarlo en la interfaz
     if force_mode in ['demo', 'real']:
         st.info(f"🔒 Modo forzado: {force_mode.upper()}")
     
+    # Si se fuerza un modelo específico, mostrarlo en la interfaz    if force_model in ['demo', 'real']:
+        st.info(f"🔒 Modelo forzado: {force_model.upper()}")
+    
     mostrar_header()
+    
+    # Añadir controles del modelo a la barra lateral
+    add_model_controls_to_sidebar()
     add_sidebar_contact()
     
     # Menú de navegación en pestañas
@@ -1482,6 +1546,51 @@ def main():
     # Añadir footer con contacto
     add_page_footer()
 
+# Función para agregar controles del modelo a la barra lateral
+def add_model_controls_to_sidebar():
+    """Añade controles para forzar el modelo real o demo en la barra lateral"""
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("🔧 Controles del Modelo")
+    
+    # Obtener el modo actual
+    current_model_mode = st.query_params.get('force_model', 'auto')
+    
+    # Opciones para el radio button
+    model_mode_options = {
+        'auto': 'Automático (recomendado)',
+        'real': 'Forzar modelo real',
+        'demo': 'Forzar modo demo'
+    }
+    
+    # Radio button para seleccionar el modo
+    selected_model_mode = st.sidebar.radio(
+        "Modo del modelo:",
+        options=list(model_mode_options.keys()),
+        format_func=lambda x: model_mode_options[x],
+        index=list(model_mode_options.keys()).index(current_model_mode) if current_model_mode in model_mode_options else 0
+    )
+    
+    # Si cambió el modo, actualizar la URL
+    if selected_model_mode != current_model_mode:
+        st.query_params['force_model'] = selected_model_mode
+        st.rerun()
+    
+    # Explicación del modo seleccionado
+    if selected_model_mode == 'auto':
+        st.sidebar.info("El sistema determinará automáticamente si debe usar el modelo real o el modo demo según la compatibilidad de versiones.")
+    elif selected_model_mode == 'real':
+        st.sidebar.warning("⚠️ Forzar el modelo real puede causar errores si hay incompatibilidades de versiones.")
+    else:  # demo
+        st.sidebar.info("El modo demo utiliza cálculos basados en promedios del mercado, no el modelo de ML entrenado.")
+    
+    # Botón para limpiar caché
+    if st.sidebar.button("🧹 Limpiar caché"):
+        st.cache_data.clear()
+        st.rerun()
+
 # Ejecutar la aplicación
 if __name__ == "__main__":
+    # Añadir controles del modelo a la barra lateral
+    add_model_controls_to_sidebar()
+    
     main()

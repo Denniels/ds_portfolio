@@ -29,11 +29,6 @@ Se ha completado exitosamente la corrección del problema de predicciones idént
 - ✅ Confirmación de que todos los bloques `try` tienen sus correspondientes bloques `except`
 - ✅ Validación de la sintaxis correcta en todo el código del predictor inmobiliario
 
-### 5. Actualización de metadatos de versiones
-- ✅ Actualización de `model_info.json` para reflejar la versión correcta de NumPy (1.24.4)
-- ✅ Sincronización de versiones en todos los archivos de información del modelo
-- ✅ Eliminación de advertencias por incompatibilidad de versiones menores
-
 ## Pruebas realizadas
 
 - ✅ **Prueba local**: La aplicación funciona correctamente en entorno local
