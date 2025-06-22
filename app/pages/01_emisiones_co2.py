@@ -27,7 +27,19 @@ load_css_styles()
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 import folium
+
+# Importar la utilidad de visualización mejorada
+try:
+    from utils.visualization_helper import enhanced_plotly_chart, apply_standard_layout
+except ImportError:
+    # Fallback simple si no se encuentra el módulo
+    def enhanced_plotly_chart(fig, **kwargs):
+        return st.plotly_chart(fig, use_container_width=True)
+    
+    def apply_standard_layout(fig, **kwargs):
+        return fig
 from folium import plugins
 import branca.colormap as cm
 from datetime import datetime
@@ -253,14 +265,24 @@ with tab2:
             orientation='h',
             color='emisiones_mt',
             color_continuous_scale='Reds'
-        )
+        )        # Aplicar layout mejorado
         fig_regiones.update_layout(
             height=600,
             showlegend=False,
-            plot_bgcolor='rgba(240,240,240,0.3)'
+            plot_bgcolor='rgba(240,240,240,0.3)',
+            title={
+                'text': "Emisiones de CO₂ por Región",
+                'y': 0.95,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top',
+                'font': {'size': 20, 'color': '#2F4F4F'}
+            },
+            margin=dict(l=60, r=40, t=100, b=60)
         )
         
-        st.plotly_chart(fig_regiones, use_container_width=True)
+        # Usar la función mejorada para mostrar el gráfico
+        enhanced_plotly_chart(fig_regiones, filename="emisiones_co2_regiones")
         
         # Mostrar tabla de datos
         st.markdown("### 📋 Tabla de Datos por Región")
@@ -348,12 +370,17 @@ with tab2:
                 title='Distribución de Emisiones por Región',
                 labels={'emisiones_mt': 'Emisiones (Mt CO₂)', 'count': 'Número de Regiones'},
                 color_discrete_sequence=['#FF6B6B']
+            )            # Mejorar el layout del histograma
+            fig_hist = apply_standard_layout(
+                fig_hist,
+                title='Distribución de Emisiones por Región',
+                height=450,
+                xaxis_title='Emisiones (Mt CO₂)',
+                yaxis_title='Número de Regiones'
             )
-            fig_hist.update_layout(
-                showlegend=False,
-                plot_bgcolor='rgba(240,240,240,0.3)'
-            )
-            st.plotly_chart(fig_hist, use_container_width=True)
+            
+            # Mostrar con visualización mejorada
+            enhanced_plotly_chart(fig_hist, filename="histograma_emisiones")
         
         with col_hist2:
             # Gráfico de caja (boxplot)
@@ -363,12 +390,16 @@ with tab2:
                 title='Análisis de Distribución (Boxplot)',
                 labels={'emisiones_mt': 'Emisiones (Mt CO₂)'},
                 color_discrete_sequence=['#4ECDC4']
+            )            # Mejorar el layout del boxplot
+            fig_box = apply_standard_layout(
+                fig_box,
+                title='Análisis de Distribución (Boxplot)',
+                height=450,
+                yaxis_title='Emisiones (Mt CO₂)'
             )
-            fig_box.update_layout(
-                showlegend=False,
-                plot_bgcolor='rgba(240,240,240,0.3)'
-            )
-            st.plotly_chart(fig_box, use_container_width=True)
+            
+            # Mostrar con visualización mejorada
+            enhanced_plotly_chart(fig_box, filename="boxplot_emisiones")
     
     # Gráfico de barras apiladas por cuartiles
     st.markdown("### 📊 Clasificación por Niveles de Emisión")

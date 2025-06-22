@@ -191,11 +191,48 @@ class ReportGenerator:
         """Crea visualizaciones automáticas basadas en los datos"""
         visualizations = []
         
+        # Configuración base para todos los gráficos
+        theme_config = {
+            'template': 'plotly_white',
+            'height': 500,               # Altura fija 
+            'width': 800,                # Ancho fijo
+            'title_font_size': 20,       # Tamaño de fuente del título
+            'title_font_color': '#2F4F4F', 
+            'showlegend': True,
+            'margin': dict(l=60, r=60, t=80, b=60)  # Márgenes adecuados
+        }
+        
         # Gráfico de distribución para columnas numéricas
         numeric_cols = df.select_dtypes(include=['number']).columns
         if len(numeric_cols) > 0:
             col = numeric_cols[0]  # Tomar primera columna numérica
-            fig = px.histogram(df, x=col, title=f"Distribución de {col}")
+            fig = px.histogram(
+                df, 
+                x=col, 
+                title=f"Distribución de {col}",
+                height=theme_config['height'],
+                width=theme_config['width'],
+                template=theme_config['template'],
+                color_discrete_sequence=['#3366CC']  # Color consistente
+            )
+            
+            # Mejoras adicionales
+            fig.update_layout(
+                title={
+                    'text': f"Distribución de {col}",
+                    'y': 0.95,
+                    'x': 0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top',
+                    'font': {'size': theme_config['title_font_size'], 'color': theme_config['title_font_color']}
+                },
+                margin=theme_config['margin'],
+                bargap=0.05,  # Espacio entre barras
+                xaxis_title=col,
+                yaxis_title="Frecuencia",
+                xaxis={'showgrid': True, 'gridwidth': 0.5, 'gridcolor': 'lightgray'},
+                yaxis={'showgrid': True, 'gridwidth': 0.5, 'gridcolor': 'lightgray'}
+            )
             visualizations.append(("Distribución", fig))
         
         # Gráfico de barras para columnas categóricas
@@ -203,15 +240,76 @@ class ReportGenerator:
         for col in categorical_cols[:2]:  # Máximo 2 gráficos categóricos
             if df[col].nunique() <= 20:  # Solo si tiene pocas categorías
                 value_counts = df[col].value_counts().head(10)
-                fig = px.bar(x=value_counts.values, y=value_counts.index, 
-                           orientation='h', title=f"Top 10 valores en {col}")
+                fig = px.bar(
+                    x=value_counts.values, 
+                    y=value_counts.index,
+                    orientation='h', 
+                    title=f"Top 10 valores en {col}",
+                    height=theme_config['height'],
+                    width=theme_config['width'],
+                    template=theme_config['template'],
+                    color_discrete_sequence=['#4CAF50']  # Color verde para barras
+                )
+                
+                # Mejoras adicionales
+                fig.update_layout(
+                    title={
+                        'text': f"Top 10 valores en {col}",
+                        'y': 0.95,
+                        'x': 0.5,
+                        'xanchor': 'center',
+                        'yanchor': 'top',
+                        'font': {'size': theme_config['title_font_size'], 'color': theme_config['title_font_color']}
+                    },
+                    margin=theme_config['margin'],
+                    xaxis_title="Cantidad",
+                    yaxis_title=col,
+                    xaxis={'showgrid': True, 'gridwidth': 0.5, 'gridcolor': 'lightgray'},
+                    bargap=0.2  # Espacio entre barras
+                )
+                
+                # Añadir etiquetas de valor
+                fig.update_traces(texttemplate='%{x}', textposition='outside')
+                
                 visualizations.append((f"Top {col}", fig))
         
         # Correlación si hay múltiples columnas numéricas
         if len(numeric_cols) > 1:
-            corr_matrix = df[numeric_cols].corr()
-            fig = px.imshow(corr_matrix, text_auto=True, aspect="auto",
-                          title="Matriz de Correlación")
+            # Limitar a máximo 10 columnas para la matriz de correlación
+            cols_to_use = numeric_cols[:10] if len(numeric_cols) > 10 else numeric_cols
+            corr_matrix = df[cols_to_use].corr().round(2)
+            
+            fig = px.imshow(
+                corr_matrix, 
+                text_auto=True, 
+                aspect="auto",
+                title="Matriz de Correlación",
+                height=theme_config['height'],
+                width=theme_config['width'],
+                template=theme_config['template'],
+                color_continuous_scale='RdBu_r',  # Escala de color más efectiva
+                zmin=-1, zmax=1  # Fijar escala de -1 a 1
+            )
+            
+            # Mejoras adicionales
+            fig.update_layout(
+                title={
+                    'text': "Matriz de Correlación",
+                    'y': 0.95,
+                    'x': 0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top',
+                    'font': {'size': theme_config['title_font_size'], 'color': theme_config['title_font_color']}
+                },
+                margin=theme_config['margin']
+            )
+            
+            # Mejorar texto en la matriz
+            fig.update_traces(
+                texttemplate="%{text:.2f}",
+                textfont={"size": 12}
+            )
+            
             visualizations.append(("Correlación", fig))
         
         return visualizations
@@ -625,14 +723,34 @@ def main():
         
         for insight in insights:
             st.markdown(f"• {insight}")
-        
-        # Visualizaciones automáticas
+          # Visualizaciones automáticas
         st.markdown("### 📊 Visualizaciones Automáticas")
         visualizations = report_generator.create_automatic_visualizations(df)
         
         if visualizations:
+            # Contenedor para mejores visualizaciones con altura fija
+            viz_container = st.container()
+            
+            # Configuración avanzada para mostrar los gráficos
             for title, fig in visualizations:
-                st.plotly_chart(fig, use_container_width=True)
+                viz_container.subheader(f"{title}")
+                viz_container.plotly_chart(
+                    fig, 
+                    use_container_width=True,
+                    config={
+                        'displayModeBar': True,
+                        'responsive': True,
+                        'toImageButtonOptions': {
+                            'format': 'png',
+                            'filename': f'viz_{title}_report',
+                            'height': 600,
+                            'width': 1000,
+                            'scale': 2  # Mejor resolución
+                        }
+                    }
+                )
+                # Pequeño espacio entre visualizaciones
+                viz_container.markdown("<br>", unsafe_allow_html=True)
         else:
             st.info("No se pudieron generar visualizaciones automáticas para este dataset")
         

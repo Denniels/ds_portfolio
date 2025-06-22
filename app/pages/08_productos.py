@@ -234,18 +234,47 @@ def mostrar_roadmap_visual():
             mode='lines+markers',
             name=producto,
             line=dict(width=3, color=colors[i]),
-            marker=dict(size=8)
-        ))
-    
+            marker=dict(size=8)        ))
     fig.update_layout(
-        title="Roadmap de Desarrollo de Productos (%)",
+        title={
+            'text': "Roadmap de Desarrollo de Productos (%)",
+            'y': 0.95,
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top',
+            'font': {'size': 20, 'color': '#2F4F4F'}
+        },
         xaxis_title="Trimestre",
         yaxis_title="Progreso de Desarrollo (%)",
-        height=400,
-        hovermode='x unified'
+        height=500,  # Mayor altura
+        width=800,   # Ancho fijo para evitar problemas de escala
+        hovermode='x unified',
+        template='plotly_white',
+        margin=dict(l=60, r=40, t=100, b=60)  # Márgenes mejorados
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    # Mejorar el formato de los ejes y líneas
+    fig.update_traces(
+        line=dict(width=3),     # Línea más gruesa
+        marker=dict(size=8)     # Marcadores más grandes
+    )
+    
+    # Configuración avanzada para la visualización
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        config={
+            'displayModeBar': True,
+            'responsive': True,
+            'toImageButtonOptions': {
+                'format': 'png',
+                'filename': 'roadmap_productos',
+                'height': 600,
+                'width': 1200,
+                'scale': 2  # Mayor resolución
+            }
+        }
+    )
 
 def mostrar_metricas_comerciales():
     """Muestra métricas y proyecciones comerciales"""
@@ -274,34 +303,106 @@ def mostrar_metricas_comerciales():
             y=arr_data["ARR_Optimista"],
             mode='lines+markers',
             name='Escenario Optimista',
-            line=dict(color='#4ECDC4', width=3)
-        ))
-        
+            line=dict(color='#4ECDC4', width=3)        ))
         fig_arr.update_layout(
-            title="Proyección ARR (Annual Recurring Revenue)",
+            title={
+                'text': "Proyección ARR (Annual Recurring Revenue)",
+                'y': 0.95,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top',
+                'font': {'size': 18, 'color': '#2F4F4F'}
+            },
             xaxis_title="Año",
             yaxis_title="ARR (USD)",
-            height=300
+            height=450,  # Mayor altura
+            template='plotly_white',
+            margin=dict(l=50, r=40, t=80, b=50),  # Márgenes adecuados
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         
-        st.plotly_chart(fig_arr, use_container_width=True)
+        # Mejoras adicionales para el gráfico
+        fig_arr.update_traces(
+            line=dict(width=3),      # Líneas más gruesas
+            marker=dict(size=8)      # Marcadores más grandes
+        )
+        
+        # Configuración avanzada para la visualización
+        st.plotly_chart(
+            fig_arr, 
+            use_container_width=True,
+            config={
+                'displayModeBar': True,
+                'responsive': True,
+                'toImageButtonOptions': {
+                    'format': 'png',
+                    'filename': 'proyeccion_arr',
+                    'height': 500,
+                    'width': 900,
+                    'scale': 2  # Mayor resolución
+                }
+            }
+        )
     
     with col2:
         # Distribución de productos por categoría
         categorias_data = {
             "Categoría": ["Automatización", "Predicción", "Monitoreo", "Análisis"],
             "Productos": [3, 3, 2, 2],
-            "ARR_Potencial": [400000, 600000, 300000, 200000]
-        }
-        
+            "ARR_Potencial": [400000, 600000, 300000, 200000]        }
         fig_pie = px.pie(
             values=categorias_data["ARR_Potencial"],
             names=categorias_data["Categoría"],
-            title="Distribución ARR por Categoría"
+            title="Distribución ARR por Categoría",
+            color_discrete_sequence=px.colors.qualitative.Bold,  # Paleta de colores más vistosa
+            template='plotly_white',
+            hole=0.4,  # Crear gráfico de dona para mejor visualización
+            height=450  # Mayor altura
         )
-        fig_pie.update_layout(height=300)
         
-        st.plotly_chart(fig_pie, use_container_width=True)
+        # Mejoras adicionales para el gráfico de pastel
+        fig_pie.update_layout(
+            title={
+                'text': "Distribución ARR por Categoría",
+                'y': 0.95,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top',
+                'font': {'size': 18, 'color': '#2F4F4F'}
+            },
+            margin=dict(l=40, r=40, t=80, b=40),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=-0.2,  # Posición debajo del gráfico
+                xanchor="center",
+                x=0.5
+            )
+        )
+        
+        # Añadir etiquetas con valores
+        fig_pie.update_traces(
+            textinfo='percent+label',
+            textposition='inside',
+            insidetextfont=dict(color='white', size=14)
+        )
+        
+        # Configuración avanzada para la visualización
+        st.plotly_chart(
+            fig_pie, 
+            use_container_width=True,
+            config={
+                'displayModeBar': True,
+                'responsive': True,
+                'toImageButtonOptions': {
+                    'format': 'png',
+                    'filename': 'distribucion_arr',
+                    'height': 500,
+                    'width': 900,
+                    'scale': 2  # Mayor resolución
+                }
+            }
+        )
 
 def mostrar_estrategia_comercial():
     """Muestra la estrategia go-to-market"""
