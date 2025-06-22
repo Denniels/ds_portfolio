@@ -6,10 +6,29 @@
     "banos",
     "estacionamientos",
     "antiguedad_anos",
-    "indice_ubicacion"
+    "piso",
+    "cercania_metro",
+    "comuna_La Florida",
+    "comuna_La Reina",
+    "comuna_Las Condes",
+    "comuna_Maipú",
+    "comuna_Providencia",
+    "comuna_Santiago Centro",
+    "comuna_Vitacura",
+    "comuna_Ñuñoa",
+    "tipo_propiedad_Casa",
+    "tipo_propiedad_Departamento",
+    "orientacion_Este",
+    "orientacion_Norte",
+    "orientacion_Oeste",
+    "orientacion_Sur"
   ],
-  "n_features": 7,
-  "n_estimators": 50,
-  "max_depth": 8,
-  "version": "v2"
+  "n_features": 22,
+  "version": {
+    "scikit-learn": "1.2.2",
+    "numpy": "1.26.4",
+    "pandas": "2.0.3",
+    "joblib": "1.2.0"
+  },
+  "created_at": "2025-06-21 21:01:06"
 }

@@ -1,0 +1,27 @@
+{
+  "fecha_analisis": "2025-06-18T12:16:57.103431",
+  "productos_analizados": 10,
+  "arr_total_minimo": 486000,
+  "arr_total_maximo": 2136000,
+  "tiempo_desarrollo_promedio": "2-4 meses",
+  "roi_proyectado": "300-800%",
+  "producto_recomendado": "Generador de Reportes Automáticos",
+  "target_q3_2025": {
+    "clientes": 50,
+    "mrr": 5000,
+    "productos_lanzados": 2
+  },
+  "ventajas_competitivas": [
+    "Especialización mercado latino",
+    "IA nativa integrada",
+    "Pricing 50-80% más accesible",
+    "Enfoque no-code",
+    "ROI medible y claro"
+  ],
+  "archivos_generados": [
+    "ROADMAP_PRODUCTOS_COMERCIALES.md",
+    "ANALISIS_COMERCIAL_DETALLADO.md",
+    "TABLA_COMPARATIVA_PRECIOS.md",
+    "INFORME_COMERCIAL_CONSOLIDADO.md"
+  ]
+}

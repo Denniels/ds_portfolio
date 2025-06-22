@@ -1,0 +1,502 @@
+[
+  {
+    "id": 39367,
+    "nombre": "Instalación 39367",
+    "lat": -30.583535211826995,
+    "lon": -70.72585113780676,
+    "emisiones": 104660.9659,
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 10138,
+    "nombre": "Instalación 10138",
+    "lat": -28.13368720774111,
+    "lon": -72.09178381721142,
+    "emisiones": 104561.6153,
+    "region": "Antofagasta",
+    "comuna": "Antofagasta",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 37794,
+    "nombre": "Instalación 37794",
+    "lat": -23.57648216035291,
+    "lon": -71.42608092093595,
+    "emisiones": 97253.94819,
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 263479,
+    "nombre": "Instalación 263479",
+    "lat": -18.322984594146938,
+    "lon": -68.44612877931323,
+    "emisiones": 95630.58179,
+    "region": "Maule",
+    "comuna": "Talca",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 13155,
+    "nombre": "Instalación 13155",
+    "lat": -28.109442996354854,
+    "lon": -69.64233235472686,
+    "emisiones": 94657.66538,
+    "region": "Antofagasta",
+    "comuna": "Antofagasta",
+    "tipo": "Buses urbanos"
+  },
+  {
+    "id": 18297,
+    "nombre": "Instalación 18297",
+    "lat": -32.79638355925098,
+    "lon": -71.89467067476392,
+    "emisiones": 89313.6511,
+    "region": "Coquimbo",
+    "comuna": "La Serena",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 109322,
+    "nombre": "Instalación 109322",
+    "lat": -32.070954372507025,
+    "lon": -69.74437127523838,
+    "emisiones": 86905.20538,
+    "region": "Metropolitana",
+    "comuna": "Las Condes",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 245866,
+    "nombre": "Instalación 245866",
+    "lat": -39.16112446568843,
+    "lon": -70.53241931839037,
+    "emisiones": 85926.32768,
+    "region": "Libertador Gral. Bernardo O'Higgins",
+    "comuna": "Rancagua",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 190395,
+    "nombre": "Instalación 190395",
+    "lat": -19.96164514795955,
+    "lon": -69.5838547444092,
+    "emisiones": 72792.58983,
+    "region": "Metropolitana",
+    "comuna": "Puente Alto",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 147725,
+    "nombre": "Instalación 147725",
+    "lat": -28.902318086037816,
+    "lon": -71.81770211968822,
+    "emisiones": 69742.88564,
+    "region": "Metropolitana",
+    "comuna": "Providencia",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 53851,
+    "nombre": "Instalación 53851",
+    "lat": -33.912764538276015,
+    "lon": -68.82702130685841,
+    "emisiones": 68953.02677,
+    "region": "Metropolitana",
+    "comuna": "Santiago",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 188822,
+    "nombre": "Instalación 188822",
+    "lat": -37.66496227402601,
+    "lon": -69.46806182720786,
+    "emisiones": 67163.76791,
+    "region": "Metropolitana",
+    "comuna": "Puente Alto",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 52278,
+    "nombre": "Instalación 52278",
+    "lat": -26.00518729305434,
+    "lon": -72.03928575651723,
+    "emisiones": 66370.18628,
+    "region": "Metropolitana",
+    "comuna": "Santiago",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 21754,
+    "nombre": "Instalación 21754",
+    "lat": -35.76190669123846,
+    "lon": -71.36055640681428,
+    "emisiones": 65143.00315,
+    "region": "Coquimbo",
+    "comuna": "Coquimbo",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 92254,
+    "nombre": "Instalación 92254",
+    "lat": -27.449824665596875,
+    "lon": -72.1510249753216,
+    "emisiones": 64847.43607,
+    "region": "Metropolitana",
+    "comuna": "La Florida",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 130657,
+    "nombre": "Instalación 130657",
+    "lat": -28.059348940944453,
+    "lon": -70.4856226117043,
+    "emisiones": 63654.07771,
+    "region": "Metropolitana",
+    "comuna": "Maipú",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 129084,
+    "nombre": "Instalación 129084",
+    "lat": -27.028524732446193,
+    "lon": -71.45472878999826,
+    "emisiones": 63393.16874,
+    "region": "Metropolitana",
+    "comuna": "Maipú",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 90681,
+    "nombre": "Instalación 90681",
+    "lat": -29.388739043344465,
+    "lon": -71.43466005343717,
+    "emisiones": 63165.09621,
+    "region": "Metropolitana",
+    "comuna": "La Florida",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 53172,
+    "nombre": "Instalación 53172",
+    "lat": -25.81491491003358,
+    "lon": -70.79933647691165,
+    "emisiones": 61859.22442,
+    "region": "Metropolitana",
+    "comuna": "Santiago",
+    "tipo": "Alquiler"
+  },
+  {
+    "id": 186128,
+    "nombre": "Instalación 186128",
+    "lat": -36.203048608413354,
+    "lon": -72.17315219473,
+    "emisiones": 60086.77164,
+    "region": "Metropolitana",
+    "comuna": "Vitacura",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 28504,
+    "nombre": "Instalación 28504",
+    "lat": -34.52600932359225,
+    "lon": -69.46979508020915,
+    "emisiones": 58349.12449,
+    "region": "Valparaíso",
+    "comuna": "Valparaíso",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 156259,
+    "nombre": "Instalación 156259",
+    "lat": -40.254634975156264,
+    "lon": -70.88424842267546,
+    "emisiones": 54066.41969,
+    "region": "Metropolitana",
+    "comuna": "Quilicura",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 37704,
+    "nombre": "Instalación 37704",
+    "lat": -18.502686404069145,
+    "lon": -71.80173933491953,
+    "emisiones": 52185.09857,
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 198929,
+    "nombre": "Instalación 198929",
+    "lat": -22.047833268973864,
+    "lon": -72.54670753170414,
+    "emisiones": 50529.58496,
+    "region": "Metropolitana",
+    "comuna": "Colina",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 37922,
+    "nombre": "Instalación 37922",
+    "lat": -27.986307068195643,
+    "lon": -69.71733465048499,
+    "emisiones": 50448.06797,
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 107749,
+    "nombre": "Instalación 107749",
+    "lat": -30.132204673176158,
+    "lon": -70.95994884251232,
+    "emisiones": 50328.80687,
+    "region": "Metropolitana",
+    "comuna": "Las Condes",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 211730,
+    "nombre": "Instalación 211730",
+    "lat": -32.28345929381962,
+    "lon": -69.44664700479365,
+    "emisiones": 50046.66049,
+    "region": "Metropolitana",
+    "comuna": "San Bernardo",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 16724,
+    "nombre": "Instalación 16724",
+    "lat": -32.67312315449054,
+    "lon": -70.20496730507055,
+    "emisiones": 49264.03987,
+    "region": "Coquimbo",
+    "comuna": "La Serena",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 287370,
+    "nombre": "Instalación 287370",
+    "lat": -32.540893174418244,
+    "lon": -72.11344757286146,
+    "emisiones": 47918.48908,
+    "region": "Biobío",
+    "comuna": "Concepción",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 288978,
+    "nombre": "Instalación 288978",
+    "lat": -22.92232605658974,
+    "lon": -68.89547085649063,
+    "emisiones": 47498.76261,
+    "region": "Biobío",
+    "comuna": "Concepción",
+    "tipo": "Buses urbanos"
+  },
+  {
+    "id": 151992,
+    "nombre": "Instalación 151992",
+    "lat": -39.119882773711836,
+    "lon": -71.11488874716724,
+    "emisiones": 46670.07584,
+    "region": "Metropolitana",
+    "comuna": "Pudahuel",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 26931,
+    "nombre": "Instalación 26931",
+    "lat": -35.51708620804883,
+    "lon": -70.85352541069493,
+    "emisiones": 45799.04146,
+    "region": "Valparaíso",
+    "comuna": "Valparaíso",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 346862,
+    "nombre": "Instalación 346862",
+    "lat": -23.467231495871307,
+    "lon": -70.48457602263156,
+    "emisiones": 45604.40791,
+    "region": "Los Lagos",
+    "comuna": "Puerto Montt",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 328921,
+    "nombre": "Instalación 328921",
+    "lat": -32.36871816370394,
+    "lon": -71.071261520298,
+    "emisiones": 44528.56753,
+    "region": "Araucanía",
+    "comuna": "Temuco",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 154686,
+    "nombre": "Instalación 154686",
+    "lat": -25.38544344194952,
+    "lon": -71.86218669410657,
+    "emisiones": 43671.37534,
+    "region": "Metropolitana",
+    "comuna": "Quilicura",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 197356,
+    "nombre": "Instalación 197356",
+    "lat": -17.81172740397112,
+    "lon": -70.33411203119853,
+    "emisiones": 42587.70628,
+    "region": "Metropolitana",
+    "comuna": "Colina",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 188950,
+    "nombre": "Instalación 188950",
+    "lat": -32.60331933866051,
+    "lon": -69.47457982692946,
+    "emisiones": 42195.21914,
+    "region": "Metropolitana",
+    "comuna": "Puente Alto",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 52406,
+    "nombre": "Instalación 52406",
+    "lat": -21.704995818739512,
+    "lon": -71.16803666642598,
+    "emisiones": 41696.65642,
+    "region": "Metropolitana",
+    "comuna": "Santiago",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 134924,
+    "nombre": "Instalación 134924",
+    "lat": -30.96875580766671,
+    "lon": -71.1623020567391,
+    "emisiones": 41070.732,
+    "region": "Metropolitana",
+    "comuna": "Ñuñoa",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 210157,
+    "nombre": "Instalación 210157",
+    "lat": -39.263635762460346,
+    "lon": -68.23982045160857,
+    "emisiones": 40488.07187,
+    "region": "Metropolitana",
+    "comuna": "San Bernardo",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 42988,
+    "nombre": "Instalación 42988",
+    "lat": -19.833733800688545,
+    "lon": -72.73761159585298,
+    "emisiones": 40250.23671,
+    "region": "Valparaíso",
+    "comuna": "Quilpué",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 261906,
+    "nombre": "Instalación 261906",
+    "lat": -27.2135898248874,
+    "lon": -69.14318958472687,
+    "emisiones": 40170.16854,
+    "region": "Maule",
+    "comuna": "Talca",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 146152,
+    "nombre": "Instalación 146152",
+    "lat": -36.59408894347649,
+    "lon": -70.46194808362412,
+    "emisiones": 40035.84513,
+    "region": "Metropolitana",
+    "comuna": "Providencia",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 129212,
+    "nombre": "Instalación 129212",
+    "lat": -32.87917121779482,
+    "lon": -68.43347642520612,
+    "emisiones": 39826.36368,
+    "region": "Metropolitana",
+    "comuna": "Maipú",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 90809,
+    "nombre": "Instalación 90809",
+    "lat": -29.67824389955746,
+    "lon": -71.12346078985755,
+    "emisiones": 39683.07853,
+    "region": "Metropolitana",
+    "comuna": "La Florida",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 2370,
+    "nombre": "Instalación 2370",
+    "lat": -21.711870154421252,
+    "lon": -70.94548970505706,
+    "emisiones": 38821.97278,
+    "region": "Tarapacá",
+    "comuna": "Iquique",
+    "tipo": "Taxis-Colectivos"
+  },
+  {
+    "id": 323580,
+    "nombre": "Instalación 323580",
+    "lat": -39.57094068794009,
+    "lon": -72.5937079270908,
+    "emisiones": 38337.40694,
+    "region": "Biobío",
+    "comuna": "Los Angeles",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 150419,
+    "nombre": "Instalación 150419",
+    "lat": -27.95825954724166,
+    "lon": -68.81018912581958,
+    "emisiones": 38105.35766,
+    "region": "Metropolitana",
+    "comuna": "Pudahuel",
+    "tipo": "Vehículos particulares"
+  },
+  {
+    "id": 75186,
+    "nombre": "Instalación 75186",
+    "lat": -33.514893541670595,
+    "lon": -70.33661136704374,
+    "emisiones": 37117.80784,
+    "region": "Metropolitana",
+    "comuna": "Estación Central",
+    "tipo": "Comerciales uso particular"
+  },
+  {
+    "id": 73613,
+    "nombre": "Instalación 73613",
+    "lat": -29.33286835484182,
+    "lon": -68.10383203084902,
+    "emisiones": 36624.98069,
+    "region": "Metropolitana",
+    "comuna": "Estación Central",
+    "tipo": "Vehículos particulares"
+  }
+]

@@ -71,27 +71,38 @@ def cargar_datos():
 
 # Función para cargar el modelo
 def cargar_modelo():
-    """Carga el modelo ensemble de predicción o retorna None si hay error"""
+    """Carga el modelo de predicción inmobiliaria"""
     try:
         import joblib
-        modelo = joblib.load(MODEL_DIR / "modelo_ensemble.pkl")
+        import json
         
-        # Verificar que sea un modelo válido intentando acceder a atributos críticos
-        if hasattr(modelo, 'predict') and hasattr(modelo, 'estimators_'):
-            return modelo
-        else:
-            st.error("El archivo del modelo no contiene un modelo válido de scikit-learn")
-            st.info("La aplicación continuará en modo demo")
-            return None
+        # Intentar cargar el modelo y archivos relacionados
+        model_path = DATA_DIR / "modelo_inmobiliario.pkl"
+        scaler_path = DATA_DIR / "scaler_inmobiliario.pkl"
+        info_path = DATA_DIR / "model_info.json"
+        
+        if not all(p.exists() for p in [model_path, scaler_path, info_path]):
+            st.error("No se encontraron todos los archivos necesarios del modelo")
+            return _crear_modelo_demo()
+        
+        # Cargar información del modelo
+        with open(info_path, 'r', encoding='utf-8') as f:
+            model_info = json.load(f)
+        
+        # Cargar modelo y scaler
+        modelo = joblib.load(model_path)
+        scaler = joblib.load(scaler_path)
+        
+        return {
+            'model': modelo,
+            'scaler': scaler,
+            'info': model_info,
+            'feature_names': model_info.get('feature_names', [])
+        }
             
     except Exception as e:
-        if "numpy._core" in str(e):
-            st.error("Error de compatibilidad con numpy detectado")
-            st.info("Por favor, asegúrese de que las versiones de numpy sean compatibles")
-        else:
-            st.error(f"Error al cargar el modelo: {str(e)}")
-        st.info("La aplicación continuará en modo demo")
-        return None
+        st.error(f"Error al cargar el modelo: {str(e)}")
+        return _crear_modelo_demo(str(e))
 
 def _crear_modelo_demo(error_msg=None):
     """Crea un modelo simulado para el modo demo"""
@@ -812,29 +823,7 @@ def mostrar_planes_precios():
     """, unsafe_allow_html=True)
 
 # Función para mostrar casos de éxito
-#def mostrar_casos_exito():
-#    """Muestra casos de éxito y testimonios"""
-#    st.markdown("---")
-#    st.header("🌟 Casos de Éxito")
-#    
-#    # Testimonios
-#    testimonios = [
-#        {
-#            "cliente": "Inmobiliaria Santiago",
-#            "cargo": "Gerente Comercial",
-#            "testimonio": "Implementamos el Predictor en nuestro proceso de tasación y logramos reducir el tiempo de venta promedio en un 22%. La precisión de las predicciones nos ha permitido optimizar los precios y mejorar nuestros márgenes.",
-#            "logo": "🏢"
-#        },
-#        {
-#            "cliente": "Banco Inmobiliario",
-#            "cargo": "Jefe de Riesgo Hipotecario",
-#            "testimonio": "La API de validación automática nos ha permitido agilizar el proceso de aprobación de créditos hipotecarios, reduciendo en un 45% el tiempo de evaluación de garantías.",
-#            "logo": "🏦"
-#        },
-#        {
-#            "cliente": "Propiedades Chile",
-#            "cargo": "Tasador Senior",
-#            "testimonio": "Como tasador independiente, el sistema me ha dado una ventaja competitiva enorme. Los informes automáticos son profesionales y mis clientes valoran la precisión de las estimaciones.",
+#def
 #            "logo": "🏠"
 #        }
 #    ]
