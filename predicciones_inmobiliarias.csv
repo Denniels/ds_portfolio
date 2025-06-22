@@ -14,3 +14,27 @@ timestamp,precio_uf,is_demo,comuna,tipo_propiedad,metros_totales,metros_construi
 2025-06-21 23:28:55.612984,7542.760782754495,True,Providencia,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
 2025-06-21 23:29:24.088554,5558.319710904029,True,Maipú,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
 2025-06-21 23:29:50.801255,6637.436012192229,True,La Reina,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-21 23:51:53.000020,3423.949603068604,True,La Florida,Departamento,100.0,90.0,4,3,1,30,1,Norte,50000,False,False
+2025-06-21 23:52:10.233446,7313.652746097873,True,Las Condes,Departamento,100.0,90.0,4,3,1,30,1,Norte,50000,False,False
+2025-06-21 23:52:20.418393,7087.656127559094,True,Las Condes,Departamento,100.0,90.0,4,3,1,30,1,Norte,50000,False,False
+2025-06-21 23:52:32.175109,5559.8474920052,True,La Reina,Casa,100.0,90.0,4,3,1,30,1,Norte,0,False,False
+2025-06-21 23:53:12.818321,5135.311317875643,True,Independencia,Casa,100.0,90.0,4,3,1,30,1,Norte,0,False,False
+2025-06-21 23:53:39.192644,5289.69673746951,True,Santiago Centro,Casa,100.0,90.0,4,3,1,30,1,Norte,0,False,False
+2025-06-22 09:17:26.024695,9680.86095541582,False,Departamento,100,90,3,2,1,10,Norte,3,False,Las Condes
+2025-06-22 09:17:26.347587,7776.756040948822,False,Departamento,100,90,3,2,1,10,Norte,3,False,Providencia
+2025-06-22 09:17:26.665199,7485.277761755899,False,Departamento,100,90,3,2,1,10,Norte,3,False,La Reina
+2025-06-22 09:17:26.982570,6134.252192560065,False,Departamento,100,90,3,2,1,10,Norte,3,False,Santiago Centro
+2025-06-22 09:17:27.300418,6549.4103143807115,False,Departamento,100,90,3,2,1,10,Norte,3,False,Independencia
+2025-06-22 09:17:27.618168,6724.656126691814,False,Departamento,100,90,3,2,1,10,Norte,3,False,Ñuñoa
+2025-06-22 09:27:19.152005,9680.860955415817,False,Departamento,100,90,3,2,1,10,Norte,3,False,Las Condes
+2025-06-22 09:27:19.511374,7776.756040948818,False,Departamento,100,90,3,2,1,10,Norte,3,False,Providencia
+2025-06-22 09:27:19.826043,7485.277761755897,False,Departamento,100,90,3,2,1,10,Norte,3,False,La Reina
+2025-06-22 09:27:20.140909,6134.252192560064,False,Departamento,100,90,3,2,1,10,Norte,3,False,Santiago Centro
+2025-06-22 09:27:20.459655,6549.4103143807115,False,Departamento,100,90,3,2,1,10,Norte,3,False,Independencia
+2025-06-22 09:27:20.775602,6724.656126691814,False,Departamento,100,90,3,2,1,10,Norte,3,False,Ñuñoa
+2025-06-22 13:33:00.290327,7234.896223652851,False,Conchalí,Departamento,150.0,90.0,4,3,1,10,5,Norte,120000,False,True
+2025-06-22 13:33:07.546890,7434.905903479147,False,Conchalí,Casa,150.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 13:33:22.867227,10907.98338845133,False,Las Condes,Casa,150.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 13:34:09.095597,8180.883187000343,False,La Reina,Casa,150.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 13:34:21.226016,7434.90590347915,False,San Miguel,Casa,150.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 13:34:32.476874,7176.680806477846,False,Santiago Centro,Casa,150.0,90.0,4,3,1,10,1,Norte,0,False,False

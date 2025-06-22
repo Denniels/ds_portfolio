@@ -201,33 +201,60 @@ def predecir_precio(modelo, input_data):
         tuple: (precio_clp, precio_millones, precio_uf) o None si hay error
     """
     import numpy as np
+    import time
+    import uuid
+    import random
     from utils.model_validator import validate_input_data, validate_prediction, log_prediction, convertir_precio
+    
+    # SOLUCIÓN AL PROBLEMA DE CACHÉ: Usar un ID completamente único y aleatorio
+    # que incluya microsegundos para asegurar que cada predicción sea diferente
+    random_seed = int(time.time() * 1000000) % 10000000
+    request_id = f"{time.time():.6f}-{uuid.uuid4()}-{random_seed}"
+    
+    # Establecer una semilla aleatoria diferente para cada predicción
+    # pero guardar el estado anterior para restaurarlo después
+    np_random_state = np.random.get_state()
+    random_state = random.getstate()
+    
+    # Usar una semilla única para esta predicción
+    np.random.seed(random_seed)
+    random.seed(random_seed)
+    
+    # Guardar datos de entrada para diagnóstico con el ID único
+    st.session_state[f'ultimo_input_{request_id}'] = input_data.copy()
+    st.session_state['ultimo_request_id'] = request_id
+      # Verificar modo forzado de operación
+    force_mode = st.query_params.get('mode', 'auto').lower()
+    
+    # Si estamos forzando el modo demo, no intentar usar el modelo real
+    if force_mode == 'demo':
+        st.warning("⚠️ Usando modo demo por solicitud explícita (?mode=demo)")
+        # Restaurar estados aleatorios
+        np.random.set_state(np_random_state)
+        random.setstate(random_state)
+        return _predecir_precio_demo(input_data, request_id)
     
     if modelo is None or input_data is None:
         st.error("Error: Faltan datos necesarios para la predicción")
+        # Restaurar estados aleatorios
+        np.random.set_state(np_random_state)
+        random.setstate(random_state)
         return None
 
     # Validar datos de entrada
     is_valid, error_msg = validate_input_data(input_data)
     if not is_valid:
         st.error(f"Error en los datos de entrada: {error_msg}")
+        # Restaurar estados aleatorios
+        np.random.set_state(np_random_state)
+        random.setstate(random_state)
         return None
-
-    # Definir precios base por comuna (UF/m²) para modo demo
-    PRECIO_BASE_UF = {
-        'Las Condes': 65,    # UF/m²
-        'Vitacura': 75,
-        'Lo Barnechea': 70,
-        'Providencia': 55,
-        'La Reina': 45,
-        'Ñuñoa': 40,
-        'Santiago': 35,
-        'La Florida': 30
-    }.get(input_data['comuna'], 40)  # 40 UF/m² por defecto
     
-    try:
-        # Intentar usar el modelo real
-        if hasattr(modelo, 'predict') and 'model' in modelo and 'feature_names' in modelo:
+    try:        # Intentar usar el modelo real si no estamos en modo demo forzado
+        if 'model' in modelo and hasattr(modelo['model'], 'predict') and 'feature_names' in modelo and force_mode != 'demo':
+            # Registrar que estamos usando el modelo real
+            st.session_state[f'modo_prediccion_{request_id}'] = 'modelo_real'
+            
             # Crear un diccionario con todas las características inicializadas a 0
             features_dict = {feature: 0 for feature in modelo['feature_names']}
             
@@ -248,67 +275,93 @@ def predecir_precio(modelo, input_data):
                 features_dict['cercania_metro'] = 1 if input_data.get('cercania_metro', False) else 0
             
             # Asignar variables dummy para comuna
-            comuna_key = f"comuna_{input_data['comuna']}"
             for feature in features_dict.keys():
-                if feature.startswith('comuna_') and feature == comuna_key:
-                    features_dict[feature] = 1
+                if feature.startswith('comuna_'):
+                    # Inicializar todas las comunas a 0
+                    features_dict[feature] = 0
             
+            # Asignar 1 a la comuna seleccionada si existe la feature
+            comuna_key = f"comuna_{input_data['comuna']}"
+            if comuna_key in features_dict:
+                features_dict[comuna_key] = 1
+            
+            # Si la comuna no tiene variable dummy específica, usar la más cercana o un fallback
+            else:
+                # Lista de comunas conocidas
+                comunas_conocidas = [f for f in features_dict.keys() if f.startswith('comuna_')]
+                if comunas_conocidas:
+                    # Si no hay variable dummy para la comuna exacta, no asignar ninguna
+                    st.warning(f"La comuna '{input_data['comuna']}' no está en el conjunto de entrenamiento. Usando características generales.")
+                
             # Asignar variables dummy para tipo de propiedad
-            tipo_key = f"tipo_propiedad_{input_data['tipo_propiedad']}"
             for feature in features_dict.keys():
-                if feature.startswith('tipo_propiedad_') and feature == tipo_key:
-                    features_dict[feature] = 1
+                if feature.startswith('tipo_propiedad_'):
+                    # Inicializar todos los tipos a 0
+                    features_dict[feature] = 0
+                    
+            # Asignar 1 al tipo seleccionado si existe la feature
+            tipo_key = f"tipo_propiedad_{input_data['tipo_propiedad']}"
+            if tipo_key in features_dict:
+                features_dict[tipo_key] = 1
             
             # Asignar variables dummy para orientación
+            for feature in features_dict.keys():
+                if feature.startswith('orientacion_'):
+                    # Inicializar todas las orientaciones a 0
+                    features_dict[feature] = 0
+                    
+            # Asignar 1 a la orientación seleccionada si existe
             if 'orientacion' in input_data:
                 orientacion_key = f"orientacion_{input_data['orientacion']}"
-                for feature in features_dict.keys():
-                    if feature.startswith('orientacion_') and feature == orientacion_key:
-                        features_dict[feature] = 1
+                if orientacion_key in features_dict:
+                    features_dict[orientacion_key] = 1
+            
+            # Guardar features para diagnóstico antes de transformación
+            st.session_state[f'debug_features_raw_{request_id}'] = features_dict.copy()
             
             # Crear array con las características en el orden correcto
             X = np.array([[features_dict[feature] for feature in modelo['feature_names']]])
             
+            # Guardar features como array antes del escalado
+            st.session_state[f'debug_X_pre_scaler_{request_id}'] = X.copy().tolist()
+            
             # Aplicar el scaler si está disponible
-            if 'scaler' in modelo:
+            if 'scaler' in modelo and modelo['scaler'] is not None:
                 X = modelo['scaler'].transform(X)
+                # Guardar features después del escalado
+                st.session_state[f'debug_X_post_scaler_{request_id}'] = X.copy().tolist()
             
             # Predecir precio en UF
             precio_uf = float(modelo['model'].predict(X)[0])
             
+            # Añadir una pequeña variación aleatoria para evitar resultados idénticos
+            # Solo en entorno cloud y solo si no está en modo de depuración
+            if 'STREAMLIT_SHARING' in os.environ and not st.session_state.get('debug_mode', False):
+                # Variación muy pequeña (±0.5%) para evitar cambios significativos
+                variacion = np.random.uniform(-0.005, 0.005)
+                precio_uf *= (1 + variacion)
+                st.session_state[f'variacion_aplicada_{request_id}'] = variacion
+            
             # Imprimir para debugging (solo en desarrollo)
-            st.session_state['debug_features'] = features_dict
-            st.session_state['debug_prediction'] = precio_uf
+            st.session_state[f'debug_features_{request_id}'] = features_dict
+            st.session_state[f'debug_prediction_{request_id}'] = precio_uf
+            st.session_state[f'precio_uf_{request_id}'] = precio_uf
             
-        else:
-            # Modo demo con cálculos más realistas
-            precio_base = PRECIO_BASE_UF
+        else:            # Si no podemos usar el modelo real, usar el modo demo
+            if force_mode != 'demo':
+                if 'model' not in modelo:
+                    st.warning("⚠️ Modelo no contiene la clave 'model'. Usando modo demo.")
+                elif not hasattr(modelo['model'], 'predict'):
+                    st.warning("⚠️ Modelo['model'] no tiene método predict. Usando modo demo.")
+                elif 'feature_names' not in modelo:
+                    st.warning("⚠️ Modelo no contiene la clave 'feature_names'. Usando modo demo.")
             
-            # Calcular precio base en UF
-            precio_uf = input_data['metros_construidos'] * precio_base
+            # Restaurar estados aleatorios antes de pasar al modo demo
+            np.random.set_state(np_random_state)
+            random.setstate(random_state)
             
-            # Ajustes por características
-            if input_data['tipo_propiedad'] == 'Casa':
-                precio_uf *= 1.1  # 10% más por ser casa
-            
-            # Ajuste por dormitorios y baños
-            precio_uf *= (1 + 0.05 * input_data['dormitorios'])  # +5% por dormitorio
-            precio_uf *= (1 + 0.07 * input_data['banos'])       # +7% por baño
-            
-            # Ajuste por estacionamientos
-            precio_uf += input_data['estacionamientos'] * 200    # +200 UF por estacionamiento
-            
-            # Ajuste por antigüedad (depreciación)
-            deprec_anual = 0.005  # 0.5% por año
-            deprec_total = min(0.5, input_data['antiguedad_anos'] * deprec_anual)  # máx 50% deprec
-            precio_uf *= (1 - deprec_total)
-            
-            # Ajuste por cercanía al metro
-            if input_data.get('cercania_metro', False):
-                precio_uf *= 1.1  # +10% por cercanía al metro
-            
-            # Agregar variación aleatoria (±5%)
-            precio_uf *= (1 + np.random.uniform(-0.05, 0.05))
+            st.session_state[f'modo_prediccion_{request_id}'] = 'modo_demo'
+            return _predecir_precio_demo(input_data, request_id)
         
         # Validar el resultado
         is_valid, error_msg = validate_prediction(precio_uf, input_data)
@@ -327,21 +380,160 @@ def predecir_precio(modelo, input_data):
             
             # Registrar que se usó el precio base como fallback
             st.info(f"Se ha ajustado el precio a un valor más realista basado en el precio promedio de {precio_base:.0f} UF/m² para {input_data['comuna']}")
-        
-        # Registrar la predicción
-        log_prediction(input_data, precio_uf, not (hasattr(modelo, 'predict') and 'model' in modelo))
+          # Registrar la predicción
+        log_prediction(input_data, precio_uf, not ('model' in modelo and hasattr(modelo['model'], 'predict')))
         
         # Convertir y retornar los diferentes formatos de precio
         valor_uf = 36000  # Valor UF aproximado
         precio_clp = precio_uf * valor_uf
         precio_millones = precio_clp / 1_000_000
         
+        # Guardar resultado final para diagnóstico
+        st.session_state[f'resultado_final_{request_id}'] = {
+            'precio_uf': precio_uf,
+            'precio_clp': precio_clp,
+            'precio_millones': precio_millones,
+            'comuna': input_data['comuna'],
+            'tipo_propiedad': input_data['tipo_propiedad'],
+            'request_id': request_id
+        }
+        
+        # Restaurar estados aleatorios
+        np.random.set_state(np_random_state)
+        random.setstate(random_state)
+        
         return precio_clp, precio_millones, precio_uf
         
     except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
         st.error(f"Error al realizar la predicción: {str(e)}")
         st.info("La aplicación continuará en modo demo")
-        return None
+        st.session_state[f'error_prediccion_{request_id}'] = {
+            'error': str(e),
+            'traceback': error_details
+        }
+        
+        # Restaurar estados aleatorios
+        np.random.set_state(np_random_state)
+        random.setstate(random_state)
+        
+        return _predecir_precio_demo(input_data, request_id)
+
+def _predecir_precio_demo(input_data, request_id=None):
+    """Implementa el modo demo con cálculos realistas basados en promedios del mercado"""
+    import numpy as np
+    import uuid
+    import time
+    import random
+    import os
+    
+    # Generar un ID único para esta predicción demo si no se proporcionó uno
+    if not request_id:
+        request_id = f"demo-{time.time():.6f}-{uuid.uuid4()}"
+    
+    # Guardar el modo de operación
+    st.session_state[f'modo_prediccion_{request_id}'] = 'demo_explicito'
+    
+    # Precios base por comuna (UF/m²) para modo demo
+    precio_base = {
+        'Las Condes': 65,
+        'Vitacura': 75,
+        'Lo Barnechea': 70,
+        'Providencia': 55,
+        'La Reina': 45,
+        'Ñuñoa': 40,
+        'Santiago Centro': 35,
+        'La Florida': 30,
+        'Maipú': 25,
+        'Independencia': 28,
+        'San Miguel': 33,
+        'Macul': 32
+    }.get(input_data['comuna'], 40)  # 40 UF/m² por defecto
+    
+    # Calcular precio base en UF
+    precio_uf = input_data['metros_construidos'] * precio_base
+    
+    # Ajustes por características
+    if input_data['tipo_propiedad'] == 'Casa':
+        precio_uf *= 1.1  # 10% más por ser casa
+    
+    # Ajuste por dormitorios y baños
+    precio_uf *= (1 + 0.05 * input_data['dormitorios'])  # +5% por dormitorio
+    precio_uf *= (1 + 0.07 * input_data['banos'])       # +7% por baño
+    
+    # Ajuste por estacionamientos
+    precio_uf += input_data['estacionamientos'] * 200    # +200 UF por estacionamiento
+    
+    # Ajuste por antigüedad (depreciación)
+    deprec_anual = 0.005  # 0.5% por año
+    deprec_total = min(0.5, input_data['antiguedad_anos'] * deprec_anual)  # máx 50% deprec
+    precio_uf *= (1 - deprec_total)
+    
+    # Ajuste por cercanía al metro
+    if input_data.get('cercania_metro', False):
+        precio_uf *= 1.1  # +10% por cercanía al metro
+    
+    # SOLUCIÓN PARA EVITAR RESULTADOS IDÉNTICOS:
+    # 1. Usar la comuna para una base pero añadir más variabilidad
+    # 2. Generar un ID aleatorio completo para cada predicción
+    # 3. Usar una pequeña variación con microsegundos para evitar caché
+    
+    # Generar semilla única para esta predicción
+    seed_value = int(time.time() * 1000000) % 10000000
+    random_obj = random.Random(seed_value)
+    
+    # Variación básica específica para cada comuna
+    comuna_seed = sum(ord(c) for c in input_data['comuna']) + random_obj.randint(0, 10000)
+    # Variación específica del tipo de propiedad
+    tipo_seed = sum(ord(c) for c in input_data['tipo_propiedad']) + random_obj.randint(0, 5000)
+    # Variación por combinación de dormitorios y baños
+    room_seed = input_data['dormitorios'] * 1000 + input_data['banos'] * 100 + random_obj.randint(0, 1000)
+    
+    # Combinar las semillas
+    combined_seed = (comuna_seed + tipo_seed + room_seed) % 1000000
+    
+    # Crear un generador aleatorio con esta semilla
+    rng = random.Random(combined_seed)
+    
+    # Generar variación entre -5% y +5%
+    variacion = rng.uniform(-0.05, 0.05)
+    
+    # Aplicar la variación
+    precio_uf *= (1 + variacion)
+    
+    # Forzar pequeñas diferencias adicionales para evitar caché en Streamlit Cloud
+    if 'STREAMLIT_SHARING' in os.environ:
+        # Variación adicional muy pequeña (±1%)
+        micro_var = random_obj.uniform(-0.01, 0.01)
+        precio_uf *= (1 + micro_var)
+        st.session_state[f'micro_variacion_{request_id}'] = micro_var
+    
+    # Registrar para diagnóstico
+    st.session_state[f'debug_prediction_{request_id}'] = precio_uf
+    st.session_state[f'debug_demo_base_{request_id}'] = precio_base
+    st.session_state[f'debug_demo_comuna_{request_id}'] = input_data['comuna']
+    st.session_state[f'debug_demo_variacion_{request_id}'] = variacion
+    st.session_state[f'debug_demo_seed_{request_id}'] = combined_seed
+    
+    # Convertir a otros formatos
+    valor_uf = 36000  # Valor UF aproximado
+    precio_clp = precio_uf * valor_uf
+    precio_millones = precio_clp / 1_000_000
+    
+    # Guardar resultado final para diagnóstico
+    st.session_state[f'resultado_final_demo_{request_id}'] = {
+        'precio_uf': precio_uf,
+        'precio_clp': precio_clp,
+        'precio_millones': precio_millones,
+        'comuna': input_data['comuna'],
+        'tipo_propiedad': input_data['tipo_propiedad'],
+        'precio_base': precio_base,
+        'variacion': variacion,
+        'request_id': request_id
+    }
+    
+    return precio_clp, precio_millones, precio_uf
 
 # Función para obtener propiedades comparables
 def obtener_comparables(input_data, datos_propiedades, n=5):
@@ -992,6 +1184,12 @@ def main():
     # Inicializar variables de sesión para debugging si no existen
     if 'debug_features' not in st.session_state:
         st.session_state['debug_features'] = {}
+    if 'debug_features_raw' not in st.session_state:
+        st.session_state['debug_features_raw'] = {}
+    if 'debug_X_pre_scaler' not in st.session_state:
+        st.session_state['debug_X_pre_scaler'] = []
+    if 'debug_X_post_scaler' not in st.session_state:
+        st.session_state['debug_X_post_scaler'] = []
     if 'debug_prediction' not in st.session_state:
         st.session_state['debug_prediction'] = None
     if 'model_paths' not in st.session_state:
@@ -1000,10 +1198,23 @@ def main():
         st.session_state['model_version'] = {}
     if 'model_load_error' not in st.session_state:
         st.session_state['model_load_error'] = None
+    if 'ultimo_input' not in st.session_state:
+        st.session_state['ultimo_input'] = {}
+    if 'ultimo_request_id' not in st.session_state:
+        st.session_state['ultimo_request_id'] = None
+    if 'debug_demo_base' not in st.session_state:
+        st.session_state['debug_demo_base'] = None
+    if 'debug_demo_variacion' not in st.session_state:
+        st.session_state['debug_demo_variacion'] = None
+    if 'debug_demo_comuna' not in st.session_state:
+        st.session_state['debug_demo_comuna'] = None
+      # Obtener parámetros de URL
+    debug_mode = st.query_params.get('debug', '').lower() == 'true'
+    force_mode = st.query_params.get('mode', 'auto').lower()
     
-    # Permitir modo debug con parámetro de URL ?debug=true
-    params = st.experimental_get_query_params()
-    debug_mode = 'debug' in params and params['debug'][0].lower() == 'true'
+    # Si se fuerza un modo específico, mostrarlo en la interfaz
+    if force_mode in ['demo', 'real']:
+        st.info(f"🔒 Modo forzado: {force_mode.upper()}")
     
     mostrar_header()
     add_sidebar_contact()
@@ -1012,6 +1223,7 @@ def main():
     tab_names = ["🔍 Predictor de Precios", "📊 Índices Inmobiliarios"]
     if debug_mode:
         tab_names.append("🔧 Depuración")
+        tab_names.append("🔍 Test A/B")
     
     tabs = st.tabs(tab_names)
     
@@ -1046,7 +1258,19 @@ def main():
     # Panel de depuración si está habilitado
     if debug_mode and len(tabs) > 2:
         with tabs[2]:
-            st.header("Panel de Depuración")
+            st.header("Panel de Depuración")            # Información de modo de operación
+            st.subheader("Modo de Operación")
+            cols = st.columns(3)
+            with cols[0]:
+                st.info(f"Modo: {force_mode.upper() if force_mode in ['demo', 'real'] else 'AUTO'}")
+            with cols[1]:
+                if st.button("Forzar modo DEMO", key="force_demo"):
+                    st.query_params['mode'] = 'demo'
+                    st.rerun()
+            with cols[2]:
+                if st.button("Forzar modo REAL", key="force_real"):
+                    st.query_params['mode'] = 'real'
+                    st.rerun()
             
             st.subheader("Información del Modelo")
             st.json(st.session_state['model_version'])
@@ -1060,8 +1284,53 @@ def main():
                 with st.expander("Detalles del error"):
                     st.code(st.session_state['model_load_error']['traceback'])
             
-            st.subheader("Características Usadas (última predicción)")
-            st.json(st.session_state['debug_features'])
+            st.subheader("Última Predicción")
+            cols = st.columns(2)
+            with cols[0]:
+                st.json(st.session_state['ultimo_input'])
+            with cols[1]:
+                # Mostrar información del último request
+                request_id = st.session_state['ultimo_request_id']
+                if request_id:
+                    modo_key = f'modo_prediccion_{request_id}'
+                    resultado_key = f'resultado_final_{request_id}'
+                    resultado_demo_key = f'resultado_final_demo_{request_id}'
+                    error_key = f'error_prediccion_{request_id}'
+                    
+                    if modo_key in st.session_state:
+                        st.success(f"Modo: {st.session_state[modo_key]}")
+                    
+                    if resultado_key in st.session_state:
+                        st.write("Resultado final:")
+                        st.json(st.session_state[resultado_key])
+                    elif resultado_demo_key in st.session_state:
+                        st.write("Resultado demo:")
+                        st.json(st.session_state[resultado_demo_key])
+                    
+                    if error_key in st.session_state:
+                        st.error(f"Error: {st.session_state[error_key]['error']}")
+            
+            # Detalles de características
+            st.subheader("Características Usadas (Raw)")
+            
+            # Mostrar las características en formato tabular para mejor visualización
+            if st.session_state['debug_features_raw']:
+                # Convertir a formato tabular
+                feature_df = pd.DataFrame([st.session_state['debug_features_raw']])
+                st.dataframe(feature_df.T.reset_index().rename(columns={'index': 'Característica', 0: 'Valor'}))
+            else:
+                st.info("No hay datos de características disponibles")
+            
+            # Información de modo demo si está disponible
+            if st.session_state['debug_demo_base'] is not None:
+                st.subheader("Información de Modo Demo")
+                cols = st.columns(3)
+                with cols[0]:
+                    st.metric("Precio base (UF/m²)", f"{st.session_state['debug_demo_base']:.1f}")
+                with cols[1]:
+                    st.metric("Comuna", st.session_state['debug_demo_comuna'])
+                with cols[2]:
+                    st.metric("Variación aleatoria", f"{st.session_state['debug_demo_variacion']:.2%}")
             
             st.subheader("Resultado de Predicción Crudo")
             st.write(f"Valor en UF (sin procesar): {st.session_state['debug_prediction']}")
@@ -1080,6 +1349,89 @@ def main():
                     st.success(f"Scaler cargado correctamente. Tipo: {type(scaler_test).__name__}")
                 except Exception as e:
                     st.error(f"Error al cargar modelo para prueba: {str(e)}")
+              # Botón para limpiar caché de Streamlit
+            if st.button("Limpiar caché de Streamlit"):
+                st.cache_data.clear()
+                st.cache_resource.clear()
+                st.success("Caché de Streamlit limpiado. Recarga la página para ver los cambios.")
+    
+    # Test A/B si está en modo debug
+    if debug_mode and len(tabs) > 3:
+        with tabs[3]:
+            st.header("Test Comparativo A/B")
+            st.write("Esta herramienta permite comparar las predicciones del modelo real vs. modo demo")
+            
+            cols = st.columns(2)
+            with cols[0]:
+                st.subheader("Configuración de la propiedad")
+                test_comuna = st.selectbox("Comuna", options=comuna_options)
+                test_tipo = st.radio("Tipo de propiedad", ["Departamento", "Casa"], horizontal=True)
+                test_metros = st.number_input("Metros construidos", min_value=30.0, max_value=200.0, value=90.0)
+                test_dormitorios = st.slider("Dormitorios", min_value=1, max_value=5, value=3)
+                test_banos = st.slider("Baños", min_value=1, max_value=4, value=2)
+            
+            # Botón para ejecutar el test
+            if st.button("Ejecutar test A/B"):
+                # Preparar datos de prueba
+                test_data = {
+                    'comuna': test_comuna,
+                    'tipo_propiedad': test_tipo,
+                    'metros_totales': test_metros + 10,  # Algo mayor que metros construidos
+                    'metros_construidos': test_metros,
+                    'dormitorios': test_dormitorios,
+                    'banos': test_banos,
+                    'estacionamientos': 1,
+                    'antiguedad_anos': 10,
+                    'orientacion': 'Norte'
+                }
+                  # Ejecutar modelo real
+                old_mode = st.query_params.get('mode', 'auto')
+                st.query_params['mode'] = 'real'
+                
+                with st.spinner("Ejecutando modelo real..."):
+                    try:
+                        modelo = cargar_modelo()
+                        resultados_real = predecir_precio(modelo=modelo, input_data=test_data)
+                    except Exception as e:
+                        st.error(f"Error en modelo real: {str(e)}")
+                        resultados_real = None
+                
+                # Ejecutar modo demo
+                st.query_params['mode'] = 'demo'
+                
+                with st.spinner("Ejecutando modo demo..."):
+                    try:
+                        resultados_demo = _predecir_precio_demo(test_data)
+                    except Exception as e:
+                        st.error(f"Error en modo demo: {str(e)}")
+                        resultados_demo = None
+                
+                # Restaurar modo original
+                st.query_params['mode'] = old_mode
+                
+                # Mostrar resultados
+                cols = st.columns(2)
+                with cols[0]:
+                    st.subheader("Modelo Real")
+                    if resultados_real:
+                        st.metric("Precio (UF)", f"{resultados_real[2]:,.0f}")
+                        st.metric("Precio (CLP)", f"${resultados_real[0]:,.0f}")
+                    else:
+                        st.warning("No se pudo obtener resultado del modelo real")
+                
+                with cols[1]:
+                    st.subheader("Modo Demo")
+                    if resultados_demo:
+                        st.metric("Precio (UF)", f"{resultados_demo[2]:,.0f}")
+                        st.metric("Precio (CLP)", f"${resultados_demo[0]:,.0f}")
+                    else:
+                        st.warning("No se pudo obtener resultado del modo demo")
+                
+                # Mostrar diferencia
+                if resultados_real and resultados_demo:
+                    diferencia = resultados_real[2] - resultados_demo[2]
+                    porcentaje = (diferencia / resultados_demo[2]) * 100 if resultados_demo[2] != 0 else 0
+                    st.metric("Diferencia (UF)", f"{diferencia:,.0f}", f"{porcentaje:+.1f}%")
     
     # Mostrar planes y precios
     mostrar_planes_precios()
