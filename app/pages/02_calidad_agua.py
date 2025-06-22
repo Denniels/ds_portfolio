@@ -36,6 +36,19 @@ data_manager = DataManager()
 # Cargar datos reales de calidad del agua
 import json
 import os
+import folium
+from pathlib import Path
+from folium.plugins import MarkerCluster
+import pandas as pd
+
+# Importar streamlit_folium de manera segura
+try:
+    from streamlit_folium import folium_static
+except ImportError:
+    # Crear una función de respaldo si la importación falla
+    def folium_static(fig, width=700, height=500):
+        st.error("No se pudo cargar streamlit_folium")
+        st.warning("Por favor, instale streamlit-folium con: pip install streamlit-folium==0.15.0")
 
 # Cargar datos JSON
 data_dir = Path(__file__).parent.parent / "data" / "cache"
@@ -502,21 +515,24 @@ with tab2:
         '''
         
         m.get_root().html.add_child(folium.Element(legend_html))
-    
-    # Mostrar el mapa en Streamlit
+      # Mostrar el mapa en Streamlit
     try:
-        from streamlit_folium import st_folium
-        st_folium(m, width=800, height=500, returned_objects=[])
-    except ImportError:
-        try:
-            from streamlit_folium import folium_static
-            folium_static(m, width=800, height=500)
-        except ImportError:
-            # Si streamlit_folium no está disponible, mostrar mensaje alternativo
-            st.warning("La biblioteca streamlit_folium no está instalada. Instalando...")
-            st.code("pip install streamlit-folium", language="bash")
-            st.image("https://via.placeholder.com/800x500?text=Mapa+Interactivo+de+Estaciones", 
-                    caption="Vista previa del mapa interactivo de estaciones")
+        # Intentar cargar el mapa con streamlit_folium
+        folium_static(m, width=800, height=500)
+    except Exception as e:
+        # Mostrar mensaje de error y alternativa
+        st.error(f"Error al cargar el mapa: {str(e)}")
+        st.warning("""
+        No se pudo cargar el mapa interactivo. Esto puede deberse a:
+        1. La biblioteca streamlit-folium no está correctamente instalada
+        2. Hay un problema de compatibilidad con la versión actual de Python
+        
+        Por favor, revise los logs para más detalles.
+        """)
+        st.info("Mientras tanto, se muestra una vista previa estática")
+        # Mostrar una imagen estática como alternativa
+        st.image("https://via.placeholder.com/800x500?text=Mapa+Interactivo+de+Estaciones", 
+                caption="Vista previa del mapa interactivo de estaciones")
     
     # Información del mapa
     if estaciones_data:

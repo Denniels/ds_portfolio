@@ -5,3 +5,10 @@ python3-setuptools
 python3-wheel
 libpango1.0-dev
 python3-tk
+libfreetype6-dev
+pkg-config
+libxft-dev
+libblas-dev
+liblapack-dev
+libatlas-base-dev
+gfortran
