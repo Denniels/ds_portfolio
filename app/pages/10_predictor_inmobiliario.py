@@ -641,22 +641,59 @@ def generar_grafico_tendencias(tendencias, comuna, tipo_propiedad):
     # Convertir precios a millones
     datos_filtrados['precio_millones'] = datos_filtrados['precio_promedio'] / 1_000_000
     
-    # Crear gráfico
+    # Crear gráfico mejorado
     fig = px.line(
         datos_filtrados, 
         x='fecha', 
         y='precio_millones',
         title=f'Tendencia de precios en {comuna} - {tipo_propiedad}',
-        markers=True
+        markers=True,
+        line_shape='spline',     # Líneas suaves
+        render_mode='svg',       # Mejor calidad de renderizado
+        height=600,              # Altura fija más grande
+        width=900                # Ancho fijo para evitar problemas de escala
     )
     
-    # Personalizar
+    # Personalizar con mejor formato
     fig.update_layout(
         xaxis_title='Fecha',
         yaxis_title='Precio promedio (millones CLP)',
         hovermode='x unified',
-        template='plotly_white'
+        template='plotly_white',
+        title={
+            'y': 0.95,           # Posición del título
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top',
+            'font': {'size': 20, 'color': '#2F4F4F'}
+        },
+        margin=dict(l=60, r=40, t=100, b=60),  # Márgenes aumentados
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        autosize=True            # Permitir autoajuste
     )
+    
+    # Mejorar el formato de los ejes y líneas
+    fig.update_traces(
+        line=dict(width=3),      # Línea más gruesa
+        marker=dict(size=8)      # Marcadores más grandes
+    )
+    
+    # Mejorar el formato del eje Y
+    fig.update_yaxes(
+        tickformat='.1f',        # Formato de números con 1 decimal
+        gridcolor='lightgray',   # Color de la cuadrícula
+        gridwidth=0.5,           # Grosor de la cuadrícula
+        zeroline=False           # Quitar línea del cero
+    )
+    
+    # Mejorar el formato del eje X
+    fig.update_xaxes(
+        tickangle=0,             # Ángulo de las etiquetas
+        gridcolor='lightgray',   # Color de la cuadrícula
+        gridwidth=0.5            # Grosor de la cuadrícula
+    )
+    
+    return fig
     
     return fig
 
@@ -921,17 +958,32 @@ def mostrar_resultados(precio_predicho, input_data, datos_propiedades, tendencia
             <li>Precio por m² total: <b>{precio_uf/input_data['metros_totales']:.1f} UF/m²</b></li>
             <li>Rango típico en {input_data['comuna']}: 
                 {precio_base_comuna(input_data['comuna']):.0f} - {precio_base_comuna(input_data['comuna'])*1.3:.0f} UF/m²</li>
-        </ul>
-    </div>
+        </ul>    </div>
     """, unsafe_allow_html=True)
-
+    
     # Mostrar análisis adicionales en pestañas
     tab1, tab2, tab3, tab4 = st.tabs(["📈 Tendencias", "🔍 Comparables", "⚠️ Alertas", "📋 Detalles"])
     
     with tab1:
         st.subheader("Tendencia de precios")
         fig = generar_grafico_tendencias(tendencias, input_data['comuna'], input_data['tipo_propiedad'])
-        st.plotly_chart(fig, use_container_width=True)
+        # Configuración mejorada para visualización del gráfico
+        st.plotly_chart(
+            fig, 
+            use_container_width=True, 
+            height=600,  # Altura fija para el contenedor
+            config={
+                'displayModeBar': True,
+                'responsive': True,
+                'toImageButtonOptions': {
+                    'format': 'png',
+                    'filename': f'tendencia_precios_{input_data["comuna"]}',
+                    'height': 800,
+                    'width': 1200,
+                    'scale': 2  # Resolución más alta
+                }
+            }
+        )
         
         # Análisis de tendencia
         st.info(f"""
@@ -941,15 +993,15 @@ def mostrar_resultados(precio_predicho, input_data, datos_propiedades, tendencia
         en los últimos 12 meses. {random.choice([
             'El mejor momento para vender suele ser entre marzo y mayo.',
             'La demanda ha incrementado un 12% en el último trimestre.',
-            'El tiempo promedio de venta es de 4.2 meses para este tipo de propiedad.'
-        ])}
+            'El tiempo promedio de venta es de 4.2 meses para este tipo de propiedad.'        ])}
         """)
     
     with tab2:
         st.subheader("Propiedades comparables")
         comparables = obtener_comparables(input_data, datos_propiedades)
         
-        if len(comparables) > 0:            # Crear una copia del DataFrame para evitar advertencias de SettingWithCopy
+        if len(comparables) > 0:
+            # Crear una copia del DataFrame para evitar advertencias de SettingWithCopy
             comparables_display = comparables[['comuna', 'tipo_propiedad', 'metros_construidos', 
                                              'dormitorios', 'banos', 'antiguedad_anos', 'precio']].copy()
             
