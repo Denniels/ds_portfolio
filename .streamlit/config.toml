@@ -1,12 +1,31 @@
 [server]
 enableCORS = false
 enableXsrfProtection = false
+maxUploadSize = 200
+maxMessageSize = 200
+headless = true
 
 [browser]
 gatherUsageStats = false
+serverAddress = "0.0.0.0"
 
 [theme]
 primaryColor = "#667eea"
 backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f8f9fa"
 textColor = "#333333"
+
+[runner]
+fastReruns = true
+
+[client]
+showErrorDetails = true
+toolbarMode = "minimal"
+
+[logger]
+level = "info"
+
+[global]
+developmentMode = false
+disableWatchdogWarning = true
+suppressDeprecationWarnings = true

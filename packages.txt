@@ -8,6 +8,10 @@ python3-tk
 libfreetype6-dev
 pkg-config
 libxft-dev
+libopenblas-dev
+liblapack-dev
+gfortran
+libblas-dev
 libblas-dev
 liblapack-dev
 libatlas-base-dev
