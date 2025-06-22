@@ -41,3 +41,10 @@ timestamp,precio_uf,is_demo,comuna,tipo_propiedad,metros_totales,metros_construi
 2025-06-22 15:03:12.128080,6308.852212187546,False,Conchalí,Casa,100.0,90.0,4,3,1,30,1,Nororiente,0,False,False
 2025-06-22 15:03:28.251619,4319.789719813273,False,La Florida,Casa,100.0,90.0,4,3,1,30,1,Nororiente,0,False,False
 2025-06-22 15:03:51.937579,7419.450919633063,False,La Reina,Casa,100.0,90.0,4,3,1,30,1,Norte,0,False,False
+2025-06-22 15:38:41.958482,4704.186686969762,False,La Florida,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 15:39:01.622732,10715.049271434764,False,Las Condes,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 15:39:08.201173,10715.049271434764,False,Las Condes,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 15:39:15.953024,7361.577411655776,False,Puente Alto,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 15:39:30.126316,12307.328553636653,False,Vitacura,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 15:39:54.330831,12307.328553636651,False,Vitacura,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False
+2025-06-22 15:40:04.360508,12307.328553636651,False,Vitacura,Casa,100.0,90.0,4,3,1,10,1,Norte,0,False,False

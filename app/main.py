@@ -88,22 +88,36 @@ def main():
         <div class="project-card">
             <h3>🏭 Análisis de Emisiones CO2</h3>
             <p>Estudio comprehensivo de emisiones industriales en Chile</p>
-        </div>
-        """, unsafe_allow_html=True)
+        </div>        """, unsafe_allow_html=True)
         
         if st.button("Ver Análisis CO2", key="btn1"):
-            st.switch_page("pages/01_emisiones_co2.py")
+            try:
+                st.switch_page("pages/01_emisiones_co2.py")
+            except AttributeError:
+                # Fallback para versiones de Streamlit que no tienen switch_page
+                st.markdown("""
+                <meta http-equiv="refresh" content="0;URL='01_emisiones_co2'" />
+                """, unsafe_allow_html=True)
+                st.info("Redirigiendo a análisis de emisiones CO2...")
+                st.stop()
     
     with col2:
         st.markdown("""
         <div class="project-card">
             <h3>💧 Calidad del Agua</h3>
             <p>Análisis de parámetros de calidad en fuentes hídricas</p>
-        </div>
-        """, unsafe_allow_html=True)
+        </div>        """, unsafe_allow_html=True)
         
         if st.button("Ver Análisis Agua", key="btn2"):
-            st.switch_page("pages/02_calidad_agua.py")
+            try:
+                st.switch_page("pages/02_calidad_agua.py")
+            except AttributeError:
+                # Fallback para versiones de Streamlit que no tienen switch_page
+                st.markdown("""
+                <meta http-equiv="refresh" content="0;URL='02_calidad_agua'" />
+                """, unsafe_allow_html=True)
+                st.info("Redirigiendo a análisis de calidad del agua...")
+                st.stop()
     
     # Segunda fila
     col3, col4 = st.columns(2)
@@ -113,22 +127,36 @@ def main():
         <div class="project-card">
             <h3>👥 Análisis Demográfico</h3>
             <p>Exploración de datos poblacionales de Chile</p>
-        </div>
-        """, unsafe_allow_html=True)
+        </div>        """, unsafe_allow_html=True)
         
         if st.button("Ver Demografía", key="btn3"):
-            st.switch_page("pages/03_demografia.py")
+            try:
+                st.switch_page("pages/03_demografia_bigquery.py")
+            except AttributeError:
+                # Fallback para versiones de Streamlit que no tienen switch_page
+                st.markdown("""
+                <meta http-equiv="refresh" content="0;URL='03_demografia_bigquery'" />
+                """, unsafe_allow_html=True)
+                st.info("Redirigiendo a análisis demográfico...")
+                st.stop()
     
     with col4:
         st.markdown("""
         <div class="project-card">
             <h3>💰 Presupuesto Público</h3>
             <p>Análisis de gastos gubernamentales y tendencias</p>
-        </div>
-        """, unsafe_allow_html=True)
+        </div>        """, unsafe_allow_html=True)
         
         if st.button("Ver Presupuesto", key="btn4"):
-            st.switch_page("pages/04_presupuesto_publico.py")
+            try:
+                st.switch_page("pages/04_presupuesto_publico.py")
+            except AttributeError:
+                # Fallback para versiones de Streamlit que no tienen switch_page
+                st.markdown("""
+                <meta http-equiv="refresh" content="0;URL='04_presupuesto_publico'" />
+                """, unsafe_allow_html=True)
+                st.info("Redirigiendo a análisis de presupuesto público...")
+                st.stop()
     
     # Objetivo del portfolio
     st.markdown("---")

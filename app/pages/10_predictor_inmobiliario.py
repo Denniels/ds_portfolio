@@ -64,39 +64,6 @@ except ImportError:
 DATA_DIR = Path(parent_dir) / "data" / "inmobiliario"
 MODEL_DIR = Path(parent_dir) / "data" / "modelos"
 
-# Función auxiliar para obtener parámetros de URL de manera compatible
-def get_query_param(key, default_value=''):
-    """
-    Obtiene un parámetro de URL de manera compatible con Streamlit Cloud y entorno local.
-    
-    Args:
-        key (str): Clave del parámetro a obtener
-        default_value (Any): Valor predeterminado si el parámetro no existe
-        
-    Returns:
-        Any: Valor del parámetro o el valor predeterminado
-    """
-    try:
-        return st.query_params.get(key, default_value)
-    except (AttributeError, Exception):
-        # Fallback para versiones de Streamlit que no tienen query_params
-        return st.session_state.get(f'param_{key}', default_value)
-
-# Función auxiliar para establecer parámetros de URL de manera compatible
-def set_query_param(key, value):
-    """
-    Establece un parámetro de URL de manera compatible con Streamlit Cloud y entorno local.
-    
-    Args:
-        key (str): Clave del parámetro a establecer
-        value (Any): Valor a establecer
-    """
-    try:
-        st.query_params[key] = value
-    except (AttributeError, Exception):
-        # Fallback para versiones de Streamlit que no tienen query_params
-        st.session_state[f'param_{key}'] = value
-
 # Función para cargar datos
 def cargar_datos():
     """Carga los datos de propiedades y tendencias"""
@@ -1337,7 +1304,7 @@ def main():
     if 'model_load_error' not in st.session_state:
         st.session_state['model_load_error'] = None
     if 'ultimo_input' not in st.session_state:
-        st.session_state['ultimo_input'] = {}
+        st.session_state['ultimo_input'] = {}    
     if 'ultimo_request_id' not in st.session_state:
         st.session_state['ultimo_request_id'] = None
     if 'debug_demo_base' not in st.session_state:
@@ -1345,7 +1312,12 @@ def main():
     if 'debug_demo_variacion' not in st.session_state:
         st.session_state['debug_demo_variacion'] = None
     if 'debug_demo_comuna' not in st.session_state:
-        st.session_state['debug_demo_comuna'] = None    # Obtener parámetros de URL
+        st.session_state['debug_demo_comuna'] = None
+        
+    # Agregar controles del modelo a la barra lateral primero
+    add_model_controls_to_sidebar()
+    
+    # Obtener parámetros de URL
     try:
         debug_mode = st.query_params.get('debug', '').lower() == 'true'
         force_mode = st.query_params.get('mode', 'auto').lower()
@@ -1358,14 +1330,13 @@ def main():
     # Si se fuerza un modo específico, mostrarlo en la interfaz
     if force_mode in ['demo', 'real']:
         st.info(f"🔒 Modo forzado: {force_mode.upper()}")
-    
-    # Si se fuerza un modelo específico, mostrarlo en la interfaz    if force_model in ['demo', 'real']:
+      # Si se fuerza un modelo específico, mostrarlo en la interfaz
+    if force_model in ['demo', 'real']:
         st.info(f"🔒 Modelo forzado: {force_model.upper()}")
     
     mostrar_header()
     
-    # Añadir controles del modelo a la barra lateral
-    add_model_controls_to_sidebar()
+    # Añadir sidebar components
     add_sidebar_contact()
     
     # Menú de navegación en pestañas
@@ -1492,9 +1463,8 @@ def main():
             
             st.subheader("Resultado de Predicción Crudo")
             st.write(f"Valor en UF (sin procesar): {st.session_state['debug_prediction']}")
-            
-            # Botón para probar carga de modelo
-            if st.button("Probar carga de modelo"):
+              # Botón para probar carga de modelo
+            if st.button("Probar carga de modelo", key="test_model_load_button"):
                 try:
                     import joblib
                     model_path = Path(st.session_state['model_paths']['model'])
@@ -1508,12 +1478,11 @@ def main():
                 except Exception as e:
                     st.error(f"Error al cargar modelo para prueba: {str(e)}")
               # Botón para limpiar caché de Streamlit
-            if st.button("Limpiar caché de Streamlit"):
+            if st.button("Limpiar caché de Streamlit", key="clear_streamlit_cache_debug"):
                 st.cache_data.clear()
                 st.cache_resource.clear()
                 st.success("Caché de Streamlit limpiado. Recarga la página para ver los cambios.")
-    
-    # Test A/B si está en modo debug
+      # Test A/B si está en modo debug
     if debug_mode and len(tabs) > 3:
         with tabs[3]:
             st.header("Test Comparativo A/B")
@@ -1522,14 +1491,14 @@ def main():
             cols = st.columns(2)
             with cols[0]:
                 st.subheader("Configuración de la propiedad")
-                test_comuna = st.selectbox("Comuna", options=comuna_options)
-                test_tipo = st.radio("Tipo de propiedad", ["Departamento", "Casa"], horizontal=True)
-                test_metros = st.number_input("Metros construidos", min_value=30.0, max_value=200.0, value=90.0)
-                test_dormitorios = st.slider("Dormitorios", min_value=1, max_value=5, value=3)
-                test_banos = st.slider("Baños", min_value=1, max_value=4, value=2)
+                test_comuna = st.selectbox("Comuna", options=comuna_options, key="test_ab_comuna")
+                test_tipo = st.radio("Tipo de propiedad", ["Departamento", "Casa"], horizontal=True, key="test_ab_tipo")
+                test_metros = st.number_input("Metros construidos", min_value=30.0, max_value=200.0, value=90.0, key="test_ab_metros")
+                test_dormitorios = st.slider("Dormitorios", min_value=1, max_value=5, value=3, key="test_ab_dormitorios")
+                test_banos = st.slider("Baños", min_value=1, max_value=4, value=2, key="test_ab_banos")
             
             # Botón para ejecutar el test
-            if st.button("Ejecutar test A/B"):
+            if st.button("Ejecutar test A/B", key="run_ab_test"):
                 # Preparar datos de prueba
                 test_data = {
                     'comuna': test_comuna,
@@ -1544,12 +1513,9 @@ def main():
                 }                # Ejecutar modelo real
                 try:
                     old_mode = st.query_params.get('mode', 'auto')
-                except (AttributeError, Exception):
-                    old_mode = st.session_state.get('force_mode', 'auto')
-                
-                try:
                     st.query_params['mode'] = 'real'
                 except (AttributeError, Exception):
+                    old_mode = st.session_state.get('force_mode', 'auto')
                     st.session_state['force_mode'] = 'real'
                 
                 with st.spinner("Ejecutando modelo real..."):
@@ -1642,7 +1608,6 @@ def add_model_controls_to_sidebar():
             st.rerun()
         except (AttributeError, Exception):
             # Fallback para Streamlit Cloud
-
             if 'debug_mode' in st.session_state and st.session_state.get('debug_mode', False):
                 st.sidebar.info("Nota: No se pudo actualizar la URL en esta versión de Streamlit")
             # Usar session_state como alternativa para mantener el estado
@@ -1656,15 +1621,12 @@ def add_model_controls_to_sidebar():
         st.sidebar.warning("⚠️ Forzar el modelo real puede causar errores si hay incompatibilidades de versiones.")
     else:  # demo
         st.sidebar.info("El modo demo utiliza cálculos basados en promedios del mercado, no el modelo de ML entrenado.")
-    
-    # Botón para limpiar caché
-    if st.sidebar.button("🧹 Limpiar caché"):
+      # Botón para limpiar caché
+    if st.sidebar.button("🧹 Limpiar caché", key="sidebar_clear_cache"):
         st.cache_data.clear()
         st.rerun()
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
-    # Añadir controles del modelo a la barra lateral
-    add_model_controls_to_sidebar()
-    
+    # Ejecutar la función principal (que ya incluye la adición de controles)
     main()
