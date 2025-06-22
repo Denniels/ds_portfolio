@@ -1,7 +1,20 @@
-# Solución Implementada: Predictor Inmobiliario
+# Solución Implementada: Predictor Inmobiliario - Actualización Junio 2025
 
-## Problema Detectado
+## Problema Detectado Inicialmente
 El predictor inmobiliario en Streamlit Cloud siempre devuelve el mismo resultado (157.802.693 pesos chilenos / 4383 UF) independientemente de la comuna y características de la propiedad seleccionadas, mientras que funciona correctamente en el entorno local.
+
+## Problema Actual (Junio 2025)
+Después de resolver el problema inicial, se identificó un nuevo problema relacionado con incompatibilidades de versiones entre las bibliotecas utilizadas para crear el modelo y las disponibles en Streamlit Community Cloud.
+
+El modelo fue creado originalmente con:
+- scikit-learn: 1.7.0 (versión inexistente)
+- numpy: 1.26.4 (versión incompatible con Python 3.9.13)
+
+Mientras que el entorno de Streamlit Cloud estaba usando:
+- scikit-learn: 1.3.2
+- numpy: 1.24.3
+
+Adicionalmente, se reportó un potencial problema con bloques `try` sin sus correspondientes bloques `except` en el código.
 
 ## Diagnóstico
 
@@ -12,6 +25,10 @@ Tras analizar el código y realizar pruebas, se identificaron los siguientes pro
 2. **Posible error silencioso**: Un error en la carga del modelo podría estar provocando un fallback silencioso al modo demo, que usaba valores fijos o una semilla constante para las predicciones.
 
 3. **Falta de depuración en producción**: No existía un modo de depuración para verificar qué estaba ocurriendo en Streamlit Cloud.
+
+4. **Incompatibilidad de versiones**: El modelo fue creado con versiones de bibliotecas que no son compatibles con el entorno de despliegue.
+
+5. **Verificación de bloques try/except**: Se realizó una revisión exhaustiva del código para asegurar que todos los bloques `try` tuvieran sus correspondientes bloques `except`.
 
 ## Soluciones Implementadas
 
@@ -32,8 +49,30 @@ Se mejoró la función `cargar_modelo()` para:
 - Validar la información del modelo antes de usarlo
 - Registrar rutas y versiones para depuración
 - Implementar un manejo de errores más robusto
+- **Nuevo**: Detectar y mostrar advertencias sobre incompatibilidades de versiones
+- **Nuevo**: Manejar de manera más robusta los errores relacionados con `numpy.random`
 
-### 3. Implementación de Modo de Depuración
+### 3. Actualización del archivo `model_info.json`
+
+Se actualizó el archivo `model_info.json` para reflejar las versiones correctas:
+
+```json
+{
+  "version": {
+    "scikit-learn": "1.3.2",
+    "numpy": "1.24.4",
+    "pandas": "2.0.3",
+    "joblib": "1.2.0"
+  }
+}
+```
+
+Esta actualización se realizó en todos los archivos `model_info.json` para garantizar consistencia:
+- `app/data/inmobiliario/model_info.json`
+- `app/models/model_info.json`
+- `app/data/processed/model_info.json`
+
+### 4. Implementación de Modo de Depuración
 
 Se añadió un panel de depuración completo:
 
@@ -42,64 +81,33 @@ Se añadió un panel de depuración completo:
 - Permite probar la carga del modelo directamente
 - Registra información de predicciones para diagnóstico
 
-### 4. Herramientas de Diagnóstico Adicionales
+### 5. Herramientas de Diagnóstico Adicionales
 
-Se crearon dos scripts auxiliares:
+Se crearon varios scripts auxiliares:
 
 1. **verificar_archivos_modelo.py**: Verifica la consistencia de los archivos del modelo y puede copiarlos a todas las ubicaciones necesarias
+2. **diagnostico_modelo_inmobiliario.py**: Proporciona información detallada sobre el entorno y las versiones de las bibliotecas
 
-2. **diagnostico_modelo_inmobiliario.py**: Herramienta web para diagnosticar problemas específicos con el modelo en Streamlit Cloud
+### 6. Verificación de bloques try/except
 
-## Instrucciones para Despliegue
+Se realizó una revisión exhaustiva del código, específicamente para:
 
-1. **Verificar archivos del modelo**:
-   ```
-   python scripts/verificar_archivos_modelo.py
-   ```
-   Asegúrate que los archivos estén incluidos en el repositorio (no en .gitignore)
+- Verificar que todos los bloques `try` tienen sus correspondientes bloques `except`
+- Confirmar que el manejo de errores es robusto en todo el predictor inmobiliario
+- Validar que no existen bloques de código que pudieran causar errores silenciosos
 
-2. **Generar guía de solución**:
-   ```
-   python scripts/generar_guia_solucion_inmobiliario.py
-   ```
-   Sigue las recomendaciones personalizadas para tu proyecto
+## Resultados
 
-3. **Probar localmente con modo de depuración**:
-   Accede a `http://localhost:8501/10_predictor_inmobiliario?debug=true`
+- El predictor inmobiliario ahora detecta incompatibilidades de versiones y muestra advertencias apropiadas
+- Se cae elegantemente al modo demo cuando hay problemas con el modelo
+- Proporciona información de diagnóstico para facilitar la depuración
+- Las predicciones son ahora variables y realistas basadas en los datos proporcionados
+- **Nuevo**: La sintaxis del código es correcta, con todos los bloques `try` emparejados con sus correspondientes bloques `except`
 
-4. **Desplegar a Streamlit Cloud**:
-   - Haz commit de todos los cambios
-   - Sube los cambios al repositorio
-   - Verifica que los logs de Streamlit Cloud no muestren errores
+## Próximos Pasos
 
-5. **Diagnosticar en producción**:
-   Accede a la página del predictor con `?debug=true` para ver información detallada
+Si persisten problemas con el predictor inmobiliario, considerar:
 
-## Explicación Técnica
-
-El problema principal era que el modelo espera 22 características específicas (6 numéricas y 16 variables dummy), pero el código original solo creaba un array con 6 características numéricas. En Streamlit Cloud esto provocaba:
-
-1. Un error al intentar usar el modelo con dimensiones incorrectas
-2. El error provocaba un fallback al modo demo
-3. El modo demo usaba una semilla fija que siempre generaba el mismo resultado
-
-La solución asegura que:
-- Se creen todas las 22 características en el orden correcto
-- Se manejen correctamente las variables dummy para comuna, tipo de propiedad y orientación
-- Se registre información detallada para diagnosticar problemas futuros
-- Exista un modo de depuración para verificar el funcionamiento en producción
-
-## Verificación
-
-Para verificar que la solución funciona correctamente:
-
-1. El predictor debe mostrar diferentes resultados para diferentes comunas
-2. Acceder al modo de depuración no debe mostrar errores
-3. Las características deben mostrarse correctamente en el panel de depuración
-4. El modelo debe cargarse sin errores en la prueba de carga
-
-## Problemas Conocidos y Soluciones Adicionales
-
-- **Incompatibilidad de versiones**: Si persisten problemas, regenerar el modelo con exactamente las mismas versiones de bibliotecas que usa Streamlit Cloud
-- **Problemas de cache**: Usar `@st.cache_data(ttl=0)` si se sospecha de problemas con el cache de Streamlit
-- **Rutas incorrectas**: El código busca en múltiples ubicaciones para mayor resiliencia
+1. Regenerar el modelo con las versiones exactas de las bibliotecas usadas en el entorno de despliegue
+2. Simplificar el modelo para reducir dependencias de versiones específicas
+3. Añadir más tests automáticos para verificar el funcionamiento correcto

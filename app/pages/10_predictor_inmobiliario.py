@@ -18,6 +18,12 @@ from pathlib import Path
 import sys
 import os
 import random
+import uuid
+import traceback
+try:
+    import sklearn
+except ImportError:
+    sklearn = None
 import json
 from typing import Optional, Dict, List, Union, Any
 
@@ -72,63 +78,97 @@ def cargar_datos():
 # Función para cargar el modelo
 def cargar_modelo():
     """Carga el modelo de predicción inmobiliaria"""
+    import joblib
+    import json
+    import logging
+    import os
+    import traceback
+
+    # Intentar cargar el modelo y archivos relacionados
+    model_path = DATA_DIR / "modelo_inmobiliario.pkl"
+    scaler_path = DATA_DIR / "scaler_inmobiliario.pkl"
+    info_path = DATA_DIR / "model_info.json"
+
+    # Verificar que los archivos existen
+    for path, name in [(model_path, "modelo"), (scaler_path, "scaler"), (info_path, "info")]:
+        if not path.exists():
+            st.error(f"No se encontró el archivo {name} en {path}")
+            return _crear_modelo_demo(f"Archivo no encontrado: {path}")
+
+    # Log de rutas para debugging
+    st.session_state['model_paths'] = {
+        'model': str(model_path),        'scaler': str(scaler_path),
+        'info': str(info_path)
+    }
+
+    # Cargar información del modelo
+    import json
+    with open(info_path, 'r', encoding='utf-8') as f:
+        model_info = json.load(f)
+
+    # Verificar que la información del modelo contiene los campos necesarios
+    required_fields = ['feature_names', 'version']
+    for field in required_fields:
+        if field not in model_info:
+            st.error(f"El archivo de información del modelo no contiene el campo requerido: {field}")
+            return _crear_modelo_demo(f"Campo faltante en model_info.json: {field}")    # Verificar compatibilidad de versiones
+    model_versions = model_info.get('version', {})
+    current_versions = {
+        'scikit-learn': getattr(sklearn, '__version__', 'no disponible'),
+        'numpy': np.__version__,
+        'pandas': pd.__version__,
+        'joblib': getattr(joblib, '__version__', 'desconocido')
+    }
+
+    # Registrar las versiones para diagnóstico
+    st.session_state['version_info'] = {
+        'model': model_versions,
+        'current': current_versions
+    }
+
+    # Detectar incompatibilidades críticas
+    if sklearn is None:
+        st.warning("⚠️ scikit-learn no está disponible. La aplicación continuará en modo demo.")
+        return _crear_modelo_demo("scikit-learn no está instalado")
+    
+    if 'scikit-learn' in model_versions and model_versions['scikit-learn'] != current_versions['scikit-learn']:
+        st.warning(f"⚠️ Versión de scikit-learn diferente: modelo ({model_versions['scikit-learn']}) vs actual ({current_versions['scikit-learn']})")
+
+    if 'numpy' in model_versions and model_versions['numpy'] != current_versions['numpy']:
+        st.warning(f"⚠️ Versión de numpy diferente: modelo ({model_versions['numpy']}) vs actual ({current_versions['numpy']})")
+
+    # Cargar modelo y scaler
     try:
-        import joblib
-        import json
-        import logging
-        import os
-        
-        # Intentar cargar el modelo y archivos relacionados
-        model_path = DATA_DIR / "modelo_inmobiliario.pkl"
-        scaler_path = DATA_DIR / "scaler_inmobiliario.pkl"
-        info_path = DATA_DIR / "model_info.json"
-        
-        # Verificar que los archivos existen
-        for path, name in [(model_path, "modelo"), (scaler_path, "scaler"), (info_path, "info")]:
-            if not path.exists():
-                st.error(f"No se encontró el archivo {name} en {path}")
-                return _crear_modelo_demo(f"Archivo no encontrado: {path}")
-                
-        # Log de rutas para debugging
-        st.session_state['model_paths'] = {
-            'model': str(model_path),
-            'scaler': str(scaler_path),
-            'info': str(info_path)
-        }
-        
-        # Cargar información del modelo
-        with open(info_path, 'r', encoding='utf-8') as f:
-            model_info = json.load(f)
-            
-        # Verificar que la información del modelo contiene los campos necesarios
-        required_fields = ['feature_names', 'version']
-        for field in required_fields:
-            if field not in model_info:
-                st.error(f"El archivo de información del modelo no contiene el campo requerido: {field}")
-                return _crear_modelo_demo(f"Campo faltante en model_info.json: {field}")
-        
-        # Cargar modelo y scaler
         modelo = joblib.load(model_path)
         scaler = joblib.load(scaler_path)
-        
+
         # Guardar las versiones del modelo para debugging
         st.session_state['model_version'] = model_info.get('version', {})
-        
+
         return {
             'model': modelo,
             'scaler': scaler,
             'info': model_info,
             'feature_names': model_info.get('feature_names', [])
         }
-            
     except Exception as e:
         import traceback
         error_details = traceback.format_exc()
-        st.error(f"Error al cargar el modelo: {str(e)}")
+        st.error(f"Error al cargar el modelo o scaler: {str(e)}")
         st.session_state['model_load_error'] = {
             'error': str(e),
             'traceback': error_details
         }
+
+        # Verificar si es un error de compatibilidad
+        if "BitGenerator" in str(e) or "MT19937" in str(e) or "numpy.random" in str(e):
+            mensaje = """
+            ⚠️ Error de compatibilidad detectado con numpy.random. 
+            Este es un error conocido cuando el modelo fue guardado con una versión diferente de numpy.
+            La aplicación continuará en modo demo.
+            """
+            st.warning(mensaje)
+
         return _crear_modelo_demo(str(e))
 
 def _crear_modelo_demo(error_msg=None):
