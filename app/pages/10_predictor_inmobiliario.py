@@ -64,6 +64,39 @@ except ImportError:
 DATA_DIR = Path(parent_dir) / "data" / "inmobiliario"
 MODEL_DIR = Path(parent_dir) / "data" / "modelos"
 
+# Función auxiliar para obtener parámetros de URL de manera compatible
+def get_query_param(key, default_value=''):
+    """
+    Obtiene un parámetro de URL de manera compatible con Streamlit Cloud y entorno local.
+    
+    Args:
+        key (str): Clave del parámetro a obtener
+        default_value (Any): Valor predeterminado si el parámetro no existe
+        
+    Returns:
+        Any: Valor del parámetro o el valor predeterminado
+    """
+    try:
+        return st.query_params.get(key, default_value)
+    except (AttributeError, Exception):
+        # Fallback para versiones de Streamlit que no tienen query_params
+        return st.session_state.get(f'param_{key}', default_value)
+
+# Función auxiliar para establecer parámetros de URL de manera compatible
+def set_query_param(key, value):
+    """
+    Establece un parámetro de URL de manera compatible con Streamlit Cloud y entorno local.
+    
+    Args:
+        key (str): Clave del parámetro a establecer
+        value (Any): Valor a establecer
+    """
+    try:
+        st.query_params[key] = value
+    except (AttributeError, Exception):
+        # Fallback para versiones de Streamlit que no tienen query_params
+        st.session_state[f'param_{key}'] = value
+
 # Función para cargar datos
 def cargar_datos():
     """Carga los datos de propiedades y tendencias"""
@@ -127,10 +160,15 @@ def cargar_modelo():
     }    # Detectar incompatibilidades críticas
     if sklearn is None:
         st.warning("⚠️ scikit-learn no está disponible. La aplicación continuará en modo demo.")
-        return _crear_modelo_demo("scikit-learn no está instalado")
-    
-    # Obtener parámetros de URL para forzar modelo
-    force_model = st.query_params.get('force_model', 'auto').lower()
+        return _crear_modelo_demo("scikit-learn no está instalado")    # Obtener parámetros de URL para forzar modelo de manera compatible con Cloud y local
+    try:
+        # Intentar usar st.query_params (disponible en entorno local)
+        force_model = st.query_params.get('force_model', 'auto').lower()
+    except (AttributeError, Exception) as e:
+        # Fallback para Streamlit Cloud
+        force_model = 'auto'  # Valor predeterminado si no hay query_params
+        if 'debug_mode' in st.session_state and st.session_state.get('debug_mode', False):
+            st.info(f"Nota: Parámetros de URL no disponibles en esta versión de Streamlit: {str(e)}")
     
     # Verificar scikit-learn
     sklearn_incompatible = False
@@ -279,9 +317,11 @@ def predecir_precio(modelo, input_data):
     
     # Guardar datos de entrada para diagnóstico con el ID único
     st.session_state[f'ultimo_input_{request_id}'] = input_data.copy()
-    st.session_state['ultimo_request_id'] = request_id
-      # Verificar modo forzado de operación
-    force_mode = st.query_params.get('mode', 'auto').lower()
+    st.session_state['ultimo_request_id'] = request_id    # Verificar modo forzado de operación
+    try:
+        force_mode = st.query_params.get('mode', 'auto').lower()
+    except (AttributeError, Exception):
+        force_mode = st.session_state.get('force_mode', 'auto')
     
     # Si estamos forzando el modo demo, no intentar usar el modelo real
     if force_mode == 'demo':
@@ -1305,10 +1345,15 @@ def main():
     if 'debug_demo_variacion' not in st.session_state:
         st.session_state['debug_demo_variacion'] = None
     if 'debug_demo_comuna' not in st.session_state:
-        st.session_state['debug_demo_comuna'] = None      # Obtener parámetros de URL
-    debug_mode = st.query_params.get('debug', '').lower() == 'true'
-    force_mode = st.query_params.get('mode', 'auto').lower()
-    force_model = st.query_params.get('force_model', 'auto').lower()
+        st.session_state['debug_demo_comuna'] = None    # Obtener parámetros de URL
+    try:
+        debug_mode = st.query_params.get('debug', '').lower() == 'true'
+        force_mode = st.query_params.get('mode', 'auto').lower()
+        force_model = st.query_params.get('force_model', 'auto').lower()
+    except (AttributeError, Exception):
+        debug_mode = st.session_state.get('debug_mode', False)
+        force_mode = st.session_state.get('force_mode', 'auto')
+        force_model = st.session_state.get('force_model', 'auto')
     
     # Si se fuerza un modo específico, mostrarlo en la interfaz
     if force_mode in ['demo', 'real']:
@@ -1358,22 +1403,31 @@ def main():
     with tabs[1]:
         # Mostrar dashboard de índices inmobiliarios
         mostrar_dashboard_indices()
-    
-    # Panel de depuración si está habilitado
+      # Panel de depuración si está habilitado
     if debug_mode and len(tabs) > 2:
         with tabs[2]:
-            st.header("Panel de Depuración")            # Información de modo de operación
+            st.header("Panel de Depuración")
+            
+            # Información de modo de operación
             st.subheader("Modo de Operación")
             cols = st.columns(3)
             with cols[0]:
                 st.info(f"Modo: {force_mode.upper() if force_mode in ['demo', 'real'] else 'AUTO'}")
+            
             with cols[1]:
                 if st.button("Forzar modo DEMO", key="force_demo"):
-                    st.query_params['mode'] = 'demo'
+                    try:
+                        st.query_params['mode'] = 'demo'
+                    except (AttributeError, Exception):
+                        st.session_state['force_mode'] = 'demo'
                     st.rerun()
+            
             with cols[2]:
                 if st.button("Forzar modo REAL", key="force_real"):
-                    st.query_params['mode'] = 'real'
+                    try:
+                        st.query_params['mode'] = 'real'
+                    except (AttributeError, Exception):
+                        st.session_state['force_mode'] = 'real'
                     st.rerun()
             
             st.subheader("Información del Modelo")
@@ -1487,10 +1541,16 @@ def main():
                     'estacionamientos': 1,
                     'antiguedad_anos': 10,
                     'orientacion': 'Norte'
-                }
-                  # Ejecutar modelo real
-                old_mode = st.query_params.get('mode', 'auto')
-                st.query_params['mode'] = 'real'
+                }                # Ejecutar modelo real
+                try:
+                    old_mode = st.query_params.get('mode', 'auto')
+                except (AttributeError, Exception):
+                    old_mode = st.session_state.get('force_mode', 'auto')
+                
+                try:
+                    st.query_params['mode'] = 'real'
+                except (AttributeError, Exception):
+                    st.session_state['force_mode'] = 'real'
                 
                 with st.spinner("Ejecutando modelo real..."):
                     try:
@@ -1499,9 +1559,11 @@ def main():
                     except Exception as e:
                         st.error(f"Error en modelo real: {str(e)}")
                         resultados_real = None
-                
-                # Ejecutar modo demo
-                st.query_params['mode'] = 'demo'
+                  # Ejecutar modo demo
+                try:
+                    st.query_params['mode'] = 'demo'
+                except (AttributeError, Exception):
+                    st.session_state['force_mode'] = 'demo'
                 
                 with st.spinner("Ejecutando modo demo..."):
                     try:
@@ -1509,9 +1571,11 @@ def main():
                     except Exception as e:
                         st.error(f"Error en modo demo: {str(e)}")
                         resultados_demo = None
-                
-                # Restaurar modo original
-                st.query_params['mode'] = old_mode
+                  # Restaurar modo original
+                try:
+                    st.query_params['mode'] = old_mode
+                except (AttributeError, Exception):
+                    st.session_state['force_mode'] = old_mode
                 
                 # Mostrar resultados
                 cols = st.columns(2)
@@ -1551,9 +1615,11 @@ def add_model_controls_to_sidebar():
     """Añade controles para forzar el modelo real o demo en la barra lateral"""
     st.sidebar.markdown("---")
     st.sidebar.subheader("🔧 Controles del Modelo")
-    
-    # Obtener el modo actual
-    current_model_mode = st.query_params.get('force_model', 'auto')
+      # Obtener el modo actual
+    try:
+        current_model_mode = st.query_params.get('force_model', 'auto')
+    except (AttributeError, Exception):
+        current_model_mode = 'auto'  # Fallback para Streamlit Cloud
     
     # Opciones para el radio button
     model_mode_options = {
@@ -1569,11 +1635,19 @@ def add_model_controls_to_sidebar():
         format_func=lambda x: model_mode_options[x],
         index=list(model_mode_options.keys()).index(current_model_mode) if current_model_mode in model_mode_options else 0
     )
-    
-    # Si cambió el modo, actualizar la URL
+      # Si cambió el modo, actualizar la URL
     if selected_model_mode != current_model_mode:
-        st.query_params['force_model'] = selected_model_mode
-        st.rerun()
+        try:
+            st.query_params['force_model'] = selected_model_mode
+            st.rerun()
+        except (AttributeError, Exception):
+            # Fallback para Streamlit Cloud
+
+            if 'debug_mode' in st.session_state and st.session_state.get('debug_mode', False):
+                st.sidebar.info("Nota: No se pudo actualizar la URL en esta versión de Streamlit")
+            # Usar session_state como alternativa para mantener el estado
+            st.session_state['force_model'] = selected_model_mode
+            st.rerun()
     
     # Explicación del modo seleccionado
     if selected_model_mode == 'auto':
