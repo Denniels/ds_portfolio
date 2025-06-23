@@ -4,6 +4,12 @@ Página para el análisis de emisiones de CO2 en Chile - VERSIÓN CON DATOS REAL
 
 import streamlit as st
 
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
+
 # Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
 st.set_page_config(
     page_title="Emisiones de CO2 Chile - DS Portfolio",
@@ -11,18 +17,14 @@ st.set_page_config(
     layout="wide"
 )
 
-# Cargar estilos CSS
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
+
+# Definir variables de path que se usarán más adelante
 import sys
 from pathlib import Path
-
-# Agregar el directorio padre al path para importar utils
 current_dir = Path(__file__).parent
 parent_dir = current_dir.parent
-if str(parent_dir) not in sys.path:
-    sys.path.append(str(parent_dir))
-
-from utils.css_loader import load_css_styles
-load_css_styles()
 
 import pandas as pd
 import numpy as np
@@ -40,6 +42,17 @@ except ImportError:
     
     def apply_standard_layout(fig, **kwargs):
         return fig
+        
+# Importar visualizaciones especializadas para CO2
+try:
+    from utils.co2_visualization import create_region_scatter_plot, create_boxplot_distribution
+except ImportError:
+    # Fallback si no se encuentra el módulo
+    def create_region_scatter_plot(df, **kwargs):
+        return px.scatter(df, x='emisiones_mt', y='Region')
+        
+    def create_boxplot_distribution(df, **kwargs):
+        return px.box(df, y='emisiones_mt')
 from folium import plugins
 import branca.colormap as cm
 from datetime import datetime
@@ -164,11 +177,55 @@ de Chile para el año 2023, procesados desde los datasets oficiales del Minister
 4. Generar visualizaciones basadas en datos oficiales
 """)
 
+# Nueva sección sobre mi aprendizaje personal
+with st.expander("💡 Mi Camino de Aprendizaje con este Proyecto", expanded=False):
+    st.markdown("""
+    #### 🧠 Lo que aprendí desarrollando este análisis
+
+    Este proyecto de análisis de emisiones de CO₂ fue uno de mis primeros proyectos completos de ciencia de datos, 
+    donde pude aplicar varias habilidades que había estado aprendiendo de forma autodidacta:
+
+    - **Limpieza de datos complejos**: Trabajé con datos oficiales que requerían normalización y transformación
+    - **Visualización geoespacial**: Aprendí a crear mapas interactivos con Folium y a representar datos por regiones
+    - **Análisis estadístico básico**: Calculé tendencias, distribuciones y valores atípicos en los datos
+    - **Optimización de rendimiento**: Implementé técnicas de caché para mejorar la velocidad de carga
+
+    #### 📚 Recursos que me ayudaron
+    
+    - Tutorial de Plotly para visualizaciones interactivas
+    - Documentación oficial de Pandas para manipulación de datos
+    - Cursos online sobre análisis exploratorio de datos
+    - Comunidad de Streamlit para resolver dudas sobre la implementación
+
+    #### 🌱 Áreas de mejora futura
+    
+    Reconozco que este análisis podría mejorar en:
+    - Implementación de modelos predictivos para estimar tendencias futuras
+    - Análisis más detallado de las correlaciones entre variables
+    - Mejora de la narrativa visual y storytelling con los datos
+    
+    Este proyecto refleja mi camino de aprendizaje autodidacta y mi interés en aplicar la ciencia de datos 
+    a problemas medioambientales reales.
+    """)
+
 # Pestañas para organizar el contenido
-tab1, tab2, tab3, tab4 = st.tabs(["Resultados Principales", "Visualizaciones", "Conclusiones", "Próximos Avances"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Resultados Principales", "Visualizaciones", "Conclusiones", "Próximos Avances", "Notas Personales"])
 
 with tab1:
     st.header("📊 Hallazgos Clave del RETC 2023")
+    
+    # Información de depuración para desarrollo
+    with st.expander("🔍 Información de Depuración (Solo desarrollo)", expanded=False):
+        st.markdown("#### Datos Cargados")
+        st.write(f"Número de regiones: {len(df_regiones)}")
+        st.write(f"Columnas disponibles: {', '.join(df_regiones.columns.tolist())}")
+        if not df_regiones.empty:
+            st.dataframe(df_regiones)
+        else:
+            st.error("DataFrame vacío - Revisar carga de datos")
+            
+        st.markdown("#### Estadísticas")
+        st.json(stats)
     
     # Contenedor de métricas con clase CSS
     st.markdown('<div class="co2-metrics-grid">', unsafe_allow_html=True)
@@ -349,54 +406,120 @@ with tab2:
                 weight=2
             ).add_to(mapa)
         
-        # Mostrar mapa
+    # Mostrar mapa
         st.components.v1.html(mapa._repr_html_(), height=500)
     else:
         st.warning("No hay datos de coordenadas disponibles para el mapa")
-    
-    # Nuevas visualizaciones avanzadas
+      # Nuevas visualizaciones avanzadas
     st.markdown("---")
     st.markdown("### 📈 Análisis Avanzado de Distribución")
     
     if not df_regiones.empty:
-        # Gráfico de distribución (histograma)
-        col_hist1, col_hist2 = st.columns(2)
-        
-        with col_hist1:
-            fig_hist = px.histogram(
-                df_regiones, 
-                x='emisiones_mt',
-                nbins=8,
-                title='Distribución de Emisiones por Región',
-                labels={'emisiones_mt': 'Emisiones (Mt CO₂)', 'count': 'Número de Regiones'},
-                color_discrete_sequence=['#FF6B6B']
-            )            # Mejorar el layout del histograma
-            fig_hist = apply_standard_layout(
-                fig_hist,
-                title='Distribución de Emisiones por Región',
-                height=450,
-                xaxis_title='Emisiones (Mt CO₂)',
-                yaxis_title='Número de Regiones'
-            )
+        # Verificar explícitamente si hay datos
+        if len(df_regiones) == 0 or df_regiones['emisiones_mt'].isnull().all():
+            st.warning("⚠️ No hay datos regionales suficientes para crear las visualizaciones avanzadas")
+        else:
+            # Crear pestañas para las visualizaciones avanzadas
+            dist_tab1, dist_tab2 = st.tabs(["📊 Distribución por Región", "📈 Análisis Estadístico"])
             
-            # Mostrar con visualización mejorada
-            enhanced_plotly_chart(fig_hist, filename="histograma_emisiones")
-        
-        with col_hist2:
-            # Gráfico de caja (boxplot)
-            fig_box = px.box(
-                df_regiones,
-                y='emisiones_mt',
-                title='Análisis de Distribución (Boxplot)',
-                labels={'emisiones_mt': 'Emisiones (Mt CO₂)'},
-                color_discrete_sequence=['#4ECDC4']
-            )            # Mejorar el layout del boxplot
-            fig_box = apply_standard_layout(
-                fig_box,
-                title='Análisis de Distribución (Boxplot)',
-                height=450,
-                yaxis_title='Emisiones (Mt CO₂)'
-            )
+            with dist_tab1:
+                try:
+                    # Crear gráfico de scatter personalizado para distribución regional
+                    fig_scatter = create_region_scatter_plot(df_regiones)
+                    
+                    # Mostrar con visualización mejorada
+                    enhanced_plotly_chart(fig_scatter, filename="distribucion_regional")
+                    
+                    # Explicación contextual
+                    st.info("""
+                    **📝 Interpretación:** Este gráfico muestra la distribución de emisiones de CO₂ por región. 
+                    El tamaño y color de cada punto representan la magnitud de las emisiones. 
+                    Las regiones están ordenadas de mayor a menor emisión.
+                    """)
+                except Exception as e:
+                    st.error(f"Error al generar el gráfico de distribución: {str(e)}")
+            
+            with dist_tab2:
+                # Gráfico de distribución (histograma)
+                col_hist1, col_hist2 = st.columns(2)
+                
+                with col_hist1:
+                    try:
+                        # Asegurar valores válidos para el histograma
+                        valid_data = df_regiones[df_regiones['emisiones_mt'].notnull()]
+                        if len(valid_data) > 0:
+                            fig_hist = px.histogram(
+                                valid_data, 
+                                x='emisiones_mt',
+                                nbins=8,
+                                title='Distribución de Emisiones por Región',
+                                labels={'emisiones_mt': 'Emisiones (Mt CO₂)', 'count': 'Número de Regiones'},
+                                color_discrete_sequence=['#FF6B6B']
+                            )
+                            # Mejorar el layout del histograma
+                            fig_hist = apply_standard_layout(
+                                fig_hist,
+                                title='Distribución de Emisiones por Región',
+                                height=450,
+                                xaxis_title='Emisiones (Mt CO₂)',
+                                yaxis_title='Número de Regiones'
+                            )
+                            # Forzar rango adecuado
+                            fig_hist.update_layout(bargap=0.2)
+                            fig_hist.update_xaxes(range=[0, max(valid_data['emisiones_mt']) * 1.1])
+                            
+                            # Mostrar con visualización mejorada
+                            enhanced_plotly_chart(fig_hist, filename="histograma_emisiones")
+                        else:
+                            st.warning("⚠️ No hay datos válidos para el histograma")
+                    except Exception as e:
+                        st.error(f"Error al generar el histograma: {str(e)}")
+                
+                with col_hist2:
+                    try:
+                        # Usar la función especializada para crear un boxplot mejorado
+                        fig_box = create_boxplot_distribution(df_regiones)
+                        
+                        # Mostrar con visualización mejorada
+                        enhanced_plotly_chart(fig_box, filename="boxplot_emisiones")
+                        
+                    except Exception as e:
+                        st.error(f"Error al generar el boxplot: {str(e)}")
+                        
+                # Estadísticas adicionales
+                st.markdown("#### 📊 Estadísticas de Distribución")
+                
+                stats_col1, stats_col2, stats_col3 = st.columns(3)
+                
+                with stats_col1:
+                    q1 = df_regiones['emisiones_mt'].quantile(0.25)
+                    q3 = df_regiones['emisiones_mt'].quantile(0.75)
+                    iqr = q3 - q1
+                    st.metric(
+                        "Rango Intercuartílico",
+                        f"{iqr:.2f} Mt CO₂",
+                        help="Diferencia entre Q3 y Q1, representa la dispersión central"
+                    )
+                    
+                with stats_col2:
+                    skew = df_regiones['emisiones_mt'].skew()
+                    skew_label = "Asimétrica derecha" if skew > 0.5 else "Simétrica" if abs(skew) <= 0.5 else "Asimétrica izquierda"
+                    st.metric(
+                        "Asimetría",
+                        f"{skew:.2f}",
+                        skew_label,
+                        help="Medida de asimetría de la distribución"
+                    )
+                    
+                with stats_col3:
+                    kurt = df_regiones['emisiones_mt'].kurtosis()
+                    kurt_label = "Leptocúrtica" if kurt > 0 else "Mesocúrtica" if abs(kurt) < 0.5 else "Platicúrtica"
+                    st.metric(
+                        "Curtosis",
+                        f"{kurt:.2f}",
+                        kurt_label,
+                        help="Medida de concentración de valores alrededor de la media"
+                    )
             
             # Mostrar con visualización mejorada
             enhanced_plotly_chart(fig_box, filename="boxplot_emisiones")
@@ -792,6 +915,64 @@ with tab4:
     - **Investigadores independientes** con expertise complementario
     
     📧 **Contacto para colaboraciones:** [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+    """)
+
+with tab5:
+    st.header("📝 Notas Personales")
+    
+    st.markdown("""
+    ### Mi experiencia personal con este proyecto
+    
+    Cuando comencé a trabajar con estos datos, mi experiencia en programación era bastante limitada. Este fue uno 
+    de mis primeros proyectos "reales" después de varios meses estudiando Python por mi cuenta mientras continuaba 
+    con mi trabajo en reparación de equipos industriales.
+    
+    #### Desafíos que enfrenté:
+    
+    - **Datos desordenados**: El dataset original del RETC tenía inconsistencias, valores faltantes y formatos variables que tuve que aprender a manejar.
+    - **Curva de aprendizaje técnico**: Aprender a usar Pandas, Plotly y Folium simultáneamente fue un reto significativo.
+    - **Limitaciones de tiempo**: Desarrollé este proyecto en mis horas libres, generalmente por las noches después del trabajo.
+    - **Optimización de recursos**: Al principio, la app era muy lenta; tuve que investigar y aprender sobre técnicas de caché y optimización.
+    
+    #### Lo que me enorgullece:
+    
+    Me siento particularmente satisfecho de haber logrado crear un mapa interactivo que muestra la distribución regional 
+    de emisiones. Cuando vi el mapa funcionando por primera vez después de varios intentos fallidos, sentí que realmente 
+    estaba avanzando en mi camino de aprendizaje.
+    
+    #### Lo que haría diferente ahora:
+    
+    Con lo que he aprendido hasta ahora, implementaría:
+    - Un mejor sistema de gestión de datos y una arquitectura más clara
+    - Tests automatizados para verificar la integridad de los datos
+    - Un análisis estadístico más profundo con modelos predictivos
+    
+    ### Una nota honesta
+    
+    Este proyecto representa mi esfuerzo por aplicar lo que he aprendido de manera autodidacta. Sé que hay muchas 
+    áreas de mejora, y que profesionales con más experiencia podrían implementar soluciones más elegantes o eficientes.
+    
+    Sin embargo, este proyecto muestra mi capacidad para:
+    - Enfrentar problemas complejos de datos
+    - Aprender nuevas tecnologías de forma independiente
+    - Perseverar ante los desafíos técnicos
+    - Comunicar hallazgos de datos de manera accesible
+    
+    Estoy ansioso por seguir mejorando mis habilidades y contribuir a proyectos más ambiciosos 
+    en un entorno profesional de desarrollo.
+    """)
+    
+    # Añadir una cita personal
+    st.markdown("""
+    ---
+    > "Este análisis refleja mi viaje de aprendizaje: comenzando con curiosidad, avanzando a través de desafíos, 
+    > y celebrando pequeños logros mientras miro hacia adelante para seguir mejorando."
+    """)
+    
+    # Añadir un pequeño CTA (Call to Action)
+    st.info("""
+    **¿Tienes sugerencias para mejorar este análisis?** ¡Me encantaría escucharlas! 
+    Puedes contactarme a través de LinkedIn para compartir ideas, ofrecer consejos o explorar posibles colaboraciones.
     """)
 
 # Footer con información adicional

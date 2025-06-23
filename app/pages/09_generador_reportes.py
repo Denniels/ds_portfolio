@@ -3,6 +3,12 @@ MVP - Generador de Reportes Automáticos
 Página dedicada del primer producto comercial
 """
 import streamlit as st
+
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
 import pandas as pd
 import json
 import requests
@@ -20,6 +26,9 @@ st.set_page_config(
     page_icon="🤖",
     layout="wide"
 )
+
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
 
 # Cargar estilos CSS
 current_dir = Path(__file__).parent

@@ -2,6 +2,12 @@
 Página de feedback y comentarios
 """
 import streamlit as st
+
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
 from utils.feedback_utils import FeedbackManager
 
 st.set_page_config(
@@ -9,6 +15,9 @@ st.set_page_config(
     page_icon="💭",
     layout="wide"
 )
+
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
 
 # Configurar estilo - Los estilos ahora están en static/css/components.css
 # st.markdown("""

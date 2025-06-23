@@ -155,9 +155,69 @@ def get_page_path(page_name):
     return None
 
 def create_sidebar_nav_menu():
+     """
+     Crea un menú de navegación en la barra lateral con todas las páginas disponibles
+     """
+     st.sidebar.markdown("### 📑 Navegación")
+    
+     # Obtener todas las páginas
+     pages_dir = Path(__file__).parent.parent / "pages"
+     pages = []
+    
+     for file_path in pages_dir.glob("*.py"):
+         # Ignorar archivos que comienzan con _ (módulos internos)
+         if not file_path.stem.startswith("_"):
+             # Intentar leer el título de la página desde el archivo
+             title = _get_page_title(file_path)
+             if not title:
+                 title = file_path.stem.replace("_", " ").title()
+            
+             pages.append({
+                 "title": title,
+                 "path": str(file_path.relative_to(Path(__file__).parent.parent)),
+                 "order": int(file_path.stem.split("_")[0]) if file_path.stem[0].isdigit() else 99
+             })
+     # Ordenar páginas por el número de orden
+     pages.sort(key=lambda x: x["order"])
+    
+     # Crear botones para cada página
+     for page in pages:
+         if st.sidebar.button(page["title"]):
+             st.switch_page(page["path"])
+    
+     # Botón para volver al inicio
+     st.sidebar.markdown("---")
+     if st.sidebar.button("🏠 Página Principal"):
+         st.switch_page("main.py")
+
+def create_robust_sidebar_nav():
     """
-    Crea un menú de navegación en la barra lateral con todas las páginas disponibles
+    Crea un menú de navegación en la barra lateral usando los métodos de redirección robustos
     """
+    import sys
+    from pathlib import Path
+    
+    # Asegurarse que utils está en el path
+    current_dir = Path(__file__).parent
+    parent_dir = current_dir.parent
+    if str(parent_dir) not in sys.path:
+        sys.path.append(str(parent_dir))
+          # Función de navegación robusta para botones
+    def create_redirect_button(label, target_page, key=None, **kwargs):
+        if st.sidebar.button(label, key=key):
+            try:
+                if target_page.endswith('.py'):
+                    st.switch_page(target_page)
+                else:
+                    st.switch_page(f"{target_page}.py")
+            except:
+                # Fallback silencioso con meta refresh
+                html_refresh = f"""
+                    <meta http-equiv="refresh" content="0;URL='/{target_page}'" />
+                """
+                st.markdown(html_refresh, unsafe_allow_html=True)
+                st.stop()
+    
     st.sidebar.markdown("### 📑 Navegación")
     
     # Obtener todas las páginas
@@ -177,18 +237,26 @@ def create_sidebar_nav_menu():
                 "path": str(file_path.relative_to(Path(__file__).parent.parent)),
                 "order": int(file_path.stem.split("_")[0]) if file_path.stem[0].isdigit() else 99
             })
-    # Ordenar páginas por el número de orden
+      # Ordenar páginas por el número de orden
     pages.sort(key=lambda x: x["order"])
     
     # Crear botones para cada página
-    for page in pages:
-        if st.sidebar.button(page["title"]):
-            st.switch_page(page["path"])
+    for i, page in enumerate(pages):
+        button_text = page["title"].split(" - ")[0] if " - " in page["title"] else page["title"]
+        if st.sidebar.button(button_text, key=f"side_btn_{i}"):
+            try:
+                st.switch_page(page["path"])
+            except:
+                # Fallback con redirección HTML
+                html = f"""
+                    <meta http-equiv="refresh" content="0;URL='/{page["path"]}'" />
+                    <p>Redirigiendo a {page["title"]}...</p>
+                """
+                st.markdown(html, unsafe_allow_html=True)
+                st.stop()
     
-    # Botón para volver al inicio
-    st.sidebar.markdown("---")
-    if st.sidebar.button("🏠 Página Principal"):
-        st.switch_page("main.py")
+    # Ya no agregamos el botón duplicado para volver al inicio
+    # La navegación ya tiene los enlaces necesarios en la parte superior
 
 def _get_page_title(file_path):
     """

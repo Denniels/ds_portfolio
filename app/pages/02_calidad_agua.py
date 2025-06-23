@@ -4,6 +4,12 @@ Página para el análisis de calidad del agua
 
 import streamlit as st
 
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
+
 # Configuración de la página
 st.set_page_config(
     page_title="Calidad del Agua Chile - DS Portfolio",
@@ -11,13 +17,20 @@ st.set_page_config(
     layout="wide"
 )
 
-# Cargar estilos CSS
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
+
+# Cargar estilos CSS compartidos
 import sys
 from pathlib import Path
 
 # Agregar el directorio padre al path para importar utils
 current_dir = Path(__file__).parent
 parent_dir = current_dir.parent
+
+# Importar estilos compartidos
+sys.path.append(str(parent_dir))
+
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
 

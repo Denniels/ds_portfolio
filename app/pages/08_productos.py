@@ -3,6 +3,12 @@ Página de Productos Comerciales del Portafolio Data Science
 Transformando expertise técnico en soluciones comerciales
 """
 import streamlit as st
+
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
 import pandas as pd
 from datetime import datetime
 import plotly.graph_objects as go
@@ -24,6 +30,9 @@ st.set_page_config(
     page_icon="🚀",
     layout="wide"
 )
+
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
 
 # Cargar estilos CSS
 import sys

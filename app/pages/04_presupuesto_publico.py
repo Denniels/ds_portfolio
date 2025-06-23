@@ -3,6 +3,12 @@ Página para el análisis del presupuesto público
 """
 
 import streamlit as st
+
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
 import sys
 from pathlib import Path
 
@@ -18,6 +24,9 @@ st.set_page_config(
     page_title="Análisis Presupuesto Público - DS Portfolio",    page_icon="💰",
     layout="wide"
 )
+
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
 
 # Agregar el directorio raíz al path
 parent_dir = Path(__file__).parent.parent

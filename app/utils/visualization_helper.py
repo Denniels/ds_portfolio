@@ -23,6 +23,17 @@ def apply_standard_layout(fig, title: str, height: int = 500, width: int = 800,
     Returns:
         go.Figure: La figura con el layout mejorado
     """
+    # Verificar que la figura tiene datos
+    if not fig.data or len(fig.data) == 0:
+        # Si no hay datos, agregar un mensaje de texto en el gráfico
+        fig.add_annotation(
+            text="No hay datos disponibles para mostrar",
+            xref="paper", yref="paper",
+            x=0.5, y=0.5,
+            showarrow=False,
+            font=dict(size=16, color="red")
+        )
+    
     # Configuración base
     fig.update_layout(
         title={
@@ -47,18 +58,20 @@ def apply_standard_layout(fig, title: str, height: int = 500, width: int = 800,
     if yaxis_title:
         fig.update_yaxes(title=yaxis_title)
     
-    # Mejoras de cuadrícula
+    # Mejoras de cuadrícula y asegurar rangos adecuados
     fig.update_xaxes(
         showgrid=True,
         gridwidth=0.5,
-        gridcolor='lightgray'
+        gridcolor='lightgray',
+        autorange=True
     )
     
     fig.update_yaxes(
         showgrid=True,
         gridwidth=0.5,
         gridcolor='lightgray',
-        zeroline=False
+        zeroline=False,
+        autorange=True
     )
     
     return fig
@@ -75,6 +88,11 @@ def enhanced_plotly_chart(fig, title: Optional[str] = None,
         filename: Nombre de archivo para exportar (opcional)
         **kwargs: Argumentos adicionales para st.plotly_chart
     """
+    # Asegurarse de que el gráfico tenga datos para mostrar
+    if not fig.data or len(fig.data) == 0:
+        st.warning(f"⚠️ No hay datos disponibles para el gráfico: {title or 'Sin título'}")
+        return
+    
     # Actualizar título si se proporciona uno nuevo
     if title:
         fig.update_layout(
@@ -95,6 +113,12 @@ def enhanced_plotly_chart(fig, title: Optional[str] = None,
             filename = fig.layout.title.text.replace(" ", "_").lower()[:30]
         else:
             filename = "grafico_plotly"
+    
+    # Asegurar rangos de ejes adecuados para evitar gráficos vacíos
+    if hasattr(fig, 'update_xaxes'):
+        fig.update_xaxes(autorange=True)
+    if hasattr(fig, 'update_yaxes'):
+        fig.update_yaxes(autorange=True)
     
     # Configuración avanzada para la visualización
     st.plotly_chart(

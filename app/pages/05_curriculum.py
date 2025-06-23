@@ -2,6 +2,12 @@
 Página de currículum vitae
 """
 import streamlit as st
+
+# Importar configuración global
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import apply_styles_only
 from pathlib import Path
 from utils.contact_components import add_page_footer, add_sidebar_contact
 
@@ -11,6 +17,9 @@ st.set_page_config(
     page_icon="📄",
     layout="wide"
 )
+
+# Aplicar estilos compartidos después de configurar la página
+apply_styles_only()
 
 def load_cv_content():
     """Carga el contenido del CV desde el archivo markdown"""
