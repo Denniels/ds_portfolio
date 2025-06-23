@@ -95,7 +95,7 @@ def main():
             **Descubrimiento del análisis de datos**
             - Introducción a Pandas y NumPy
             - Primeros análisis de datos relacionados con mi negocio
-            - Curso completo de Data Science en Coursera (con certificado)
+            - Curso completo de Data Science (En Udemy)
             """)
             st.markdown("---")
             
@@ -108,6 +108,7 @@ def main():
             - Aprendizaje de Matplotlib, Seaborn y Plotly
             - Creación de dashboards básicos para análisis de ventas
             - Participación en foros y comunidades de datos
+            - Curso completo de Data Science en Academia DesafioLATAM (con certificado)
             """)
             st.markdown("---")
             
