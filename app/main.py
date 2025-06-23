@@ -297,7 +297,7 @@ def main():
     # Mensaje final más personal
     st.markdown("""
     <div class="final-message">
-        <h3>👋 Un último mensaje personal</h3>
+        <h3>👋 ¡Hasta pronto! Espero sinceramente tener la oportunidad de unirme a su equipo de trabajo.</h3>
         <p>
             Gracias por tomarte el tiempo de revisar mi portafolio. Este proyecto representa mi esfuerzo por aprender 
             nuevas habilidades mientras trabajo en mi emprendimiento de reparación de equipos industriales.
