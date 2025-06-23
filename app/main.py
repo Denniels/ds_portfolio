@@ -166,7 +166,7 @@ def main():
             - Jupyter Notebooks
             - Google Colab
             - Excel avanzado
-            - Power BI (básico)
+            - Flask (básico)
             """)
             
         # Añadir sección de nivel de experiencia en machine learning
