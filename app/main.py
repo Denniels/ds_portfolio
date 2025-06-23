@@ -50,14 +50,15 @@ def main():
         <p>Un autodidacta en el camino de la ciencia de datos, buscando mi primera oportunidad profesional</p>
     </div>
     """, unsafe_allow_html=True)
-    
-    # Sección de presentación personal interactiva con tabs
+      # Sección de presentación personal interactiva con tabs
     tabs = st.tabs(["🧑‍💻 Sobre mí", "🛣️ Mi camino", "🔍 Mis habilidades", "🎯 Mis objetivos"])
     
     with tabs[0]:
         col_photo, col_text = st.columns([1, 2])
         with col_photo:
-            st.image("https://img.icons8.com/color/240/000000/user-male-circle--v1.png", width=150)
+            # Imagen de perfil más profesional y tecnológica
+            st.image("https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Nerd%20face/3D/nerd_face_3d.png", width=200)
+            st.caption("Autodidacta en Python")
         with col_text:
             st.markdown("""
             ### Mi historia
@@ -228,12 +229,16 @@ def main():
         Este portafolio es mi forma de mostrar lo que he aprendido de manera autodidacta y lo que puedo aportar, 
         siempre con la humildad de quien sabe que tiene mucho por aprender y con la motivación de quien 
         está listo para dar el salto al mundo profesional.
-        """)
-
-    # Proyectos destacados con títulos más descriptivos y enfoque en aprendizaje
+        """)    # Proyectos destacados con títulos más descriptivos y enfoque en aprendizaje
     st.markdown("---")
-    st.markdown("## Proyectos de aprendizaje")
-    st.markdown("Estos son algunos de los proyectos en los que he trabajado para aplicar mis conocimientos:")
+    st.markdown("## Proyectos de aprendizaje en Python")
+    
+    # Mostrar la imagen de la computadora con Python en la sección de proyectos
+    proj_col1, proj_col2 = st.columns([1, 5])
+    with proj_col1:
+        st.image("https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Laptop/3D/laptop_3d.png", width=80)
+    with proj_col2:
+        st.markdown("Estos son algunos de los proyectos en los que he trabajado para aplicar mis conocimientos:")
     
     col1, col2 = st.columns(2)
     
