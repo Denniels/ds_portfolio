@@ -297,9 +297,9 @@ def get_status_badge(status):
     }
     
     return f"""
-    status-badge {status}">
+    <div class="status-badge {status}">
         {icons[status]} {labels[status]}
-    
+    </div>
     """
 
 def product_card_template(title, description, icon, status, features, tech_stack):
@@ -308,40 +308,43 @@ def product_card_template(title, description, icon, status, features, tech_stack
     description = description.strip()
     
     # Generar HTML para características
-    features_html = 'features-grid'
+    features_html = '<div class="features-grid">'
     for i, feature in enumerate(features or []):
         features_html += f"""
-            feature-item style=--item-index: {i}">
+            <div class="feature-item" style="--item-index: {i}">
                 {feature}
-            """
-    features_html += ''
-    
+            </div>"""
+    features_html += '</div>'
+
     # Generar HTML para stack tecnológico
-    tech_html = 'tech-grid'
+    tech_html = '<div class="tech-grid">'
     for i, tech in enumerate(tech_stack or []):
         tech_html += f"""
-            tech-item style= --item-index: {i}">
+            <div class="tech-item" style="--item-index: {i}">
                 {tech}
-            """
-    tech_html += ''
-    
+            </div>"""
+    tech_html += '</div>'
+
     return f"""
-    product-card
-        product-title
-            {icon}
-            {title}
+    <div class="product-card">
+        <div class="product-title">
+            <span class="icon">{icon}</span>
+            <span>{title}</span>
+        </div>
         {get_status_badge(status)}
-        
-        product-description
+
+        <div class="product-description">
             {description}
-        
-        
-        features-section
-            section-title✨ Características
+        </div>
+
+        <div class="features-section">
+            <div class="section-title">✨ Características</div>
             {features_html}
-        
-        
-        tech-section
-            section-title">🛠️ Stack Tecnológico
+        </div>
+
+        <div class="tech-section">
+            <div class="section-title">🛠️ Stack Tecnológico</div>
             {tech_html}
+        </div>
+    </div>
     """

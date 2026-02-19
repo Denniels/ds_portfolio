@@ -31,7 +31,16 @@ def setup_page(title="", icon="📊", show_navigation=True):
         apply_styles_only()
     except Exception:
         pass
-    
+
+    # Ocultar la navegación nativa de Streamlit (evita doble barra lateral)
+    st.markdown("""
+        <style>
+            [data-testid="stSidebarNav"] { display: none !important; }
+            [data-testid="stSidebarNavItems"] { display: none !important; }
+            section[data-testid="stSidebar"] > div:first-child > div:first-child ul { display: none !important; }
+        </style>
+    """, unsafe_allow_html=True)
+
     # Inicializar navegación y tema
     if show_navigation:
         init_navigation()
