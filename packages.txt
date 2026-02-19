@@ -1,21 +1,3 @@
-build-essential
-python3-dev
-python3-pip
-python3-setuptools
-python3-wheel
-libpango1.0-dev
-python3-tk
-libfreetype6-dev
-pkg-config
-libxft-dev
-libopenblas-dev
-liblapack-dev
-gfortran
-libblas-dev
-libatlas-base-dev
-libaec-dev
-libsuitesparse-dev
-cmake
-python3-venv
-python3-numpy
-python3-scipy
+# System packages needed for numerical Python libraries
+libgomp1
+libopenblas0-pthread
