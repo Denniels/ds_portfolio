@@ -1,0 +1,53 @@
+/* Variables CSS globales */
+:root {
+    /* Colores base - Tema claro */
+    --primary-color: #1f77b4;
+    --primary-color-rgb: 31, 119, 180;
+    --secondary-color: #2980b9;
+    --secondary-color-rgb: 41, 128, 185;
+    --accent-color: #3498db;
+    --accent-color-rgb: 52, 152, 219;
+    --background-color: #ffffff;
+    --background-color-rgb: 255, 255, 255;
+    --text-color: #2c3e50;
+    --text-color-rgb: 44, 62, 80;
+    --card-bg: #ffffff;
+    --glass-background: rgba(104, 136, 241, 0.692);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --text-secondary: rgba(44, 62, 80, 0.7);
+    --hover-color: rgba(31, 119, 180, 0.1);
+
+    /* Efectos y transiciones */
+    --glass-blur: 10px;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Efectos de animación */
+    --hover-transform: translateX(5px);
+    --active-transform: scale(1.02);
+
+    /* Dimensiones */
+    --sidebar-width: 300px;
+    --content-max-width: 1200px;
+}
+
+/* Tema oscuro */
+[data-theme="dark"] {
+    --primary-color: #6b8afd;
+    --primary-color-rgb: 107, 138, 253;
+    --secondary-color: #4c6ef5;
+    --secondary-color-rgb: 76, 110, 245;
+    --accent-color: #00b4d8;
+    --accent-color-rgb: 0, 180, 216;
+    --background-color: #1a1a2e;
+    --background-color-rgb: 26, 26, 46;
+    --text-color: #ffffff;
+    --text-color-rgb: 255, 255, 255;
+    --card-bg: #2d3748;
+    --glass-background: rgba(26, 26, 46, 0.8);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --hover-color: rgba(107, 138, 253, 0.15);
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,42 +1,38 @@
 """
 Página para el análisis de calidad del agua
 """
-
 import streamlit as st
-
-# Importar configuración global
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
+import pandas as pd
+import json
+import folium
 
-# Configuración de la página
-st.set_page_config(
-    page_title="Calidad del Agua Chile - DS Portfolio",
-    page_icon="💧",
-    layout="wide"
-)
-
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
-
-# Cargar estilos CSS compartidos
-import sys
-from pathlib import Path
-
-# Agregar el directorio padre al path para importar utils
-current_dir = Path(__file__).parent
-parent_dir = current_dir.parent
-
-# Importar estilos compartidos
-sys.path.append(str(parent_dir))
-
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
 
-from utils.css_loader import load_css_styles
-load_css_styles()
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
 
+from utils.page_setup import setup_page, add_page_title, create_card
+
+# Configurar página (DEBE ser el primer comando Streamlit)
+st = setup_page(
+    title="Calidad del Agua Chile",
+    icon="💧"
+)
+
+# Título y descripción de la página
+add_page_title(
+    "Análisis de Calidad del Agua en Chile",
+    "Exploración y visualización de datos sobre la calidad del agua en Chile, incluyendo análisis de tendencias y patrones significativos.",
+    "💧"
+)
+
+# Importaciones después de configuración de página
 from utils.optimization import DataManager, ResourceOptimizer
 
 # Iniciar monitoreo
@@ -47,12 +43,6 @@ optimizer.start_monitoring()
 data_manager = DataManager()
 
 # Cargar datos reales de calidad del agua
-import json
-import os
-import folium
-from pathlib import Path
-from folium.plugins import MarkerCluster
-import pandas as pd
 
 # Importar streamlit_folium de manera segura
 try:
@@ -158,28 +148,6 @@ def generate_default_conclusions():
 
 # Cargar datos
 metadata, estaciones_data, conclusiones_data = load_agua_data()
-
-# Título y descripción
-col1, col2 = st.columns([0.85, 0.15])
-with col1:
-    st.title("💧 Análisis de Calidad del Agua en Chile")
-    if metadata:
-        fecha_update = metadata.get('fecha_actualizacion', '')[:10]  # Solo fecha, sin hora
-        st.markdown(f"*Última actualización: {fecha_update}*")
-    else:
-        st.markdown("*Datos no disponibles*")
-with col2:
-    # Importar la función de navegación
-    import sys
-    from pathlib import Path
-    
-    # Añadir el directorio raíz al path si no está
-    parent_dir = Path(__file__).parent.parent
-    if str(parent_dir) not in sys.path:
-        sys.path.append(str(parent_dir))
-    
-    from utils.navigation import create_back_button
-    create_back_button()
 
 # Contenido principal
 st.markdown("""

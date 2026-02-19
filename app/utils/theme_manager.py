@@ -1,5 +1,5 @@
 """
-Gestión de temas para la aplicación
+Gestión de temas para la aplicación (versión original)
 """
 import streamlit as st
 from pathlib import Path
@@ -98,262 +98,134 @@ def get_theme_config(mode, theme_name):
         return THEMES[mode][default_theme]
 
 def apply_theme_styles(mode, theme_name):
-    """Aplica los estilos CSS del tema seleccionado"""
-    theme = get_theme_config(mode, theme_name)
-    
-    # Definir background para final-message según el modo
-    if mode == "light":
-        final_message_bg = f"linear-gradient(to right, #f6f9fc, {theme['card_bg']})"
-        page_bg = "#ffffff"
-    else:
-        final_message_bg = f"linear-gradient(to right, #2a3441, {theme['card_bg']})"
-        page_bg = "#1a202c"
-    
-    # Crear CSS personalizado basado en el tema
-    css = f"""
-    <style>
-        /* Estilos de tema: {theme_name} ({mode}) */
-        
-        /* Color de fondo para toda la página */
-        .main .block-container {{
-            background-color: {page_bg};
-        }}
-        
-        /* Color de texto para toda la página */
-        body {{
-            color: {theme["text_color"]};
-        }}
-        
-        /* Mejorar contraste de títulos en modos oscuros */
-        h1, h2, h3, h4, h5 {{
-            color: {theme["primary_color"] if mode == "dark" else theme["text_color"]};
-        }}
-        
-        p, li, span {{
-            color: {theme["text_color"]};
-        }}
-        
-        /* Estilo específico para la página principal */
-        .main-title {{
-            color: {theme["secondary_color"] if mode == "light" else "#ffffff"};
-            text-shadow: {f"0 2px 4px rgba(0,0,0,0.2)" if mode == "dark" else "none"};
-        }}
-        .hero-section {{
-            background: {theme["gradient"]};
-        }}
-        .project-card {{
-            background: {theme["card_bg"]};
-            box-shadow: {theme["shadow"]};
-            border-left: 4px solid {theme["primary_color"]};
-        }}
-        .project-card h3 {{
-            color: {theme["primary_color"] if mode == "dark" else theme["text_color"]};
-        }}
-        .project-card p {{
-            color: {theme["text_color"]};
-        }}
-        .project-card p em {{
-            color: {theme["primary_color"]};
-            font-weight: {f"bold" if mode == "dark" else "normal"};
-        }}
-        
-        /* Botones con mejor contraste */
-        .stButton > button {{
-            background-color: {theme["primary_color"]};
-            color: {"#ffffff" if mode == "light" else "#ffffff"};
-            font-weight: bold;
-            text-shadow: {f"0 1px 2px rgba(0,0,0,0.3)" if mode == "dark" else "none"};
-        }}
-        .stButton > button:hover {{
-            background-color: {theme["secondary_color"]};
-            box-shadow: {f"0 4px 8px rgba(0,0,0,0.3)" if mode == "dark" else "0 2px 4px rgba(0,0,0,0.1)"};
-        }}
-        
-        /* Tabs con mejor visibilidad */
-        .stTabs [data-baseweb="tab-list"] {{
-            background-color: {"#f1f3f9" if mode == "light" else "#2d3748"};
-            padding: 5px;
-            border-radius: 5px;
-        }}
-        .stTabs [data-baseweb="tab"] {{
-            background-color: {"#e9ecef" if mode == "light" else "#1e2533"};
-            color: {theme["text_color"]};
-            font-weight: {f"500" if mode == "dark" else "normal"};
-        }}
-        .stTabs [aria-selected="true"] {{
-            background-color: {theme["primary_color"]} !important;
-            color: {"#ffffff" if mode == "light" else "#ffffff"} !important;
-            font-weight: bold !important;
-            box-shadow: {f"0 2px 4px rgba(0,0,0,0.3)" if mode == "dark" else "none"};
-        }}
-        
-        /* Mejorar legibilidad del contenido de los tabs */
-        .stTabs [role="tabpanel"] {{
-            background-color: {"#ffffff" if mode == "light" else "#1a202c"};
-            padding: 10px;
-            border-radius: 0 0 5px 5px;
-            border: {f"1px solid rgba(255,255,255,0.1)" if mode == "dark" else "1px solid rgba(0,0,0,0.05)"};
-        }}
-        
-        /* Mensaje final con mejor contraste */
-        .final-message {{
-            background: {final_message_bg};
-            border-left: 4px solid {theme["primary_color"]};
-            box-shadow: {f"0 4px 8px rgba(0,0,0,0.2)" if mode == "dark" else "0 2px 4px rgba(0,0,0,0.05)"};
-        }}
-        .final-message h3 {{
-            color: {theme["primary_color"] if mode == "dark" else theme["text_color"]};
-            font-weight: bold;
-        }}
-        .final-message p {{
-            color: {theme["text_color"]};
-            font-size: {f"1.05rem" if mode == "dark" else "1rem"};
-        }}
-        
-        /* Mejorar visualización de la barra lateral */
-        section[data-testid="stSidebar"] {{
-            background-color: {"#f8f9fa" if mode == "light" else "#1a202c"};
-        }}
-        
-        /* Estilos para textos del sidebar */
-        section[data-testid="stSidebar"] .css-1aehsw8,
-        section[data-testid="stSidebar"] .css-16idsys p,
-        section[data-testid="stSidebar"] h1,
-        section[data-testid="stSidebar"] h2,
-        section[data-testid="stSidebar"] h3 {{
-            color: {theme["primary_color"] if mode == "dark" else "inherit"};
-        }}
-        
-        /* Enlaces del menú lateral con mejor contraste */
-        section[data-testid="stSidebar"] a {{
-            color: {theme["primary_color"] if mode == "dark" else "#4a4a4a"};
-            font-weight: {f"600" if mode == "dark" else "normal"};
-            text-shadow: {f"0 1px 2px rgba(0,0,0,0.2)" if mode == "dark" else "none"};
-        }}
-        
-        /* Mejorar específicamente el menú de navegación lateral */
-        nav.st-emotion-cache-1uhfnlt, 
-        div.st-emotion-cache-16txtl3,
-        div.st-eb-1uhfnlt,
-        section[data-testid="stSidebar"] nav {{
-            background-color: {"#f8f9fa" if mode == "light" else "#1a202c"};
-        }}
-        
-        /* Elementos del menú lateral - soporte para múltiples clases posibles */
-        section[data-testid="stSidebar"] p,
-        section[data-testid="stSidebar"] span,
-        section[data-testid="stSidebar"] a,
-        section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] div,
-        div[class*="st-emotion-cache"] p,
-        div[class*="st-eb"] p {{
-            color: {"#4a4a4a" if mode == "light" else "#ffffff"} !important;
-            font-weight: {f"600" if mode == "dark" else "normal"};
-        }}
-        
-        /* Enlaces específicos del menú lateral */
-        section[data-testid="stSidebar"] .css-pkbazv,
-        section[data-testid="stSidebar"] .css-ue6h4q,
-        section[data-testid="stSidebar"] .st-eb-pkbazv,
-        section[data-testid="stSidebar"] .st-eb-ue6h4q,
-        section[data-testid="stSidebar"] a,
-        section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] span {{
-            color: {"#4a4a4a" if mode == "light" else "#ffffff"} !important;
-            font-weight: {f"600" if mode == "dark" else "normal"};
-        }}
-        
-        /* Resaltar el elemento activo del menú */
-        div.st-emotion-cache-7ym5gk,
-        div.st-eb-7ym5gk,
-        section[data-testid="stSidebar"] [aria-selected="true"] {{
-            background-color: {theme["primary_color"] + "33"};
-            border-left: 3px solid {theme["primary_color"]};
-        }}
-        
-        /* Íconos del menú */
-        section[data-testid="stSidebar"] svg path {{
-            fill: {"#4a4a4a" if mode == "light" else "#ffffff"} !important;
-        }}
-        
-        /* Radio buttons y selectboxes en la barra lateral */
-        section[data-testid="stSidebar"] [role="radiogroup"] label,
-        section[data-testid="stSidebar"] .stRadio label,
-        section[data-testid="stSidebar"] .stSelectbox label {{
-            color: {"#4a4a4a" if mode == "light" else "#ffffff"} !important;
-            font-weight: {f"600" if mode == "dark" else "normal"};
-        }}
-        
-        /* Enlaces en markdown */
-        .stMarkdown a {{
-            color: {theme["primary_color"]};
-            text-decoration: none;
-            font-weight: bold;
-        }}
-        
-        .stMarkdown a:hover {{
-            text-decoration: underline;
-        }}
-    </style>
     """
+    Aplica el tema seleccionado usando el sistema de variables CSS dinámicamente.
+    """
+    from config import get_theme_css
     
-    # Aplicar CSS
-    st.markdown(css, unsafe_allow_html=True)
+    if not hasattr(st.session_state, 'current_theme'):
+        st.session_state.current_theme = {'mode': mode, 'name': theme_name}
+    
+    # Solo actualizar si el tema ha cambiado
+    if (st.session_state.current_theme['mode'] != mode or 
+        st.session_state.current_theme['name'] != theme_name):
+        
+        # Actualizar el tema en session_state
+        st.session_state.current_theme = {'mode': mode, 'name': theme_name}
+        
+        # Obtener y aplicar el CSS del tema
+        theme_css = get_theme_css(mode, theme_name)
+        st.markdown(f'<style>{theme_css}</style>', unsafe_allow_html=True)
+        
+        # Marcar que necesitamos recargar
+        st.session_state.theme_needs_reload = True
+    
+    return True
 
 def create_theme_selector():
     """Crea un selector de temas en la barra lateral"""
     st.sidebar.markdown("### 🎨 Temas")
     
+    # Obtener tema actual
+    current_mode = st.session_state.current_theme['mode']
+    current_theme = st.session_state.current_theme['name']
+    
     # Selector de modo (claro/oscuro)
-    if 'theme_mode' not in st.session_state:
-        st.session_state.theme_mode = "light"
-    
-    # Obtener tema anterior
-    previous_mode = st.session_state.theme_mode
-    previous_theme = st.session_state.get('theme_name', '')
-    
-    theme_mode = st.sidebar.radio(
-        "Modo:", 
-        ["Claro", "Oscuro"], 
-        index=0 if st.session_state.theme_mode == "light" else 1,
+    mode = st.sidebar.radio(
+        "Modo:",
+        options=["Claro", "Oscuro"],
+        index=0 if current_mode == "light" else 1,
         horizontal=True,
-        key="theme_mode_selector"
+        key="theme_mode_selector",
+        label_visibility="collapsed"
     )
     
-    # Actualizar el modo del tema en session_state
-    current_mode = "light" if theme_mode == "Claro" else "dark"
-    st.session_state.theme_mode = current_mode
+    # Convertir selección a modo interno
+    selected_mode = "light" if mode == "Claro" else "dark"
     
-    # Obtener nombres de temas para el modo seleccionado
+    # Obtener temas disponibles para el modo seleccionado
     theme_names = get_theme_names()
-    available_themes = theme_names[current_mode]
-    
-    # Si no hay un tema guardado o cambiamos de modo, usar el primero de la lista
-    if 'theme_name' not in st.session_state or previous_mode != current_mode:
-        st.session_state.theme_name = available_themes[0]
+    available_themes = theme_names[selected_mode]
     
     # Selector de tema específico
     selected_theme = st.sidebar.selectbox(
-        "Selecciona un tema:",
+        "Estilo:",
         available_themes,
-        index=available_themes.index(st.session_state.theme_name),
-        key="theme_name_selector"
+        index=available_themes.index(current_theme) if current_theme in available_themes else 0,
+        key="theme_style_selector"
     )
     
-    # Actualizar el tema en session_state
-    st.session_state.theme_name = selected_theme
-    
-    # Verificar si hubo cambios
-    theme_changed = previous_theme != selected_theme or previous_mode != current_mode
-    
-    # Aplicar el tema seleccionado
-    apply_theme_styles(current_mode, selected_theme)
-    
-    # Si hubo cambios, forzar recargar con un rerun
-    if theme_changed and previous_theme != '':
-        st.experimental_rerun()
-    
-    st.sidebar.markdown("---")
-    
+    # Aplicar cambios si es necesario
+    if selected_mode != current_mode or selected_theme != current_theme:
+        apply_theme_styles(selected_mode, selected_theme)
+        
     return {
-        "mode": current_mode,
-        "theme": selected_theme
+        'mode': selected_mode,
+        'name': selected_theme
     }
+
+"""
+Utilidad para manejar el tema de la aplicación
+"""
+import streamlit as st
+from streamlit.components.v1 import html
+
+def init_theme_manager():
+    """Inicializa el administrador de temas"""
+    if 'theme' not in st.session_state:
+        st.session_state.theme = 'light'
+        
+def add_theme_persistance():
+    """Agrega el script de persistencia del tema a la página"""
+    st.markdown("""
+    <script>
+    // Función para obtener el tema guardado
+    function getStoredTheme() {
+        return localStorage.getItem('streamlit_theme') || 'light';
+    }
+
+    // Función para guardar el tema actual
+    function setStoredTheme(theme) {
+        localStorage.setItem('streamlit_theme', theme);
+    }
+
+    // Función para aplicar el tema
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
+    }
+
+    // Inicializar tema desde localStorage
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const storedTheme = getStoredTheme();
+        applyTheme(storedTheme);
+    });
+
+    // Observar cambios en el tema
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'class') {
+                const isDark = document.body.classList.contains('dark-theme');
+                setStoredTheme(isDark ? 'dark' : 'light');
+            }
+        });
+    });
+
+    observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+    </script>
+    """, unsafe_allow_html=True)
+
+def get_current_theme():
+    """Obtiene el tema actual"""
+    return st.session_state.get('theme', 'light')
+
+def toggle_theme():
+    """Cambia entre tema claro y oscuro"""
+    st.session_state.theme = 'dark' if st.session_state.theme == 'light' else 'light'
+    # El cambio se refleja automáticamente debido al script de persistencia

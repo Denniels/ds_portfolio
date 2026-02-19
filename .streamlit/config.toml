@@ -21,6 +21,8 @@ fastReruns = true
 [client]
 showErrorDetails = true
 toolbarMode = "minimal"
+# Ocultar el menú de navegación nativo de Streamlit
+hideNavigationBar = true
 
 [logger]
 level = "info"
@@ -29,3 +31,7 @@ level = "info"
 developmentMode = false
 disableWatchdogWarning = true
 suppressDeprecationWarnings = true
+
+[ui]
+hideTopBar = true
+hideSidebarNav = true

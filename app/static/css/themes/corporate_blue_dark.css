@@ -1,0 +1,475 @@
+/* Estilos específicos para el tema Corporate Blue - Modo Oscuro */
+
+/* Mejor visibilidad para enlaces del sidebar y navegación de páginas */
+[data-testid="stSidebar"] [data-testid="baseButton-headerNoPadding"] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+[data-testid="stSidebar"] [data-testid="baseButton-headerNoPadding"]:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Enlaces principales y navegación de páginas */
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] a {
+    color: #FFFFFF !important;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mejorar visibilidad de íconos */
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] svg {
+    fill: #FFFFFF !important;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Mejorar contraste en las etiquetas de secciones */
+[data-testid="stSidebar"] [data-testid="stSidebarNav"] span {
+    color: #FFFFFF !important;
+    font-weight: 600;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto hover para los enlaces */
+[data-testid="stSidebar"] [data-testid="stSidebarNav"] a:hover {
+    background-color: rgba(102, 179, 255, 0.3) !important;
+}
+
+/* Ítem activo/seleccionado */
+[data-testid="stSidebar"] [data-testid="stSidebarNav"] a[aria-selected="true"] {
+    background-color: rgba(102, 179, 255, 0.5) !important;
+    border-left: 3px solid #66B3FF;
+    font-weight: bold;
+}
+
+/* Enlaces personalizados en el sidebar */
+.sidebar-section h3 {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-links a span, 
+.sidebar-nav a {
+    color: #FFFFFF !important;
+    font-weight: 500;
+}
+
+/* Forzar colores claros para el sidebar en modo oscuro */
+[data-testid="stSidebar"] {
+    background-color: var(--background-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Links de navegación en el sidebar */
+[data-testid="stSidebar"] .sidebar-nav a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem 0;
+    border-radius: 4px;
+    text-decoration: none !important;
+}
+
+[data-testid="stSidebar"] .sidebar-nav a:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Enlaces sociales y externos */
+[data-testid="stSidebar"] .sidebar-links a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem 0;
+    border-radius: 4px;
+    text-decoration: none !important;
+    display: block;
+}
+
+[data-testid="stSidebar"] .sidebar-links a:hover {
+    color: #ffffff !important;
+    background-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Estilos específicos para la página del Predictor Inmobiliario en modo oscuro */
+/* Corrección para los bloques de texto en el header */
+div[data-testid="stAppViewContainer"] div[style*="background-color:#f0f8ff"] {
+    background-color: rgba(30, 50, 80, 0.9) !important;
+    color: white !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#f0f8ff"] h3 {
+    color: white !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#f0f8ff"] p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#f0f8ff"] ul {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#f0f8ff"] li {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#f0f8ff"] strong {
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Forzar color de texto para el bloque verde */
+div[data-testid="stAppViewContainer"] div[style*="background-color:#28a745"] {
+    background-color: #28a745 !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#28a745"] h2 {
+    color: white !important;
+}
+
+div[data-testid="stAppViewContainer"] div[style*="background-color:#28a745"] p {
+    color: white !important;
+}
+
+/* Títulos del sidebar */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 1rem 0;
+}
+
+/* Texto normal en el sidebar */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] .profile-role {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Sección de temas en el sidebar */
+[data-testid="stSidebar"] .theme-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Radio buttons en el selector de temas */
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    color: #ffffff !important;
+}
+
+/* Selectbox en el selector de temas */
+[data-testid="stSidebar"] [data-testid="stSelectbox"] {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stSelectbox"]:hover {
+    color: #ffffff !important;
+}
+
+/* Separadores en el sidebar */
+[data-testid="stSidebar"] hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+/* Ajustes de color específicos del tema */
+.stMarkdown a {
+    color: var(--primary-color);
+}
+
+.stButton>button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Estilos para el sidebar */
+[data-testid="stSidebar"] {
+    background-color: var(--background-color);
+    border-right: 1px solid var(--border-color);
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdown"] {
+    color: var(--text-color) !important;
+}
+
+/* Navegación */
+.sidebar-nav a {
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+/* Enlaces */
+.sidebar-links a {
+    color: var(--primary-color);
+    background-color: var(--hover-color);
+}
+
+.sidebar-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Métricas y KPIs */
+[data-testid="stMetric"] {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--text-color) !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--primary-color) !important;
+}
+
+/* Selectores y inputs */
+[data-testid="stSelectbox"] {
+    color: var(--text-color);
+}
+
+[data-testid="stTextInput"] {
+    color: var(--text-color);
+}
+
+/* Headers y texto */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color) !important;
+}
+
+p {
+    color: var(--text-color);
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 1px;
+    background-color: var(--border-color);
+}
+
+.stTabs [data-baseweb="tab"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* DataFrames y tablas */
+[data-testid="stTable"] {
+    color: var(--text-color);
+}
+
+.dataframe {
+    color: var(--text-color);
+}
+
+/* Plotly charts */
+.js-plotly-plot {
+    background-color: var(--background-color);
+}
+
+/* Tooltips y elementos flotantes */
+[data-baseweb="tooltip"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Ajustes específicos para modo oscuro */
+[data-testid="stSidebar"] .stMarkdown {
+    text-shadow: none !important;
+}
+
+[data-testid="stMarkdown"] {
+    text-shadow: none !important;
+}
+
+/* Forzar colores en elementos que pueden ser problemáticos */
+[data-testid="baseButton-secondary"] {
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-testid="stMetricDelta"] {
+    color: var(--accent-color) !important;
+}
+
+/* Mejorar contraste en elementos interactivos */
+.stSelectbox > div > div {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.stTextInput > div > div > input {
+    color: var(--text-color) !important;
+}
+
+/* Plotly dark theme overrides */
+.js-plotly-plot .plotly .modebar {
+    background: var(--background-color) !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn path {
+    fill: var(--text-color) !important;
+}
+
+/* Sección de temas */
+.theme-section {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    background-color: var(--background-color);
+}
+
+.theme-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color) !important;
+    font-size: 1.1rem;
+}
+
+/* Radio buttons y selectbox del selector de temas */
+[data-testid="stRadio"] > div {
+    display: flex;
+    gap: 1rem;
+}
+
+[data-testid="stRadio"] label {
+    color: var(--text-color) !important;
+    background-color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+[data-testid="stRadio"] label:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+[data-testid="stRadio"] input:checked + label {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-color: var(--primary-color);
+}
+
+/* Personalizar selectbox del tema */
+.theme-section [data-testid="stSelectbox"] {
+    margin-top: 0.5rem;
+}
+
+.theme-section [data-testid="stSelectbox"] > div {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.theme-section [data-testid="stSelectbox"] > div:hover {
+    border-color: var(--primary-color);
+}
+
+/* Estilos globales adicionales para textos en modo oscuro */
+body.dark {
+    color-scheme: dark;
+}
+
+/* Forzar la visibilidad de textos en todos los elementos del predictor inmobiliario */
+body.dark [data-testid="stAppViewContainer"] .stMarkdown,
+body.dark [data-testid="stAppViewContainer"] .stText,
+body.dark [data-testid="stAppViewContainer"] .stMarkdownContainer,
+body.dark [data-testid="stAppViewContainer"] .stTitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Forzar la visibilidad de enlaces y textos en formularios */
+body.dark [data-testid="stAppViewContainer"] a:not(.sidebar-links a):not(.sidebar-nav a):not(.nav-link) {
+    color: var(--accent-color) !important;
+}
+
+body.dark [data-testid="stAppViewContainer"] label,
+body.dark [data-testid="stAppViewContainer"] .stSelectbox label,
+body.dark [data-testid="stAppViewContainer"] .stNumberInput label {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Estilos específicos para la navegación mejorada en modo oscuro */
+body.dark .nav-link {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.dark .nav-link:hover {
+    background-color: rgba(102, 179, 255, 0.15);
+    color: white !important;
+}
+
+body.dark .nav-link.active {
+    background-color: rgba(102, 179, 255, 0.25);
+    color: white !important;
+}
+
+/* Sobreescritura de estilos para el texto dentro de divs con backgrounds */
+body.dark div[style*="background-color"] h1, 
+body.dark div[style*="background-color"] h2, 
+body.dark div[style*="background-color"] h3, 
+body.dark div[style*="background-color"] h4, 
+body.dark div[style*="background-color"] h5, 
+body.dark div[style*="background-color"] h6 {
+    color: white !important;
+}
+
+body.dark div[style*="background-color"] p, 
+body.dark div[style*="background-color"] li, 
+body.dark div[style*="background-color"] ul, 
+body.dark div[style*="background-color"] ol {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark div[style*="background-color"] strong {
+    color: white !important;
+    font-weight: bold !important;
+}

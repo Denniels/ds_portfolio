@@ -1,0 +1,35 @@
+/* 
+ * hide-streamlit-menu.css
+ * CSS para ocultar el menú de navegación nativo de Streamlit
+ */
+
+/* Ocultar el botón de navegación nativo de Streamlit */
+.st-emotion-cache-18ni7ap.ezrtsby2, /* Selector para el botón hamburguesa del menú */
+.st-emotion-cache-18ni7ap.ezrtsby2 div, /* Selector para divs dentro del botón hamburguesa */
+#MainMenu, /* Menú principal */
+footer { /* Footer con los créditos de Streamlit */
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Ocultar el contenedor del menú desplegable */
+.st-emotion-cache-1l35pf3.edoxtuh1 {
+    display: none !important;
+}
+
+/* Asegurar que el sidebar personalizado sea el único visible */
+div[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+/* Aumentar la visibilidad de nuestro sidebar personalizado */
+.navigation-container {
+    margin-top: 1rem !important;
+    opacity: 1 !important;
+}

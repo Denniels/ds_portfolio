@@ -1,0 +1,277 @@
+/* Theme application styles */
+
+/* Apply transitions to color changes */
+*, *::before, *::after {
+    transition: background-color var(--transition-speed),
+                color var(--transition-speed),
+                border-color var(--transition-speed),
+                box-shadow var(--transition-speed);
+}
+
+/* Dark theme specific styles */
+[data-theme="dark"] {
+    --primary-color: #6b8afd;
+    --background-color: #1a1a2e;
+    --text-color: #ffffff;
+    --secondary-color: #4c6ef5;
+    --accent-color: #00b4d8;
+    --card-bg: #2d3748;
+    --glass-background: rgba(26, 26, 46, 0.8);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+/* Apply transitions to color changes */
+*, *::before, *::after {
+    transition: background-color var(--transition-speed),
+                color var(--transition-speed),
+                border-color var(--transition-speed),
+                box-shadow var(--transition-speed);
+}
+
+/* Base styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Sidebar styles */
+.stSidebar {
+    background-color: var(--glass-background);
+    backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Make sure links are visible in both themes */
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Ensure text is readable in both themes */
+.sidebar-header h1,
+.sidebar-header p,
+.sidebar-section h3 {
+    color: var(--text-color);
+}
+
+/* Style sidebar links */
+.sidebar-links a,
+.sidebar-nav a {
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.sidebar-links a:hover,
+.sidebar-nav a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* Contenedor principal */
+.stApp {
+    background: var(--background-primary);
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-right: 1px solid var(--border-color);
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+.st-emotion-cache-16txtl3,
+.st-emotion-cache-1q1n0ol,
+.st-emotion-cache-1cypcdb {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+/* Títulos en el sidebar */
+[data-testid="stSidebar"] h1 {
+    color: var(--text-primary) !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stSidebar"] h3 {
+    color: var(--text-primary) !important;
+    font-size: 1.1rem !important;
+    margin: 1.5rem 0 0.5rem !important;
+    padding-bottom: 0.3rem !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Caption bajo el título */
+[data-testid="stSidebar"] .st-emotion-cache-1cypcdb {
+    color: var(--text-secondary) !important;
+    font-size: 0.9rem !important;
+    opacity: 0.9;
+}
+
+/* Separadores */
+[data-testid="stSidebar"] hr {
+    border-color: var(--border-color) !important;
+    margin: 2rem 0 !important;
+}
+
+/* Enlaces en el sidebar */
+[data-testid="stSidebar"] a {
+    color: var(--accent-color) !important;
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    margin: 2px 0;
+    background: rgba(100, 181, 246, 0.1);
+}
+
+[data-testid="stSidebar"] a:hover {
+    color: var(--accent-hover) !important;
+    background: rgba(217, 218, 219, 0.2);
+    transform: translateX(4px);
+}
+
+/* Sidebar mejorado */
+[data-testid="stSidebar"] {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-right: 1px solid var(--border-color);
+}
+
+/* Contenedor de perfil */
+.sidebar-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+        to bottom,
+        var(--glass-background),
+        transparent
+    );
+    border-radius: 8px;
+}
+
+.profile-info h1 {
+    color: var(--text-color) !important;
+    font-size: 1.5rem !important;
+    margin: 0.5rem 0 !important;
+}
+
+.profile-role {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.profile-emoji {
+    font-size: 4rem;
+    text-align: center;
+    margin: 1rem 0;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Secciones del sidebar */
+.sidebar-section {
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+}
+
+.sidebar-section h3 {
+    color: var(--text-color) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Enlaces mejorados */
+.sidebar-links a,
+.sidebar-nav a {
+    display: block !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0.5rem 0 !important;
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    transition: all var(--transition-speed) ease !important;
+}
+
+.sidebar-links a:hover,
+.sidebar-nav a:hover {
+    background: rgba(247, 243, 243, 0.1) !important;
+    transform: translateX(5px);
+    color: var(--accent-color) !important;
+}
+
+/* Selectores y controles */
+[data-testid="stSidebar"] select,
+[data-testid="stSidebar"] .stRadio > div {
+    background-color: var(--background-primary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px;
+}
+
+/* Selector de temas */
+.stRadio > div {
+    background: var(--glass-background) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem !important;
+}
+
+.stSelectbox > div {
+    background: var(--glass-background) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+}
+
+/* Efectos hover y focus */
+button:hover,
+.stSelectbox > div:hover {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 1px var(--accent-color) !important;
+}
+
+/* Contenido principal */
+.main .block-container {
+    background: var(--background-secondary);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+/* Texto principal */
+.stMarkdown {
+    color: var(--text-primary) !important;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+    color: var(--text-primary) !important;
+}
+
+/* Botones */
+.stButton > button {
+    background-color: var(--accent-color) !important;
+    color: rgba(51, 36, 36, 0.822) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    transition: all var(--transition-speed) ease !important;
+}
+
+.stButton > button:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-2px);
+}

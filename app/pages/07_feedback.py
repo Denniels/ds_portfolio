@@ -2,41 +2,35 @@
 Página de feedback y comentarios
 """
 import streamlit as st
-
-# Importar configuración global
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
-from utils.feedback_utils import FeedbackManager
 
-st.set_page_config(
-    page_title="Feedback - Portafolio Data Science",
-    page_icon="💭",
-    layout="wide"
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+from utils.page_setup import setup_page, add_page_title, create_card
+
+# Configurar página
+st = setup_page(
+    title="Feedback",
+    icon="📬"
 )
 
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
+# Título y descripción de la página
+add_page_title(
+    "Feedback y Comentarios",
+    "Comparte tu opinión y sugerencias sobre el portafolio para ayudarnos a mejorar.",
+    "📬"
+)
 
-# Configurar estilo - Los estilos ahora están en static/css/components.css
-# st.markdown("""
-# <style>
-#     .feedback-header {
-#         text-align: center;
-#         padding: 2rem 0;
-#     }
-#     .feedback-form {
-#         max-width: 800px;
-#         margin: 0 auto;
-#         padding: 2rem;
-#     }
-#     .comment-section {
-#         max-width: 900px;
-#         margin: 2rem auto;
-#     }
-# </style>
-# """, unsafe_allow_html=True)
+# Importar utilidades de feedback
+from utils.feedback_utils import FeedbackManager
 
 # Importar componente de contacto
 try:
@@ -48,6 +42,50 @@ except ImportError:
         st.markdown("© 2025 DS Portfolio")
     def add_sidebar_contact():
         st.sidebar.markdown("---")
+
+# Añadir estilos específicos para la sección de comentarios que respetan el tema actual
+st.markdown("""
+<style>
+    .feedback-header {
+        text-align: center;
+        padding: 2rem 0;
+        color: var(--text-color);
+    }
+    .feedback-form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: var(--background-color);
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+    .comment-section {
+        max-width: 900px;
+        margin: 2rem auto;
+    }
+    .comment-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid var(--primary-color);
+        background-color: rgba(var(--primary-rgb), 0.05);
+        border-radius: 4px;
+    }
+    .comment-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+    .comment-body {
+        color: var(--text-color);
+    }
+    .comment-rating {
+        color: #FFD700;
+        font-weight: bold;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 def main():
     # Header

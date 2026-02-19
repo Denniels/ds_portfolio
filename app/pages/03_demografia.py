@@ -2,16 +2,36 @@
 Página para el análisis demográfico de Chile
 Integración completa con datos del notebook 03_Analisis_Demografia.ipynb
 """
-
 import streamlit as st
+import sys
+from pathlib import Path
 
-# Importar configuración global
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
-import sys
-from pathlib import Path
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+from utils.page_setup import setup_page, add_page_title, create_card
+
+# Configurar página
+st = setup_page(
+    title="Análisis Demográfico",
+    icon="👥"
+)
+
+# Título y descripción de la página
+add_page_title(
+    "Análisis Demográfico de Chile",
+    "Exploración de datos demográficos chilenos, con visualizaciones interactivas y análisis detallados de tendencias poblacionales.",
+    "👥"
+)
+
+# Importaciones adicionales
+from utils.optimization import DataManager, ResourceOptimizer
 import json
 import plotly.express as px
 import plotly.graph_objects as go
@@ -24,23 +44,6 @@ if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
     print(f"\nstreamlit run {__file__}\n")
     print("Ejecutando este archivo directamente con Python puede causar advertencias.")
     print("Las advertencias 'missing ScriptRunContext' pueden ser ignoradas en modo bare.")
-
-# Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
-st.set_page_config(
-    page_title="Análisis Demográfico - DS Portfolio",
-    page_icon="👥",
-    layout="wide"
-)
-
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
-
-# Agregar el directorio raíz al path
-parent_dir = Path(__file__).parent.parent
-if str(parent_dir) not in sys.path:
-    sys.path.append(str(parent_dir))
-
-from utils.optimization import DataManager, ResourceOptimizer
 
 def load_demografia_data():
     """Cargar datos del análisis demográfico desde el archivo JSON generado por el notebook"""

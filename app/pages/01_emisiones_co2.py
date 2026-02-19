@@ -1,36 +1,51 @@
 """
-Página para el análisis de emisiones de CO2 en Chile - VERSIÓN CON DATOS REALES
+Análisis de Emisiones de CO2 en Chile
 """
-
 import streamlit as st
-
-# Importar configuración global
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
 
-# Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
-st.set_page_config(
-    page_title="Emisiones de CO2 Chile - DS Portfolio",
-    page_icon="🏭",
-    layout="wide"
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+from utils.page_setup import setup_page, add_page_title, add_page_footer, create_card
+
+# Configurar la página
+st = setup_page(
+    title="Emisiones CO2",
+    icon="📊"
 )
 
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
+# Título de la página
+add_page_title(
+    "Análisis de Emisiones de CO2",
+    "Estudio detallado de las emisiones de gases de efecto invernadero en Chile",
+    "🌍"
+)
 
-# Definir variables de path que se usarán más adelante
-import sys
-from pathlib import Path
-current_dir = Path(__file__).parent
-parent_dir = current_dir.parent
+# Nota informativa sobre el contexto del proyecto
+st.info("""
+    Este proyecto es un ejercicio demostrativo de mis habilidades en análisis de datos.
+    Mi objetivo es mostrar cómo abordo el análisis y visualización de datos complejos,
+    reconociendo que en un entorno profesional real el proceso podría ser diferente.
+""", icon="ℹ️")
 
+# Importar librerías y configurar paths
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import folium
+
+# Definir paths de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
 
 # Importar la utilidad de visualización mejorada
 try:
@@ -42,6 +57,15 @@ except ImportError:
     
     def apply_standard_layout(fig, **kwargs):
         return fig
+
+# Importar gestor de paletas de colores
+try:
+    from utils.color_palette_manager import apply_color_palette_to_fig, get_color_palette_info
+except ImportError:
+    def apply_color_palette_to_fig(fig, palette=None):
+        return fig
+    def get_color_palette_info():
+        return "Paleta: Por defecto"
         
 # Importar visualizaciones especializadas para CO2
 try:
@@ -307,8 +331,7 @@ with tab2:
     st.header("📈 Visualizaciones de Datos Reales")
     
     st.markdown("### 🗺️ Distribución Regional de Emisiones CO₂")
-    
-    # Crear gráfico de barras con datos reales
+      # Crear gráfico de barras con datos reales
     if not df_regiones.empty:
         # Ordenar por emisiones
         df_sorted = df_regiones.sort_values('emisiones_mt', ascending=True)
@@ -322,7 +345,12 @@ with tab2:
             orientation='h',
             color='emisiones_mt',
             color_continuous_scale='Reds'
-        )        # Aplicar layout mejorado
+        )
+        
+        # Aplicar paleta de colores personalizada
+        fig_regiones = apply_color_palette_to_fig(fig_regiones)
+        
+        # Aplicar layout mejorado
         fig_regiones.update_layout(
             height=600,
             showlegend=False,
@@ -965,8 +993,9 @@ with tab5:
     # Añadir una cita personal
     st.markdown("""
     ---
-    > "Este análisis refleja mi viaje de aprendizaje: comenzando con curiosidad, avanzando a través de desafíos, 
-    > y celebrando pequeños logros mientras miro hacia adelante para seguir mejorando."
+    > "Este análisis refleja mi viaje de aprendizaje: comenzando con curiosidad, 
+    > avanzando a través de desafíos, y celebrando pequeños logros mientras miro hacia 
+    > adelante para seguir mejorando."
     """)
     
     # Añadir un pequeño CTA (Call to Action)
@@ -979,7 +1008,7 @@ with tab5:
 st.markdown("---")
 st.markdown("### 📊 Información Técnica")
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown(f"""
     **Datos utilizados:**
@@ -994,6 +1023,14 @@ with col2:
     - Datos: {fecha_analisis}
     - Versión: {metadata.get('version', 'N/A')}
     - Tipo: Datos reales RETC 2023
+    """)
+
+with col3:
+    st.markdown(f"""
+    **Configuración Visual:**
+    - {get_color_palette_info()}
+    - Modo: {st.session_state.get('theme_mode', 'light')}
+    - Tema: {st.session_state.get('theme_name', 'Por defecto')}
     """)
 
 # Importar componentes de contacto

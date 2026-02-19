@@ -3,12 +3,34 @@ MVP - Generador de Reportes Automáticos
 Página dedicada del primer producto comercial
 """
 import streamlit as st
-
-# Importar configuración global
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
+
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+from utils.page_setup import setup_page, add_page_title, create_card
+
+# Configurar página
+st = setup_page(
+    title="Generador de Reportes",
+    icon="📊"
+)
+
+# Título y descripción de la página
+add_page_title(
+    "Generador de Reportes Automáticos",
+    "MVP - Automatización inteligente de reportes empresariales con IA.",
+    "📊"
+)
+
+# Importaciones adicionales
 import pandas as pd
 import json
 import requests
@@ -17,18 +39,8 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import io
 import base64
-from pathlib import Path
-import sys
 
-# Configuración de la página
-st.set_page_config(
-    page_title="Generador de Reportes Automáticos - MVP",
-    page_icon="🤖",
-    layout="wide"
-)
-
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
+# Inicializar variables globales y configuración
 
 # Cargar estilos CSS
 current_dir = Path(__file__).parent

@@ -2,39 +2,35 @@
 Página de Servicios Profesionales del Portafolio
 """
 import streamlit as st
-
-# Importar configuración global
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
 import pandas as pd
 from datetime import datetime
 import plotly.graph_objects as go
-from pathlib import Path
 
-# Configuración de la página
-st.set_page_config(
-    page_title="Servicios Profesionales - DS Portfolio",
-    page_icon="💼",
-    layout="wide"
-)
-
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
-
-# Cargar estilos CSS
-import sys
-from pathlib import Path
-
-# Agregar el directorio padre al path para importar utils
-current_dir = Path(__file__).parent
-parent_dir = current_dir.parent
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
 
-from utils.css_loader import load_css_styles
-load_css_styles()
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+from utils.page_setup import setup_page, add_page_title, create_card
+
+# Configurar página
+st = setup_page(
+    title="Servicios Profesionales",
+    icon="🛠️"
+)
+
+# Título y descripción de la página
+add_page_title(
+    "Servicios Profesionales",
+    "Soluciones personalizadas en Data Science, Machine Learning y desarrollo de software para empresas y particulares.",
+    "🛠️"
+)
 
 # Importar componente de contacto
 try:
@@ -115,36 +111,26 @@ def format_currency(value):
 def create_service_card(service_name, details):
     """Crea una tarjeta visual para un servicio"""
     with st.container():
-        st.markdown(f'''
-        <div class="service-card">
-            <div class="service-header">
-                <div class="service-icon">💼</div>
-                <h3 class="service-title">{service_name}</h3>
-            </div>
-            <p class="service-description">{details["descripcion"]}</p>
-            <div style="margin: 1rem 0;">
-                <strong>✅ Incluye:</strong>
-                <ul class="service-features">
-        ''', unsafe_allow_html=True)
+        st.subheader(service_name)
+        col1, col2 = st.columns([2,1])
         
-        for item in details["incluye"]:
-            st.markdown(f'                <li>{item}</li>', unsafe_allow_html=True)
+        with col1:
+            st.write(details["descripcion"])
+            st.write("**Incluye:**")
+            for item in details["incluye"]:
+                st.write(f"✓ {item}")
         
-        st.markdown(f'''
-                </ul>
-            </div>
-            <div class="service-price">{format_currency(details["precio"])}</div>
-            <p><strong>⏱️ Duración estimada:</strong> {details["duracion"]}</p>
-        </div>
-        ''', unsafe_allow_html=True)
-        
-        # Botón de contacto
-        if st.button("📬 Solicitar información", key=f"btn_{service_name}"):
-            st.markdown("""
-            Para solicitar este servicio, por favor contáctame a través de:
-            - 📧 [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
-            - 💼 [Correo directo](mailto:tu_correo@ejemplo.com)
-            """)
+        with col2:
+            st.metric("Valor Referencial", format_currency(details["precio"]))
+            st.write(f"⏱️ Duración estimada: {details['duracion']}")
+            
+            # Botón de contacto
+            if st.button("📬 Solicitar información", key=f"btn_{service_name}"):
+                st.markdown("""
+                Para solicitar este servicio, por favor contáctame a través de:
+                - 📧 [LinkedIn](https://www.linkedin.com/in/daniel-andres-mardones-sanhueza-27b73777)
+                - 💼 [Correo directo](mailto:tu_correo@ejemplo.com)
+                """)
         
         st.markdown("---")
 
@@ -170,14 +156,11 @@ def main():
         "Selecciona una categoría de servicios:",
         list(services.keys())
     )
-      # Mostrar servicios de la categoría seleccionada
-    st.subheader(f"📊 {categoria}")
     
-    # Contenedor grid para servicios
-    st.markdown('<div class="services-grid">', unsafe_allow_html=True)
+    # Mostrar servicios de la categoría seleccionada
+    st.subheader(f"📊 {categoria}")
     for service_name, details in services[categoria].items():
         create_service_card(service_name, details)
-    st.markdown('</div>', unsafe_allow_html=True)
     
     # Información adicional
     with st.expander("ℹ️ Información Adicional"):
@@ -216,7 +199,7 @@ def main():
     
     # Agregar footer al final de la página
 
-    # add_page_footer()
+    add_page_footer()
 
 if __name__ == "__main__":
     main()

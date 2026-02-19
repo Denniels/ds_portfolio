@@ -1,16 +1,34 @@
 """
 Página para el análisis del presupuesto público
 """
-
 import streamlit as st
+import sys
+from pathlib import Path
 
-# Importar configuración global
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from config import apply_styles_only
-import sys
-from pathlib import Path
+# Importar configuración de página
+parent_dir = Path(__file__).parent.parent
+if str(parent_dir) not in sys.path:
+    sys.path.append(str(parent_dir))
+
+# Configurar directorios de datos
+DATA_CACHE_DIR = parent_dir / "data" / "cache"
+DATA_DIR = parent_dir / "data"
+
+from utils.page_setup import setup_page, add_page_title, create_card
+from utils.optimization import DataManager, ResourceOptimizer
+
+# Configurar página
+st = setup_page(
+    title="Análisis Presupuesto Público",
+    icon="💰"
+)
+
+# Título y descripción de la página
+add_page_title(
+    "Análisis del Presupuesto Público",
+    "Visualización y análisis detallado del presupuesto público de Chile, incluyendo tendencias, distribución y ejecución presupuestaria.",
+    "💰"
+)
 
 # Verificar si se ejecuta directamente con Python o a través de streamlit
 if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
@@ -19,46 +37,23 @@ if __name__ == "__main__" and not sys.argv[0].endswith("streamlit"):
     print("Ejecutando este archivo directamente con Python puede causar advertencias.")
     print("Las advertencias 'missing ScriptRunContext' pueden ser ignoradas en modo bare.")
 
-# Configuración de la página - DEBE SER EL PRIMER COMANDO DE STREAMLIT
-st.set_page_config(
-    page_title="Análisis Presupuesto Público - DS Portfolio",    page_icon="💰",
-    layout="wide"
-)
+# Iniciar monitoreo y gestión de datos
+optimizer = ResourceOptimizer()
+optimizer.start_monitoring()
+data_manager = DataManager()
 
-# Aplicar estilos compartidos después de configurar la página
-apply_styles_only()
+# Mostrar última actualización
+st.caption(f"*Última actualización: {data_manager.get_last_update('04_Analisis_Presupuesto_Publico')}*")
 
 # Agregar el directorio raíz al path
 parent_dir = Path(__file__).parent.parent
 if str(parent_dir) not in sys.path:
     sys.path.append(str(parent_dir))
 
-from utils.optimization import DataManager, ResourceOptimizer
+from utils.navigation import create_back_button
 
-# Iniciar monitoreo
-optimizer = ResourceOptimizer()
-optimizer.start_monitoring()
-
-# Inicializar gestor de datos
-data_manager = DataManager()
-
-# Título y descripción
-col1, col2 = st.columns([0.85, 0.15])
-with col1:
-    st.title("💰 Análisis del Presupuesto Sector Público")
-    st.markdown(f"*Última actualización: {data_manager.get_last_update('04_Analisis_Presupuesto_Publico')}*")
-with col2:
-    # Importar la función de navegación
-    import sys
-    from pathlib import Path
-    
-    # Añadir el directorio raíz al path si no está
-    parent_dir = Path(__file__).parent.parent
-    if str(parent_dir) not in sys.path:
-        sys.path.append(str(parent_dir))
-    
-    from utils.navigation import create_back_button
-    create_back_button()
+# Crear botón de retroceso
+create_back_button()
 
 def format_percentage_text(values):
     """Formatea una lista de valores como texto de porcentaje de manera segura"""
@@ -701,7 +696,7 @@ with st.expander("🔍 Ver Detalles de Metodología"):
         - Exportación para visualización
         """)
 
-# Conclusiones Finales con datos reales
+# Conclusiones Finales with datos reales
 st.header("📋 Conclusiones y Recomendaciones")
 
 st.markdown(f"""

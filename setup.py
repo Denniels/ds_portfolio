@@ -20,7 +20,6 @@ setup(
         # Garantizar disponibilidad de dependencias críticas
         "matplotlib>=3.7.0,<3.8.0",
         "plotly>=5.10.0",
-        "cython>=0.29.30",
         "wheel>=0.37.0",
     ],
     python_requires=">=3.9,<3.11",
