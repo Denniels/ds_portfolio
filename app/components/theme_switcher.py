@@ -158,9 +158,12 @@ def render_theme_switcher():
         )
         st.markdown("</div>", unsafe_allow_html=True)
         
-        # Aplicar tema si hay cambios
+        # Aplicar tema si hay cambios y persistir en session_state
         if selected_theme != current_theme_name or dark_mode != st.session_state.get('is_dark_mode', False):
+            st.session_state.is_dark_mode = dark_mode
+            st.session_state.current_theme = selected_theme
             apply_theme(theme_name=selected_theme, is_dark=dark_mode)
+            st.rerun()
         
         # Previsualización del tema con animación
         st.markdown("""

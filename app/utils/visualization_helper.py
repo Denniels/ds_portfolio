@@ -5,6 +5,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 from typing import Optional, Dict, List, Union, Any
+import uuid as _uuid
 
 def apply_standard_layout(fig, title: str, height: int = 500, width: int = 800,
                          xaxis_title: Optional[str] = None, 
@@ -120,10 +121,14 @@ def enhanced_plotly_chart(fig, title: Optional[str] = None,
     if hasattr(fig, 'update_yaxes'):
         fig.update_yaxes(autorange=True)
     
+    # Clave única para evitar StreamlitDuplicateElementId
+    chart_key = kwargs.pop('key', f"plotly_{filename}_{_uuid.uuid4().hex[:8]}")
+
     # Configuración avanzada para la visualización
     st.plotly_chart(
         fig, 
         use_container_width=True,
+        key=chart_key,
         config={
             'displayModeBar': True,
             'responsive': True,

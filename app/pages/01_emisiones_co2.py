@@ -22,6 +22,12 @@ st = setup_page(
     icon="📊"
 )
 
+# Cargar CSS específico de la página CO2
+_css_path = Path(__file__).parent.parent / "static" / "css" / "co2_analysis.css"
+if _css_path.exists():
+    with open(_css_path) as _f:
+        st.markdown(f'<style>{_f.read()}</style>', unsafe_allow_html=True)
+
 # Título de la página
 add_page_title(
     "Análisis de Emisiones de CO2",
@@ -548,9 +554,6 @@ with tab2:
                         kurt_label,
                         help="Medida de concentración de valores alrededor de la media"
                     )
-            
-            # Mostrar con visualización mejorada
-            enhanced_plotly_chart(fig_box, filename="boxplot_emisiones")
     
     # Gráfico de barras apiladas por cuartiles
     st.markdown("### 📊 Clasificación por Niveles de Emisión")
