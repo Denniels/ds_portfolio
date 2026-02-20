@@ -88,33 +88,25 @@ def setup_page(title="", icon="📊", show_navigation=True):
 
 def add_page_title(title, description="", icon=""):
     """
-    Agrega un título de página con estilo consistente
-    
+    Agrega el banner visual de página con fondo degradado (consistente en todas las páginas).
+
     Args:
         title (str): Título principal
         description (str): Descripción o subtítulo opcional
         icon (str): Ícono opcional para el título
     """
+    icon_html = f'<span class="page-banner-icon">{icon}</span>' if icon else ''
+    desc_html = f'<p class="page-banner-description">{description}</p>' if description else ''
     st.markdown(f"""
-        <div style="margin-bottom: 2rem;">
-            <h1 style="
-                margin: 0;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            ">
-                {f'<span style="font-size: 2.5rem;">{icon}</span>' if icon else ''}
-                <span>{title}</span>
-            </h1>
-            {f'<p style="font-size: 1.1rem; opacity: 0.7; margin-top: 0.5rem;">{description}</p>' if description else ''}
-            <div style="
-                height: 2px;
-                background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-                margin: 1rem 0;
-            "></div>
+        <div class="page-banner">
+            <div class="page-banner-content">
+                <h1 class="page-banner-title">
+                    {icon_html}
+                    <span>{title}</span>
+                </h1>
+                {desc_html}
+                <hr class="page-banner-divider">
+            </div>
         </div>
     """, unsafe_allow_html=True)
 

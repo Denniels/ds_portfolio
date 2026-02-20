@@ -5,6 +5,7 @@ import streamlit as st
 from utils.navigation import create_nav_menu, init_navigation
 from components.theme_switcher import render_theme_switcher
 from utils.theme_selector import initialize_theme, apply_theme
+from utils.page_setup import add_page_title
 # Asegurar que se apliquen los estilos globales (CSS) y tema
 from config import apply_styles_only, init_theme as config_init_theme
 from pathlib import Path
@@ -77,9 +78,12 @@ with st.sidebar:
     # Selector de tema
     render_theme_switcher()
 
-# Contenido principal
-st.title("Bienvenido a mi Portafolio de Data Science")
-st.write("Explora mis proyectos y análisis usando el menú lateral.")
+# Banner principal de la página de inicio
+add_page_title(
+    "Bienvenido a mi Portafolio de Data Science",
+    "Explora proyectos de análisis de datos, modelos ML y visualizaciones interactivas.",
+    "📊"
+)
 
 # Sección de destacados
 st.header("📌 Proyectos Destacados")

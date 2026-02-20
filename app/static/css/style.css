@@ -190,6 +190,95 @@
     }
 }
 
+/* ===== BANNER DE PÁGINA (compartido en todas las páginas) ===== */
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 2rem 2.5rem;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-banner-title {
+    margin: 0 0 0.5rem 0 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+}
+
+.page-banner-icon {
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.page-banner-description {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-size: 1.05rem;
+    margin: 0.5rem 0 0 0 !important;
+    line-height: 1.5;
+    max-width: 750px;
+}
+
+.page-banner-divider {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    margin-top: 1.2rem;
+    border-radius: 2px;
+}
+
+/* Responsivo para el banner */
+@media (max-width: 768px) {
+    .page-banner {
+        padding: 1.5rem 1.2rem;
+        border-radius: 10px;
+    }
+    .page-banner-title {
+        font-size: 1.5rem;
+    }
+    .page-banner-description {
+        font-size: 0.95rem;
+    }
+}
+
 /* Animaciones */
 @keyframes fadeIn {
     from {
